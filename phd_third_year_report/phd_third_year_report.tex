@@ -1,0 +1,165 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage[english]{babel}
+\usepackage{geometry}
+\usepackage{url}
+\usepackage{hyperref}
+\usepackage{parskip}
+\usepackage{csquotes}
+\usepackage{graphicx}
+\usepackage[backend=biber,style=apa,sorting=ynt]{biblatex}
+
+\addbibresource{pubblicazioni.bib}
+
+\geometry{margin=2.5cm}
+
+\hypersetup{
+    colorlinks=true,
+    linkcolor=black,
+    urlcolor=blue,
+    citecolor=black
+}
+
+\title{Research activities report -- Third year of PhD in Cultural Heritage in the Digital Ecosystem}
+\author{September 2024 -- September 2025}
+\date{}
+
+\begin{document}
+
+\maketitle
+
+\section{Summary}
+
+The third year of the PhD program in Cultural Heritage in the Digital Ecosystem focused on developing production systems for scholarly data management. Two platforms were advanced: HERITRACE, a web platform for scholarly data curation deployed at the University of Bologna, and OpenCitations Meta, a bibliographic metadata index. Research continued on temporal data management, semantic data extraction methodologies, and supporting infrastructure development.
+
+\section{Main activities}
+
+\subsection{HERITRACE platform development}
+
+HERITRACE was deployed at \url{https://paratext.ficlit.unibo.it/} in October 2024 for the ParaText project, a PRIN 2022 research initiative investigating relationships between literary texts and exegetical paratexts in ancient Greek poetry manuscript transmission. The platform serves as a semantic data editor for the ParaText Bibliographical Database, enabling Classical Philology scholars to manage complex bibliographic relationships with provenance and change-tracking.
+
+The architecture uses Docker-based deployment supporting Virtuoso and Blazegraph triplestores. A Redis-based resource locking mechanism was implemented to handle concurrent modifications. Authentication is provided through ORCID integration, linking modifications to researchers' scholarly identities.
+
+The platform supports entity creation both with and without predefined schemas, accommodating structured data with SHACL validation and unstructured data with dynamic type selection. Display rules are configurable per class or shape for visualization flexibility.
+
+The search functionality switches between SPARQL regex queries and Virtuoso's text index depending on query characteristics. The system handles orphaned entities and cascade deletions while maintaining referential integrity. Usability testing conducted in August/September 2025 informed interface modifications.
+
+A documentation system based on Starlight/MDX was developed to provide technical documentation for HERITRACE, supporting community adoption and maintenance of the platform.
+
+\subsection{OpenCitations Meta}
+
+The OpenCitations Meta index underwent performance optimizations. The system now operates exclusively through triplestores for both data and provenance, addressing previous file-based limitations.
+
+A merging system was developed to address existing duplicates in the index. The software identifies and merges duplicate entities based exclusively on shared identifiers.
+
+The infrastructure includes workflow documentation, automated testing, and semantic versioning with automated releases to support maintainability of the data processing pipeline.
+
+A suite of Virtuoso utilities was developed including Docker-based deployment automation, bulk loading tools, and database optimization utilities to support large-scale triple/quadstore operations in the OpenCitations infrastructure.
+
+\subsection{Temporal data management research}
+
+The integration of the Time Agnostic Library within HERITRACE revealed performance bottlenecks related to deleted entity identification. The HERITRACE Time Vault feature, which displays deleted entities, requires reconstructing historical snapshots for each deleted entity to determine its class information, creating performance barriers at scale.
+
+Evaluation of the Time Agnostic Library was constrained by limited benchmark availability. Only three benchmarks exist for temporal RDF systems: EvoGen, BEAR, and SPBv. EvoGen lacks community adoption preventing cross-system comparisons. BEAR's datasets are no longer accessible online despite attempts to contact authors. SPBv requires implementing custom Java components to interface with the HOBBIT benchmark framework.
+
+Development efforts to create the required Java component for HOBBIT integration proved complex due to platform-specific requirements for component interaction and data serialization. The HOBBIT platform itself exhibits stability issues: previously published benchmarks no longer execute successfully on the current platform, indicating systemic problems that prevented meaningful performance evaluation against other temporal RDF systems.
+
+\subsection{RML and knowledge graph inversion}
+
+Research on knowledge graph inversion was conducted as part of the joint PhD program with KU Leuven under the supervision of Anastasia Dimou. This work addresses the bidirectional transformation challenge: while RML (RDF Mapping Language) enables conversion from relational databases to RDF, the inverse process -- converting RDF back to relational structures using the same mapping definitions -- remained unexplored.
+
+The developed system reuses existing RML mappings to perform reverse transformations, maintaining consistency between forward and backward conversions. Comprehensive testing verified coverage of most R2RML specification use cases for relational databases. Performance evaluation employed the KROWN benchmark, originally designed for RML processors like Morph-KGC. This benchmark adaptation quantifies both the system's scalability characteristics and the computational overhead of bidirectional transformation compared to unidirectional RML processing.
+
+\subsection{Supporting infrastructure and tools}
+
+The SKG-IF SHACL extractor was developed to automatically generate SHACL shapes from annotated ontologies. The system parses ontology constraints and transforms them into corresponding validation shapes, eliminating manual shape creation.
+
+A crowdsourcing system was developed in partnership with PKP (Public Knowledge Project) and TIB (Technische Informationsbibliothek) to integrate citation submission workflows into Open Journal Systems (OJS). The system addresses the visibility gap affecting 52,000 active OJS journals worldwide, with 79.9\% located in the Global South but largely absent from major citation indexes.
+
+The workflow enables journal editors to contribute citations by copying references from articles into OJS dashboard fields. The system parses references to extract structured metadata, allowing manual error correction before submission. Citations are formatted as CSV files and submitted to GitHub as structured issues. Validation checks CSV structure, validates identifiers, and ensures metadata completeness.
+
+\section{Publications}
+
+\subsection{Journal articles}
+
+\fullcite{massariHERITRACEUserFriendlySemantic2025}
+
+\fullcite{massariRepresentingProvenanceTrack2025}
+
+\fullcite{barzaghiProposalFAIRManagement2024}
+
+\fullcite{sebastianReproducibleWorkflowCreation2025}
+
+\subsection{Software releases}
+
+\fullcite{arcangelomassariOpencitationsHeritraceV2332025}
+
+\fullcite{arcangelomassariOpencitationsTimeagnosticlibrary5042025}
+
+\fullcite{arcangelomassariOpencitationsOc_metaV2132025}
+
+\subsection{Presentations}
+
+\fullcite{massariMappingUnmappedCitation2025}
+
+\fullcite{massariPresentationHERITRACEUserFriendly2025}
+
+\fullcite{massariPresentazioneDiHERITRACE2024}
+
+\section{Training and educational activities}
+
+\subsection{Disciplinary and multidisciplinary training}
+
+LUDI Seminar Series: ``L'importanza di fare una buona impressione: vicende e progetti editoriali della Typographia Medicea delle lingue orientali (Roma, 1584-1614)'' by Sara Fani (AMS Università di Bologna). Attended online, 10 October 2024, 14:00-17:00.
+
+LUDI Seminar Series: ``La biblioteconomia nel contesto internazionale. Esperienze e progetti'' by Rossana Morriello (Università di Firenze). Attended online, 15 November 2024, 10:00-12:00.
+
+``Revealing Connections: Leveraging Linked Open Data to discover knowledge through ResearchSpace''. One-day seminar on digital semantic archives and Linked Open Data technologies. Giorgio Prodi Lecture Hall, Piazza San Giovanni in Monte, 2, Bologna, 28 November 2024, 9:30-17:00.
+
+``Tweets or posts on X as sources of information'' by Elisavet Chantavaridou (University of West Attica). Attended online, 10 December 2024, 9:00-11:00.
+
+``nodegoat: database for historical research and the Digital Humanities'' by Pim van Bree and Geert Kessels (Lab1100). Attended online, 6 March 2025, 10:00-12:00.
+
+``Workshop PRIN Atlas'' by Professor Marilena Daquino. Aula Affreschi, Via Zamboni 34, Bologna, 26 March 2025, 10:00-17:00.
+
+``AI Literacies in the Digital Humanities: Ethics, Archives, and Critical Thinking'' by Moisés Rockembach. Attended online, 17 June 2025, 10:00-13:00.
+
+``Biblioteche digitali e IIIF. Caratteristiche, innovazioni e applicazioni'' by Fabio Cusimano. Book presentation. Attended online, 4 July 2025, 15:00-17:00.
+
+\subsection{Training related to the acquisition of transversal skills}
+
+``Frontiere dell'intelligenza artificiale'' by Giovanni Colavizza, 20 June 2025, 14:00-17:00.
+
+``Artificial Intelligence Tools for Content Production in Academia'' by Paolo Torroni and Alessandro Gallo. Bologna, 26 May 2025, 23 June 2025, 30 June 2025, 15:00-18:00.
+
+``Nuove macchine e antichi saperi: IA, Supercalcolo e dati per il patrimonio culturale''. Conference on artificial intelligence, supercomputing and data for cultural heritage. Attended online, 3 December 2024, 9:00-13:00.
+
+``Using Generative Artificial Intelligence for processing tweets'' by Elisavet Chantavaridou (University of West Attica). Attended online, 6 December 2024, 15:00-16:30.
+
+\subsection{Extra-curricular training}
+
+Una-Her-Doc seminars on heritage theories, methodologies and participatory approaches. Attended online, 12 November 2024, 7 hours.
+
+Una-Her-Doc program Kickoff for the new cohort \& Founding theories seminars. Attended online, 22 January - 22 February 2025, 6 hours.
+
+Una-Her-Doc - Founding theories seminars. Attended online, 7 March 2025, 6 hours.
+
+Una-Her-Doc founding theories \& methodology seminars. Attended online, 19-20 June 2025, 9 hours.
+
+\subsection{Dissemination of research results}
+
+PhD Workshop One Europe for Cultural Heritage Researchers: ``Museums and New Challenges: virtual technologies, social responsibility and environmental sustainability''. Bologna, Italy, 5-10 May 2025.
+
+csv,conf,v9: ``Mapping the unmapped citation landscape: how crowdsourcing will fill the citation gap''. Bologna, Italy, 10 September 2025.
+
+\vspace{2cm}
+
+\noindent Ozzano dell'Emilia, 12 September 2025
+
+\vspace{1cm}
+
+\noindent \includegraphics[width=5cm]{firma.png}
+
+\end{document}
