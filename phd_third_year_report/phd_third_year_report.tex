@@ -2,14 +2,14 @@
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
 \usepackage{lmodern}
-\usepackage[english]{babel}
+\usepackage[italian]{babel}
 \usepackage{geometry}
 \usepackage{url}
 \usepackage{hyperref}
 \usepackage{parskip}
 \usepackage{csquotes}
 \usepackage{graphicx}
-\usepackage[backend=biber,style=apa,sorting=ynt]{biblatex}
+\usepackage[backend=biber,style=authoryear,sorting=ynt]{biblatex}
 
 \addbibresource{pubblicazioni.bib}
 
@@ -22,67 +22,69 @@
     citecolor=black
 }
 
-\title{Research activities report -- Third year of PhD in Cultural Heritage in the Digital Ecosystem}
-\author{September 2024 -- September 2025}
+\title{Relazione delle attività di ricerca -- Terzo anno di dottorato in Patrimonio culturale nell'ecosistema digitale}
+\author{Settembre 2024 -- Settembre 2025}
 \date{}
 
 \begin{document}
 
 \maketitle
 
-\section{Summary}
+\section{Riassunto}
 
-The third year of the PhD program in Cultural Heritage in the Digital Ecosystem focused on developing production systems for scholarly data management. Two platforms were advanced: HERITRACE, a web platform for scholarly data curation deployed at the University of Bologna, and OpenCitations Meta, a bibliographic metadata index. Research continued on temporal data management, semantic data extraction methodologies, and supporting infrastructure development.
+Il terzo anno del dottorato in Patrimonio culturale nell'ecosistema digitale ha visto da un lato la messa in produzione di HERITRACE, un framework che consente a curatori di dati del patrimonio culturale di curare i dati in maniera agnostica rispetto al \textit{data model}, e dall'altro il miglioramento e incremento di OpenCitations Meta, un indice di metadati bibliografici. Parallelamente, è proseguito il lavoro di ricerca sull'inversione dei grafi prodotti tramite RML (RDF Mapping Language), sulla gestione di dati temporali, sulle metodologie di estrazione di dati semantici e sullo sviluppo di infrastrutture di supporto.
 
-\section{Main activities}
+\section{Attività principali}
 
-\subsection{HERITRACE platform development}
+\subsection{Sviluppo di HERITRACE}
 
-HERITRACE was deployed at \url{https://paratext.ficlit.unibo.it/} in October 2024 for the ParaText project, a PRIN 2022 research initiative investigating relationships between literary texts and exegetical paratexts in ancient Greek poetry manuscript transmission. The platform serves as a semantic data editor for the ParaText Bibliographical Database, enabling Classical Philology scholars to manage complex bibliographic relationships with provenance and change-tracking.
+HERITRACE è stata messa in produzione all'indirizzo \url{https://paratext.ficlit.unibo.it/} nell'ottobre 2024 nell'ambito del progetto ParaText, un'iniziativa di ricerca PRIN 2022 che studia le relazioni tra testi letterari e paratesti esegetici nella tradizione manoscritta della poesia greca antica. Il framework funziona come editor di dati semantici per il \textit{Database Bibliografico ParaText} e permette agli studiosi di Filologia Classica di curare relazioni bibliografiche complesse, correggere errori, migliorare e aggiungere informazioni, garantendo la tracciabilità delle modifiche e la registrazione della \textit{provenance} dei dati.
 
-The architecture uses Docker-based deployment supporting Virtuoso and Blazegraph triplestores. A Redis-based resource locking mechanism was implemented to handle concurrent modifications. Authentication is provided through ORCID integration, linking modifications to researchers' scholarly identities.
+L'architettura del sistema è basata su Docker e supporta qualunque database a grafo o \textit{quadstore}. Per gestire le modifiche concorrenti è stato implementato un meccanismo di blocco delle risorse che utilizza Redis. L'autenticazione avviene attraverso l'integrazione con ORCID, permettendo di associare ogni modifica all'identità accademica del ricercatore che l'ha effettuata.
 
-The platform supports entity creation both with and without predefined schemas, accommodating structured data with SHACL validation and unstructured data with dynamic type selection. Display rules are configurable per class or shape for visualization flexibility.
+Il configuratore del sistema può definire il modello tramite SHACL, che viene utilizzato per la generazione dei form e per la validazione. È anche possibile non definire alcun \textit{data model}: il sistema funziona comunque, ma non è disponibile la validazione automatica. Le regole di visualizzazione possono essere configurate per singola classe o \textit{shape}, garantendo flessibilità nella presentazione dei dati.
 
-The search functionality switches between SPARQL regex queries and Virtuoso's text index depending on query characteristics. The system handles orphaned entities and cascade deletions while maintaining referential integrity. Usability testing conducted in August/September 2025 informed interface modifications.
+Il sistema di ricerca alterna automaticamente tra query SPARQL regex e l'indice testuale, supportando al momento quelli di OpenLink Virtuoso e di Blazegraph, in base alle caratteristiche della ricerca effettuata. Il sistema è in grado di gestire entità orfane e cancellazioni a cascata preservando l'integrità referenziale.
 
-A documentation system based on Starlight/MDX was developed to provide technical documentation for HERITRACE, supporting community adoption and maintenance of the platform.
+Sono stati eseguiti test di usabilità tra agosto e settembre 2025 che saranno la base per i prossimi miglioramenti dell'usabilità e dell'esperienza utente.
+
+È stato inoltre sviluppato un sistema di documentazione basato su Starlight/MDX per fornire documentazione tecnica completa di HERITRACE, facilitando così l'adozione da parte della comunità scientifica e la manutenzione del framework.
 
 \subsection{OpenCitations Meta}
 
-The OpenCitations Meta index underwent performance optimizations. The system now operates exclusively through triplestores for both data and provenance, addressing previous file-based limitations.
+L'indice OpenCitations Meta è stato oggetto di significative ottimizzazioni delle prestazioni. Il sistema è stato migrato per operare esclusivamente attraverso triplestore, sia per i dati che per la \textit{provenance}, superando così le limitazioni dell'approccio precedente basato su file.
 
-A merging system was developed to address existing duplicates in the index. The software identifies and merges duplicate entities based exclusively on shared identifiers.
+È stato sviluppato un sistema di fusione per risolvere il problema dei duplicati presenti nell'indice. Il software è in grado di identificare e unificare entità duplicate utilizzando esclusivamente gli identificatori condivisi come criterio di matching.
 
-The infrastructure includes workflow documentation, automated testing, and semantic versioning with automated releases to support maintainability of the data processing pipeline.
+L'infrastruttura è stata arricchita con documentazione completa dei flussi di lavoro, test automatizzati e un sistema di versionamento semantico che prevede rilasci automatizzati, elementi fondamentali per garantire la manutenibilità della pipeline di elaborazione dati.
 
-A suite of Virtuoso utilities was developed including Docker-based deployment automation, bulk loading tools, and database optimization utilities to support large-scale triple/quadstore operations in the OpenCitations infrastructure.
+È stata inoltre sviluppata una suite completa di utility per Virtuoso che comprende automazione del deployment basata su Docker, strumenti per il caricamento massivo di dati e utility per l'ottimizzazione del database, al fine di supportare operazioni su dataset di grandi dimensioni all'interno dell'infrastruttura OpenCitations.
 
-\subsection{Temporal data management research}
+\subsection{Ricerca sulla gestione di dati temporali}
 
-The integration of the Time Agnostic Library within HERITRACE revealed performance bottlenecks related to deleted entity identification. The HERITRACE Time Vault feature, which displays deleted entities, requires reconstructing historical snapshots for each deleted entity to determine its class information, creating performance barriers at scale.
+L'integrazione della Time Agnostic Library in HERITRACE ha evidenziato alcuni colli di bottiglia nelle prestazioni, in particolare nell'identificazione di entità cancellate. La funzionalità Time Vault di HERITRACE, che permette di visualizzare le entità cancellate, necessita infatti della ricostruzione di istantanee storiche per ciascuna entità eliminata al fine di determinarne le informazioni di classe, processo che genera significative limitazioni prestazionali quando applicato su larga scala.
 
-Evaluation of the Time Agnostic Library was constrained by limited benchmark availability. Only three benchmarks exist for temporal RDF systems: EvoGen, BEAR, and SPBv. EvoGen lacks community adoption preventing cross-system comparisons. BEAR's datasets are no longer accessible online despite attempts to contact authors. SPBv requires implementing custom Java components to interface with the HOBBIT benchmark framework.
+La valutazione delle prestazioni della Time Agnostic Library è stata ostacolata dalla scarsa disponibilità di benchmark adeguati. Attualmente esistono soltanto tre benchmark specifici per sistemi RDF temporali: EvoGen, BEAR e SPBv. EvoGen presenta una limitata adozione da parte della comunità scientifica, rendendo impossibili confronti significativi tra diversi sistemi. I dataset di BEAR non risultano più accessibili online, nonostante i tentativi di contattare gli autori originali. SPBv, infine, richiede lo sviluppo di componenti Java ad hoc per l'interfacciamento con il framework di benchmark HOBBIT.
 
-Development efforts to create the required Java component for HOBBIT integration proved complex due to platform-specific requirements for component interaction and data serialization. The HOBBIT platform itself exhibits stability issues: previously published benchmarks no longer execute successfully on the current platform, indicating systemic problems that prevented meaningful performance evaluation against other temporal RDF systems.
+Lo sviluppo del componente Java necessario per l'integrazione con HOBBIT si è rivelato particolarmente complesso a causa dei requisiti specifici della piattaforma relativi all'interazione tra componenti e alla serializzazione dei dati. La piattaforma HOBBIT presenta inoltre problemi di stabilità: benchmark precedentemente pubblicati non riescono più a essere eseguiti correttamente sulla versione attuale della piattaforma, evidenziando problematiche sistemiche che hanno precluso una valutazione significativa delle prestazioni rispetto ad altri sistemi RDF temporali.
 
-\subsection{RML and knowledge graph inversion}
+\subsection{RML e inversione di grafi di conoscenza}
 
-Research on knowledge graph inversion was conducted as part of the joint PhD program with KU Leuven under the supervision of Anastasia Dimou. This work addresses the bidirectional transformation challenge: while RML (RDF Mapping Language) enables conversion from relational databases to RDF, the inverse process -- converting RDF back to relational structures using the same mapping definitions -- remained unexplored.
+La ricerca sull'inversione di grafi di conoscenza è stata svolta nell'ambito del programma di dottorato congiunto con KU Leuven sotto la supervisione di Anastasia Dimou. Questo studio affronta la problematica delle trasformazioni bidirezionali: mentre RML (RDF Mapping Language) permette di convertire database relazionali in RDF, il processo inverso – ovvero la conversione da RDF a strutture relazionali utilizzando le medesime definizioni di mappatura – non era mai stato approfondito.
 
-The developed system reuses existing RML mappings to perform reverse transformations, maintaining consistency between forward and backward conversions. Comprehensive testing verified coverage of most R2RML specification use cases for relational databases. Performance evaluation employed the KROWN benchmark, originally designed for RML processors like Morph-KGC. This benchmark adaptation quantifies both the system's scalability characteristics and the computational overhead of bidirectional transformation compared to unidirectional RML processing.
+Il sistema sviluppato riutilizza le mappature RML esistenti per effettuare trasformazioni inverse, garantendo coerenza tra conversioni dirette e inverse. Attraverso test approfonditi è stata verificata la copertura della maggior parte dei casi d'uso previsti dalle specifiche R2RML per database relazionali. Per la valutazione delle prestazioni è stato utilizzato il benchmark KROWN, originariamente sviluppato per processori RML come Morph-KGC. L'adattamento di questo benchmark ha permesso di quantificare tanto le caratteristiche di scalabilità del sistema quanto l'overhead computazionale delle trasformazioni bidirezionali rispetto all'elaborazione RML unidirezionale.
 
-\subsection{Supporting infrastructure and tools}
+\subsection{Infrastruttura di supporto e strumenti}
 
-The SKG-IF SHACL extractor was developed to automatically generate SHACL shapes from annotated ontologies. The system parses ontology constraints and transforms them into corresponding validation shapes, eliminating manual shape creation.
+È stato sviluppato l'estrattore SHACL SKG-IF per la generazione automatica di \textit{shape} SHACL a partire da ontologie annotate. Il sistema è in grado di analizzare i vincoli presenti nell'ontologia e di trasformarli automaticamente nelle corrispondenti \textit{shape} di validazione, eliminando così la necessità di creare manualmente tali \textit{shape}.
 
-A crowdsourcing system was developed in partnership with PKP (Public Knowledge Project) and TIB (Technische Informationsbibliothek) to integrate citation submission workflows into Open Journal Systems (OJS). The system addresses the visibility gap affecting 52,000 active OJS journals worldwide, with 79.9\% located in the Global South but largely absent from major citation indexes.
+In collaborazione con PKP (Public Knowledge Project) e TIB (Technische Informationsbibliothek) è stato sviluppato un sistema di crowdsourcing per integrare i flussi di lavoro di invio delle citazioni all'interno di Open Journal Systems (OJS). Il sistema mira a colmare il divario di visibilità che caratterizza le 52.000 riviste OJS attive a livello mondiale, di cui il 79,9\% è localizzato nel Sud Globale ma risulta largamente assente dai principali indici di citazione.
 
-The workflow enables journal editors to contribute citations by copying references from articles into OJS dashboard fields. The system parses references to extract structured metadata, allowing manual error correction before submission. Citations are formatted as CSV files and submitted to GitHub as structured issues. Validation checks CSV structure, validates identifiers, and ensures metadata completeness.
+Il flusso di lavoro implementato permette agli editori delle riviste di contribuire alle citazioni copiando i riferimenti bibliografici dagli articoli direttamente nei campi dedicati del dashboard OJS. Il sistema procede quindi all'analisi automatica dei riferimenti per estrarre metadati strutturati, offrendo la possibilità di correggere manualmente eventuali errori prima dell'invio finale. Le citazioni vengono quindi formattate come file CSV e inviate a GitHub sotto forma di issue strutturate. Il processo di validazione verifica la correttezza della struttura CSV, convalida gli identificatori e assicura la completezza dei metadati. Una volta al mese, i metadati vengono integrati in OpenCitations Meta e le citazioni in OpenCitations Index, mentre i metadati di \textit{provenance} e i dati vengono archiviati su Zenodo per la preservazione a lungo termine.
 
-\section{Publications}
+\section{Pubblicazioni}
 
-\subsection{Journal articles}
+\subsection{Articoli su rivista}
 
 \fullcite{massariHERITRACEUserFriendlySemantic2025}
 
@@ -92,7 +94,7 @@ The workflow enables journal editors to contribute citations by copying referenc
 
 \fullcite{sebastianReproducibleWorkflowCreation2025}
 
-\subsection{Software releases}
+\subsection{Software rilasciati}
 
 \fullcite{arcangelomassariOpencitationsHeritraceV2332025}
 
@@ -100,63 +102,16 @@ The workflow enables journal editors to contribute citations by copying referenc
 
 \fullcite{arcangelomassariOpencitationsOc_metaV2132025}
 
-\subsection{Presentations}
+\subsection{Presentazioni}
 
 \fullcite{massariMappingUnmappedCitation2025}
 
 \fullcite{massariPresentationHERITRACEUserFriendly2025}
 
-\fullcite{massariPresentazioneDiHERITRACE2024}
-
-\section{Training and educational activities}
-
-\subsection{Disciplinary and multidisciplinary training}
-
-LUDI Seminar Series: ``L'importanza di fare una buona impressione: vicende e progetti editoriali della Typographia Medicea delle lingue orientali (Roma, 1584-1614)'' by Sara Fani (AMS Università di Bologna). Attended online, 10 October 2024, 14:00-17:00.
-
-LUDI Seminar Series: ``La biblioteconomia nel contesto internazionale. Esperienze e progetti'' by Rossana Morriello (Università di Firenze). Attended online, 15 November 2024, 10:00-12:00.
-
-``Revealing Connections: Leveraging Linked Open Data to discover knowledge through ResearchSpace''. One-day seminar on digital semantic archives and Linked Open Data technologies. Giorgio Prodi Lecture Hall, Piazza San Giovanni in Monte, 2, Bologna, 28 November 2024, 9:30-17:00.
-
-``Tweets or posts on X as sources of information'' by Elisavet Chantavaridou (University of West Attica). Attended online, 10 December 2024, 9:00-11:00.
-
-``nodegoat: database for historical research and the Digital Humanities'' by Pim van Bree and Geert Kessels (Lab1100). Attended online, 6 March 2025, 10:00-12:00.
-
-``Workshop PRIN Atlas'' by Professor Marilena Daquino. Aula Affreschi, Via Zamboni 34, Bologna, 26 March 2025, 10:00-17:00.
-
-``AI Literacies in the Digital Humanities: Ethics, Archives, and Critical Thinking'' by Moisés Rockembach. Attended online, 17 June 2025, 10:00-13:00.
-
-``Biblioteche digitali e IIIF. Caratteristiche, innovazioni e applicazioni'' by Fabio Cusimano. Book presentation. Attended online, 4 July 2025, 15:00-17:00.
-
-\subsection{Training related to the acquisition of transversal skills}
-
-``Frontiere dell'intelligenza artificiale'' by Giovanni Colavizza, 20 June 2025, 14:00-17:00.
-
-``Artificial Intelligence Tools for Content Production in Academia'' by Paolo Torroni and Alessandro Gallo. Bologna, 26 May 2025, 23 June 2025, 30 June 2025, 15:00-18:00.
-
-``Nuove macchine e antichi saperi: IA, Supercalcolo e dati per il patrimonio culturale''. Conference on artificial intelligence, supercomputing and data for cultural heritage. Attended online, 3 December 2024, 9:00-13:00.
-
-``Using Generative Artificial Intelligence for processing tweets'' by Elisavet Chantavaridou (University of West Attica). Attended online, 6 December 2024, 15:00-16:30.
-
-\subsection{Extra-curricular training}
-
-Una-Her-Doc seminars on heritage theories, methodologies and participatory approaches. Attended online, 12 November 2024, 7 hours.
-
-Una-Her-Doc program Kickoff for the new cohort \& Founding theories seminars. Attended online, 22 January - 22 February 2025, 6 hours.
-
-Una-Her-Doc - Founding theories seminars. Attended online, 7 March 2025, 6 hours.
-
-Una-Her-Doc founding theories \& methodology seminars. Attended online, 19-20 June 2025, 9 hours.
-
-\subsection{Dissemination of research results}
-
-PhD Workshop One Europe for Cultural Heritage Researchers: ``Museums and New Challenges: virtual technologies, social responsibility and environmental sustainability''. Bologna, Italy, 5-10 May 2025.
-
-csv,conf,v9: ``Mapping the unmapped citation landscape: how crowdsourcing will fill the citation gap''. Bologna, Italy, 10 September 2025.
 
 \vspace{2cm}
 
-\noindent Ozzano dell'Emilia, 12 September 2025
+\noindent Ozzano dell'Emilia, 12 settembre 2025
 
 \vspace{1cm}
 
