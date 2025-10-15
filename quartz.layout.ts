@@ -40,21 +40,12 @@ export const defaultContentPageLayout: PageLayout = {
     }),
     Component.Explorer({
       sortFn: (a, b) => {
-        // Cartelle prima dei file
+        // Folders first, then files
         if (a.isFolder && !b.isFolder) return -1
         if (!a.isFolder && b.isFolder) return 1
 
-        // Ordina per data (più recente prima)
-        // Le date sono stringhe ISO nel JSON
-        const aDate = a.data?.date ? new Date(a.data.date).getTime() : 0
-        const bDate = b.data?.date ? new Date(b.data.date).getTime() : 0
-
-        if (aDate !== bDate) {
-          return bDate - aDate // Più recente prima
-        }
-
-        // Se le date sono uguali, ordina alfabeticamente
-        return a.displayName.localeCompare(b.displayName, undefined, {
+        // Sort in reverse alphabetical order (Z-A)
+        return b.displayName.localeCompare(a.displayName, undefined, {
           numeric: true,
           sensitivity: "base",
         })
@@ -84,21 +75,12 @@ export const defaultListPageLayout: PageLayout = {
     }),
     Component.Explorer({
       sortFn: (a, b) => {
-        // Cartelle prima dei file
+        // Folders first, then files
         if (a.isFolder && !b.isFolder) return -1
         if (!a.isFolder && b.isFolder) return 1
 
-        // Ordina per data (più recente prima)
-        // Le date sono stringhe ISO nel JSON
-        const aDate = a.data?.date ? new Date(a.data.date).getTime() : 0
-        const bDate = b.data?.date ? new Date(b.data.date).getTime() : 0
-
-        if (aDate !== bDate) {
-          return bDate - aDate // Più recente prima
-        }
-
-        // Se le date sono uguali, ordina alfabeticamente
-        return a.displayName.localeCompare(b.displayName, undefined, {
+        // Sort in reverse alphabetical order (Z-A)
+        return b.displayName.localeCompare(a.displayName, undefined, {
           numeric: true,
           sensitivity: "base",
         })
