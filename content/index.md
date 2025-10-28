@@ -1,5 +1,5 @@
 ---
-{"publish":true,"created":"2025-10-15T20:56:24.684+02:00","modified":"2025-10-22T15:46:39.359+02:00","cssclasses":""}
+{"publish":true,"created":"2025-10-15T20:56:24.684+02:00","modified":"2025-10-28T14:27:04.346+01:00","cssclasses":""}
 ---
 
 # La Novitade
