@@ -224,6 +224,7 @@ a {
       z-index: 1;
       grid-area: grid-sidebar-left;
       flex-direction: column;
+      display: none; // Hide left sidebar since it's empty
       @media all and ($mobile) {
         gap: 0;
         align-items: center;
@@ -240,6 +241,7 @@ a {
       grid-area: grid-sidebar-right;
       margin-right: 0;
       flex-direction: column;
+      display: none; // Hide right sidebar since it's empty
       @media all and ($mobile) {
         margin-left: inherit;
         margin-right: inherit;
@@ -271,32 +273,38 @@ a {
         margin-top: 0;
         padding: 0;
       }
+
+      & .flex-component {
+        width: 100%;
+      }
     }
 
-    & .center > article {
-      grid-area: grid-center;
+    & .center {
+      max-width: 1200px;
+      margin-left: auto;
+      margin-right: auto;
+      padding-left: 2rem;
+      padding-right: 2rem;
+      box-sizing: border-box;
+      @media all and ($mobile) {
+        padding-left: 1rem;
+        padding-right: 1rem;
+      }
+
+      & > article {
+        max-width: 900px;
+        margin-left: auto;
+        margin-right: auto;
+      }
     }
 
     & footer {
       grid-area: grid-footer;
-    }
-
-    & .center,
-    & footer {
-      max-width: 100%;
-      min-width: 100%;
+      max-width: 1200px;
       margin-left: auto;
       margin-right: auto;
-      @media all and ($tablet) {
-        margin-right: 0;
-      }
-      @media all and ($mobile) {
-        margin-right: 0;
-        margin-left: 0;
-      }
-    }
-    & footer {
-      margin-left: 0;
+      padding-left: 2rem;
+      padding-right: 2rem;
     }
   }
 }

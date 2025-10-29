@@ -8,8 +8,8 @@ import * as Plugin from "./quartz/plugins"
  */
 const config: QuartzConfig = {
   configuration: {
-    pageTitle: "Scripta Manent",
-    pageTitleSuffix: "",
+    pageTitle: "Giardino digitale di Arcangelo",
+    pageTitleSuffix: " | Giardino digitale di Arcangelo",
     enableSPA: true,
     enablePopovers: true,
     analytics: {
