@@ -11,6 +11,7 @@ export default defineConfig({
 			social: [{ icon: 'github', label: 'GitHub', href: 'https://github.com/arcangelo7/arcangelo7.github.io' }],
 			components: {
 				Sidebar: './src/components/Sidebar.astro',
+				Pagination: './src/components/Pagination.astro',
 			},
 			sidebar: [obsidianSidebarGroup],
 			plugins: [

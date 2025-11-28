@@ -75,6 +75,20 @@ aspectRatio: "50"
 ![attachments/Pasted image 20251128155010.png](../../../../assets/notes/attachments/pasted-image-20251128155010.png)
 Questa immagine mostra le esecuzioni successive alla prima su un unico file con un'unica riga che contiene 3000 autori concatenati. E' inutile che io perda tempo a migliorare l'efficienza delle varie fasi del curator quando la fase di query SPARQL e di recupero delle informazioni occupa il 99% del tempo. Mi devo focalizzare esclusivamente su quella.
 
+La soluzione è abbastanza ovvia: parallelizzare.
+
+```embed
+title: "perf(finder): parallelize SPARQL queries using ProcessPoolExecutor · opencitations/oc_meta@46c9b8c"
+image: "https://opengraph.githubassets.com/8d62d6615e39b86844aad47db194e64e1416ac5f114ce315b3c98b43ad778177/opencitations/oc_meta/commit/46c9b8c88b165d29d4e724df05a2ce3e5329b54b"
+description: "Changes: - Add module-level _execute_sparql_query() worker function for parallel execution - Refactor get_everything_about_res() to use ProcessPoolExecutor with spawn context - Parallelize batch pr..."
+url: "https://github.com/opencitations/oc_meta/commit/46c9b8c88b165d29d4e724df05a2ce3e5329b54b"
+favicon: ""
+aspectRatio: "50"
+```
+
+Direi che avevo ragione: ![attachments/Pasted image 20251128171452.png](../../../../assets/notes/attachments/pasted-image-20251128171452.png)
+Quanti worker? 4. Dai miei benchmark si ottengono i risultati migliori.
+
 ## Virtuoso utilities
 
 ### Fix
@@ -96,9 +110,6 @@ url: "https://github.com/opencitations/virtuoso_utilities/commit/97d982a4039f304
 favicon: ""
 aspectRatio: "50"
 ```
-
-Prima: ![attachments/Pasted image 20251126224656.png](../../../../assets/notes/attachments/pasted-image-20251126224656.png)
-Dopo:
 
 ## Aldrovandi
 
