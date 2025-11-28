@@ -90,10 +90,11 @@ aspectRatio: "50"
 
 ```embed
 title: "fix(bulk_load): clean up load_list table before bulk load · opencitations/virtuoso_utilities@97d982a"
-image: ""
+image: "https://opengraph.githubassets.com/6da48833cc9d3aa0ca6685db32db8cfd0444d7dc01c9edd4f09bb0fbceada6e6/opencitations/virtuoso_utilities/commit/97d982a4039f3045f49c8bb09f23182af4c1e23f"
 description: "[release]"
 url: "https://github.com/opencitations/virtuoso_utilities/commit/97d982a4039f3045f49c8bb09f23182af4c1e23f"
 favicon: ""
+aspectRatio: "50"
 ```
 
 Prima: ![attachments/Pasted image 20251126224656.png](../../../../assets/notes/attachments/pasted-image-20251126224656.png)

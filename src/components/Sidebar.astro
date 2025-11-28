@@ -1,0 +1,39 @@
+---
+// @ts-ignore - virtual module resolved by Starlight at runtime
+import MobileMenuFooter from 'virtual:starlight/components/MobileMenuFooter';
+import SidebarPersister from '@astrojs/starlight/components/SidebarPersister.astro';
+import SidebarSublist from '@astrojs/starlight/components/SidebarSublist.astro';
+
+const { sidebar } = Astro.locals.starlightRoute;
+
+function reverseEntries(entries: any[]): any[] {
+	const indexEntry = entries.find(e => e.slug?.endsWith('/index') || e.label === 'index');
+	const otherEntries = entries.filter(e => e !== indexEntry);
+
+	otherEntries.reverse();
+
+	return indexEntry ? [indexEntry, ...otherEntries] : otherEntries;
+}
+
+function processGroup(group: any): void {
+	if (group.entries) {
+		group.entries = reverseEntries(group.entries);
+		for (const entry of group.entries) {
+			if (entry.entries) {
+				processGroup(entry);
+			}
+		}
+	}
+}
+
+for (const group of sidebar) {
+	processGroup(group);
+}
+---
+<SidebarPersister>
+	<SidebarSublist sublist={sidebar} />
+</SidebarPersister>
+
+<div class="md:sl-hidden">
+	<MobileMenuFooter />
+</div>

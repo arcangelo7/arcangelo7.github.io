@@ -8,10 +8,11 @@ export default defineConfig({
 	integrations: [
 		starlight({
 			title: 'Tu vuo far el phdino',
-			social: [{ icon: 'github', label: 'GitHub', href: 'https://github.com/arcangelo7' }],
-			sidebar: [
-				obsidianSidebarGroup,
-			],
+			social: [{ icon: 'github', label: 'GitHub', href: 'https://github.com/arcangelo7/arcangelo7.github.io' }],
+			components: {
+				Sidebar: './src/components/Sidebar.astro',
+			},
+			sidebar: [obsidianSidebarGroup],
 			plugins: [
 				starlightObsidian({
 					vault: '/home/arcangelo/Documents/obsidian',
