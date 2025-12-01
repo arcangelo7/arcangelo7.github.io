@@ -268,9 +268,9 @@ Preparation, SPARQL upload, Bulk load)</li>
   </div>
 </div>
 
-In produzione: ![Pasted image 20251129155643.png](../../../../assets/notes/attachments/pasted-image-20251129155643.png)
+In produzione: ![Pasted image 20251130140750.png](../../../../assets/notes/attachments/pasted-image-20251130140750.png)
 
-Mi sembra fuori dal mondo che la preparazione all'upload duri così tanto più dell'upload. Però non posso fare modifiche in produzione, ho bisogno di estendere il benchmark per riprodurre il caso in cui sto aggiornando tante entità preesistenti, nell'ipotesi che sia quello il problema.
+Chiaramente il salvataggio in RDF è la parte più dispendiosa. Però non posso fare modifiche in produzione, ho bisogno di estendere il benchmark per riprodurre il caso in cui sto aggiornando tante entità preesistenti.
 
 <div style="border: 1px solid #d0d7de; border-radius: 8px; padding: 16px; margin: 8px 0; background: #ffffff; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; color: #1f2328;">
   <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 12px;">
@@ -302,15 +302,133 @@ graph diff comparisons.</p>
   </div>
 </div>
 
-Con 10 righe: ![Pasted image 20251129174407.png](../../../../assets/notes/attachments/pasted-image-20251129174407.png)
+Baseline con 1000 righe: ![Pasted image 20251130120418.png](../../../../assets/notes/attachments/pasted-image-20251130120418.png)
+Posso parallelizzare anche qui, dato che indicizzo le entità per file. Posso scrivere parallelamente su file diversi, chiaramente in batch. Tra l'altro, posso anche togliere i lock, sempre in maniera opzionale. Nuovo parametro `workers` che parallelizza sia l'aggiornamento degli RDF che la serializzazione in nquads per il bulk load successivo.
 
-Con 1000 righe: ![Pasted image 20251129174415.png](../../../../assets/notes/attachments/pasted-image-20251129174415.png)
+<div style="border: 1px solid #d0d7de; border-radius: 8px; padding: 16px; margin: 8px 0; background: #ffffff; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; color: #1f2328;">
+  <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 12px;">
+    <img src="https://avatars.githubusercontent.com/u/42008604?v=4" style="width: 32px; height: 32px; border-radius: 50%;" alt="arcangelo7" />
+    <div>
+      <strong style="display: block; color: #1f2328;">arcangelo7</strong>
+      <span style="font-size: 0.85em; color: #656d76;">Nov 30, 2025</span>
+    </div>
+  </div>
+  <div style="margin: 12px 0; color: #1f2328;">
+    <p>perf(meta_process): remove multiprocessing overhead from storage phase</p>
+<p>Replace ProcessPoolExecutor with sequential execution to eliminate
+pickle serialization overhead.</p>
 
-Ucci ucci ucci sento odor di O di n alla terzucci.
+  </div>
+  <div style="display: flex; justify-content: space-between; align-items: center; font-size: 0.85em;">
+    <span style="font-family: monospace; color: #1a7f37; font-weight: 600;">+89</span>
+    <span style="font-family: monospace; color: #cf222e; font-weight: 600;">-172</span>
+    <a href="https://github.com/opencitations/oc_meta/commit/ff02ea09a337b1a41be11063c3e54b9cf043ab8f" style="color: #0969da; text-decoration: none; font-weight: 500;">ff02ea0</a>
+  </div>
+</div>
+
+Suprise surprise mf'er
+
+![Pasted image 20251130140556.png](../../../../assets/notes/attachments/pasted-image-20251130140556.png)
+
+Ancora nessuna differenza in produzione: ![Pasted image 20251201110137.png](../../../../assets/notes/attachments/pasted-image-20251201110137.png)
+
+Devo rendere il benchmark più realistico.
+
+<div style="border: 1px solid #d0d7de; border-radius: 8px; padding: 16px; margin: 8px 0; background: #ffffff; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; color: #1f2328;">
+  <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 12px;">
+    <img src="https://avatars.githubusercontent.com/u/42008604?v=4" style="width: 32px; height: 32px; border-radius: 50%;" alt="arcangelo7" />
+    <div>
+      <strong style="display: block; color: #1f2328;">arcangelo7</strong>
+      <span style="font-size: 0.85em; color: #656d76;">Dec 1, 2025</span>
+    </div>
+  </div>
+  <div style="margin: 12px 0; color: #1f2328;">
+    <p>test(benchmark): add detailed storage sub-phase timing and visualization</p>
+<p>Add sub-timers for storage phase breakdown in meta_process.py:</p>
+<ul>
+<li>storage__upload_data, storage__upload_prov</li>
+<li>storage__store_data, storage__store_prov</li>
+</ul>
+<p>Update plotting.py to visualize all 7 storage sub-phases.</p>
+
+  </div>
+  <div style="display: flex; justify-content: space-between; align-items: center; font-size: 0.85em;">
+    <span style="font-family: monospace; color: #1a7f37; font-weight: 600;">+131</span>
+    <span style="font-family: monospace; color: #cf222e; font-weight: 600;">-75</span>
+    <a href="https://github.com/opencitations/oc_meta/commit/a3622d60376e48d01bfed772b6d5ef2024c3853f" style="color: #0969da; text-decoration: none; font-weight: 500;">a3622d6</a>
+  </div>
+</div>
+
+Ah: ![Pasted image 20251201182601.png](../../../../assets/notes/attachments/pasted-image-20251201182601.png)
+
+Incredibile quante sfumature possa avere l'acqua calda.
+
+According to
+
+```bash
+dd if=/dev/zero of=/mnt/arcangelo/test_write.tmp bs=1M count=1024 conv=fdatasync
+
+sync && echo 3 | sudo tee /proc/sys/vm/drop_caches > /dev/null && if=/mnt/arcangelo/test_write.tmp of=/dev/null bs=1M
+```
+
+Il disco di ServerGrosso che sto usando fa \~440 MB/s di scrittura e \~1.5 GB/s di lettura, mentre il mio PC 2.2 GB/s di scrittura e 2.8 GB/s di lettura, il che rende i benchmark eseguiti sul mio PC fallaci a prescindere, ma vedo di avvicinarmici.
+
+Dopo svariati tentativi non sono riuscito a riprodurre questi risultati tramite benchmark, quindi devo farlo direttamente in produzione aggiungendo logging di performance.
+
+```bash
+cangelo/oc_meta_merge/meta_config.yaml --timing --timing-output ./meta_process_timing.json                                     [91/92]
+Processing files:   0%|                                                                                      | 0/2735 [00:00<?, ?it/s]
+[1/2735] Processing 900.csv...                                                                                                        
+/mnt/arcangelo/meta_input_2025_10/crossref_1000/900.csv            
+  [curation__collect_identifiers] Starting...                      
+  [curation__collect_identifiers] Completed in 50.17s                                                                                 
+  [curation__clean_id] Starting...                                                                                                    
+  [curation__clean_id] Completed in 1.13s 
+  [curation__merge_duplicates] Starting...                                                                                            
+  [curation__merge_duplicates] Completed in 0.10s                                                                                     
+  [curation__clean_vvi] Starting...              
+  [curation__clean_vvi] Completed in 14.91s
+  [curation__clean_ra] Starting...                                 
+  [curation__clean_ra] Completed in 1.96s                          
+  [curation__finalize] Starting...                                 
+  [curation__finalize] Completed in 2.27s                          
+  [rdf_creation] Starting...                                       
+  [rdf_creation] Completed in 35.01s                               
+  [storage__upload_data] Starting...       
+  [storage__upload_data] Completed in 7.16s
+  [storage__upload_prov] Starting...       
+  [storage__upload_prov] Completed in 1.72s
+  [storage__store_data] Starting...                                
+                                                                   
+  [store_all timing]                                               
+    Files: 348, Entities: 13035                                    
+    Path indexing:    13.43s                                       
+    File read:        40.74s                                       
+    Entity store:     1.06s                                        
+    Serialization:    48.13s
+    Total:            103.50s
+    Overhead:         0.14s
+  [storage__store_data] Completed in 103.51s
+  [storage__store_prov] Starting...
+q
+  [store_all timing]
+    Files: 348, Entities: 13366
+    Path indexing:    13.15s
+    File read:        153.60s
+    Entity store:     5.84s
+    Serialization:    285.54s
+    Total:            458.29s
+    Overhead:         0.16s
+  [storage__store_prov] Completed in 458.29s
+  [storage__sparql_upload] Starting...
+Uploading data SPARQL: 100%|██████████████████████████████████████████████████████████████████████████| 31/31 [00:00<00:00, 53.59it/s]
+  [storage__sparql_upload] Completed in 2.28s██████████████████████████████████████████████████████▌  | 30/31 [00:00<00:00, 57.86it/s]
+  [storage__bulk_load] Starting...
+  [storage__bulk_load] Completed in 38.14s
+  ✓ Completed in 716.71s
+```
 
 ### Virtuoso utilities
-
-#### Fix
 
 <div style="border: 1px solid #d0d7de; border-radius: 8px; padding: 16px; margin: 8px 0; background: #ffffff; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; color: #1f2328;">
   <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 12px;">
@@ -354,6 +472,162 @@ the API and ensuring consistent behavior across all callers.</p>
   </div>
 </div>
 
+<div style="border: 1px solid #d0d7de; border-radius: 8px; padding: 16px; margin: 8px 0; background: #ffffff; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; color: #1f2328;">
+  <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 12px;">
+    <img src="https://avatars.githubusercontent.com/u/42008604?v=4" style="width: 32px; height: 32px; border-radius: 50%;" alt="arcangelo7" />
+    <div>
+      <strong style="display: block; color: #1f2328;">arcangelo7</strong>
+      <span style="font-size: 0.85em; color: #656d76;">Nov 30, 2025</span>
+    </div>
+  </div>
+  <div style="margin: 12px 0; color: #1f2328;">
+    <p>fix(launch_virtuoso): fix launch_virtuoso.py to remove deprecated capture parameter</p>
+<p>Also add integration tests for virtuoso launcher</p>
+
+  </div>
+  <div style="display: flex; justify-content: space-between; align-items: center; font-size: 0.85em;">
+    <span style="font-family: monospace; color: #1a7f37; font-weight: 600;">+806</span>
+    <span style="font-family: monospace; color: #cf222e; font-weight: 600;">-8</span>
+    <a href="https://github.com/opencitations/virtuoso_utilities/commit/c77b4fea4ad3f7cce5d5b22d7aaef66591cb4b70" style="color: #0969da; text-decoration: none; font-weight: 500;">c77b4fe</a>
+  </div>
+</div>
+
+<div style="border: 1px solid #d0d7de; border-radius: 8px; padding: 16px; margin: 8px 0; background: #ffffff; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; color: #1f2328;">
+  <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 12px;">
+    <img src="https://avatars.githubusercontent.com/u/42008604?v=4" style="width: 32px; height: 32px; border-radius: 50%;" alt="arcangelo7" />
+    <div>
+      <strong style="display: block; color: #1f2328;">arcangelo7</strong>
+      <span style="font-size: 0.85em; color: #656d76;">Nov 30, 2025</span>
+    </div>
+  </div>
+  <div style="margin: 12px 0; color: #1f2328;">
+    <p>fix(launch_virtuoso): fix launch_virtuoso.py to remove deprecated capture parameter</p>
+<p>Also add integration tests for virtuoso launcher</p>
+
+  </div>
+  <div style="display: flex; justify-content: space-between; align-items: center; font-size: 0.85em;">
+    <span style="font-family: monospace; color: #1a7f37; font-weight: 600;">+806</span>
+    <span style="font-family: monospace; color: #cf222e; font-weight: 600;">-8</span>
+    <a href="https://github.com/opencitations/virtuoso_utilities/commit/c77b4fea4ad3f7cce5d5b22d7aaef66591cb4b70" style="color: #0969da; text-decoration: none; font-weight: 500;">c77b4fe</a>
+  </div>
+</div>
+
+<div style="border: 1px solid #d0d7de; border-radius: 8px; padding: 16px; margin: 8px 0; background: #ffffff; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; color: #1f2328;">
+  <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 12px;">
+    <img src="https://avatars.githubusercontent.com/u/42008604?v=4" style="width: 32px; height: 32px; border-radius: 50%;" alt="arcangelo7" />
+    <div>
+      <strong style="display: block; color: #1f2328;">arcangelo7</strong>
+      <span style="font-size: 0.85em; color: #656d76;">Nov 30, 2025</span>
+    </div>
+  </div>
+  <div style="margin: 12px 0; color: #1f2328;">
+    <p>ci: add coverage reporting and README badges</p>
+<p>Add test coverage with pytest-cov, deploy coverage report to GitHub
+Pages, and create dynamic coverage badge using BYOB. Add badges
+to README for tests, coverage, Python versions, lines of code, and
+license.</p>
+
+  </div>
+  <div style="display: flex; justify-content: space-between; align-items: center; font-size: 0.85em;">
+    <span style="font-family: monospace; color: #1a7f37; font-weight: 600;">+233</span>
+    <span style="font-family: monospace; color: #cf222e; font-weight: 600;">-4</span>
+    <a href="https://github.com/opencitations/virtuoso_utilities/commit/0a2baadff3d48cf4e7c54115963b9c12bd44f3c3" style="color: #0969da; text-decoration: none; font-weight: 500;">0a2baad</a>
+  </div>
+</div>
+
+<div style="border: 1px solid #d0d7de; border-radius: 8px; padding: 16px; margin: 8px 0; background: #ffffff; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; color: #1f2328;">
+  <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 12px;">
+    <img src="https://avatars.githubusercontent.com/u/42008604?v=4" style="width: 32px; height: 32px; border-radius: 50%;" alt="arcangelo7" />
+    <div>
+      <strong style="display: block; color: #1f2328;">arcangelo7</strong>
+      <span style="font-size: 0.85em; color: #656d76;">Nov 30, 2025</span>
+    </div>
+  </div>
+  <div style="margin: 12px 0; color: #1f2328;">
+    <p>build: migrate from Poetry to uv</p>
+
+  </div>
+  <div style="display: flex; justify-content: space-between; align-items: center; font-size: 0.85em;">
+    <span style="font-family: monospace; color: #1a7f37; font-weight: 600;">+627</span>
+    <span style="font-family: monospace; color: #cf222e; font-weight: 600;">-484</span>
+    <a href="https://github.com/opencitations/virtuoso_utilities/commit/5a4a486463b79aec79521bca6c60d092a0637fb9" style="color: #0969da; text-decoration: none; font-weight: 500;">5a4a486</a>
+  </div>
+</div>
+
+<div style="border: 1px solid #d0d7de; border-radius: 8px; padding: 16px; margin: 8px 0; background: #ffffff; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; color: #1f2328;">
+  <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 12px;">
+    <img src="https://avatars.githubusercontent.com/u/42008604?v=4" style="width: 32px; height: 32px; border-radius: 50%;" alt="arcangelo7" />
+    <div>
+      <strong style="display: block; color: #1f2328;">arcangelo7</strong>
+      <span style="font-size: 0.85em; color: #656d76;">Nov 30, 2025</span>
+    </div>
+  </div>
+  <div style="margin: 12px 0; color: #1f2328;">
+    <p>docs: add Astro Starlight documentation site</p>
+<ul>
+<li>Add docs/ directory with Astro Starlight setup</li>
+<li>Create documentation pages from README content</li>
+<li>Add docs.yml workflow for GitHub Pages deployment</li>
+<li>Remove deploy-pages job from test.yml (now handled by docs workflow)</li>
+<li>Simplify README.md with link to full documentation</li>
+</ul>
+
+  </div>
+  <div style="display: flex; justify-content: space-between; align-items: center; font-size: 0.85em;">
+    <span style="font-family: monospace; color: #1a7f37; font-weight: 600;">+7195</span>
+    <span style="font-family: monospace; color: #cf222e; font-weight: 600;">-503</span>
+    <a href="https://github.com/opencitations/virtuoso_utilities/commit/414f27ce6eb7d3f6fbfef96c519f1790f743105d" style="color: #0969da; text-decoration: none; font-weight: 500;">414f27c</a>
+  </div>
+</div>
+
+[https://opencitations.github.io/virtuoso\_utilities/](https://opencitations.github.io/virtuoso_utilities/)
+
+<div style="border: 1px solid #d0d7de; border-radius: 8px; padding: 16px; margin: 8px 0; background: #ffffff; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; color: #1f2328;">
+  <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 12px;">
+    <img src="https://avatars.githubusercontent.com/u/42008604?v=4" style="width: 32px; height: 32px; border-radius: 50%;" alt="arcangelo7" />
+    <div>
+      <strong style="display: block; color: #1f2328;">arcangelo7</strong>
+      <span style="font-size: 0.85em; color: #656d76;">Nov 30, 2025</span>
+    </div>
+  </div>
+  <div style="margin: 12px 0; color: #1f2328;">
+    <p>feat(launch_virtuoso): add programmatic API for launch_virtuoso function</p>
+<p>[release]</p>
+
+  </div>
+  <div style="display: flex; justify-content: space-between; align-items: center; font-size: 0.85em;">
+    <span style="font-family: monospace; color: #1a7f37; font-weight: 600;">+221</span>
+    <span style="font-family: monospace; color: #cf222e; font-weight: 600;">-97</span>
+    <a href="https://github.com/opencitations/virtuoso_utilities/commit/eff8acf16c85f9cfcb42909583e3b028591492c3" style="color: #0969da; text-decoration: none; font-weight: 500;">eff8acf</a>
+  </div>
+</div>
+
+### oc\_ocdm
+
+```python
+class IsomorphicGraph(ConjunctiveGraph):
+
+"""An implementation of the RGDA1 graph digest algorithm. An implementation of RGDA1 (publication below), a combination of Sayers & Karp's graph digest algorithm using sum and SHA-256 <http://www.hpl.hp.com/techreports/2003/HPL-2003-235R1.pdf> and traces <http://pallini.di.uniroma1.it>, an average case
+polynomial time algorithm for graph canonicalization. McCusker, J. P. (2015). WebSig: A Digital Signature Framework for the Web. Rensselaer Polytechnic Institute, Troy, NY. http://gradworks.umi.com/3727015.pdf
+"""
+```
+
+an average case polynomial time algorithm... Ne abbiamo veramente bisogno?
+
+```
+  to_isomorphic(graph)        
+      └── IsomorphicGraph.__eq__() 
+          └── internal_hash()       
+              └── _TripleCanonicalizer.to_hash()  
+                  └── canonical_triples()       
+                      └── _traces()
+
+- Se _discrete(coloring) è True (nessun blank node): salta _traces → O(n)
+- Se _discrete(coloring) è False (blank node presenti): chiama _traces → fino a O(2^n)
+```
+
+A me sembra un overhead inutile. Una differenza di set mi sembra sufficiente, dato che noi non abbiamo blank node. Comunque dubito che stia qui il problema.
+
 ### Aldrovandi
 
 * FIle organizzati con un criterio basato su un identificativo presente nei metadati
@@ -389,7 +663,147 @@ Il problema è che:
 
 La soluzione è usare SH.node seguito dalla shape dell'oggetto, in modo che il nodo venga validato sulla base di una shape. La shape mantiene SH.targetClass, per consentire la validazione doppia.
 
+### sparqlite
+
+| Libreria                                                                                                     | HTTP/2         | Async | Sync | Connection pooling | Streaming |
+| ------------------------------------------------------------------------------------------------------------ | -------------- | ----- | ---- | ------------------ | --------- |
+| HTTPX                                                                                                        | Sì (opzionale) | Sì    | Sì   | Sì                 | Sì        |
+| niquests                                                                                                     | Sì (default)   | Sì    | Sì   | Sì                 | Sì        |
+| aiohttp                                                                                                      | No             | Sì    | No   | Sì                 | Sì        |
+| requests                                                                                                     | No             | No    | Sì   | Sì                 | Sì        |
+| urllib3                                                                                                      | No             | No    | Sì   | Sì                 | Sì        |
+| pycurl                                                                                                       | Sì             | No    | Sì   | Sì                 | Sì        |
+| SPARQLWrapper                                                                                                | No             | No    | Sì   | No                 | No        |
+| [https://oxylabs.io/blog/httpx-vs-requests-vs-aiohttp](https://oxylabs.io/blog/httpx-vs-requests-vs-aiohttp) |                |       |      |                    |           |
+
+| Libreria      | Chiusura connessioni    | Retry automatico        | Timeout granulare               | Autenticazione                |
+| ------------- | ----------------------- | ----------------------- | ------------------------------- | ----------------------------- |
+| HTTPX         | Sì, con client.close()  | Sì, configurabile       | Sì, connect/read/write separati | Basic, Digest, Bearer, custom |
+| niquests      | Sì, con session.close() | Sì                      | Sì                              | Basic, Digest, Bearer         |
+| aiohttp       | Sì, con session.close() | Sì                      | Sì                              | Basic, Bearer                 |
+| requests      | Sì, con session.close() | No, va implementato     | Sì                              | Basic, Digest                 |
+| urllib3       | Sì, con pool.clear()    | Sì, molto configurabile | Sì                              | Basic                         |
+| pycurl        | Sì, con curl.close()    | No                      | Sì                              | Tutte                         |
+| SPARQLWrapper | No                      | No                      | No                              | Basic, Digest                 |
+
+Benchmark: [https://github.com/perodriguezl/python-http-libraries-benchmark](https://github.com/perodriguezl/python-http-libraries-benchmark). Vince httpx ma sono solo GET a un URL. Mi serve un benchmark specifico per SPARQL.
+
+Nuovo progetto: [https://github.com/arcangelo7/sparql-http-benchmark](https://github.com/arcangelo7/sparql-http-benchmark)
+
+<div style="border: 1px solid #d0d7de; border-radius: 8px; padding: 16px; margin: 8px 0; background: #ffffff; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; color: #1f2328;">
+  <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 12px;">
+    <img src="https://avatars.githubusercontent.com/u/42008604?v=4" style="width: 32px; height: 32px; border-radius: 50%;" alt="arcangelo7" />
+    <div>
+      <strong style="display: block; color: #1f2328;">arcangelo7</strong>
+      <span style="font-size: 0.85em; color: #656d76;">Nov 30, 2025</span>
+    </div>
+  </div>
+  <div style="margin: 12px 0; color: #1f2328;">
+    <p>feat: add SPARQL HTTP benchmark project</p>
+<p>Benchmark tool for comparing Python HTTP libraries performance
+on SPARQL 1.1 operations against Virtuoso endpoint.</p>
+<p>Libraries tested: httpx, aiohttp, requests, urllib3, pycurl.
+Operations covered: SELECT, ASK, CONSTRUCT, INSERT, DELETE, UPDATE.</p>
+
+  </div>
+  <div style="display: flex; justify-content: space-between; align-items: center; font-size: 0.85em;">
+    <span style="font-family: monospace; color: #1a7f37; font-weight: 600;">+2200</span>
+    <span style="font-family: monospace; color: #cf222e; font-weight: 600;">-0</span>
+    <a href="https://github.com/arcangelo7/sparql-http-benchmark/commit/a56f6bd5a1861e0fe57f2ff0f767d05e436f94d6" style="color: #0969da; text-decoration: none; font-weight: 500;">a56f6bd</a>
+  </div>
+</div>
+
+#### Confronto tra HTTP/1.1 e HTTP/2
+
+| Aspetto                   | HTTP/1.1                                                                       | HTTP/2                                                                       |
+| ------------------------- | ------------------------------------------------------------------------------ | ---------------------------------------------------------------------------- |
+| **Anno di rilascio**      | 1997                                                                           | 2015                                                                         |
+| **Connessioni**           | Una richiesta per connessione TCP, oppure keep-alive con richieste sequenziali | Multiplexing: più richieste e risposte simultanee su una singola connessione |
+| **Formato dei dati**      | Testuale (header leggibili in chiaro)                                          | Binario (più efficiente da parsare per le macchine)                          |
+| **Compressione header**   | Nessuna compressione nativa degli header                                       | HPACK: compressione degli header che riduce l'overhead                       |
+| **Server push**           | Non supportato                                                                 | Il server può inviare risorse al client prima che vengano richieste          |
+| **Prioritizzazione**      | Non disponibile                                                                | Le richieste possono avere priorità diverse                                  |
+| **Head of line blocking** | Presente a livello TCP e HTTP                                                  | Risolto a livello HTTP, rimane a livello TCP                                 |
+| **Crittografia**          | Opzionale (HTTP o HTTPS)                                                       | Di fatto obbligatoria (i browser richiedono HTTPS)                           |
+| **Latenza**               | Maggiore a causa delle connessioni multiple e dell'assenza di multiplexing     | Ridotta grazie al multiplexing e alla compressione                           |
+| **Consumo risorse**       | Più connessioni TCP aperte, maggior consumo di memoria e CPU                   | Meno connessioni, uso più efficiente delle risorse                           |
+| **Compatibilità**         | Universale                                                                     | Supportato da tutti i browser moderni, richiede configurazione lato server   |
+
+Tutto molto bello, ma Virtuoso implementa il protocollo HTTP/2? No: [https://docs.openlinksw.com/virtuoso/ch-webappdevelopment/](https://docs.openlinksw.com/virtuoso/ch-webappdevelopment/), solo HTTP/1.1.
+
+Ma possibile che nessuno si sia mai posto questi problemi?
+
+Bamboat, M. A., Khan, A. H., & Wagan, A. (2021). "Performance of RDF Library of Java, C# and Python on Large RDF Models." International Journal on Emerging Technologies, 12(1), 25-30.
+
+Ho trovato solo questo: [https://www.researchtrend.net/ijet/pdf/Performance%20of%20RDF%20Library.pdf](https://www.researchtrend.net/ijet/pdf/Performance%20of%20RDF%20Library.pdf)
+
+Per Python c'è solo RDFlib, che è anche quello che performa peggio: ![Pasted image 20251130215710.png](../../../../assets/notes/attachments/pasted-image-20251130215710.png)
+
+Confronto con PyOxigraph: [https://github.com/oxigraph/oxigraph/discussions/1092](https://github.com/oxigraph/oxigraph/discussions/1092)
+
+| Operazione                                                                                                                                                                                                                          | RDFLib Memory | Oxigraph In-Memory | Speedup   |
+| ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------- | ------------------ | --------- |
+| Parsing (Turtle)                                                                                                                                                                                                                    | 59,26 ms      | 19,57 ms           | **\~3x**  |
+| Query SPARQL                                                                                                                                                                                                                        | 752,35 ms     | 19,99 ms           | **\~38x** |
+| Serializzazione                                                                                                                                                                                                                     | 58,17 ms      | 5,56 ms            | **\~10x** |
+| Secondo me nella testa delle persone c'è che il bottleneck è solo il server, MA NON È COSÌ, il bottleneck è il client se usi RDFlib/SPARQLWrapper. Fare query SPARQL con SPARQLWrapper su QLever è come avere una Ferrari a metano. |               |                    |           |
+
+<div style="border: 1px solid #d0d7de; border-radius: 8px; padding: 16px; margin: 8px 0; background: #ffffff; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; color: #1f2328;">
+  <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 12px;">
+    <img src="https://avatars.githubusercontent.com/u/42008604?v=4" style="width: 32px; height: 32px; border-radius: 50%;" alt="arcangelo7" />
+    <div>
+      <strong style="display: block; color: #1f2328;">arcangelo7</strong>
+      <span style="font-size: 0.85em; color: #656d76;">Nov 30, 2025</span>
+    </div>
+  </div>
+  <div style="margin: 12px 0; color: #1f2328;">
+    <p>feat: initial implementation of sparqlite SPARQL 1.1 client</p>
+<p>Add SPARQLClient with support for SELECT, ASK, CONSTRUCT, DESCRIBE
+and UPDATE queries. Includes automatic retry with exponential backoff,
+connection pooling via pycurl, and RDF graph handling with rdflib.</p>
+<p>Features:</p>
+<ul>
+<li>Full SPARQL 1.1 query type support</li>
+<li>Configurable retry logic for transient failures</li>
+<li>Custom exception hierarchy for error handling</li>
+<li>Comprehensive test suite with integration tests</li>
+<li>Starlight documentation site</li>
+<li>GitHub Actions workflows for CI, releases and docs</li>
+</ul>
+
+  </div>
+  <div style="display: flex; justify-content: space-between; align-items: center; font-size: 0.85em;">
+    <span style="font-family: monospace; color: #1a7f37; font-weight: 600;">+9454</span>
+    <span style="font-family: monospace; color: #cf222e; font-weight: 600;">-0</span>
+    <a href="https://github.com/opencitations/sparqlite/commit/ce0ed64115d692139ea808341b1ae0f0f30bbf09" style="color: #0969da; text-decoration: none; font-weight: 500;">ce0ed64</a>
+  </div>
+</div>
+
+Ecco qui: [https://github.com/opencitations/sparqlite](https://github.com/opencitations/sparqlite)
+
+### GitHub Commit Embed
+
+Ho creato un plugin Obsidian per generare delle card automaticamente quando si incolla un link di un commit di GitHub: [https://github.com/arcangelo7/github-commit-embed](https://github.com/arcangelo7/github-commit-embed). Entrambe le edizioni,  Virtuoso Open Source 7.2.x e Virtuoso Commercial 8.x, condividono la stessa infrastruttura HTTP/1.x.
+
+#### Stato dell'arte
+
+| Plugin            | Funzionalità  | Supporta Commit         | Stile embeddato |
+| ----------------- | ------------- | ----------------------- | --------------- |
+| **GitHub Embeds** | Issues, PR    | No                      | No              |
+| **GitHub Issues** | Issues        | No                      | No              |
+| **Link Embed**    | Qualsiasi URL | Sì, ma preview troncato | No              |
+
+![Pasted image 20251129201422.png](../../../../assets/notes/attachments/pasted-image-20251129201422.png)
+
+Le card sono HTML con lo stile integrato, per essere renderizzate ovunque allo stesso modo indipendentemente dal plugin.
+
+L'ho inviato al repo ufficiale di Obsidian, se lo accettano comparirà tra i plugin della community, altrimenti continuerò a usarlo localmente.
+
 ## Domande
+
+### oc\_ocdm
+
+Perché pubblichiamo l'RDF in JSON-LD e non in NQuads? Serializzare in NQuads e anche deserializzare è molto più efficiente rispetto al JSON-LD. Oltre al fatto che è anche più resiliente rispetto a bug: ad esempio il bug del contesto che non viene incluso nel JSON-LD che oc\_ocdm risolve ricopiando i dati all'interno di un dataset aggiunge un overhead decisamente importante.
 
 ### Aldrovandi
 
@@ -403,23 +817,9 @@ Per classi esterne senza descrizione nell'ontologia (owl:Thing, foaf:Document), 
 
 Vogliamo la doppia validazione o vogliamo che le entità che possono comparire solo come oggetto siano valide solo quando compaiono come oggetto. Se ho un identificatore da solo con la sua classe datacite:Identifier voglio che sia valido o invalido?
 
-### GitHub Commit Embed
+### Infrastruttura
 
-Ho creato un plugin Obsidian per generare delle card automaticamente quando si incolla un link di un commit di GitHub: [https://github.com/arcangelo7/github-commit-embed](https://github.com/arcangelo7/github-commit-embed)
-
-#### Stato dell'arte
-
-| Plugin            | Funzionalità  | Supporta Commit         | Stile embeddato |
-| ----------------- | ------------- | ----------------------- | --------------- |
-| **GitHub Embeds** | Issues, PR    | No                      | No              |
-| **GitHub Issues** | Issues        | No                      | No              |
-| **Link Embed**    | Qualsiasi URL | Sì, ma preview troncato | No              |
-
-![Pasted image 20251129193504.png](../../../../assets/notes/attachments/pasted-image-20251129193504.png)
-
-Le card sono HTML con lo stile integrato, per essere renderizzate ovunque allo stesso modo indipendentemente dal plugin.
-
-L'ho inviato al repo ufficiale di Obsidian, se lo accettano comparirà tra i plugin della community, altrimenti continuerò a usarlo localmente.
+* I server di OpenCitations usano memorie con ECC?
 
 ## Memo
 
