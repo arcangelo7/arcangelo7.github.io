@@ -428,6 +428,8 @@ Uploading data SPARQL: 100%|█████████████████�
   ✓ Completed in 716.71s
 ```
 
+![attachments/Pasted image 20251202093450.png](../../../../assets/notes/attachments/pasted-image-20251202093450.png)
+
 ### Virtuoso utilities
 
 <div style="border: 1px solid #d0d7de; border-radius: 8px; padding: 16px; margin: 8px 0; background: #ffffff; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; color: #1f2328;">
