@@ -11,31 +11,6 @@ Arrivato pressoché alla fine dell'ingestione di Crossref, il database dei dati 
 
 Si ricomincia d'accapo, senza bulk load.
 
-<div style="border: 1px solid #d0d7de; border-radius: 8px; padding: 16px; margin: 8px 0; background: #ffffff; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; color: #1f2328;">
-  <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 12px;">
-
-```
-<div>
-  <strong style="display: block; color: #1f2328;">arcangelo7</strong>
-  <span style="font-size: 0.85em; color: #656d76;">Dec 4, 2025</span>
-  <span style="font-size: 0.85em; color: #656d76;"> · </span>
-  <a href="https://github.com/opencitations/oc_meta" style="font-size: 0.85em; color: #0969da; text-decoration: none;">opencitations/oc_meta</a>
-</div>
-```
-
-  </div>
-  <div style="margin: 12px 0; color: #1f2328;">
-    <p>test(meta_process): disable bulk load in test_provenance to test SPARQL UPDATE path</p>
-<p>Virtuoso bulk load causes crashduring prolonged operations. This test now verifies the SPARQL UPDATE path while other triplestore tests continue testing the bulk load path.</p>
-
-  </div>
-  <div style="display: flex; justify-content: space-between; align-items: center; font-size: 0.85em;">
-    <span style="font-family: monospace; color: #1a7f37; font-weight: 600;">+24</span>
-    <span style="font-family: monospace; color: #cf222e; font-weight: 600;">-19</span>
-    <a href="https://github.com/opencitations/oc_meta/commit/5a02db1eb5ee5cf2ef10190d97f08f07d45a86a6" style="color: #0969da; text-decoration: none; font-weight: 500;">5a02db1</a>
-  </div>
-</div>
-
 ![Pasted image 20251205232137.png](../../../../assets/notes/attachments/pasted-image-20251205232137.png)
 
 <div style="border: 1px solid #d0d7de; border-radius: 8px; padding: 16px; margin: 8px 0; background: #ffffff; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; color: #1f2328;">
