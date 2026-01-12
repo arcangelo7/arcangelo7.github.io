@@ -5,260 +5,207 @@ editUrl: false
 
 ## La Novitade
 
-### Aldrovandi
-
-[https://github.com/dharc-org/morph-kgc-changes-metadata/blob/main/src/morph\_kgc\_changes\_metadata\_conversions/sample\_mapping\_file.yaml](https://github.com/dharc-org/morph-kgc-changes-metadata/blob/main/src/morph_kgc_changes_metadata_conversions/sample_mapping_file.yaml)
-
-| Mapping                        | Tipo entità                     | Pattern IRI       | Esempio                   |
-| ------------------------------ | ------------------------------- | ----------------- | ------------------------- |
-| `expression_creation`          | lrmoo:F28\_Expression\_Creation | `act/{NR}/ob00/1` | `act/123/ob00/1`          |
-| `expression_creation_activity` | crm:E7\_Activity                | `act/{NR}/ob01/1` | `act/123/ob01/1`          |
-| `translation_02_activity`      | crm:E7\_Activity                | `act/{NR}/ob02/1` | `act/123/ob02/1`          |
-| `engraving_03_activity`        | crm:E7\_Activity                | `act/{NR}/ob03/1` | `act/123/ob03/1`          |
-| `publishing_04_activity`       | crm:E7\_Activity                | `act/{NR}/ob04/1` | `act/123/ob04/1`          |
-| `preparation_05_activity`      | crm:E7\_Activity                | `act/{NR}/ob05/1` | `act/123/ob05/1`          |
-| `commission_06_activity`       | crm:E7\_Activity                | `act/{NR}/ob06/1` | `act/123/ob06/1`          |
-| `discovery_07_activity`        | crm:E7\_Activity                | `act/{NR}/ob07/1` | `act/123/ob07/1`          |
-| `activity_08_curation`         | crm:E7\_Activity                | `act/{NR}/ob08/1` | `act/123/ob08/1`          |
-| `work`                         | lrmoo:F1\_Work                  | `wrk/{NR}/ob00/1` | `wrk/123/ob00/1`          |
-| `expression`                   | lrmoo:F2\_Expression            | `exp/{NR}/ob00/1` | `exp/123/ob00/1`          |
-| `manifestation`                | lrmoo:F3\_Manifestation         | `mnf/{NR}/ob00/1` | `mnf/123/ob00/1`          |
-| `item`                         | lrmoo:F5\_Item                  | `itm/{NR}/ob00/1` | `itm/123/ob00/1`          |
-| `time_span`                    | crm:E52\_Time-Span              | `tsp/{NR}/ob00/1` | `tsp/123/ob00/1`          |
-| `actor_*`                      | crm:E39\_Actor                  | `acr/{name}/1`    | `acr/ulisse_aldrovandi/1` |
-| `place_*`                      | crm:E53\_Place                  | `plc/{place}/1`   | `plc/bologna/1`           |
-
-[https://github.com/dharc-org/morph-kgc-changes-metadata/blob/main/src/morph\_kgc\_changes\_metadata\_conversions/mapping\_file\_acquisition.yaml](https://github.com/dharc-org/morph-kgc-changes-metadata/blob/main/src/morph_kgc_changes_metadata_conversions/mapping_file_acquisition.yaml)
-
-| Step | Tipo RDF                         | Pattern IRI     | Descrizione      |
-| ---- | -------------------------------- | --------------- | ---------------- |
-| 00   | crmdig:D2\_Digitization\_Process | `act/{NR}/00/1` | Acquisizione 3D  |
-| 01   | crmdig:D10\_Software\_Execution  | `act/{NR}/01/1` | Processing       |
-| 02   | crmdig:D10\_Software\_Execution  | `act/{NR}/02/1` | Modellazione     |
-| 03   | crmdig:D10\_Software\_Execution  | `act/{NR}/03/1` | Ottimizzazione   |
-| 04   | crmdig:D10\_Software\_Execution  | `act/{NR}/04/1` | Esportazione     |
-| 05   | crmdig:D10\_Software\_Execution  | `act/{NR}/05/1` | Metadatazione    |
-| 06   | crmdig:D10\_Software\_Execution  | `act/{NR}/06/1` | Caricamento ATON |
-
-Non vedo Sharepoint nell'RDF, solo Nextcloud
-
-![Pasted image 20251210123551.png](../../../../assets/notes/attachments/pasted-image-20251210123551.png)
+### Meta
 
 <div style="border: 1px solid #d0d7de; border-radius: 8px; padding: 16px; margin: 8px 0; background: #ffffff; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; color: #1f2328;">
   <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 12px;">
-    <img src="https://avatars.githubusercontent.com/u/42008604?v=4" style="width: 32px; height: 32px; border-radius: 50%;" alt="arcangelo7" />
-    <div>
-      <strong style="display: block; color: #1f2328;">arcangelo7</strong>
-      <span style="font-size: 0.85em; color: #656d76;">Dec 10, 2025</span>
-      <span style="font-size: 0.85em; color: #656d76;"> · </span>
-      <a href="https://github.com/dharc-org/aldrovandi-provenance" style="font-size: 0.85em; color: #0969da; text-decoration: none;">dharc-org/aldrovandi-provenance</a>
-    </div>
-  </div>
-  <div style="margin: 12px 0; color: #1f2328;">
-    <p>feat: add folder metadata builder</p>
-<p>Add script to process SharePoint folder structure and generate metadata
-files (meta.ttl) and provenance snapshots (prov.nq) for each processing
-stage (raw, rawp, dcho, dchoo)</p>
 
-  </div>
-  <div style="display: flex; justify-content: space-between; align-items: center; font-size: 0.85em;">
-    <span style="font-family: monospace; color: #1a7f37; font-weight: 600;">+15439</span>
-    <span style="font-family: monospace; color: #cf222e; font-weight: 600;">-7531</span>
-    <a href="https://github.com/dharc-org/aldrovandi-provenance/commit/ad8a6137e6bd8d93333b489ed9ec50348a30b9a0" style="color: #0969da; text-decoration: none; font-weight: 500;">ad8a613</a>
-  </div>
+```
+<div>
+  <strong style="display: block; color: #1f2328;">arcangelo7</strong>
+  <span style="font-size: 0.85em; color: #656d76;">Dec 27, 2025</span>
+  <span style="font-size: 0.85em; color: #656d76;"> · </span>
+  <a href="https://github.com/opencitations/oc_meta" style="font-size: 0.85em; color: #0969da; text-decoration: none;">opencitations/oc_meta</a>
 </div>
+```
 
-Per me è pronto, quando vuoi puoi scaricarti i dati da Sharepoint e lanciare:
-
-`git clone https://github.com/dharc-org/changes-metadata-manager.git`
-`cd changes-metadata-manager`
-`uv sync`
-`uv run python -m changes_metadata_manager.folder_metadata_builder <root_directory>`
-
-### python-package-template
-
-<div style="border: 1px solid #d0d7de; border-radius: 8px; padding: 16px; margin: 8px 0; background: #ffffff; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; color: #1f2328;">
-  <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 12px;">
-    <img src="https://avatars.githubusercontent.com/u/42008604?v=4" style="width: 32px; height: 32px; border-radius: 50%;" alt="arcangelo7" />
-    <div>
-      <strong style="display: block; color: #1f2328;">arcangelo7</strong>
-      <span style="font-size: 0.85em; color: #656d76;">Dec 11, 2025</span>
-      <span style="font-size: 0.85em; color: #656d76;"> · </span>
-      <a href="https://github.com/opencitations/python-package-template" style="font-size: 0.85em; color: #0969da; text-decoration: none;">opencitations/python-package-template</a>
-    </div>
   </div>
   <div style="margin: 12px 0; color: #1f2328;">
-    <p>feat: add coverage badge and HTML report to GitHub Pages</p>
+    <p>feat(fixer): add script to detect identifier schema mismatches</p>
+<p>Scans RDF files directly to find identifiers where the declared schema
+does not match the value pattern (e.g., ISSN values marked as ORCID).</p>
 
   </div>
   <div style="display: flex; justify-content: space-between; align-items: center; font-size: 0.85em;">
-    <span style="font-family: monospace; color: #1a7f37; font-weight: 600;">+459</span>
-    <span style="font-family: monospace; color: #cf222e; font-weight: 600;">-4</span>
-    <a href="https://github.com/opencitations/python-package-template/commit/164731c2c02f538e1893b99ffd3b65949bca2b95" style="color: #0969da; text-decoration: none; font-weight: 500;">164731c</a>
-  </div>
-</div>
-https://opencitations.github.io/python-package-template/coverage/
-<div style="border: 1px solid #d0d7de; border-radius: 8px; padding: 16px; margin: 8px 0; background: #ffffff; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; color: #1f2328;">
-  <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 12px;">
-    <img src="https://avatars.githubusercontent.com/u/42008604?v=4" style="width: 32px; height: 32px; border-radius: 50%;" alt="arcangelo7" />
-    <div>
-      <strong style="display: block; color: #1f2328;">arcangelo7</strong>
-      <span style="font-size: 0.85em; color: #656d76;">Dec 11, 2025</span>
-      <span style="font-size: 0.85em; color: #656d76;"> · </span>
-      <a href="https://github.com/opencitations/repository_setup_guides" style="font-size: 0.85em; color: #0969da; text-decoration: none;">opencitations/repository_setup_guides</a>
-    </div>
-  </div>
-  <div style="margin: 12px 0; color: #1f2328;">
-    <p>docs: add coverage reports guide</p>
-
-  </div>
-  <div style="display: flex; justify-content: space-between; align-items: center; font-size: 0.85em;">
-    <span style="font-family: monospace; color: #1a7f37; font-weight: 600;">+201</span>
+    <span style="font-family: monospace; color: #1a7f37; font-weight: 600;">+226</span>
     <span style="font-family: monospace; color: #cf222e; font-weight: 600;">-0</span>
-    <a href="https://github.com/opencitations/repository_setup_guides/commit/dbe9c2a6145b7a6243ceb20c12304cbc3b03fbf2" style="color: #0969da; text-decoration: none; font-weight: 500;">dbe9c2a</a>
+    <a href="https://github.com/opencitations/oc_meta/commit/49a5051bf7599b4dc6eb153f71fd6f2d465c8508" style="color: #0969da; text-decoration: none; font-weight: 500;">49a5051</a>
   </div>
 </div>
 
+
+
+#### ORCID errati (7 casi)
+
+Identificatori con formato ISSN/ISBN ma schema ORCID. Tutti appartenenti a entita BR (Journal/Book).
+
+| ID Mismatch | Valore errato | Entita         | Titolo                                           | Valore corretto | Schema corretto |
+| ----------- | ------------- | -------------- | ------------------------------------------------ | --------------- | --------------- |
+| 06012393243 | 2790-9344     | br/06012054723 | Pakistan Journal Of Health Sciences              | 2790-9344       | issn            |
+| 06012393328 | 1462-0324     | br/06012054834 | Rheumatology                                     | 1462-0324       | issn            |
+| 06012393250 | 0962-1067     | br/06012054731 | Journal Of Clinical Nursing                      | 0962-1067       | issn            |
+| 06012393478 | 0277-1691     | br/06012055012 | International Journal Of Gynecological Pathology | 0277-1691       | issn            |
+| 06012393294 | 9783111692456 | br/06012054788 | Women In The Socratic Tradition                  | 9783111692456   | isbn            |
+| 06012387883 | 9783031963971 | br/06012050602 | Studies In Childhood And Youth                   | 9783031963971   | isbn            |
+| 06012387868 | 1724-6059     | ra/06030984957 | (Responsible Agent)                              | 1724-6059       | issn            |
+
+**Verifica esterna**:
+
+* ISSN 2790-9344: confermato [Pakistan Journal of Health Sciences](https://www.thejas.com.pk/index.php/pjhs/about)
+* ISSN 0962-1067: confermato [Journal of Clinical Nursing](https://portal.issn.org/resource/ISSN/0962-1067)
+* ISBN 9783111692456: confermato [De Gruyter](https://www.degruyterbrill.com/document/doi/10.1515/9783111692456/html)
+
+Tutte le corruzioni sono successive al 22 dicembre, data in cui è stato spento il server. Io me l'ero dimenticato e non ho stoppato Meta in tempo.
+
+~~Soluzione: cancellare tutte le entità successive al 22 dicembre e riprocessarle.~~
+
+Pensandoci meglio questa soluzione è rischiosa. Alla fine ho preferito rilanciare il processo da capo.
+
+***
+
+```yaml
+  autoheal:
+    image: willfarrell/autoheal:latest
+    container_name: oc_meta_autoheal
+    restart: unless-stopped
+    network_mode: none
+    environment:
+      AUTOHEAL_CONTAINER_LABEL: all
+      AUTOHEAL_INTERVAL: 30
+      AUTOHEAL_START_PERIOD: 120
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+      - /etc/localtime:/etc/localtime:ro
+```
+
 <div style="border: 1px solid #d0d7de; border-radius: 8px; padding: 16px; margin: 8px 0; background: #ffffff; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; color: #1f2328;">
   <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 12px;">
-    <img src="https://avatars.githubusercontent.com/u/42008604?v=4" style="width: 32px; height: 32px; border-radius: 50%;" alt="arcangelo7" />
-    <div>
-      <strong style="display: block; color: #1f2328;">arcangelo7</strong>
-      <span style="font-size: 0.85em; color: #656d76;">Dec 11, 2025</span>
-      <span style="font-size: 0.85em; color: #656d76;"> · </span>
-      <a href="https://github.com/opencitations/python-package-template" style="font-size: 0.85em; color: #0969da; text-decoration: none;">opencitations/python-package-template</a>
-    </div>
-  </div>
-  <div style="margin: 12px 0; color: #1f2328;">
-    <p>refactor: include pre-built docs/ and simplify setup.py</p>
-<p>Replace dynamic Starlight creation with pre-built docs/ directory.
-This avoids npm downloads during setup and speeds up project initialization.</p>
 
-  </div>
-  <div style="display: flex; justify-content: space-between; align-items: center; font-size: 0.85em;">
-    <span style="font-family: monospace; color: #1a7f37; font-weight: 600;">+6664</span>
-    <span style="font-family: monospace; color: #cf222e; font-weight: 600;">-169</span>
-    <a href="https://github.com/opencitations/python-package-template/commit/3893399dd1f70856cc1eb5a1bf9d931f937b0398" style="color: #0969da; text-decoration: none; font-weight: 500;">3893399</a>
-  </div>
+```
+<div>
+  <strong style="display: block; color: #1f2328;">arcangelo7</strong>
+  <span style="font-size: 0.85em; color: #656d76;">Dec 20, 2025</span>
+  <span style="font-size: 0.85em; color: #656d76;"> · </span>
+  <a href="https://github.com/opencitations/oc_meta" style="font-size: 0.85em; color: #0969da; text-decoration: none;">opencitations/oc_meta</a>
 </div>
+```
 
-### virtuoso\_utilities
-
-<div style="border: 1px solid #d0d7de; border-radius: 8px; padding: 16px; margin: 8px 0; background: #ffffff; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; color: #1f2328;">
-  <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 12px;">
-    <img src="https://avatars.githubusercontent.com/u/42008604?v=4" style="width: 32px; height: 32px; border-radius: 50%;" alt="arcangelo7" />
-    <div>
-      <strong style="display: block; color: #1f2328;">arcangelo7</strong>
-      <span style="font-size: 0.85em; color: #656d76;">Dec 15, 2025</span>
-      <span style="font-size: 0.85em; color: #656d76;"> · </span>
-      <a href="https://github.com/opencitations/virtuoso_utilities" style="font-size: 0.85em; color: #0969da; text-decoration: none;">opencitations/virtuoso_utilities</a>
-    </div>
   </div>
   <div style="margin: 12px 0; color: #1f2328;">
-    <p>fix: prevent lock contention with AdjustVectorSize=0 and frequent checkpoints [release]</p>
-<p>Change Virtuoso vector and checkpoint configuration to prevent &quot;locks are
-held for a long time&quot; errors during parallel query execution:</p>
+    <p>fix: add timeout to SPARQLClient to handle database unavailability</p>
 <ul>
-<li>Set AdjustVectorSize=0 (recommended default since Virtuoso 7.2.2)</li>
-<li>Replace MaxVectorSize with VectorSize=1000</li>
-<li>Add CheckpointInterval=1 for frequent checkpoints</li>
+<li>Add timeout=3600 (1 hour) to all SPARQLClient calls in production code</li>
+<li>Add timeout=60 to all SPARQLClient calls in test code</li>
+<li>Update sparqlite to 1.1.0 which supports timeout parameter</li>
+<li>Add exit code checking in meta_process.py for child process failures</li>
+<li>Add wait_for_virtuoso utility for test database readiness</li>
+<li>Add database_unavailability_test.py to verify graceful failure handling</li>
 </ul>
-<p>These settings are applied in both virtuoso-launch and virtuoso-native-launch.</p>
+<p>When the triplestore becomes unavailable, SPARQLClient now times out
+instead of hanging indefinitely, allowing proper error propagation.</p>
 
   </div>
   <div style="display: flex; justify-content: space-between; align-items: center; font-size: 0.85em;">
-    <span style="font-family: monospace; color: #1a7f37; font-weight: 600;">+27</span>
-    <span style="font-family: monospace; color: #cf222e; font-weight: 600;">-13</span>
-    <a href="https://github.com/opencitations/virtuoso_utilities/commit/b5fe65126de9793a8ef8e1ff59a9cc01ee2fc48d" style="color: #0969da; text-decoration: none; font-weight: 500;">b5fe651</a>
+    <span style="font-family: monospace; color: #1a7f37; font-weight: 600;">+262</span>
+    <span style="font-family: monospace; color: #cf222e; font-weight: 600;">-75</span>
+    <a href="https://github.com/opencitations/oc_meta/commit/c59160b3f3182e73ebe89d74ba24ba88dff422a3" style="color: #0969da; text-decoration: none; font-weight: 500;">c59160b</a>
   </div>
 </div>
-
-<div style="border: 1px solid #d0d7de; border-radius: 8px; padding: 16px; margin: 8px 0; background: #ffffff; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; color: #1f2328;">
-  <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 12px;">
-    <img src="https://avatars.githubusercontent.com/u/42008604?v=4" style="width: 32px; height: 32px; border-radius: 50%;" alt="arcangelo7" />
-    <div>
-      <strong style="display: block; color: #1f2328;">arcangelo7</strong>
-      <span style="font-size: 0.85em; color: #656d76;">Dec 15, 2025</span>
-      <span style="font-size: 0.85em; color: #656d76;"> · </span>
-      <a href="https://github.com/opencitations/virtuoso_utilities" style="font-size: 0.85em; color: #0969da; text-decoration: none;">opencitations/virtuoso_utilities</a>
-    </div>
-  </div>
-  <div style="margin: 12px 0; color: #1f2328;">
-    <p>feat: add ThreadCleanupInterval and ResourcesCleanupInterval parameters [release]</p>
-<p>Add cleanup interval parameters to help prevent &quot;locks are held for a long
-time&quot; errors by releasing unused threads and resources every minute:</p>
-<ul>
-<li>ThreadCleanupInterval = 1</li>
-<li>ResourcesCleanupInterval = 1</li>
-</ul>
-<p>These are set both as environment variables and written to virtuoso.ini.
-Default was changed to 1 in Virtuoso 7.2.12 for new installations.</p>
-
-  </div>
-  <div style="display: flex; justify-content: space-between; align-items: center; font-size: 0.85em;">
-    <span style="font-family: monospace; color: #1a7f37; font-weight: 600;">+34</span>
-    <span style="font-family: monospace; color: #cf222e; font-weight: 600;">-2</span>
-    <a href="https://github.com/opencitations/virtuoso_utilities/commit/36c40ba3174e1b64ab2e77e48a151ee92462364b" style="color: #0969da; text-decoration: none; font-weight: 500;">36c40ba</a>
-  </div>
-</div>
-
-Continuo ad avere quell'errore...
-
-### piccione
-
-[https://github.com/opencitations/piccione](https://github.com/opencitations/piccione)
 
 ### Altro
 
-Nuova libreria preferita: [https://github.com/Textualize/rich](https://github.com/Textualize/rich)
+<div style="border: 1px solid #d0d7de; border-radius: 8px; padding: 16px; margin: 8px 0; background: #ffffff; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; color: #1f2328;">
+  <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 12px;">
+    <img src="https://avatars.githubusercontent.com/u/42008604?v=4" style="width: 32px; height: 32px; border-radius: 50%;" alt="arcangelo7" />
+    <div>
+      <strong style="display: block; color: #1f2328;">arcangelo7</strong>
+      <span style="font-size: 0.85em; color: #656d76;">Dec 20, 2025</span>
+      <span style="font-size: 0.85em; color: #656d76;"> · </span>
+      <a href="https://github.com/opencitations/sparqlite" style="font-size: 0.85em; color: #0969da; text-decoration: none;">opencitations/sparqlite</a>
+    </div>
+  </div>
+  <div style="margin: 12px 0; color: #1f2328;">
+    <p>feat: add timeout parameter to SPARQLClient [release]</p>
 
-![Pasted image 20251210161144.png](../../../../assets/notes/attachments/pasted-image-20251210161144.png)
+  </div>
+  <div style="display: flex; justify-content: space-between; align-items: center; font-size: 0.85em;">
+    <span style="font-family: monospace; color: #1a7f37; font-weight: 600;">+85</span>
+    <span style="font-family: monospace; color: #cf222e; font-weight: 600;">-1</span>
+    <a href="https://github.com/opencitations/sparqlite/commit/8bfd31aa3ac3f01945d45fa1be4867b8782dac9c" style="color: #0969da; text-decoration: none; font-weight: 500;">8bfd31a</a>
+  </div>
+</div>
 
-Sto seguendo il corso C di Salvatore Sanfilippo (sviluppatore catanese autore di Redis). È gratis su YouTube [https://www.youtube.com/watch?v=HjXBXBgfKyk\&list=PLrEMgOSrS\_3cFJpM2gdw8EGFyRBZOyAKY](https://www.youtube.com/watch?v=HjXBXBgfKyk\&list=PLrEMgOSrS_3cFJpM2gdw8EGFyRBZOyAKY).
+### Tesi
 
-Obiettivo: implementare un database SPARQL in C dal nome "Vizioso".
+> Explain which specific system underpins the Paratext DB case study when it is first mentioned
 
-## Domande
+> Regarding the ParaText scenario, it is fairly obvious that editing in a database requires a user interface, this is not specific to the complexity of the domain. As a reader, I wonder whether there is another reason why this system is a good example for the contribution of this thesis. The argument about a provenance is clearer, and maybe that could be at the centre of the scenario in 3.2.
+
+Nella narrativa attuale sembra quasi che Paratext sia un sistema preesistente a Heritrace e che sia stato utilizzato per far emergere dei requisiti che poi Heritrace ha soddisfatto. Questo crea dei fraintendimenti in entrambi i revisori. Di conseguenza ho reso più esplicito che OC Meta è il sistema preesistente che dimostra l'esistenza di barriere sistematiche su scala, mentre Paratext è servito come piattaforma di guerilla testing per validare se la soluzione proposta, cioè Heritrace, fosse in grado di risolvere quei problemi che pur si presentano anche in Paratext. In quest'ottica, la metodologia utilizzata rientra nel cosiddetto Design Science Research, un paradigma orientato alla risoluzione di problemi che mira a estendere i confini delle capacità umane e organizzative attraverso la creazione di artefatti nuovi e innovativi. Si oppone alla behavioural research che invece indaga comportamenti esistenti per elaborare nuove teorie. Noi partiamo da una teoria esistente per elaborare una soluzione.
+
+> The research follows a Design Science Research methodology \citep{hevnerDesignScienceInformation2004}, where the construction and evaluation of an artifact (HERITRACE) constitutes the primary contribution. Two case studies serve distinct methodological roles. OpenCitations Meta \citep{massariOpenCitationsMeta2024}, where the author participates as a contributor, provides independent validation that the identified barriers exist at scale in production systems. The ParaText Bibliographical Database was developed as an application case for HERITRACE, serving as a testbed for guerrilla testing \citep{nielsenUsabilityEngineering1993} and iterative refinement throughout the development process. This distinction is methodologically significant: OpenCitations Meta demonstrates the problem exists independently, while ParaText enables solution validation through guerrilla testing in a real-world scholarly context.
+
+***
+
+> The RQ could be better developed, possibly breaking it down to sub-questions.
+
+> Why considering technically proficient users, since the RQ only targets domain experts, that are supposidely not technically savvy?
+
+Prima:
+
+> This challenge motivates the research question: how can we enable domain experts to participate in semantic data curation while maintaining provenance documentation, tracking changes over time, supporting flexible customization, and integrating with existing RDF collections?
+
+Dopo:
+
+> This challenge motivates two research questions addressing distinct operational phases:
+>
+> **RQ1**: How can we design interfaces that enable domain experts to curate RDF data without requiring technical expertise, while maintaining provenance documentation and change tracking?
+>
+> **RQ2**: How can technical staff perform one-time system configuration to adapt the curation environment to specialized domains, ensuring integration with existing RDF collections and flexible customization?
+>
+> RQ1 addresses the continuous curation workflow where domain experts interact with
+> semantic data daily. RQ2 addresses the initial configuration phase, performed once
+> by technical staff, that prepares the system for domain-specific use.
 
 ### Aldrovandi
 
-Il repo di Ari si chiama [https://github.com/dharc-org/morph-kgc-changes-metadata](https://github.com/dharc-org/morph-kgc-changes-metadata). Di conseguenza il responsible agent si chiama [https://w3id.org/changes/4/agent/morph-kgc-changes-metadata1.0.1](https://w3id.org/changes/4/agent/morph-kgc-changes-metadata1.0.1), giusto?
+## Domande
 
-Le tabelle CSV le carico io su Zenodo?
+* Contratto di ricerca
+* Cosa uso come istante di generazione delle entità di provenance per Aldrovandi? Non ricordo [https://w3id.org/changes/4/agent/morph-kgc-changes-metadata/1.0.1](https://w3id.org/changes/4/agent/morph-kgc-changes-metadata/1.0.1) va bene come agente responsabile?
 
-Nella Sala1 vedo S1-CNR\_SoffittoSala1, che non segue la convenzione sui nomi, manca il numero dell'oggetto. Tra l'altro dentro ci sono solo raw e rawp. È voluto?
+Cartelle che non rispettando il naming
 
-### Contratto di ricerca
+| Categoria                        | Conteggio | Esempio                            |
+| -------------------------------- | --------- | ---------------------------------- |
+| Non oggetto (materials, \_files) | 8         | `Sala1/materials`                  |
+| Sub-item con lettera (27a, 74b)  | 16        | `S2-27a-FICLIT_...`                |
+| Separatore spazio                | 1         | `S2-39 - Vitello...`               |
+| Prefisso speciale (PT, VS, s.n.) | 6         | `S3-PT-DICAM_...`                  |
+| NR con underscore                | 2         | `S6-106_...`, `S6-114_115_116-...` |
+| Senza NR                         | 2         | `S1-CNR_SoffittoSala1`             |
+| Sala 5 - Vetrina                 | 108       | `S5-Vetrina 1 alto N...`           |
+| Sala 5 - Manoscritto             | 8         | `S5-Manoscritto-FICLIT_...`        |
+| Sala 5 - Altri (A, B, CNR)       | 20        | `S5-A alto sinistra...`            |
+| **TOTALE**                       | **171**   |                                    |
 
-Lettere di referenza?
+Riguardo questi
 
-> Presentazione di una proposta di progetto attinente al tema del contratto della durata di due anni che si propone di svolgere nel contesto del contratto. Tale proposta dovrà: (a) avere una lunghezza massima di 20.000 caratteri, inclusi spazi ed eventuali formule, esclusi titolo, indice, bibliografia ed eventuale apparato illustrativo; (b) essere articolata nelle seguenti sezioni: stato dell'arte, descrizione del progetto, risultati attesi, cronoprogramma e tempi di realizzazione, bibliografia.
+![Pasted image 20260112200707.png](../../../../assets/notes/attachments/pasted-image-20260112200707.png)
 
-```
-La task grossazione
-```
+Qui qual è il numero?
 
-Come data prevista per il conseguimento del titolo ho messo 15 aprile, va bene? ![Pasted image 20251211154746.png](../../../../assets/notes/attachments/pasted-image-20251211154746.png)
-
-L'assegno di ricerca è un contratto di ricerca? ![Pasted image 20251211155027.png](../../../../assets/notes/attachments/pasted-image-20251211155027.png)
-
-[https://cordis.europa.eu/project/id/101188018](https://cordis.europa.eu/project/id/101188018)
-[https://opencitations.hypotheses.org/3869](https://opencitations.hypotheses.org/3869)
-Io direi che mi focalizzo sull'SSH citation index. La parte degli LLM faccio finta che non esista perché non avrei nessun master in fuffology da allegare al cv
-
-Noi come OC a che punto siamo sull'SSH citation index?
-
-Qui vedo data extraction from PDF: [https://bsky.app/profile/opencitations.bsky.social/post/3ljpg3gxi2s22](https://bsky.app/profile/opencitations.bsky.social/post/3ljpg3gxi2s22)
-Quindi direi [https://github.com/opencitations/cec](https://github.com/opencitations/cec), ma quello non era GraspOS? Si è transmigrato?
-
-Come faccio a trovare tutti gli articoli pubblicati finanziati da GRAPHIA? Su OpenAIRE Explore non ho trovato specificamente GRAPHIA. Non c'è neanche su OpenAlex.
+stesso problema con robe tipo S5-B alto sinistra 2-CNR\_Miocene, S5-Manoscritto-FICLIT\_LexiconRerumInanimatarum ecc... Questi contengono le cartelle raw, rawp, dhco, e dhcoo
 
 ## Memo
 
-* Aldrovandi
-  * Da 00 a 03 sono mappati a raw-dhcoo. 04 è l'export, 05 creazione metadati, 06 presentazione. Nel dchoo metto da 03 a 06.
-    * Chiedere ad Arianna
-  * Quelli con ob stanno in tutte e 4 le cartelle (raw-dchoo)
+Vizioso
+
+* [https://en.wikipedia.org/wiki/Compilers:\_Principles,\_Techniques,\_and\_Tools](https://en.wikipedia.org/wiki/Compilers:_Principles,_Techniques,_and_Tools)
+
+* [https://en.wikipedia.org/wiki/GNU\_Bison](https://en.wikipedia.org/wiki/GNU_Bison)
+
+* [https://en.wikipedia.org/wiki/Yacc](https://en.wikipedia.org/wiki/Yacc)
 
 * HERITRACE
   * C'è un bug che si verifica quando uno seleziona un'entità preesistente, poi clicca sulla X e inserisce i metadati a mano. Alcuni metadati vengono duplicati.
