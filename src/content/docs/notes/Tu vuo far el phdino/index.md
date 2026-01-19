@@ -5,197 +5,89 @@ editUrl: false
 
 ## La Novitade
 
+### Aldrovandi
+
+```python
+FOLDER_TO_ID = {
+    "S3-PT-DICAM_VetrinaMatriciXilografiche": "ptb",
+    "S3-PT-DICAM_Matrice Xilografica Fiore": "ptb_1",
+    "S3-PT-DICAM_Matrice Xilografica Pianta": "ptb_2",
+    "S3-PT-DICAM_Matrice Xilografica Serpente": "ptb_3",
+    "S3-VS6-DBC_Matrice 1 egizia": "ptb_4",
+    "S5-s.n.-DBC_Busto di Ulisse Aldrovandi": "s_n",
+    "S4-ManicoColtelloZoomorfo": 50,
+    "S5-CNR-AAltoCentro_TestamentoUlisseAldrovandi": "a_alto_centro",
+    "S5-B alto destra 1-FICLIT_Mammuthus1": "b_alto_destra_1",
+    "S5-B alto destra 1-FICLIT_Mammuthus2": "b_alto_destra_2",
+}
+```
+
 ### Meta
 
-<div style="border: 1px solid #d0d7de; border-radius: 8px; padding: 16px; margin: 8px 0; background: #ffffff; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; color: #1f2328;">
-  <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 12px;">
+```bash
+--- File: 3627.csv ---
+Rows: 1000, With IDs: 1000, Identifiers: 3915 (omid schema: 0)
+With OMID: 3905, Without OMID: 10
+Data graphs - Found: 37299, Missing: 0
+Prov graphs - Found: 37299, Missing: 0
+Provenance in DB - With: 2524, Without: 0
+
+Problems in this file:
+  - Identifier doi:10.35377/saucis..1418505 has no OMID (row 132, column id)
+  - Identifier doi:10.35377/saucis..1402414 has no OMID (row 138, column id)
+  - Identifier doi:10.35377/saucis..1341082 has no OMID (row 141, column id)
+  - Identifier doi:10.35377/saucis..1444155 has no OMID (row 145, column id)
+  - Identifier doi:10.35377/saucis..1381522 has no OMID (row 147, column id)
+  - Identifier doi:10.35377/saucis..1339931 has no OMID (row 153, column id)
+  - Identifier doi:10.35377/saucis..1359146 has no OMID (row 161, column id)
+  - Identifier doi:10.35377/saucis..1402561 has no OMID (row 168, column id)
+  - Identifier doi:10.35377/saucis..1391636 has no OMID (row 170, column id)
+  - Identifier doi:10.1891/1540–4153.6.3.115 has no OMID (row 407, column id)
 
 ```
-<div>
-  <strong style="display: block; color: #1f2328;">arcangelo7</strong>
-  <span style="font-size: 0.85em; color: #656d76;">Dec 27, 2025</span>
-  <span style="font-size: 0.85em; color: #656d76;"> · </span>
-  <a href="https://github.com/opencitations/oc_meta" style="font-size: 0.85em; color: #0969da; text-decoration: none;">opencitations/oc_meta</a>
-</div>
+
+```csv
+**doi:10.35377/saucis..1418505**,Automatic Maize Leaf Disease Recognition Using Deep Learning,"Çakmak, Muhammet [orcid:0000-0002-3752-6642]",2024-4-30,Sakarya University Journal of Computer and Information Sciences [issn:2636-8129],7,1,61-76,journal article,Sakarya University Journal of Computer and Information Sciences [crossref:20819],
 ```
 
-  </div>
-  <div style="margin: 12px 0; color: #1f2328;">
-    <p>feat(fixer): add script to detect identifier schema mismatches</p>
-<p>Scans RDF files directly to find identifiers where the declared schema
-does not match the value pattern (e.g., ISSN values marked as ORCID).</p>
+Il DOI esiste, ma con tre punti: [https://doi.org/10.35377/saucis...1418505](https://doi.org/10.35377/saucis...1418505). Chi lo ha corrotto? In Crossref è giusto: [https://api.crossref.org/works/10.35377/saucis...1418505](https://api.crossref.org/works/10.35377/saucis...1418505)
 
-  </div>
-  <div style="display: flex; justify-content: space-between; align-items: center; font-size: 0.85em;">
-    <span style="font-family: monospace; color: #1a7f37; font-weight: 600;">+226</span>
-    <span style="font-family: monospace; color: #cf222e; font-weight: 600;">-0</span>
-    <a href="https://github.com/opencitations/oc_meta/commit/49a5051bf7599b4dc6eb153f71fd6f2d465c8508" style="color: #0969da; text-decoration: none; font-weight: 500;">49a5051</a>
-  </div>
-</div>
+Eccoti: [https://github.com/opencitations/oc\_ds\_converter/blob/18d0c76e31407a533d683ced4d166e86fcae9a05/oc\_ds\_converter/oc\_idmanager/doi.py#L184](https://github.com/opencitations/oc_ds_converter/blob/18d0c76e31407a533d683ced4d166e86fcae9a05/oc_ds_converter/oc_idmanager/doi.py#L184)
 
+In realtà Meta ha incluso quei DOI ma mentre oc\_ds\_converter ha rimosso il primo punto, Meta ha rimosso il secondo e quindi i DOI sono finiti corrotti in Meta con un solo punto.
 
+Li ho corretti con uno script ad hoc che usa il Meta Editor, non a mano con HERITRACE.
 
-#### ORCID errati (7 casi)
-
-Identificatori con formato ISSN/ISBN ma schema ORCID. Tutti appartenenti a entita BR (Journal/Book).
-
-| ID Mismatch | Valore errato | Entita         | Titolo                                           | Valore corretto | Schema corretto |
-| ----------- | ------------- | -------------- | ------------------------------------------------ | --------------- | --------------- |
-| 06012393243 | 2790-9344     | br/06012054723 | Pakistan Journal Of Health Sciences              | 2790-9344       | issn            |
-| 06012393328 | 1462-0324     | br/06012054834 | Rheumatology                                     | 1462-0324       | issn            |
-| 06012393250 | 0962-1067     | br/06012054731 | Journal Of Clinical Nursing                      | 0962-1067       | issn            |
-| 06012393478 | 0277-1691     | br/06012055012 | International Journal Of Gynecological Pathology | 0277-1691       | issn            |
-| 06012393294 | 9783111692456 | br/06012054788 | Women In The Socratic Tradition                  | 9783111692456   | isbn            |
-| 06012387883 | 9783031963971 | br/06012050602 | Studies In Childhood And Youth                   | 9783031963971   | isbn            |
-| 06012387868 | 1724-6059     | ra/06030984957 | (Responsible Agent)                              | 1724-6059       | issn            |
-
-**Verifica esterna**:
-
-* ISSN 2790-9344: confermato [Pakistan Journal of Health Sciences](https://www.thejas.com.pk/index.php/pjhs/about)
-* ISSN 0962-1067: confermato [Journal of Clinical Nursing](https://portal.issn.org/resource/ISSN/0962-1067)
-* ISBN 9783111692456: confermato [De Gruyter](https://www.degruyterbrill.com/document/doi/10.1515/9783111692456/html)
-
-Tutte le corruzioni sono successive al 22 dicembre, data in cui è stato spento il server. Io me l'ero dimenticato e non ho stoppato Meta in tempo.
-
-~~Soluzione: cancellare tutte le entità successive al 22 dicembre e riprocessarle.~~
-
-Pensandoci meglio questa soluzione è rischiosa. Alla fine ho preferito rilanciare il processo da capo.
-
-***
-
-```yaml
-  autoheal:
-    image: willfarrell/autoheal:latest
-    container_name: oc_meta_autoheal
-    restart: unless-stopped
-    network_mode: none
-    environment:
-      AUTOHEAL_CONTAINER_LABEL: all
-      AUTOHEAL_INTERVAL: 30
-      AUTOHEAL_START_PERIOD: 120
-    volumes:
-      - /var/run/docker.sock:/var/run/docker.sock
-      - /etc/localtime:/etc/localtime:ro
-```
-
-<div style="border: 1px solid #d0d7de; border-radius: 8px; padding: 16px; margin: 8px 0; background: #ffffff; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; color: #1f2328;">
-  <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 12px;">
-
-```
-<div>
-  <strong style="display: block; color: #1f2328;">arcangelo7</strong>
-  <span style="font-size: 0.85em; color: #656d76;">Dec 20, 2025</span>
-  <span style="font-size: 0.85em; color: #656d76;"> · </span>
-  <a href="https://github.com/opencitations/oc_meta" style="font-size: 0.85em; color: #0969da; text-decoration: none;">opencitations/oc_meta</a>
-</div>
-```
-
-  </div>
-  <div style="margin: 12px 0; color: #1f2328;">
-    <p>fix: add timeout to SPARQLClient to handle database unavailability</p>
-<ul>
-<li>Add timeout=3600 (1 hour) to all SPARQLClient calls in production code</li>
-<li>Add timeout=60 to all SPARQLClient calls in test code</li>
-<li>Update sparqlite to 1.1.0 which supports timeout parameter</li>
-<li>Add exit code checking in meta_process.py for child process failures</li>
-<li>Add wait_for_virtuoso utility for test database readiness</li>
-<li>Add database_unavailability_test.py to verify graceful failure handling</li>
-</ul>
-<p>When the triplestore becomes unavailable, SPARQLClient now times out
-instead of hanging indefinitely, allowing proper error propagation.</p>
-
-  </div>
-  <div style="display: flex; justify-content: space-between; align-items: center; font-size: 0.85em;">
-    <span style="font-family: monospace; color: #1a7f37; font-weight: 600;">+262</span>
-    <span style="font-family: monospace; color: #cf222e; font-weight: 600;">-75</span>
-    <a href="https://github.com/opencitations/oc_meta/commit/c59160b3f3182e73ebe89d74ba24ba88dff422a3" style="color: #0969da; text-decoration: none; font-weight: 500;">c59160b</a>
-  </div>
-</div>
-
-### Altro
-
-<div style="border: 1px solid #d0d7de; border-radius: 8px; padding: 16px; margin: 8px 0; background: #ffffff; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; color: #1f2328;">
-  <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 12px;">
-    <img src="https://avatars.githubusercontent.com/u/42008604?v=4" style="width: 32px; height: 32px; border-radius: 50%;" alt="arcangelo7" />
-    <div>
-      <strong style="display: block; color: #1f2328;">arcangelo7</strong>
-      <span style="font-size: 0.85em; color: #656d76;">Dec 20, 2025</span>
-      <span style="font-size: 0.85em; color: #656d76;"> · </span>
-      <a href="https://github.com/opencitations/sparqlite" style="font-size: 0.85em; color: #0969da; text-decoration: none;">opencitations/sparqlite</a>
-    </div>
-  </div>
-  <div style="margin: 12px 0; color: #1f2328;">
-    <p>feat: add timeout parameter to SPARQLClient [release]</p>
-
-  </div>
-  <div style="display: flex; justify-content: space-between; align-items: center; font-size: 0.85em;">
-    <span style="font-family: monospace; color: #1a7f37; font-weight: 600;">+85</span>
-    <span style="font-family: monospace; color: #cf222e; font-weight: 600;">-1</span>
-    <a href="https://github.com/opencitations/sparqlite/commit/8bfd31aa3ac3f01945d45fa1be4867b8782dac9c" style="color: #0969da; text-decoration: none; font-weight: 500;">8bfd31a</a>
-  </div>
-</div>
+Ad ogni modo queste correzioni automatiche fatte da bendati sono a mio avviso folli. Queste correzioni automatiche hanno senso soltanto se non passa la prima validazione tramite API, dopodiché si cerca di correggere in automatico e infine si fa una seconda validazione tramite API. ma dato che abbiamo spento la validazione tramite API sia su Meta che sullo oc ds converter per ragioni di tempistiche il rischio che abbiamo corrotto una quantità importante di DOI è concreto.
 
 ### Tesi
 
-> Explain which specific system underpins the Paratext DB case study when it is first mentioned
+> The relationship between specific design choices (Ch. 5) and the issues (positive or negative) in the evaluation (Ch. 7) should be made more clear. For example, relating requirements with results in a table.
 
-> Regarding the ParaText scenario, it is fairly obvious that editing in a database requires a user interface, this is not specific to the complexity of the domain. As a reader, I wonder whether there is another reason why this system is a good example for the contribution of this thesis. The argument about a provenance is clearer, and maybe that could be at the centre of the scenario in 3.2.
+> In Sec. 7.4 --> is the answer to the RQ mainly an interface to a database? It seems that most negative feedback is on the user interface. But isn't it the user interface that should reduce the barrier for non-experts?
 
-Nella narrativa attuale sembra quasi che Paratext sia un sistema preesistente a Heritrace e che sia stato utilizzato per far emergere dei requisiti che poi Heritrace ha soddisfatto. Questo crea dei fraintendimenti in entrambi i revisori. Di conseguenza ho reso più esplicito che OC Meta è il sistema preesistente che dimostra l'esistenza di barriere sistematiche su scala, mentre Paratext è servito come piattaforma di guerilla testing per validare se la soluzione proposta, cioè Heritrace, fosse in grado di risolvere quei problemi che pur si presentano anche in Paratext. In quest'ottica, la metodologia utilizzata rientra nel cosiddetto Design Science Research, un paradigma orientato alla risoluzione di problemi che mira a estendere i confini delle capacità umane e organizzative attraverso la creazione di artefatti nuovi e innovativi. Si oppone alla behavioural research che invece indaga comportamenti esistenti per elaborare nuove teorie. Noi partiamo da una teoria esistente per elaborare una soluzione.
+![Pasted image 20260114135808.png](../../../../assets/notes/attachments/pasted-image-20260114135808.png)
 
-> The research follows a Design Science Research methodology \citep{hevnerDesignScienceInformation2004}, where the construction and evaluation of an artifact (HERITRACE) constitutes the primary contribution. Two case studies serve distinct methodological roles. OpenCitations Meta \citep{massariOpenCitationsMeta2024}, where the author participates as a contributor, provides independent validation that the identified barriers exist at scale in production systems. The ParaText Bibliographical Database was developed as an application case for HERITRACE, serving as a testbed for guerrilla testing \citep{nielsenUsabilityEngineering1993} and iterative refinement throughout the development process. This distinction is methodologically significant: OpenCitations Meta demonstrates the problem exists independently, while ParaText enables solution validation through guerrilla testing in a real-world scholarly context.
+> The first example on Open Citations (p18) motivating the need for manual intervention in the curation process is not entirely convincing: if new data link existing records that were previously distinct, one can re-assign new identifiers and update the related links? Are there cases where identifier information is wrong? To be clear, allowing curators to review and correct data is in general useful, I just feel that the provided example is not compelling enough. Or maybe a concrete example would make it clearer (for example, one where the title is the same but the publication different, for example a conference paper becoming a book chapter...).
 
-***
+Vuoi dei problemi? No problem bro, quanti ne vuoi:
 
-> The RQ could be better developed, possibly breaking it down to sub-questions.
+* [https://pubmed.ncbi.nlm.nih.gov/15370649/](https://pubmed.ncbi.nlm.nih.gov/15370649/)
+* [https://pubmed.ncbi.nlm.nih.gov/15849057/](https://pubmed.ncbi.nlm.nih.gov/15849057/)
+  Due entità completamente diverse con lo stesso DOI. Può bastare?
 
-> Why considering technically proficient users, since the RQ only targets domain experts, that are supposidely not technically savvy?
+> Even if an implementation of SPARQL-LTL does not exist, you should still discuss the difference in the approach as described by the paper.
 
-Prima:
+> SPARQL-LTL \citep{fiondaGizeTimeWarp2016} extends SPARQL with an algorithm for rewriting queries into standard SPARQL, requiring triples annotated with revision numbers and available as named graphs. This strategy lacks known implementations. The fundamental difference between SPARQL-LTL and the Time Agnostic Library lies in where temporal logic is handled: SPARQL-LTL extends the query language with temporal operators (\texttt{NEXT}, \texttt{EVENTUALLY}, \texttt{ALWAYS}) that are rewritten into unions over revision-annotated graphs, while the Time Agnostic Library relies on temporal information in data mapped according to the OCDM data model and reconstructs states programmatically, preserving standard SPARQL 1.1 syntax.
 
-> This challenge motivates the research question: how can we enable domain experts to participate in semantic data curation while maintaining provenance documentation, tracking changes over time, supporting flexible customization, and integrating with existing RDF collections?
+### Co tutela
 
-Dopo:
+![screenshot-2026-01-16\_09-49-27.png](../../../../assets/notes/attachments/screenshot-2026-01-16_09-49-27.png)
 
-> This challenge motivates two research questions addressing distinct operational phases:
->
-> **RQ1**: How can we design interfaces that enable domain experts to curate RDF data without requiring technical expertise, while maintaining provenance documentation and change tracking?
->
-> **RQ2**: How can technical staff perform one-time system configuration to adapt the curation environment to specialized domains, ensuring integration with existing RDF collections and flexible customization?
->
-> RQ1 addresses the continuous curation workflow where domain experts interact with
-> semantic data daily. RQ2 addresses the initial configuration phase, performed once
-> by technical staff, that prepares the system for domain-specific use.
+### Domande
 
-### Aldrovandi
-
-## Domande
-
-* Contratto di ricerca
-* Cosa uso come istante di generazione delle entità di provenance per Aldrovandi? Non ricordo [https://w3id.org/changes/4/agent/morph-kgc-changes-metadata/1.0.1](https://w3id.org/changes/4/agent/morph-kgc-changes-metadata/1.0.1) va bene come agente responsabile?
-
-Cartelle che non rispettando il naming
-
-| Categoria                        | Conteggio | Esempio                            |
-| -------------------------------- | --------- | ---------------------------------- |
-| Non oggetto (materials, \_files) | 8         | `Sala1/materials`                  |
-| Sub-item con lettera (27a, 74b)  | 16        | `S2-27a-FICLIT_...`                |
-| Separatore spazio                | 1         | `S2-39 - Vitello...`               |
-| Prefisso speciale (PT, VS, s.n.) | 6         | `S3-PT-DICAM_...`                  |
-| NR con underscore                | 2         | `S6-106_...`, `S6-114_115_116-...` |
-| Senza NR                         | 2         | `S1-CNR_SoffittoSala1`             |
-| Sala 5 - Vetrina                 | 108       | `S5-Vetrina 1 alto N...`           |
-| Sala 5 - Manoscritto             | 8         | `S5-Manoscritto-FICLIT_...`        |
-| Sala 5 - Altri (A, B, CNR)       | 20        | `S5-A alto sinistra...`            |
-| **TOTALE**                       | **171**   |                                    |
-
-Riguardo questi
-
-![Pasted image 20260112200707.png](../../../../assets/notes/attachments/pasted-image-20260112200707.png)
-
-Qui qual è il numero?
-
-stesso problema con robe tipo S5-B alto sinistra 2-CNR\_Miocene, S5-Manoscritto-FICLIT\_LexiconRerumInanimatarum ecc... Questi contengono le cartelle raw, rawp, dhco, e dhcoo
+* Email di Muriel Heisch
+* Sto notando che a volte oggetti diversi sono stati raggruppati in una sola entità nel kg. Ad esempio: S6-98a-DA-Calchi facciali colorati, boscimani, S6-98b-DA-Calchi facciali colorati, boscimani e S6-98c-DA-Calchi facciali colorati, boscimani (ciacuno coi propri raw, rawp, dcho e dchoo) corrispondono tutti all'entità 98 nel kg. Non esistono 98a, 98b e 98c. Infatti crm:P3\_has\_note recita "Ricostruzioni plastiche sul vivente. Da sinistra a destra: boscimano Ai-hum maschio, boscimano Kung femmina, boscimano Ai-hum femmina". Cosa faccio in questo caso? Metto gli stessi metadati in 3 gruppi di cartelle diversi caricati come entità diverse su Zenodo? Noto anche che in altri casi le sotto entità sono state mappate come distinte nel kg: è il caso di 27a (Delphinium staphisagria), 27b (Adonis vernalis) e tutti gli altri 27x  che corrispondono a 6 piante diverse da volumi diversi dell'erbaio. Non esiste 27 senza suffisso
 
 ## Memo
 
