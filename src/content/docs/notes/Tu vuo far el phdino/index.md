@@ -5,89 +5,158 @@ editUrl: false
 
 ## La Novitade
 
-### Aldrovandi
-
-```python
-FOLDER_TO_ID = {
-    "S3-PT-DICAM_VetrinaMatriciXilografiche": "ptb",
-    "S3-PT-DICAM_Matrice Xilografica Fiore": "ptb_1",
-    "S3-PT-DICAM_Matrice Xilografica Pianta": "ptb_2",
-    "S3-PT-DICAM_Matrice Xilografica Serpente": "ptb_3",
-    "S3-VS6-DBC_Matrice 1 egizia": "ptb_4",
-    "S5-s.n.-DBC_Busto di Ulisse Aldrovandi": "s_n",
-    "S4-ManicoColtelloZoomorfo": 50,
-    "S5-CNR-AAltoCentro_TestamentoUlisseAldrovandi": "a_alto_centro",
-    "S5-B alto destra 1-FICLIT_Mammuthus1": "b_alto_destra_1",
-    "S5-B alto destra 1-FICLIT_Mammuthus2": "b_alto_destra_2",
-}
-```
-
 ### Meta
 
-```bash
---- File: 3627.csv ---
-Rows: 1000, With IDs: 1000, Identifiers: 3915 (omid schema: 0)
-With OMID: 3905, Without OMID: 10
-Data graphs - Found: 37299, Missing: 0
-Prov graphs - Found: 37299, Missing: 0
-Provenance in DB - With: 2524, Without: 0
+Zenodo, io mi fidavo di te...
+![Pasted image 20260122103934.png](../../../../assets/notes/attachments/pasted-image-20260122103934.png)
 
-Problems in this file:
-  - Identifier doi:10.35377/saucis..1418505 has no OMID (row 132, column id)
-  - Identifier doi:10.35377/saucis..1402414 has no OMID (row 138, column id)
-  - Identifier doi:10.35377/saucis..1341082 has no OMID (row 141, column id)
-  - Identifier doi:10.35377/saucis..1444155 has no OMID (row 145, column id)
-  - Identifier doi:10.35377/saucis..1381522 has no OMID (row 147, column id)
-  - Identifier doi:10.35377/saucis..1339931 has no OMID (row 153, column id)
-  - Identifier doi:10.35377/saucis..1359146 has no OMID (row 161, column id)
-  - Identifier doi:10.35377/saucis..1402561 has no OMID (row 168, column id)
-  - Identifier doi:10.35377/saucis..1391636 has no OMID (row 170, column id)
-  - Identifier doi:10.1891/1540–4153.6.3.115 has no OMID (row 407, column id)
+<div style="border: 1px solid #d0d7de; border-radius: 8px; padding: 16px; margin: 8px 0; background: #ffffff; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; color: #1f2328;">
+  <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 12px;">
+    <img src="https://avatars.githubusercontent.com/u/42008604?v=4" style="width: 32px; height: 32px; border-radius: 50%;" alt="arcangelo7" />
+    <div>
+      <strong style="display: block; color: #1f2328;">arcangelo7</strong>
+      <span style="font-size: 0.85em; color: #656d76;">Jan 22, 2026</span>
+      <span style="font-size: 0.85em; color: #656d76;"> · </span>
+      <a href="https://github.com/opencitations/piccione" style="font-size: 0.85em; color: #0969da; text-decoration: none;">opencitations/piccione</a>
+    </div>
+  </div>
+  <div style="margin: 12px 0; color: #1f2328;">
+    <p>feat(zenodo): add metadata management, new deposition creation, and auto-publish</p>
+<p>Add support for creating new depositions (not just updating existing ones),
+configurable metadata fields (title, upload_type, creators, keywords, license,
+description), User-Agent header requirement, and optional auto-publish flag.</p>
+<p>Switch progress bar from tqdm to rich.progress for better UX.</p>
+
+  </div>
+  <div style="display: flex; justify-content: space-between; align-items: center; font-size: 0.85em;">
+    <span style="font-family: monospace; color: #1a7f37; font-weight: 600;">+261</span>
+    <span style="font-family: monospace; color: #cf222e; font-weight: 600;">-43</span>
+    <a href="https://github.com/opencitations/piccione/commit/8a8be0c7c6966d5ddd73ed43f0b055686673fded" style="color: #0969da; text-decoration: none; font-weight: 500;">8a8be0c</a>
+  </div>
+</div>
+
+<div style="border: 1px solid #d0d7de; border-radius: 8px; padding: 16px; margin: 8px 0; background: #ffffff; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; color: #1f2328;">
+  <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 12px;">
+    <img src="https://avatars.githubusercontent.com/u/42008604?v=4" style="width: 32px; height: 32px; border-radius: 50%;" alt="arcangelo7" />
+    <div>
+      <strong style="display: block; color: #1f2328;">arcangelo7</strong>
+      <span style="font-size: 0.85em; color: #656d76;">Jan 25, 2026</span>
+      <span style="font-size: 0.85em; color: #656d76;"> · </span>
+      <a href="https://github.com/opencitations/piccione" style="font-size: 0.85em; color: #0969da; text-decoration: none;">opencitations/piccione</a>
+    </div>
+  </div>
+  <div style="margin: 12px 0; color: #1f2328;">
+    <p>feat(upload): add infinite retry with exponential backoff for figshare and zenodo</p>
+<ul>
+<li>Figshare: add infinite retry for network and server errors (max 60s delay)</li>
+<li>Figshare: skip files already uploaded with matching MD5</li>
+<li>Figshare: automatic re-upload when MD5 differs</li>
+<li>Zenodo: change from max 5 retries to infinite retry (max 60s delay)</li>
+<li>Update tests to match refactored modules</li>
+<li>Update documentation to reflect new features</li>
+</ul>
+<p>[release]</p>
+
+  </div>
+  <div style="display: flex; justify-content: space-between; align-items: center; font-size: 0.85em;">
+    <span style="font-family: monospace; color: #1a7f37; font-weight: 600;">+364</span>
+    <span style="font-family: monospace; color: #cf222e; font-weight: 600;">-175</span>
+    <a href="https://github.com/opencitations/piccione/commit/57649b39a855ebb32128d8fc2da50bf812714d55" style="color: #0969da; text-decoration: none; font-weight: 500;">57649b3</a>
+  </div>
+</div>
+
+<div style="border: 1px solid #d0d7de; border-radius: 8px; padding: 16px; margin: 8px 0; background: #ffffff; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; color: #1f2328;">
+  <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 12px;">
+    <img src="https://avatars.githubusercontent.com/u/42008604?v=4" style="width: 32px; height: 32px; border-radius: 50%;" alt="arcangelo7" />
+    <div>
+      <strong style="display: block; color: #1f2328;">arcangelo7</strong>
+      <span style="font-size: 0.85em; color: #656d76;">Jan 25, 2026</span>
+      <span style="font-size: 0.85em; color: #656d76;"> · </span>
+      <a href="https://github.com/opencitations/oc_download" style="font-size: 0.85em; color: #0969da; text-decoration: none;">opencitations/oc_download</a>
+    </div>
+  </div>
+  <div style="margin: 12px 0; color: #1f2328;">
+    <p>feat: update OpenCitations Meta to January 2026 dump</p>
+<p>Update download links and statistics for the January 2026 release:</p>
+<ul>
+<li>129,436,832 bibliographic entities</li>
+<li>389,069,283 authors, 2,862,406 editors, 106,791,171 publishers</li>
+<li>1,376,246 publication venues</li>
+<li>Data sources: Crossref September 2025, DataCite 2025</li>
+</ul>
+<p>Move June 2025 dump to previous dumps section.</p>
+
+  </div>
+  <div style="display: flex; justify-content: space-between; align-items: center; font-size: 0.85em;">
+    <span style="font-family: monospace; color: #1a7f37; font-weight: 600;">+32</span>
+    <span style="font-family: monospace; color: #cf222e; font-weight: 600;">-19</span>
+    <a href="https://github.com/opencitations/oc_download/commit/5ea49b007c4a1371b3e0bda293db690a54bbd280" style="color: #0969da; text-decoration: none; font-weight: 500;">5ea49b0</a>
+  </div>
+</div>
+
+
+
+* multiple\_start\_nodes: 718
+  * Publisher multipli non collegati da has next: [https://w3id.org/oc/meta/br/0601586824](https://w3id.org/oc/meta/br/0601586824)
+* dangling\_has\_next: 26
+  * Catene di autori che proseguono oltre il contesto della br: [https://w3id.org/oc/meta/br/0603913432](https://w3id.org/oc/meta/br/0603913432)
+* self\_loop: 568
+  * [https://ldd.opencitations.net/meta/ar/06304319601.html](https://ldd.opencitations.net/meta/ar/06304319601.html)
+* multiple\_has\_next: 316
+  * AR 06015796507 has 2 hasNext targets: [https://ldd.opencitations.net/meta/ar/06015796507.html](https://ldd.opencitations.net/meta/ar/06015796507.html)
+* cycle: 161
+  * 3-node cycle: 06208525988 -> 06208525986 -> 06208525987 -> 06208525988
+    * [https://w3id.org/oc/meta/ar/06208525988](https://w3id.org/oc/meta/ar/06208525988)
+
+
+
+<div style="border: 1px solid #d0d7de; border-radius: 8px; padding: 16px; margin: 8px 0; background: #ffffff; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; color: #1f2328;">
+  <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 12px;">
 
 ```
-
-```csv
-**doi:10.35377/saucis..1418505**,Automatic Maize Leaf Disease Recognition Using Deep Learning,"Çakmak, Muhammet [orcid:0000-0002-3752-6642]",2024-4-30,Sakarya University Journal of Computer and Information Sciences [issn:2636-8129],7,1,61-76,journal article,Sakarya University Journal of Computer and Information Sciences [crossref:20819],
+<div>
+  <strong style="display: block; color: #1f2328;">arcangelo7</strong>
+  <span style="font-size: 0.85em; color: #656d76;">Jan 26, 2026</span>
+  <span style="font-size: 0.85em; color: #656d76;"> · </span>
+  <a href="https://github.com/opencitations/oc_meta" style="font-size: 0.85em; color: #0969da; text-decoration: none;">opencitations/oc_meta</a>
+</div>
 ```
 
-Il DOI esiste, ma con tre punti: [https://doi.org/10.35377/saucis...1418505](https://doi.org/10.35377/saucis...1418505). Chi lo ha corrotto? In Crossref è giusto: [https://api.crossref.org/works/10.35377/saucis...1418505](https://api.crossref.org/works/10.35377/saucis...1418505)
+  </div>
+  <div style="margin: 12px 0; color: #1f2328;">
+    <p>feat(fixer): add hasNext chain anomaly detection and fixer</p>
+<p>Add analyser script to detect hasNext chain anomalies (cycles,
+self-loops, dangling references, missing/multiple start nodes)
+in RDF data using parallel processing.</p>
+<p>Add fixer module with two modes:</p>
+<ul>
+<li>dry-run: generates correction plan by matching ARs to external
+APIs (Crossref, DataCite, PubMed) and produces CSV for Meta</li>
+<li>execute: applies corrections by deleting broken AR chains</li>
+</ul>
 
-Eccoti: [https://github.com/opencitations/oc\_ds\_converter/blob/18d0c76e31407a533d683ced4d166e86fcae9a05/oc\_ds\_converter/oc\_idmanager/doi.py#L184](https://github.com/opencitations/oc_ds_converter/blob/18d0c76e31407a533d683ced4d166e86fcae9a05/oc_ds_converter/oc_idmanager/doi.py#L184)
-
-In realtà Meta ha incluso quei DOI ma mentre oc\_ds\_converter ha rimosso il primo punto, Meta ha rimosso il secondo e quindi i DOI sono finiti corrotti in Meta con un solo punto.
-
-Li ho corretti con uno script ad hoc che usa il Meta Editor, non a mano con HERITRACE.
-
-Ad ogni modo queste correzioni automatiche fatte da bendati sono a mio avviso folli. Queste correzioni automatiche hanno senso soltanto se non passa la prima validazione tramite API, dopodiché si cerca di correggere in automatico e infine si fa una seconda validazione tramite API. ma dato che abbiamo spento la validazione tramite API sia su Meta che sullo oc ds converter per ragioni di tempistiche il rischio che abbiamo corrotto una quantità importante di DOI è concreto.
+  </div>
+  <div style="display: flex; justify-content: space-between; align-items: center; font-size: 0.85em;">
+    <span style="font-family: monospace; color: #1a7f37; font-weight: 600;">+1302</span>
+    <span style="font-family: monospace; color: #cf222e; font-weight: 600;">-36</span>
+    <a href="https://github.com/opencitations/oc_meta/commit/0fc9105de59a48f5e263882dc69c1887d08c20b6" style="color: #0969da; text-decoration: none; font-weight: 500;">0fc9105</a>
+  </div>
+</div>
 
 ### Tesi
 
-> The relationship between specific design choices (Ch. 5) and the issues (positive or negative) in the evaluation (Ch. 7) should be made more clear. For example, relating requirements with results in a table.
-
-> In Sec. 7.4 --> is the answer to the RQ mainly an interface to a database? It seems that most negative feedback is on the user interface. But isn't it the user interface that should reduce the barrier for non-experts?
-
-![Pasted image 20260114135808.png](../../../../assets/notes/attachments/pasted-image-20260114135808.png)
-
-> The first example on Open Citations (p18) motivating the need for manual intervention in the curation process is not entirely convincing: if new data link existing records that were previously distinct, one can re-assign new identifiers and update the related links? Are there cases where identifier information is wrong? To be clear, allowing curators to review and correct data is in general useful, I just feel that the provided example is not compelling enough. Or maybe a concrete example would make it clearer (for example, one where the title is the same but the publication different, for example a conference paper becoming a book chapter...).
-
-Vuoi dei problemi? No problem bro, quanti ne vuoi:
-
-* [https://pubmed.ncbi.nlm.nih.gov/15370649/](https://pubmed.ncbi.nlm.nih.gov/15370649/)
-* [https://pubmed.ncbi.nlm.nih.gov/15849057/](https://pubmed.ncbi.nlm.nih.gov/15849057/)
-  Due entità completamente diverse con lo stesso DOI. Può bastare?
-
-> Even if an implementation of SPARQL-LTL does not exist, you should still discuss the difference in the approach as described by the paper.
-
-> SPARQL-LTL \citep{fiondaGizeTimeWarp2016} extends SPARQL with an algorithm for rewriting queries into standard SPARQL, requiring triples annotated with revision numbers and available as named graphs. This strategy lacks known implementations. The fundamental difference between SPARQL-LTL and the Time Agnostic Library lies in where temporal logic is handled: SPARQL-LTL extends the query language with temporal operators (\texttt{NEXT}, \texttt{EVENTUALLY}, \texttt{ALWAYS}) that are rewritten into unions over revision-annotated graphs, while the Time Agnostic Library relies on temporal information in data mapped according to the OCDM data model and reconstructs states programmatically, preserving standard SPARQL 1.1 syntax.
-
-### Co tutela
-
-![screenshot-2026-01-16\_09-49-27.png](../../../../assets/notes/attachments/screenshot-2026-01-16_09-49-27.png)
+![Pasted image 20260124145536.png](../../../../assets/notes/attachments/pasted-image-20260124145536.png)
+![Pasted image 20260124145629.png](../../../../assets/notes/attachments/pasted-image-20260124145629.png)
 
 ### Domande
 
-* Email di Muriel Heisch
-* Sto notando che a volte oggetti diversi sono stati raggruppati in una sola entità nel kg. Ad esempio: S6-98a-DA-Calchi facciali colorati, boscimani, S6-98b-DA-Calchi facciali colorati, boscimani e S6-98c-DA-Calchi facciali colorati, boscimani (ciacuno coi propri raw, rawp, dcho e dchoo) corrispondono tutti all'entità 98 nel kg. Non esistono 98a, 98b e 98c. Infatti crm:P3\_has\_note recita "Ricostruzioni plastiche sul vivente. Da sinistra a destra: boscimano Ai-hum maschio, boscimano Kung femmina, boscimano Ai-hum femmina". Cosa faccio in questo caso? Metto gli stessi metadati in 3 gruppi di cartelle diversi caricati come entità diverse su Zenodo? Noto anche che in altri casi le sotto entità sono state mappate come distinte nel kg: è il caso di 27a (Delphinium staphisagria), 27b (Adonis vernalis) e tutti gli altri 27x  che corrispondono a 6 piante diverse da volumi diversi dell'erbaio. Non esiste 27 senza suffisso
+![Pasted image 20260126132342.png](../../../../assets/notes/attachments/pasted-image-20260126132342.png)
+
+* Occorrono delle slide per la difesa/pre-difesa?
+
+### Aldrovandi
+
+* Ho scaricato tutti i file in locale. Sono 566 GB. Pensavo peggio.  Ho esteso piccione in modo che controlli se il file remoto ha una data di aggiornamento successiva al file locale per riscaricarlo. Per sicurezza controlla anche le differenze di dimensione.
 
 ## Memo
 
