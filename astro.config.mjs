@@ -24,12 +24,7 @@ export default defineConfig({
 				starlightObsidian({
 					vault: '/home/arcangelo/Documents/obsidian',
 					ignore: [
-						'Autismo/**',
-						'Casa/**',
-						'Filosofia/**',
-						'Note/**',
-						'UnoStrano/**',
-						'User Testing Heritrace/**',
+						'!(Tu vuo far el phdino|attachments)/**',
 						'*.png',
 					],
 					sidebar: {
