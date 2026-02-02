@@ -1,7 +1,0 @@
-﻿Dataset,Research products  (October 2022),Sources,Change-tracking & provenance in RDF,Disambiguation  method,Internal id,Access,License
-OpenAIRE  Research Graph,"169,197,921","ArXiv, PMC, Software Heritage,  Zenodo, DOAJ,  OpenCitations,  Crossref, Datacite  and thousands more",-,PiDs  and heuristics,"+,  non persistent","SPARQL, API,  web interface,  dump",CC BY
-OpenCitations Meta,"75,030,924","Crossref, in future: Datacite & NIH",+,PIDs,+,"SPARQL, API,  dump",CC0
-Wikidata,"38,470,523",Wikimedia projects & Freebase,-,PIDs,+,"SPARQL, API,  web interface,  dump",CC0
-Springer Nature  SciGraph,"14,632,430",Springer Nature & partners,-,PIDs,-,"web interface,  dump",CC BY-NC
-BioTea,"1,623,541",PMC-OA,-,PIDs,-,dump,CC BY-NC
-Scholarly Data,5811,Semantic Web conferences and workshops,-,machine learning,+,"SPARQL, API,  web interface,  dump",CC BY

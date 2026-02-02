@@ -5,33 +5,88 @@ editUrl: false
 
 ## La Novitade
 
-### Meta
-
-Zenodo, io mi fidavo di te...
-![Pasted image 20260122103934.png](../../../../assets/notes/attachments/pasted-image-20260122103934.png)
+### Aldrovandi
 
 <div style="border: 1px solid #d0d7de; border-radius: 8px; padding: 16px; margin: 8px 0; background: #ffffff; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; color: #1f2328;">
   <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 12px;">
     <img src="https://avatars.githubusercontent.com/u/42008604?v=4" style="width: 32px; height: 32px; border-radius: 50%;" alt="arcangelo7" />
     <div>
       <strong style="display: block; color: #1f2328;">arcangelo7</strong>
-      <span style="font-size: 0.85em; color: #656d76;">Jan 22, 2026</span>
+      <span style="font-size: 0.85em; color: #656d76;">Jan 28, 2026</span>
+      <span style="font-size: 0.85em; color: #656d76;"> · </span>
+      <a href="https://github.com/dharc-org/changes-metadata-manager" style="font-size: 0.85em; color: #0969da; text-decoration: none;">dharc-org/changes-metadata-manager</a>
+    </div>
+  </div>
+  <div style="margin: 12px 0; color: #1f2328;">
+    <p>feat(zenodo): add module for preparing and uploading entity packages</p>
+<p>Queries kg.ttl for licensed entity/stage combinations, groups folders
+by entity ID, creates one zip per entity with all stages, and generates
+piccione-compatible YAML configs for Zenodo upload.</p>
+  </div>
+  <div style="display: flex; justify-content: space-between; align-items: center; font-size: 0.85em;">
+    <span style="font-family: monospace; color: #1a7f37; font-weight: 600;">+485</span>
+    <span style="font-family: monospace; color: #cf222e; font-weight: 600;">-0</span>
+    <a href="https://github.com/dharc-org/changes-metadata-manager/commit/995b5e0728ab86f4cd3122779ce2bdc1767f9a1b" style="color: #0969da; text-decoration: none; font-weight: 500;">995b5e0</a>
+  </div>
+</div>
+
+<div style="border: 1px solid #d0d7de; border-radius: 8px; padding: 16px; margin: 8px 0; background: #ffffff; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; color: #1f2328;">
+  <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 12px;">
+    <img src="https://avatars.githubusercontent.com/u/42008604?v=4" style="width: 32px; height: 32px; border-radius: 50%;" alt="arcangelo7" />
+    <div>
+      <strong style="display: block; color: #1f2328;">arcangelo7</strong>
+      <span style="font-size: 0.85em; color: #656d76;">Jan 28, 2026</span>
+      <span style="font-size: 0.85em; color: #656d76;"> · </span>
+      <a href="https://github.com/dharc-org/changes-metadata-manager" style="font-size: 0.85em; color: #0969da; text-decoration: none;">dharc-org/changes-metadata-manager</a>
+    </div>
+  </div>
+  <div style="margin: 12px 0; color: #1f2328;">
+    <p>feat(zenodo): add complete creators list with ORCIDs</p>
+  </div>
+  <div style="display: flex; justify-content: space-between; align-items: center; font-size: 0.85em;">
+    <span style="font-family: monospace; color: #1a7f37; font-weight: 600;">+78</span>
+    <span style="font-family: monospace; color: #cf222e; font-weight: 600;">-6</span>
+    <a href="https://github.com/dharc-org/changes-metadata-manager/commit/b1894ddc346aac54a819fdb1b3a0f668168e9f59" style="color: #0969da; text-decoration: none; font-weight: 500;">b1894dd</a>
+  </div>
+</div>
+
+<div style="border: 1px solid #d0d7de; border-radius: 8px; padding: 16px; margin: 8px 0; background: #ffffff; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; color: #1f2328;">
+  <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 12px;">
+    <img src="https://avatars.githubusercontent.com/u/42008604?v=4" style="width: 32px; height: 32px; border-radius: 50%;" alt="arcangelo7" />
+    <div>
+      <strong style="display: block; color: #1f2328;">arcangelo7</strong>
+      <span style="font-size: 0.85em; color: #656d76;">Jan 28, 2026</span>
+      <span style="font-size: 0.85em; color: #656d76;"> · </span>
+      <a href="https://github.com/dharc-org/changes-metadata-manager" style="font-size: 0.85em; color: #0969da; text-decoration: none;">dharc-org/changes-metadata-manager</a>
+    </div>
+  </div>
+  <div style="margin: 12px 0; color: #1f2328;">
+    <p>feat(zenodo): update keywords</p>
+  </div>
+  <div style="display: flex; justify-content: space-between; align-items: center; font-size: 0.85em;">
+    <span style="font-family: monospace; color: #1a7f37; font-weight: 600;">+8</span>
+    <span style="font-family: monospace; color: #cf222e; font-weight: 600;">-3</span>
+    <a href="https://github.com/dharc-org/changes-metadata-manager/commit/1f23b88f67cb404aa20da3ff92ac5179e7ab404f" style="color: #0969da; text-decoration: none; font-weight: 500;">1f23b88</a>
+  </div>
+</div>
+
+<div style="border: 1px solid #d0d7de; border-radius: 8px; padding: 16px; margin: 8px 0; background: #ffffff; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; color: #1f2328;">
+  <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 12px;">
+    <img src="https://avatars.githubusercontent.com/u/42008604?v=4" style="width: 32px; height: 32px; border-radius: 50%;" alt="arcangelo7" />
+    <div>
+      <strong style="display: block; color: #1f2328;">arcangelo7</strong>
+      <span style="font-size: 0.85em; color: #656d76;">Jan 29, 2026</span>
       <span style="font-size: 0.85em; color: #656d76;"> · </span>
       <a href="https://github.com/opencitations/piccione" style="font-size: 0.85em; color: #0969da; text-decoration: none;">opencitations/piccione</a>
     </div>
   </div>
   <div style="margin: 12px 0; color: #1f2328;">
-    <p>feat(zenodo): add metadata management, new deposition creation, and auto-publish</p>
-<p>Add support for creating new depositions (not just updating existing ones),
-configurable metadata fields (title, upload_type, creators, keywords, license,
-description), User-Agent header requirement, and optional auto-publish flag.</p>
-<p>Switch progress bar from tqdm to rich.progress for better UX.</p>
-
+    <p>feat(zenodo): add support for all Zenodo API metadata fields [release]</p>
   </div>
   <div style="display: flex; justify-content: space-between; align-items: center; font-size: 0.85em;">
-    <span style="font-family: monospace; color: #1a7f37; font-weight: 600;">+261</span>
-    <span style="font-family: monospace; color: #cf222e; font-weight: 600;">-43</span>
-    <a href="https://github.com/opencitations/piccione/commit/8a8be0c7c6966d5ddd73ed43f0b055686673fded" style="color: #0969da; text-decoration: none; font-weight: 500;">8a8be0c</a>
+    <span style="font-family: monospace; color: #1a7f37; font-weight: 600;">+211</span>
+    <span style="font-family: monospace; color: #cf222e; font-weight: 600;">-24</span>
+    <a href="https://github.com/opencitations/piccione/commit/220679f14a6258ba23592b540a6cda2f7217e020" style="color: #0969da; text-decoration: none; font-weight: 500;">220679f</a>
   </div>
 </div>
 
@@ -40,28 +95,20 @@ description), User-Agent header requirement, and optional auto-publish flag.</p>
     <img src="https://avatars.githubusercontent.com/u/42008604?v=4" style="width: 32px; height: 32px; border-radius: 50%;" alt="arcangelo7" />
     <div>
       <strong style="display: block; color: #1f2328;">arcangelo7</strong>
-      <span style="font-size: 0.85em; color: #656d76;">Jan 25, 2026</span>
+      <span style="font-size: 0.85em; color: #656d76;">Jan 29, 2026</span>
       <span style="font-size: 0.85em; color: #656d76;"> · </span>
-      <a href="https://github.com/opencitations/piccione" style="font-size: 0.85em; color: #0969da; text-decoration: none;">opencitations/piccione</a>
+      <a href="https://github.com/dharc-org/changes-metadata-manager" style="font-size: 0.85em; color: #0969da; text-decoration: none;">dharc-org/changes-metadata-manager</a>
     </div>
   </div>
   <div style="margin: 12px 0; color: #1f2328;">
-    <p>feat(upload): add infinite retry with exponential backoff for figshare and zenodo</p>
-<ul>
-<li>Figshare: add infinite retry for network and server errors (max 60s delay)</li>
-<li>Figshare: skip files already uploaded with matching MD5</li>
-<li>Figshare: automatic re-upload when MD5 differs</li>
-<li>Zenodo: change from max 5 retries to infinite retry (max 60s delay)</li>
-<li>Update tests to match refactored modules</li>
-<li>Update documentation to reflect new features</li>
-</ul>
-<p>[release]</p>
-
+    <p>refactor(zenodo): split uploads into separate records per stage</p>
+<p>Each processing stage (raw, rawp, dcho, dchoo) now becomes a separate
+Zenodo record instead of bundling all stages into a single entity record.</p>
   </div>
   <div style="display: flex; justify-content: space-between; align-items: center; font-size: 0.85em;">
-    <span style="font-family: monospace; color: #1a7f37; font-weight: 600;">+364</span>
-    <span style="font-family: monospace; color: #cf222e; font-weight: 600;">-175</span>
-    <a href="https://github.com/opencitations/piccione/commit/57649b39a855ebb32128d8fc2da50bf812714d55" style="color: #0969da; text-decoration: none; font-weight: 500;">57649b3</a>
+    <span style="font-family: monospace; color: #1a7f37; font-weight: 600;">+83</span>
+    <span style="font-family: monospace; color: #cf222e; font-weight: 600;">-52</span>
+    <a href="https://github.com/dharc-org/changes-metadata-manager/commit/25e440c116aadc5339e4200d7ba56e14895a3a87" style="color: #0969da; text-decoration: none; font-weight: 500;">25e440c</a>
   </div>
 </div>
 
@@ -70,97 +117,174 @@ description), User-Agent header requirement, and optional auto-publish flag.</p>
     <img src="https://avatars.githubusercontent.com/u/42008604?v=4" style="width: 32px; height: 32px; border-radius: 50%;" alt="arcangelo7" />
     <div>
       <strong style="display: block; color: #1f2328;">arcangelo7</strong>
-      <span style="font-size: 0.85em; color: #656d76;">Jan 25, 2026</span>
+      <span style="font-size: 0.85em; color: #656d76;">Jan 29, 2026</span>
       <span style="font-size: 0.85em; color: #656d76;"> · </span>
-      <a href="https://github.com/opencitations/oc_download" style="font-size: 0.85em; color: #0969da; text-decoration: none;">opencitations/oc_download</a>
+      <a href="https://github.com/dharc-org/changes-metadata-manager" style="font-size: 0.85em; color: #0969da; text-decoration: none;">dharc-org/changes-metadata-manager</a>
     </div>
   </div>
   <div style="margin: 12px 0; color: #1f2328;">
-    <p>feat: update OpenCitations Meta to January 2026 dump</p>
-<p>Update download links and statistics for the January 2026 release:</p>
-<ul>
-<li>129,436,832 bibliographic entities</li>
-<li>389,069,283 authors, 2,862,406 editors, 106,791,171 publishers</li>
-<li>1,376,246 publication venues</li>
-<li>Data sources: Crossref September 2025, DataCite 2025</li>
-</ul>
-<p>Move June 2025 dump to previous dumps section.</p>
-
+    <p>feat(zenodo): extract authors dynamically from RDF knowledge graph</p>
+<p>Instead of assigning all 27 creators to every Zenodo record, authors are
+now extracted from the RDF graph via crm:P14_carried_out_by for each
+entity/stage combination. A lookup table maps RDF names to Zenodo
+metadata (affiliation, ORCID).</p>
   </div>
   <div style="display: flex; justify-content: space-between; align-items: center; font-size: 0.85em;">
-    <span style="font-family: monospace; color: #1a7f37; font-weight: 600;">+32</span>
-    <span style="font-family: monospace; color: #cf222e; font-weight: 600;">-19</span>
-    <a href="https://github.com/opencitations/oc_download/commit/5ea49b007c4a1371b3e0bda293db690a54bbd280" style="color: #0969da; text-decoration: none; font-weight: 500;">5ea49b0</a>
+    <span style="font-family: monospace; color: #1a7f37; font-weight: 600;">+262</span>
+    <span style="font-family: monospace; color: #cf222e; font-weight: 600;">-87</span>
+    <a href="https://github.com/dharc-org/changes-metadata-manager/commit/df54bae6f4efe646d2e02276ef24f3ef359bb984" style="color: #0969da; text-decoration: none; font-weight: 500;">df54bae</a>
   </div>
 </div>
-
-
-
-* multiple\_start\_nodes: 718
-  * Publisher multipli non collegati da has next: [https://w3id.org/oc/meta/br/0601586824](https://w3id.org/oc/meta/br/0601586824)
-* dangling\_has\_next: 26
-  * Catene di autori che proseguono oltre il contesto della br: [https://w3id.org/oc/meta/br/0603913432](https://w3id.org/oc/meta/br/0603913432)
-* self\_loop: 568
-  * [https://ldd.opencitations.net/meta/ar/06304319601.html](https://ldd.opencitations.net/meta/ar/06304319601.html)
-* multiple\_has\_next: 316
-  * AR 06015796507 has 2 hasNext targets: [https://ldd.opencitations.net/meta/ar/06015796507.html](https://ldd.opencitations.net/meta/ar/06015796507.html)
-* cycle: 161
-  * 3-node cycle: 06208525988 -> 06208525986 -> 06208525987 -> 06208525988
-    * [https://w3id.org/oc/meta/ar/06208525988](https://w3id.org/oc/meta/ar/06208525988)
-
-
 
 <div style="border: 1px solid #d0d7de; border-radius: 8px; padding: 16px; margin: 8px 0; background: #ffffff; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; color: #1f2328;">
   <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 12px;">
-
-```
-<div>
-  <strong style="display: block; color: #1f2328;">arcangelo7</strong>
-  <span style="font-size: 0.85em; color: #656d76;">Jan 26, 2026</span>
-  <span style="font-size: 0.85em; color: #656d76;"> · </span>
-  <a href="https://github.com/opencitations/oc_meta" style="font-size: 0.85em; color: #0969da; text-decoration: none;">opencitations/oc_meta</a>
-</div>
-```
-
+    <img src="https://avatars.githubusercontent.com/u/42008604?v=4" style="width: 32px; height: 32px; border-radius: 50%;" alt="arcangelo7" />
+    <div>
+      <strong style="display: block; color: #1f2328;">arcangelo7</strong>
+      <span style="font-size: 0.85em; color: #656d76;">Jan 29, 2026</span>
+      <span style="font-size: 0.85em; color: #656d76;"> · </span>
+      <a href="https://github.com/dharc-org/changes-metadata-manager" style="font-size: 0.85em; color: #0969da; text-decoration: none;">dharc-org/changes-metadata-manager</a>
+    </div>
   </div>
   <div style="margin: 12px 0; color: #1f2328;">
-    <p>feat(fixer): add hasNext chain anomaly detection and fixer</p>
-<p>Add analyser script to detect hasNext chain anomalies (cycles,
-self-loops, dangling references, missing/multiple start nodes)
-in RDF data using parallel processing.</p>
-<p>Add fixer module with two modes:</p>
-<ul>
-<li>dry-run: generates correction plan by matching ARs to external
-APIs (Crossref, DataCite, PubMed) and produces CSV for Meta</li>
-<li>execute: applies corrections by deleting broken AR chains</li>
-</ul>
-
+    <p>refactor: convert output format from JSON-LD to Turtle/TriG with CC0 license via metadata.add((URIRef(&quot;&quot;), DCTERMS.license, CC0))</p>
   </div>
   <div style="display: flex; justify-content: space-between; align-items: center; font-size: 0.85em;">
-    <span style="font-family: monospace; color: #1a7f37; font-weight: 600;">+1302</span>
-    <span style="font-family: monospace; color: #cf222e; font-weight: 600;">-36</span>
-    <a href="https://github.com/opencitations/oc_meta/commit/0fc9105de59a48f5e263882dc69c1887d08c20b6" style="color: #0969da; text-decoration: none; font-weight: 500;">0fc9105</a>
+    <span style="font-family: monospace; color: #1a7f37; font-weight: 600;">+24</span>
+    <span style="font-family: monospace; color: #cf222e; font-weight: 600;">-17</span>
+    <a href="https://github.com/dharc-org/changes-metadata-manager/commit/e22fc99bb15d0c6d18e89bfac8625eedcb67f473" style="color: #0969da; text-decoration: none; font-weight: 500;">e22fc99</a>
   </div>
 </div>
 
-### Tesi
+<div style="border: 1px solid #d0d7de; border-radius: 8px; padding: 16px; margin: 8px 0; background: #ffffff; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; color: #1f2328;">
+  <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 12px;">
+    <img src="https://avatars.githubusercontent.com/u/42008604?v=4" style="width: 32px; height: 32px; border-radius: 50%;" alt="arcangelo7" />
+    <div>
+      <strong style="display: block; color: #1f2328;">arcangelo7</strong>
+      <span style="font-size: 0.85em; color: #656d76;">Jan 29, 2026</span>
+      <span style="font-size: 0.85em; color: #656d76;"> · </span>
+      <a href="https://github.com/dharc-org/changes-metadata-manager" style="font-size: 0.85em; color: #0969da; text-decoration: none;">dharc-org/changes-metadata-manager</a>
+    </div>
+  </div>
+  <div style="margin: 12px 0; color: #1f2328;">
+    <p>feat(zenodo): add comprehensive metadata</p>
+<p>Add dynamic license extraction from RDF, publication date generation,
+and enhanced descriptions. Include static metadata fields: communities,
+related works, locations, notes, and method.</p>
+  </div>
+  <div style="display: flex; justify-content: space-between; align-items: center; font-size: 0.85em;">
+    <span style="font-family: monospace; color: #1a7f37; font-weight: 600;">+201</span>
+    <span style="font-family: monospace; color: #cf222e; font-weight: 600;">-5</span>
+    <a href="https://github.com/dharc-org/changes-metadata-manager/commit/3be24a50f60fee98a40fe682b08625c876df4a3c" style="color: #0969da; text-decoration: none; font-weight: 500;">3be24a5</a>
+  </div>
+</div>
 
-![Pasted image 20260124145536.png](../../../../assets/notes/attachments/pasted-image-20260124145536.png)
-![Pasted image 20260124145629.png](../../../../assets/notes/attachments/pasted-image-20260124145629.png)
+<div style="border: 1px solid #d0d7de; border-radius: 8px; padding: 16px; margin: 8px 0; background: #ffffff; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; color: #1f2328;">
+  <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 12px;">
+    <img src="https://avatars.githubusercontent.com/u/42008604?v=4" style="width: 32px; height: 32px; border-radius: 50%;" alt="arcangelo7" />
+    <div>
+      <strong style="display: block; color: #1f2328;">arcangelo7</strong>
+      <span style="font-size: 0.85em; color: #656d76;">Jan 29, 2026</span>
+      <span style="font-size: 0.85em; color: #656d76;"> · </span>
+      <a href="https://github.com/dharc-org/changes-metadata-manager" style="font-size: 0.85em; color: #0969da; text-decoration: none;">dharc-org/changes-metadata-manager</a>
+    </div>
+  </div>
+  <div style="margin: 12px 0; color: #1f2328;">
+    <p>feat(zenodo): add entity URI as alternate identifier</p>
+<p>Add the entity URI (e.g., <a href="https://w3id.org/changes/4/aldrovandi/itm/27/ob00/1">https://w3id.org/changes/4/aldrovandi/itm/27/ob00/1</a>)
+to Zenodo uploads via the related_identifiers field with relation
+isAlternateIdentifier.</p>
+  </div>
+  <div style="display: flex; justify-content: space-between; align-items: center; font-size: 0.85em;">
+    <span style="font-family: monospace; color: #1a7f37; font-weight: 600;">+78</span>
+    <span style="font-family: monospace; color: #cf222e; font-weight: 600;">-2</span>
+    <a href="https://github.com/dharc-org/changes-metadata-manager/commit/8ab96324c6ed7e15572a4a58034033e22ef02e09" style="color: #0969da; text-decoration: none; font-weight: 500;">8ab9632</a>
+  </div>
+</div>
+
+Ho scoperto il software usato da Zenodo: [https://inveniordm.docs.cern.ch/](https://inveniordm.docs.cern.ch/)
+Infatti, se si usano le API legacy di Zenodo non si possono specificare più licenze, con quelle nuove di InvenioRDM invece sì.
+
+Con le nuove API i tempi di caricamento sono anche infinitamente più rapidi.
+
+<div style="border: 1px solid #d0d7de; border-radius: 8px; padding: 16px; margin: 8px 0; background: #ffffff; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; color: #1f2328;">
+  <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 12px;">
+    <img src="https://avatars.githubusercontent.com/u/42008604?v=4" style="width: 32px; height: 32px; border-radius: 50%;" alt="arcangelo7" />
+    <div>
+      <strong style="display: block; color: #1f2328;">arcangelo7</strong>
+      <span style="font-size: 0.85em; color: #656d76;">Jan 30, 2026</span>
+      <span style="font-size: 0.85em; color: #656d76;"> · </span>
+      <a href="https://github.com/dharc-org/changes-metadata-manager" style="font-size: 0.85em; color: #0969da; text-decoration: none;">dharc-org/changes-metadata-manager</a>
+    </div>
+  </div>
+  <div style="margin: 12px 0; color: #1f2328;">
+    <p>feat(zenodo): add support for multiple licenses with descriptive titles</p>
+<p>Use InvenioRDM rights array format instead of legacy license field.
+Each license now has a custom title indicating whether it applies to
+metadata or content, making it immediately visible in the Zenodo UI.</p>
+  </div>
+  <div style="display: flex; justify-content: space-between; align-items: center; font-size: 0.85em;">
+    <span style="font-family: monospace; color: #1a7f37; font-weight: 600;">+43</span>
+    <span style="font-family: monospace; color: #cf222e; font-weight: 600;">-5</span>
+    <a href="https://github.com/dharc-org/changes-metadata-manager/commit/b73271640832d088415c3441a6dde4a9929d51ed" style="color: #0969da; text-decoration: none; font-weight: 500;">b732716</a>
+  </div>
+</div>
+
+#### La risultatazione
+
+* [https://sandbox.zenodo.org/records/432369](https://sandbox.zenodo.org/records/432369)
+* [https://sandbox.zenodo.org/records/432371](https://sandbox.zenodo.org/records/432371)
+* [https://sandbox.zenodo.org/records/432362](https://sandbox.zenodo.org/records/432362)
+* [https://sandbox.zenodo.org/records/432367](https://sandbox.zenodo.org/records/432367)
+
+### Mobility and migration broadly understood
+
+#### From Maya blue to digital permanence: a 500-year migration toward immortality
+
+The Codex Cospi, one of only fourteen surviving pre-Columbian manuscripts, arrived in Bologna in 1533 as a gift from the Dominican friar Domingo de Betanzos to Pope Clement VII. In the five centuries since, it has traveled through private collections, public museums, and academic institutions, each transfer transforming its meaning: from sacred divination manual to exotic curiosity, from museum piece to subject of scientific inquiry.
+
+This contribution traces the codex's migrations as a case study in knowledge preservation across time. The narrative begins with Maya Blue, the synthetic pigment that colors its pages - a nanocomposite material invented a thousand years ago, whose production technique was lost after the Spanish conquest but whose brilliance endures. Maya Blue serves as a metaphor for the manuscript itself: knowledge that survives even when its context is forgotten.
+
+The presentation examines three phases of the codex's migration: its physical migration from Mesoamerica to Europe; its institutional migration through 132 years of undocumented ownership followed by centuries of cataloguing and scientific analysis; and its current digital migration within the CHANGES project at the University of Bologna. This final phase raises a question: how do we ensure that digital twins carry not just images, but the knowledge needed to interpret them?
+
+Drawing on the FAIR principles and semantic web technologies, the contribution argues that contemporary metadata practices continue a tradition of documentation stretching back to Lorenzo Legati's 1677 description in the *Museo Cospiano*. The responsibility remains the same: to create records that might outlast us.
 
 ### Domande
 
-![Pasted image 20260126132342.png](../../../../assets/notes/attachments/pasted-image-20260126132342.png)
+#### Aldrovandi
 
-* Occorrono delle slide per la difesa/pre-difesa?
+* Non trovo il progetto CHANGES su OpenAIRE, che è la fonte usata da Zenodo per i progetti. Serve per il campo grants.
+* Abbiamo detti che
+  ```python
+    STAGE_STEPS = {
+        "raw": ["00"],
+        "rawp": ["00", "01"],
+        "dcho": ["00", "01", "02"],
+        "dchoo": ["00", "01", "02", "03", "04", "05", "06"],
+    }    
+  ```
+  Questo fa sì che gli autori delle fasi 5 e 6, ovvero metadatazione e pubblicazione, finiscano su Zenodo come autori del dchoo, il che non è vero. Li tolgo?
+* Vanno bene degli zip normali o uso livelli di compressione più aggressivi? Tipo 7z a livello 9.
+* va bene Zenodo come publisher?
 
-### Aldrovandi
+#### Tesi
 
-* Ho scaricato tutti i file in locale. Sono 566 GB. Pensavo peggio.  Ho esteso piccione in modo che controlli se il file remoto ha una data di aggiornamento successiva al file locale per riscaricarlo. Per sicurezza controlla anche le differenze di dimensione.
+* Nella mia tesi dico che la FICLIT DL usa Omeka S. Questa cosa è ancora vera?7
 
 ## Memo
 
-Vizioso
+Aldrovandi
+
+* Bisogna caricare su Zenodo soltanto gli oggetti a cui è associata una licenza, dove per oggetti si intende l'entità di ogni sottotipologia RAW, RAWP, DCHO e DCHOO.
+
+* La provenance andrà salvata su un unico file Turtle da inviare a Ivan.
+
+* Bisogna inserire la licenza CC- all'interno di ogni file metadatale, ovvero sia in meta.ttl che in prov.ttl
+
+* Bisogna salvare una tabella di associazione tra ciascuna entità e il DOI su Zenodo
+
+* Bisogna chiedere a Silvio la tabella CSV da cui ricavare i nomi delle colonne, tabella che andrà compilata con le informazioni sui documenti che abbiamo caricato su Zenodo.
+  Vizioso
 
 * [https://en.wikipedia.org/wiki/Compilers:\_Principles,\_Techniques,\_and\_Tools](https://en.wikipedia.org/wiki/Compilers:_Principles,_Techniques,_and_Tools)
 
