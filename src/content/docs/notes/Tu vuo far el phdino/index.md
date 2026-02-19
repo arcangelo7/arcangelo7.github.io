@@ -5,6 +5,131 @@ editUrl: false
 
 ## La Novitade
 
+### Difesa
+
+[https://defence.arcangelomassari.com](https://defence.arcangelomassari.com)
+
+### time-agnostic-library
+
+<div style="border: 1px solid #d0d7de; border-radius: 8px; padding: 16px; margin: 8px 0; background: #ffffff; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; color: #1f2328;">
+  <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 12px;">
+    <img src="https://avatars.githubusercontent.com/u/42008604?v=4" style="width: 32px; height: 32px; border-radius: 50%;" alt="arcangelo7" />
+    <div>
+      <strong style="display: block; color: #1f2328;">arcangelo7</strong>
+      <span style="font-size: 0.85em; color: #656d76;">Feb 12, 2026</span>
+      <span style="font-size: 0.85em; color: #656d76;"> · </span>
+      <a href="https://github.com/opencitations/time-agnostic-library" style="font-size: 0.85em; color: #0969da; text-decoration: none;">opencitations/time-agnostic-library</a>
+    </div>
+  </div>
+  <div style="margin: 12px 0; color: #1f2328;">
+    <p>refactor!: replace python-dateutil with datetime.fromisoformat</p>
+<p>BREAKING CHANGE: date/time values must now be in ISO 8601 format.
+Non-ISO formats (e.g., &quot;May 21, 2021&quot;) are no longer accepted.</p>
+  </div>
+  <div style="display: flex; justify-content: space-between; align-items: center; font-size: 0.85em;">
+    <span style="font-family: monospace; color: #1a7f37; font-weight: 600;">+8</span>
+    <span style="font-family: monospace; color: #cf222e; font-weight: 600;">-8</span>
+    <a href="https://github.com/opencitations/time-agnostic-library/commit/7f2bf309df4e7508eae613aa5e882a3118e9bb8c" style="color: #0969da; text-decoration: none; font-weight: 500;">7f2bf30</a>
+  </div>
+</div>
+
+<div style="border: 1px solid #d0d7de; border-radius: 8px; padding: 16px; margin: 8px 0; background: #ffffff; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; color: #1f2328;">
+  <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 12px;">
+    <img src="https://avatars.githubusercontent.com/u/42008604?v=4" style="width: 32px; height: 32px; border-radius: 50%;" alt="arcangelo7" />
+    <div>
+      <strong style="display: block; color: #1f2328;">arcangelo7</strong>
+      <span style="font-size: 0.85em; color: #656d76;">Feb 14, 2026</span>
+      <span style="font-size: 0.85em; color: #656d76;"> · </span>
+      <a href="https://github.com/opencitations/heritrace" style="font-size: 0.85em; color: #0969da; text-decoration: none;">opencitations/heritrace</a>
+    </div>
+  </div>
+  <div style="margin: 12px 0; color: #1f2328;">
+    <p>build!: adapt to time-agnostic-library v6.0.0</p>
+<p>The library now returns N3-encoded string tuples instead of RDFLib
+Graph/Dataset objects from get_history() and get_state_at_time().
+Add converter functions at the boundary to restore RDFLib objects
+for downstream code. Remove cache_endpoint and cache_update_endpoint
+parameters dropped from generate_config_file().</p>
+<p>BREAKING CHANGE: requires time-agnostic-library &gt;= 6.0.0</p>
+  </div>
+  <div style="display: flex; justify-content: space-between; align-items: center; font-size: 0.85em;">
+    <span style="font-family: monospace; color: #1a7f37; font-weight: 600;">+94</span>
+    <span style="font-family: monospace; color: #cf222e; font-weight: 600;">-84</span>
+    <a href="https://github.com/opencitations/heritrace/commit/947b6ee4f46219e32dfc2f1102301a85313b3a63" style="color: #0969da; text-decoration: none; font-weight: 500;">947b6ee</a>
+  </div>
+</div>
+
+<div style="border: 1px solid #d0d7de; border-radius: 8px; padding: 16px; margin: 8px 0; background: #ffffff; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; color: #1f2328;">
+  <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 12px;">
+    <img src="https://avatars.githubusercontent.com/u/42008604?v=4" style="width: 32px; height: 32px; border-radius: 50%;" alt="arcangelo7" />
+    <div>
+      <strong style="display: block; color: #1f2328;">arcangelo7</strong>
+      <span style="font-size: 0.85em; color: #656d76;">Feb 18, 2026</span>
+      <span style="font-size: 0.85em; color: #656d76;"> · </span>
+      <a href="https://github.com/opencitations/time-agnostic-library" style="font-size: 0.85em; color: #0969da; text-decoration: none;">opencitations/time-agnostic-library</a>
+    </div>
+  </div>
+  <div style="margin: 12px 0; color: #1f2328;">
+    <p>feat(benchmark): add disk usage tracking and per-query memory measurement</p>
+<p>Replace resource.getrusage with tracemalloc for per-query peak memory
+tracking. Add timestamped run files with query-level resume support.
+Record OCDM, QLever, and OSTRICH disk usage from setup scripts.
+Add storage comparison and memory comparison plots to analysis.</p>
+  </div>
+  <div style="display: flex; justify-content: space-between; align-items: center; font-size: 0.85em;">
+    <span style="font-family: monospace; color: #1a7f37; font-weight: 600;">+280</span>
+    <span style="font-family: monospace; color: #cf222e; font-weight: 600;">-64</span>
+    <a href="https://github.com/opencitations/time-agnostic-library/commit/200ff4f985f49ebb4e187b4f8433e687dd8f6d5f" style="color: #0969da; text-decoration: none; font-weight: 500;">200ff4f</a>
+  </div>
+</div>
+
+### HERITRACE
+
+<div style="border: 1px solid #d0d7de; border-radius: 8px; padding: 16px; margin: 8px 0; background: #ffffff; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; color: #1f2328;">
+  <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 12px;">
+    <img src="https://avatars.githubusercontent.com/u/42008604?v=4" style="width: 32px; height: 32px; border-radius: 50%;" alt="arcangelo7" />
+    <div>
+      <strong style="display: block; color: #1f2328;">arcangelo7</strong>
+      <span style="font-size: 0.85em; color: #656d76;">Feb 14, 2026</span>
+      <span style="font-size: 0.85em; color: #656d76;"> · </span>
+      <a href="https://github.com/opencitations/heritrace" style="font-size: 0.85em; color: #0969da; text-decoration: none;">opencitations/heritrace</a>
+    </div>
+  </div>
+  <div style="margin: 12px 0; color: #1f2328;">
+    <p>feat: replace Flask dev server with Gunicorn</p>
+<p>Use Gunicorn as WSGI server in both development and production.
+Workers and timeout are configurable via GUNICORN_WORKERS and
+GUNICORN_TIMEOUT env vars, defaulting to (2 * CPU + 1) workers.
+Dev environment generates self-signed SSL certs and runs with
+--reload.</p>
+  </div>
+  <div style="display: flex; justify-content: space-between; align-items: center; font-size: 0.85em;">
+    <span style="font-family: monospace; color: #1a7f37; font-weight: 600;">+133</span>
+    <span style="font-family: monospace; color: #cf222e; font-weight: 600;">-16</span>
+    <a href="https://github.com/opencitations/heritrace/commit/626b26634d89538aec89e2f8fb904105ac1d2d68" style="color: #0969da; text-decoration: none; font-weight: 500;">626b266</a>
+  </div>
+</div>
+
+<div style="border: 1px solid #d0d7de; border-radius: 8px; padding: 16px; margin: 8px 0; background: #ffffff; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; color: #1f2328;">
+  <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 12px;">
+    <img src="https://avatars.githubusercontent.com/u/42008604?v=4" style="width: 32px; height: 32px; border-radius: 50%;" alt="arcangelo7" />
+    <div>
+      <strong style="display: block; color: #1f2328;">arcangelo7</strong>
+      <span style="font-size: 0.85em; color: #656d76;">Feb 14, 2026</span>
+      <span style="font-size: 0.85em; color: #656d76;"> · </span>
+      <a href="https://github.com/opencitations/heritrace" style="font-size: 0.85em; color: #0969da; text-decoration: none;">opencitations/heritrace</a>
+    </div>
+  </div>
+  <div style="margin: 12px 0; color: #1f2328;">
+    <p>build: migrate from Poetry to uv</p>
+  </div>
+  <div style="display: flex; justify-content: space-between; align-items: center; font-size: 0.85em;">
+    <span style="font-family: monospace; color: #1a7f37; font-weight: 600;">+1330</span>
+    <span style="font-family: monospace; color: #cf222e; font-weight: 600;">-1687</span>
+    <a href="https://github.com/opencitations/heritrace/commit/eef1f775e6aaa4bc4020c5c6224afa1ba50a41e5" style="color: #0969da; text-decoration: none; font-weight: 500;">eef1f77</a>
+  </div>
+</div>
+
 ### Aldrovandi
 
 <div style="border: 1px solid #d0d7de; border-radius: 8px; padding: 16px; margin: 8px 0; background: #ffffff; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; color: #1f2328;">
@@ -12,21 +137,21 @@ editUrl: false
     <img src="https://avatars.githubusercontent.com/u/42008604?v=4" style="width: 32px; height: 32px; border-radius: 50%;" alt="arcangelo7" />
     <div>
       <strong style="display: block; color: #1f2328;">arcangelo7</strong>
-      <span style="font-size: 0.85em; color: #656d76;">Jan 28, 2026</span>
+      <span style="font-size: 0.85em; color: #656d76;">Feb 14, 2026</span>
       <span style="font-size: 0.85em; color: #656d76;"> · </span>
       <a href="https://github.com/dharc-org/changes-metadata-manager" style="font-size: 0.85em; color: #0969da; text-decoration: none;">dharc-org/changes-metadata-manager</a>
     </div>
   </div>
   <div style="margin: 12px 0; color: #1f2328;">
-    <p>feat(zenodo): add module for preparing and uploading entity packages</p>
-<p>Queries kg.ttl for licensed entity/stage combinations, groups folders
-by entity ID, creates one zip per entity with all stages, and generates
-piccione-compatible YAML configs for Zenodo upload.</p>
+    <p>feat: add SHACL validation of generated metadata against CHAD-AP shapes</p>
+<p>Validate each stage&#39;s metadata against SHACL shapes during folder
+processing and report non-conforming stages at the end. Add pyshacl
+dependency and type annotations to generate_provenance_snapshots.</p>
   </div>
   <div style="display: flex; justify-content: space-between; align-items: center; font-size: 0.85em;">
-    <span style="font-family: monospace; color: #1a7f37; font-weight: 600;">+485</span>
-    <span style="font-family: monospace; color: #cf222e; font-weight: 600;">-0</span>
-    <a href="https://github.com/dharc-org/changes-metadata-manager/commit/995b5e0728ab86f4cd3122779ce2bdc1767f9a1b" style="color: #0969da; text-decoration: none; font-weight: 500;">995b5e0</a>
+    <span style="font-family: monospace; color: #1a7f37; font-weight: 600;">+387</span>
+    <span style="font-family: monospace; color: #cf222e; font-weight: 600;">-4</span>
+    <a href="https://github.com/dharc-org/changes-metadata-manager/commit/a4825b56526a9c247d389e8980c9a71329418452" style="color: #0969da; text-decoration: none; font-weight: 500;">a4825b5</a>
   </div>
 </div>
 
@@ -35,255 +160,234 @@ piccione-compatible YAML configs for Zenodo upload.</p>
     <img src="https://avatars.githubusercontent.com/u/42008604?v=4" style="width: 32px; height: 32px; border-radius: 50%;" alt="arcangelo7" />
     <div>
       <strong style="display: block; color: #1f2328;">arcangelo7</strong>
-      <span style="font-size: 0.85em; color: #656d76;">Jan 28, 2026</span>
+      <span style="font-size: 0.85em; color: #656d76;">Feb 14, 2026</span>
       <span style="font-size: 0.85em; color: #656d76;"> · </span>
       <a href="https://github.com/dharc-org/changes-metadata-manager" style="font-size: 0.85em; color: #0969da; text-decoration: none;">dharc-org/changes-metadata-manager</a>
     </div>
   </div>
   <div style="margin: 12px 0; color: #1f2328;">
-    <p>feat(zenodo): add complete creators list with ORCIDs</p>
-  </div>
-  <div style="display: flex; justify-content: space-between; align-items: center; font-size: 0.85em;">
-    <span style="font-family: monospace; color: #1a7f37; font-weight: 600;">+78</span>
-    <span style="font-family: monospace; color: #cf222e; font-weight: 600;">-6</span>
-    <a href="https://github.com/dharc-org/changes-metadata-manager/commit/b1894ddc346aac54a819fdb1b3a0f668168e9f59" style="color: #0969da; text-decoration: none; font-weight: 500;">b1894dd</a>
-  </div>
-</div>
-
-<div style="border: 1px solid #d0d7de; border-radius: 8px; padding: 16px; margin: 8px 0; background: #ffffff; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; color: #1f2328;">
-  <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 12px;">
-    <img src="https://avatars.githubusercontent.com/u/42008604?v=4" style="width: 32px; height: 32px; border-radius: 50%;" alt="arcangelo7" />
-    <div>
-      <strong style="display: block; color: #1f2328;">arcangelo7</strong>
-      <span style="font-size: 0.85em; color: #656d76;">Jan 28, 2026</span>
-      <span style="font-size: 0.85em; color: #656d76;"> · </span>
-      <a href="https://github.com/dharc-org/changes-metadata-manager" style="font-size: 0.85em; color: #0969da; text-decoration: none;">dharc-org/changes-metadata-manager</a>
-    </div>
-  </div>
-  <div style="margin: 12px 0; color: #1f2328;">
-    <p>feat(zenodo): update keywords</p>
-  </div>
-  <div style="display: flex; justify-content: space-between; align-items: center; font-size: 0.85em;">
-    <span style="font-family: monospace; color: #1a7f37; font-weight: 600;">+8</span>
-    <span style="font-family: monospace; color: #cf222e; font-weight: 600;">-3</span>
-    <a href="https://github.com/dharc-org/changes-metadata-manager/commit/1f23b88f67cb404aa20da3ff92ac5179e7ab404f" style="color: #0969da; text-decoration: none; font-weight: 500;">1f23b88</a>
-  </div>
-</div>
-
-<div style="border: 1px solid #d0d7de; border-radius: 8px; padding: 16px; margin: 8px 0; background: #ffffff; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; color: #1f2328;">
-  <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 12px;">
-    <img src="https://avatars.githubusercontent.com/u/42008604?v=4" style="width: 32px; height: 32px; border-radius: 50%;" alt="arcangelo7" />
-    <div>
-      <strong style="display: block; color: #1f2328;">arcangelo7</strong>
-      <span style="font-size: 0.85em; color: #656d76;">Jan 29, 2026</span>
-      <span style="font-size: 0.85em; color: #656d76;"> · </span>
-      <a href="https://github.com/opencitations/piccione" style="font-size: 0.85em; color: #0969da; text-decoration: none;">opencitations/piccione</a>
-    </div>
-  </div>
-  <div style="margin: 12px 0; color: #1f2328;">
-    <p>feat(zenodo): add support for all Zenodo API metadata fields [release]</p>
-  </div>
-  <div style="display: flex; justify-content: space-between; align-items: center; font-size: 0.85em;">
-    <span style="font-family: monospace; color: #1a7f37; font-weight: 600;">+211</span>
-    <span style="font-family: monospace; color: #cf222e; font-weight: 600;">-24</span>
-    <a href="https://github.com/opencitations/piccione/commit/220679f14a6258ba23592b540a6cda2f7217e020" style="color: #0969da; text-decoration: none; font-weight: 500;">220679f</a>
-  </div>
-</div>
-
-<div style="border: 1px solid #d0d7de; border-radius: 8px; padding: 16px; margin: 8px 0; background: #ffffff; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; color: #1f2328;">
-  <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 12px;">
-    <img src="https://avatars.githubusercontent.com/u/42008604?v=4" style="width: 32px; height: 32px; border-radius: 50%;" alt="arcangelo7" />
-    <div>
-      <strong style="display: block; color: #1f2328;">arcangelo7</strong>
-      <span style="font-size: 0.85em; color: #656d76;">Jan 29, 2026</span>
-      <span style="font-size: 0.85em; color: #656d76;"> · </span>
-      <a href="https://github.com/dharc-org/changes-metadata-manager" style="font-size: 0.85em; color: #0969da; text-decoration: none;">dharc-org/changes-metadata-manager</a>
-    </div>
-  </div>
-  <div style="margin: 12px 0; color: #1f2328;">
-    <p>refactor(zenodo): split uploads into separate records per stage</p>
-<p>Each processing stage (raw, rawp, dcho, dchoo) now becomes a separate
-Zenodo record instead of bundling all stages into a single entity record.</p>
-  </div>
-  <div style="display: flex; justify-content: space-between; align-items: center; font-size: 0.85em;">
-    <span style="font-family: monospace; color: #1a7f37; font-weight: 600;">+83</span>
-    <span style="font-family: monospace; color: #cf222e; font-weight: 600;">-52</span>
-    <a href="https://github.com/dharc-org/changes-metadata-manager/commit/25e440c116aadc5339e4200d7ba56e14895a3a87" style="color: #0969da; text-decoration: none; font-weight: 500;">25e440c</a>
-  </div>
-</div>
-
-<div style="border: 1px solid #d0d7de; border-radius: 8px; padding: 16px; margin: 8px 0; background: #ffffff; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; color: #1f2328;">
-  <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 12px;">
-    <img src="https://avatars.githubusercontent.com/u/42008604?v=4" style="width: 32px; height: 32px; border-radius: 50%;" alt="arcangelo7" />
-    <div>
-      <strong style="display: block; color: #1f2328;">arcangelo7</strong>
-      <span style="font-size: 0.85em; color: #656d76;">Jan 29, 2026</span>
-      <span style="font-size: 0.85em; color: #656d76;"> · </span>
-      <a href="https://github.com/dharc-org/changes-metadata-manager" style="font-size: 0.85em; color: #0969da; text-decoration: none;">dharc-org/changes-metadata-manager</a>
-    </div>
-  </div>
-  <div style="margin: 12px 0; color: #1f2328;">
-    <p>feat(zenodo): extract authors dynamically from RDF knowledge graph</p>
-<p>Instead of assigning all 27 creators to every Zenodo record, authors are
-now extracted from the RDF graph via crm:P14_carried_out_by for each
-entity/stage combination. A lookup table maps RDF names to Zenodo
-metadata (affiliation, ORCID).</p>
-  </div>
-  <div style="display: flex; justify-content: space-between; align-items: center; font-size: 0.85em;">
-    <span style="font-family: monospace; color: #1a7f37; font-weight: 600;">+262</span>
-    <span style="font-family: monospace; color: #cf222e; font-weight: 600;">-87</span>
-    <a href="https://github.com/dharc-org/changes-metadata-manager/commit/df54bae6f4efe646d2e02276ef24f3ef359bb984" style="color: #0969da; text-decoration: none; font-weight: 500;">df54bae</a>
-  </div>
-</div>
-
-<div style="border: 1px solid #d0d7de; border-radius: 8px; padding: 16px; margin: 8px 0; background: #ffffff; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; color: #1f2328;">
-  <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 12px;">
-    <img src="https://avatars.githubusercontent.com/u/42008604?v=4" style="width: 32px; height: 32px; border-radius: 50%;" alt="arcangelo7" />
-    <div>
-      <strong style="display: block; color: #1f2328;">arcangelo7</strong>
-      <span style="font-size: 0.85em; color: #656d76;">Jan 29, 2026</span>
-      <span style="font-size: 0.85em; color: #656d76;"> · </span>
-      <a href="https://github.com/dharc-org/changes-metadata-manager" style="font-size: 0.85em; color: #0969da; text-decoration: none;">dharc-org/changes-metadata-manager</a>
-    </div>
-  </div>
-  <div style="margin: 12px 0; color: #1f2328;">
-    <p>refactor: convert output format from JSON-LD to Turtle/TriG with CC0 license via metadata.add((URIRef(&quot;&quot;), DCTERMS.license, CC0))</p>
-  </div>
-  <div style="display: flex; justify-content: space-between; align-items: center; font-size: 0.85em;">
-    <span style="font-family: monospace; color: #1a7f37; font-weight: 600;">+24</span>
-    <span style="font-family: monospace; color: #cf222e; font-weight: 600;">-17</span>
-    <a href="https://github.com/dharc-org/changes-metadata-manager/commit/e22fc99bb15d0c6d18e89bfac8625eedcb67f473" style="color: #0969da; text-decoration: none; font-weight: 500;">e22fc99</a>
-  </div>
-</div>
-
-<div style="border: 1px solid #d0d7de; border-radius: 8px; padding: 16px; margin: 8px 0; background: #ffffff; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; color: #1f2328;">
-  <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 12px;">
-    <img src="https://avatars.githubusercontent.com/u/42008604?v=4" style="width: 32px; height: 32px; border-radius: 50%;" alt="arcangelo7" />
-    <div>
-      <strong style="display: block; color: #1f2328;">arcangelo7</strong>
-      <span style="font-size: 0.85em; color: #656d76;">Jan 29, 2026</span>
-      <span style="font-size: 0.85em; color: #656d76;"> · </span>
-      <a href="https://github.com/dharc-org/changes-metadata-manager" style="font-size: 0.85em; color: #0969da; text-decoration: none;">dharc-org/changes-metadata-manager</a>
-    </div>
-  </div>
-  <div style="margin: 12px 0; color: #1f2328;">
-    <p>feat(zenodo): add comprehensive metadata</p>
-<p>Add dynamic license extraction from RDF, publication date generation,
-and enhanced descriptions. Include static metadata fields: communities,
-related works, locations, notes, and method.</p>
-  </div>
-  <div style="display: flex; justify-content: space-between; align-items: center; font-size: 0.85em;">
-    <span style="font-family: monospace; color: #1a7f37; font-weight: 600;">+201</span>
-    <span style="font-family: monospace; color: #cf222e; font-weight: 600;">-5</span>
-    <a href="https://github.com/dharc-org/changes-metadata-manager/commit/3be24a50f60fee98a40fe682b08625c876df4a3c" style="color: #0969da; text-decoration: none; font-weight: 500;">3be24a5</a>
-  </div>
-</div>
-
-<div style="border: 1px solid #d0d7de; border-radius: 8px; padding: 16px; margin: 8px 0; background: #ffffff; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; color: #1f2328;">
-  <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 12px;">
-    <img src="https://avatars.githubusercontent.com/u/42008604?v=4" style="width: 32px; height: 32px; border-radius: 50%;" alt="arcangelo7" />
-    <div>
-      <strong style="display: block; color: #1f2328;">arcangelo7</strong>
-      <span style="font-size: 0.85em; color: #656d76;">Jan 29, 2026</span>
-      <span style="font-size: 0.85em; color: #656d76;"> · </span>
-      <a href="https://github.com/dharc-org/changes-metadata-manager" style="font-size: 0.85em; color: #0969da; text-decoration: none;">dharc-org/changes-metadata-manager</a>
-    </div>
-  </div>
-  <div style="margin: 12px 0; color: #1f2328;">
-    <p>feat(zenodo): add entity URI as alternate identifier</p>
-<p>Add the entity URI (e.g., <a href="https://w3id.org/changes/4/aldrovandi/itm/27/ob00/1">https://w3id.org/changes/4/aldrovandi/itm/27/ob00/1</a>)
-to Zenodo uploads via the related_identifiers field with relation
-isAlternateIdentifier.</p>
-  </div>
-  <div style="display: flex; justify-content: space-between; align-items: center; font-size: 0.85em;">
-    <span style="font-family: monospace; color: #1a7f37; font-weight: 600;">+78</span>
-    <span style="font-family: monospace; color: #cf222e; font-weight: 600;">-2</span>
-    <a href="https://github.com/dharc-org/changes-metadata-manager/commit/8ab96324c6ed7e15572a4a58034033e22ef02e09" style="color: #0969da; text-decoration: none; font-weight: 500;">8ab9632</a>
-  </div>
-</div>
-
-Ho scoperto il software usato da Zenodo: [https://inveniordm.docs.cern.ch/](https://inveniordm.docs.cern.ch/)
-Infatti, se si usano le API legacy di Zenodo non si possono specificare più licenze, con quelle nuove di InvenioRDM invece sì.
-
-Con le nuove API i tempi di caricamento sono anche infinitamente più rapidi.
-
-<div style="border: 1px solid #d0d7de; border-radius: 8px; padding: 16px; margin: 8px 0; background: #ffffff; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; color: #1f2328;">
-  <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 12px;">
-    <img src="https://avatars.githubusercontent.com/u/42008604?v=4" style="width: 32px; height: 32px; border-radius: 50%;" alt="arcangelo7" />
-    <div>
-      <strong style="display: block; color: #1f2328;">arcangelo7</strong>
-      <span style="font-size: 0.85em; color: #656d76;">Jan 30, 2026</span>
-      <span style="font-size: 0.85em; color: #656d76;"> · </span>
-      <a href="https://github.com/dharc-org/changes-metadata-manager" style="font-size: 0.85em; color: #0969da; text-decoration: none;">dharc-org/changes-metadata-manager</a>
-    </div>
-  </div>
-  <div style="margin: 12px 0; color: #1f2328;">
-    <p>feat(zenodo): add support for multiple licenses with descriptive titles</p>
-<p>Use InvenioRDM rights array format instead of legacy license field.
-Each license now has a custom title indicating whether it applies to
-metadata or content, making it immediately visible in the Zenodo UI.</p>
+    <p>feat(zenodo): add CC0 Italian cultural heritage law disclaimer</p>
+<p>Append a disclaimer about Italian cultural heritage regulations
+to Zenodo descriptions for CC0-licensed content. Fix license
+identifier assertion and add not-None guards in zip tests.</p>
   </div>
   <div style="display: flex; justify-content: space-between; align-items: center; font-size: 0.85em;">
     <span style="font-family: monospace; color: #1a7f37; font-weight: 600;">+43</span>
-    <span style="font-family: monospace; color: #cf222e; font-weight: 600;">-5</span>
-    <a href="https://github.com/dharc-org/changes-metadata-manager/commit/b73271640832d088415c3441a6dde4a9929d51ed" style="color: #0969da; text-decoration: none; font-weight: 500;">b732716</a>
+    <span style="font-family: monospace; color: #cf222e; font-weight: 600;">-4</span>
+    <a href="https://github.com/dharc-org/changes-metadata-manager/commit/dd11c0c25a87423f38b22dd8d4e547bf4535edf1" style="color: #0969da; text-decoration: none; font-weight: 500;">dd11c0c</a>
   </div>
 </div>
 
-#### La risultatazione
+<div style="border: 1px solid #d0d7de; border-radius: 8px; padding: 16px; margin: 8px 0; background: #ffffff; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; color: #1f2328;">
+  <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 12px;">
+    <img src="https://avatars.githubusercontent.com/u/42008604?v=4" style="width: 32px; height: 32px; border-radius: 50%;" alt="arcangelo7" />
+    <div>
+      <strong style="display: block; color: #1f2328;">arcangelo7</strong>
+      <span style="font-size: 0.85em; color: #656d76;">Feb 18, 2026</span>
+      <span style="font-size: 0.85em; color: #656d76;"> · </span>
+      <a href="https://github.com/dharc-org/changes-metadata-manager" style="font-size: 0.85em; color: #0969da; text-decoration: none;">dharc-org/changes-metadata-manager</a>
+    </div>
+  </div>
+  <div style="margin: 12px 0; color: #1f2328;">
+    <p>feat(zenodo): add keeper institution and location to record description</p>
+<p>Extract curation activity data from the knowledge graph following
+the CHAD-AP ontology pattern (crm:E7_Activity with aat:300054277)
+to include the conserving institution and its location in each
+Zenodo record description.</p>
+  </div>
+  <div style="display: flex; justify-content: space-between; align-items: center; font-size: 0.85em;">
+    <span style="font-family: monospace; color: #1a7f37; font-weight: 600;">+102</span>
+    <span style="font-family: monospace; color: #cf222e; font-weight: 600;">-4</span>
+    <a href="https://github.com/dharc-org/changes-metadata-manager/commit/d4fa80a8d3bfd4068fcacc23667750e002417c7f" style="color: #0969da; text-decoration: none; font-weight: 500;">d4fa80a</a>
+  </div>
+</div>
 
-* [https://sandbox.zenodo.org/records/432369](https://sandbox.zenodo.org/records/432369)
-* [https://sandbox.zenodo.org/records/432371](https://sandbox.zenodo.org/records/432371)
-* [https://sandbox.zenodo.org/records/432362](https://sandbox.zenodo.org/records/432362)
-* [https://sandbox.zenodo.org/records/432367](https://sandbox.zenodo.org/records/432367)
+<div style="border: 1px solid #d0d7de; border-radius: 8px; padding: 16px; margin: 8px 0; background: #ffffff; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; color: #1f2328;">
+  <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 12px;">
+    <img src="https://avatars.githubusercontent.com/u/42008604?v=4" style="width: 32px; height: 32px; border-radius: 50%;" alt="arcangelo7" />
+    <div>
+      <strong style="display: block; color: #1f2328;">arcangelo7</strong>
+      <span style="font-size: 0.85em; color: #656d76;">Feb 18, 2026</span>
+      <span style="font-size: 0.85em; color: #656d76;"> · </span>
+      <a href="https://github.com/dharc-org/changes-metadata-manager" style="font-size: 0.85em; color: #0969da; text-decoration: none;">dharc-org/changes-metadata-manager</a>
+    </div>
+  </div>
+  <div style="margin: 12px 0; color: #1f2328;">
+    <p>feat(zenodo): add file scope description to license rights entries</p>
+<p>Metadata license (CC0) now explicitly lists meta.ttl and prov.trig.
+Content license describes coverage as all data files except those two.</p>
+  </div>
+  <div style="display: flex; justify-content: space-between; align-items: center; font-size: 0.85em;">
+    <span style="font-family: monospace; color: #1a7f37; font-weight: 600;">+3</span>
+    <span style="font-family: monospace; color: #cf222e; font-weight: 600;">-0</span>
+    <a href="https://github.com/dharc-org/changes-metadata-manager/commit/d6af8c34148845f3e5c515ac56b7a2a0c3a3aa17" style="color: #0969da; text-decoration: none; font-weight: 500;">d6af8c3</a>
+  </div>
+</div>
 
-### Mobility and migration broadly understood
+Zenodo non usa CREDIT, usa [https://datacite-metadata-schema.readthedocs.io/en/4.6/appendices/appendix-1/contributorType/](https://datacite-metadata-schema.readthedocs.io/en/4.6/appendices/appendix-1/contributorType/)
 
-#### From Maya blue to digital permanence: a 500-year migration toward immortality
+<div style="border: 1px solid #d0d7de; border-radius: 8px; padding: 16px; margin: 8px 0; background: #ffffff; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; color: #1f2328;">
+  <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 12px;">
+    <img src="https://avatars.githubusercontent.com/u/42008604?v=4" style="width: 32px; height: 32px; border-radius: 50%;" alt="arcangelo7" />
+    <div>
+      <strong style="display: block; color: #1f2328;">arcangelo7</strong>
+      <span style="font-size: 0.85em; color: #656d76;">Feb 18, 2026</span>
+      <span style="font-size: 0.85em; color: #656d76;"> · </span>
+      <a href="https://github.com/dharc-org/changes-metadata-manager" style="font-size: 0.85em; color: #0969da; text-decoration: none;">dharc-org/changes-metadata-manager</a>
+    </div>
+  </div>
+  <div style="margin: 12px 0; color: #1f2328;">
+    <p>feat(zenodo): convert config format to InvenioRDM API schema</p>
+<p>Restructure creators with person_or_org/role/affiliations format,
+split family_name/given_name fields, add datacollector/datacurator
+roles, convert related_identifiers and locations to InvenioRDM
+nested format, and add optional SHACL validation skip flag.</p>
+  </div>
+  <div style="display: flex; justify-content: space-between; align-items: center; font-size: 0.85em;">
+    <span style="font-family: monospace; color: #1a7f37; font-weight: 600;">+504</span>
+    <span style="font-family: monospace; color: #cf222e; font-weight: 600;">-220</span>
+    <a href="https://github.com/dharc-org/changes-metadata-manager/commit/a79556897ceb9e845d070929aa6eae406d483aa5" style="color: #0969da; text-decoration: none; font-weight: 500;">a795568</a>
+  </div>
+</div>
 
-The Codex Cospi, one of only fourteen surviving pre-Columbian manuscripts, arrived in Bologna in 1533 as a gift from the Dominican friar Domingo de Betanzos to Pope Clement VII. In the five centuries since, it has traveled through private collections, public museums, and academic institutions, each transfer transforming its meaning: from sacred divination manual to exotic curiosity, from museum piece to subject of scientific inquiry.
+[https://sandbox.zenodo.org/records/442870](https://sandbox.zenodo.org/records/442870)
 
-This contribution traces the codex's migrations as a case study in knowledge preservation across time. The narrative begins with Maya Blue, the synthetic pigment that colors its pages - a nanocomposite material invented a thousand years ago, whose production technique was lost after the Spanish conquest but whose brilliance endures. Maya Blue serves as a metaphor for the manuscript itself: knowledge that survives even when its context is forgotten.
+<div style="border: 1px solid #d0d7de; border-radius: 8px; padding: 16px; margin: 8px 0; background: #ffffff; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; color: #1f2328;">
+  <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 12px;">
+    <img src="https://avatars.githubusercontent.com/u/42008604?v=4" style="width: 32px; height: 32px; border-radius: 50%;" alt="arcangelo7" />
+    <div>
+      <strong style="display: block; color: #1f2328;">arcangelo7</strong>
+      <span style="font-size: 0.85em; color: #656d76;">Feb 18, 2026</span>
+      <span style="font-size: 0.85em; color: #656d76;"> · </span>
+      <a href="https://github.com/dharc-org/changes-metadata-manager" style="font-size: 0.85em; color: #0969da; text-decoration: none;">dharc-org/changes-metadata-manager</a>
+    </div>
+  </div>
+  <div style="margin: 12px 0; color: #1f2328;">
+    <p>feat(zenodo): generate entity-to-DOI association table after upload</p>
+  </div>
+  <div style="display: flex; justify-content: space-between; align-items: center; font-size: 0.85em;">
+    <span style="font-family: monospace; color: #1a7f37; font-weight: 600;">+110</span>
+    <span style="font-family: monospace; color: #cf222e; font-weight: 600;">-3</span>
+    <a href="https://github.com/dharc-org/changes-metadata-manager/commit/c25bd49a5e2e18765588061ca8b950dedfe4b1fb" style="color: #0969da; text-decoration: none; font-weight: 500;">c25bd49</a>
+  </div>
+</div>
 
-The presentation examines three phases of the codex's migration: its physical migration from Mesoamerica to Europe; its institutional migration through 132 years of undocumented ownership followed by centuries of cataloguing and scientific analysis; and its current digital migration within the CHANGES project at the University of Bologna. This final phase raises a question: how do we ensure that digital twins carry not just images, but the knowledge needed to interpret them?
+### Computational management of data
 
-Drawing on the FAIR principles and semantic web technologies, the contribution argues that contemporary metadata practices continue a tradition of documentation stretching back to Lorenzo Legati's 1677 description in the *Museo Cospiano*. The responsibility remains the same: to create records that might outlast us.
+<div style="border: 1px solid #d0d7de; border-radius: 8px; padding: 16px; margin: 8px 0; background: #ffffff; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; color: #1f2328;">
+  <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 12px;">
+    <img src="https://avatars.githubusercontent.com/u/42008604?v=4" style="width: 32px; height: 32px; border-radius: 50%;" alt="arcangelo7" />
+    <div>
+      <strong style="display: block; color: #1f2328;">arcangelo7</strong>
+      <span style="font-size: 0.85em; color: #656d76;">Feb 17, 2026</span>
+      <span style="font-size: 0.85em; color: #656d76;"> · </span>
+      <a href="https://github.com/thinkcompute/thinkcompute.github.io" style="font-size: 0.85em; color: #0969da; text-decoration: none;">thinkcompute/thinkcompute.github.io</a>
+    </div>
+  </div>
+  <div style="margin: 12px 0; color: #1f2328;">
+    <p>refactor: move D&amp;C and file handling labs from part 3 to new part 5</p>
+<p>Move divide-and-conquer exercises from lab-06 to lab-07 and file
+handling content from lab-07 to new lab-08, creating a dedicated
+Part 5 for these topics. Remove CSV and JSON sections from the
+file handling lab.</p>
+  </div>
+  <div style="display: flex; justify-content: space-between; align-items: center; font-size: 0.85em;">
+    <span style="font-family: monospace; color: #1a7f37; font-weight: 600;">+429</span>
+    <span style="font-family: monospace; color: #cf222e; font-weight: 600;">-890</span>
+    <a href="https://github.com/thinkcompute/thinkcompute.github.io/commit/5fe5b74ac5877991dd600927d9e21c00ff82893f" style="color: #0969da; text-decoration: none; font-weight: 500;">5fe5b74</a>
+  </div>
+</div>
+
+<div style="border: 1px solid #d0d7de; border-radius: 8px; padding: 16px; margin: 8px 0; background: #ffffff; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; color: #1f2328;">
+  <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 12px;">
+    <img src="https://avatars.githubusercontent.com/u/42008604?v=4" style="width: 32px; height: 32px; border-radius: 50%;" alt="arcangelo7" />
+    <div>
+      <strong style="display: block; color: #1f2328;">arcangelo7</strong>
+      <span style="font-size: 0.85em; color: #656d76;">Feb 18, 2026</span>
+      <span style="font-size: 0.85em; color: #656d76;"> · </span>
+      <a href="https://github.com/thinkcompute/thinkcompute.github.io" style="font-size: 0.85em; color: #0969da; text-decoration: none;">thinkcompute/thinkcompute.github.io</a>
+    </div>
+  </div>
+  <div style="margin: 12px 0; color: #1f2328;">
+    <p>feat: add part 7 laboratories on pandas and Python classes</p>
+<p>Add lab-09 (pandas exercises with Caravaggio dataset) and lab-10
+(Python classes for Baroque painters). Include CSV dataset files
+for the pandas lab. Update _toc.yml to include new Part 7 and
+renumber Databases to Part 8. Add clean step to build scripts.</p>
+  </div>
+  <div style="display: flex; justify-content: space-between; align-items: center; font-size: 0.85em;">
+    <span style="font-family: monospace; color: #1a7f37; font-weight: 600;">+532</span>
+    <span style="font-family: monospace; color: #cf222e; font-weight: 600;">-2</span>
+    <a href="https://github.com/thinkcompute/thinkcompute.github.io/commit/cbcf3e6193ee581e9c3e34ff0776a544d57e71ff" style="color: #0969da; text-decoration: none; font-weight: 500;">cbcf3e6</a>
+  </div>
+</div>
+
+[https://thinkcompute.github.io/](https://thinkcompute.github.io/)
+
+### oc-meta
+
+<div style="border: 1px solid #d0d7de; border-radius: 8px; padding: 16px; margin: 8px 0; background: #ffffff; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; color: #1f2328;">
+  <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 12px;">
+
+```
+<div>
+  <strong style="display: block; color: #1f2328;">arcangelo7</strong>
+  <span style="font-size: 0.85em; color: #656d76;">Feb 18, 2026</span>
+  <span style="font-size: 0.85em; color: #656d76;"> · </span>
+  <a href="https://github.com/opencitations/oc_meta" style="font-size: 0.85em; color: #0969da; text-decoration: none;">opencitations/oc_meta</a>
+</div>
+```
+
+  </div>
+  <div style="margin: 12px 0; color: #1f2328;">
+    <p>build: migrate from Poetry to UV</p>
+  </div>
+  <div style="display: flex; justify-content: space-between; align-items: center; font-size: 0.85em;">
+    <span style="font-family: monospace; color: #1a7f37; font-weight: 600;">+2908</span>
+    <span style="font-family: monospace; color: #cf222e; font-weight: 600;">-3816</span>
+    <a href="https://github.com/opencitations/oc_meta/commit/e8e4c4a40ef11974ee6c024c3c5b01cd38ea2179" style="color: #0969da; text-decoration: none; font-weight: 500;">e8e4c4a</a>
+  </div>
+</div>
+
+<div style="border: 1px solid #d0d7de; border-radius: 8px; padding: 16px; margin: 8px 0; background: #ffffff; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; color: #1f2328;">
+  <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 12px;">
+
+```
+<div>
+  <strong style="display: block; color: #1f2328;">arcangelo7</strong>
+  <span style="font-size: 0.85em; color: #656d76;">Feb 18, 2026</span>
+  <span style="font-size: 0.85em; color: #656d76;"> · </span>
+  <a href="https://github.com/opencitations/oc_meta" style="font-size: 0.85em; color: #0969da; text-decoration: none;">opencitations/oc_meta</a>
+</div>
+```
+
+  </div>
+  <div style="margin: 12px 0; color: #1f2328;">
+    <p>feat(finder): add merged entities reconstruction from provenance</p>
+<p>Add tool to scan provenance files and reconstruct merge chains.
+The script identifies entities that were merged by detecting multiple
+wasDerivedFrom references in provenance snapshots, then follows
+the chain to find the final surviving entity.</p>
+<p>Usage: python -m oc_meta.run.find.merged_entities -c <config> -o &lt;output.csv&gt; --entity-type br</p>
+  </div>
+  <div style="display: flex; justify-content: space-between; align-items: center; font-size: 0.85em;">
+    <span style="font-family: monospace; color: #1a7f37; font-weight: 600;">+167</span>
+    <span style="font-family: monospace; color: #cf222e; font-weight: 600;">-0</span>
+    <a href="https://github.com/opencitations/oc_meta/commit/1163da8cacbb5cced8c08c4f4e0425a45e43a137" style="color: #0969da; text-decoration: none; font-weight: 500;">1163da8</a>
+  </div>
+</div>
 
 ### Domande
 
-#### Aldrovandi
-
-* Non trovo il progetto CHANGES su OpenAIRE, che è la fonte usata da Zenodo per i progetti. Serve per il campo grants.
-* Abbiamo detti che
-  ```python
-    STAGE_STEPS = {
-        "raw": ["00"],
-        "rawp": ["00", "01"],
-        "dcho": ["00", "01", "02"],
-        "dchoo": ["00", "01", "02", "03", "04", "05", "06"],
-    }    
-  ```
-  Questo fa sì che gli autori delle fasi 5 e 6, ovvero metadatazione e pubblicazione, finiscano su Zenodo come autori del dchoo, il che non è vero. Li tolgo?
-* Vanno bene degli zip normali o uso livelli di compressione più aggressivi? Tipo 7z a livello 9.
-* va bene Zenodo come publisher?
-
-#### Tesi
-
-* Nella mia tesi dico che la FICLIT DL usa Omeka S. Questa cosa è ancora vera?7
+* La data del libro di Computational Management of Data va aggiornata tutti gli anni al nuovo anno? Perché vedo che c'è ancora il 2025 per la citazione e il 2023 nel footer. Dovremmo tenere aggiornate queste date sempre all'anno in corso o comunque alla data di ultimo aggiornamento?
 
 ## Memo
 
 Aldrovandi
 
-* Bisogna caricare su Zenodo soltanto gli oggetti a cui è associata una licenza, dove per oggetti si intende l'entità di ogni sottotipologia RAW, RAWP, DCHO e DCHOO.
-
-* La provenance andrà salvata su un unico file Turtle da inviare a Ivan.
-
-* Bisogna inserire la licenza CC- all'interno di ogni file metadatale, ovvero sia in meta.ttl che in prov.ttl
-
-* Bisogna salvare una tabella di associazione tra ciascuna entità e il DOI su Zenodo
-
 * Bisogna chiedere a Silvio la tabella CSV da cui ricavare i nomi delle colonne, tabella che andrà compilata con le informazioni sui documenti che abbiamo caricato su Zenodo.
+
+* Scrivere a Ilaria Manzini per inserire Changes su OpenAIRE.
   Vizioso
 
 * [https://en.wikipedia.org/wiki/Compilers:\_Principles,\_Techniques,\_and\_Tools](https://en.wikipedia.org/wiki/Compilers:_Principles,_Techniques,_and_Tools)
@@ -300,17 +404,14 @@ Aldrovandi
   * Bisogna produrre la tabella che associa temp a OMID per produrre le citazioni.
 
 * OpenCitations
-  * Rifare dump (CrossRef e DataCite)
-  * Risolvere la questione ORCID
   * Rilanciare processo eliminazione duplicati
+  * trovare tutti quelli che ci usano
 
 * "reference": { "@id": "frbr:part", "@type": "@vocab" } → bibreference
 
 * "crossref": { "@id": "biro:references", "@type": "@vocab"} → reference
 
 * "crossref": "datacite:crossref"
-
-* Ripubblicare dbpedia agnostica su Zenodo e si può usare time-agnostic-library su db pedia agnostica
 
 * oc\_ocdm
 
