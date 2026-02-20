@@ -326,56 +326,14 @@ renumber Databases to Part 8. Add clean step to build scripts.</p>
 
 ### oc-meta
 
-<div style="border: 1px solid #d0d7de; border-radius: 8px; padding: 16px; margin: 8px 0; background: #ffffff; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; color: #1f2328;">
-  <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 12px;">
+<div style="border: 1px solid #d0d7de; border-radius: 8px; padding: 16px; margin: 8px 0; background: #ffffff; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; color: #1f2328;"><div style="display: flex; align-items: center; gap: 12px; margin-bottom: 12px;"><div><strong style="display: block; color: #1f2328;">arcangelo7</strong><span style="font-size: 0.85em; color: #656d76;">Feb 18, 2026</span><span style="font-size: 0.85em; color: #656d76;"> &middot; </span><a href="https://github.com/opencitations/oc_meta" style="font-size: 0.85em; color: #0969da; text-decoration: none;">opencitations/oc_meta</a></div></div><div style="margin: 12px 0; color: #1f2328;"><p>build: migrate from Poetry to UV</p></div><div style="display: flex; justify-content: space-between; align-items: center; font-size: 0.85em;"><span style="font-family: monospace; color: #1a7f37; font-weight: 600;">+2908</span><span style="font-family: monospace; color: #cf222e; font-weight: 600;">-3816</span><a href="https://github.com/opencitations/oc_meta/commit/e8e4c4a40ef11974ee6c024c3c5b01cd38ea2179" style="color: #0969da; text-decoration: none; font-weight: 500;">e8e4c4a</a></div></div>
 
-```
-<div>
-  <strong style="display: block; color: #1f2328;">arcangelo7</strong>
-  <span style="font-size: 0.85em; color: #656d76;">Feb 18, 2026</span>
-  <span style="font-size: 0.85em; color: #656d76;"> · </span>
-  <a href="https://github.com/opencitations/oc_meta" style="font-size: 0.85em; color: #0969da; text-decoration: none;">opencitations/oc_meta</a>
-</div>
-```
-
-  </div>
-  <div style="margin: 12px 0; color: #1f2328;">
-    <p>build: migrate from Poetry to UV</p>
-  </div>
-  <div style="display: flex; justify-content: space-between; align-items: center; font-size: 0.85em;">
-    <span style="font-family: monospace; color: #1a7f37; font-weight: 600;">+2908</span>
-    <span style="font-family: monospace; color: #cf222e; font-weight: 600;">-3816</span>
-    <a href="https://github.com/opencitations/oc_meta/commit/e8e4c4a40ef11974ee6c024c3c5b01cd38ea2179" style="color: #0969da; text-decoration: none; font-weight: 500;">e8e4c4a</a>
-  </div>
-</div>
-
-<div style="border: 1px solid #d0d7de; border-radius: 8px; padding: 16px; margin: 8px 0; background: #ffffff; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; color: #1f2328;">
-  <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 12px;">
-
-```
-<div>
-  <strong style="display: block; color: #1f2328;">arcangelo7</strong>
-  <span style="font-size: 0.85em; color: #656d76;">Feb 18, 2026</span>
-  <span style="font-size: 0.85em; color: #656d76;"> · </span>
-  <a href="https://github.com/opencitations/oc_meta" style="font-size: 0.85em; color: #0969da; text-decoration: none;">opencitations/oc_meta</a>
-</div>
-```
-
-  </div>
-  <div style="margin: 12px 0; color: #1f2328;">
-    <p>feat(finder): add merged entities reconstruction from provenance</p>
+<div style="border: 1px solid #d0d7de; border-radius: 8px; padding: 16px; margin: 8px 0; background: #ffffff; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; color: #1f2328;"><div style="display: flex; align-items: center; gap: 12px; margin-bottom: 12px;"><div><strong style="display: block; color: #1f2328;">arcangelo7</strong><span style="font-size: 0.85em; color: #656d76;">Feb 18, 2026</span><span style="font-size: 0.85em; color: #656d76;"> &middot; </span><a href="https://github.com/opencitations/oc_meta" style="font-size: 0.85em; color: #0969da; text-decoration: none;">opencitations/oc_meta</a></div></div><div style="margin: 12px 0; color: #1f2328;"><p>feat(finder): add merged entities reconstruction from provenance</p>
 <p>Add tool to scan provenance files and reconstruct merge chains.
 The script identifies entities that were merged by detecting multiple
 wasDerivedFrom references in provenance snapshots, then follows
 the chain to find the final surviving entity.</p>
-<p>Usage: python -m oc_meta.run.find.merged_entities -c <config> -o &lt;output.csv&gt; --entity-type br</p>
-  </div>
-  <div style="display: flex; justify-content: space-between; align-items: center; font-size: 0.85em;">
-    <span style="font-family: monospace; color: #1a7f37; font-weight: 600;">+167</span>
-    <span style="font-family: monospace; color: #cf222e; font-weight: 600;">-0</span>
-    <a href="https://github.com/opencitations/oc_meta/commit/1163da8cacbb5cced8c08c4f4e0425a45e43a137" style="color: #0969da; text-decoration: none; font-weight: 500;">1163da8</a>
-  </div>
-</div>
+<p>Usage: python -m oc_meta.run.find.merged_entities -c <config> -o &lt;output.csv&gt; --entity-type br</p></div><div style="display: flex; justify-content: space-between; align-items: center; font-size: 0.85em;"><span style="font-family: monospace; color: #1a7f37; font-weight: 600;">+167</span><span style="font-family: monospace; color: #cf222e; font-weight: 600;">-0</span><a href="https://github.com/opencitations/oc_meta/commit/1163da8cacbb5cced8c08c4f4e0425a45e43a137" style="color: #0969da; text-decoration: none; font-weight: 500;">1163da8</a></div></div>
 
 ### Domande
 
