@@ -380,6 +380,7 @@ the chain to find the final surviving entity.</p>
 ### Domande
 
 * La data del libro di Computational Management of Data va aggiornata tutti gli anni al nuovo anno? Perché vedo che c'è ancora il 2025 per la citazione e il 2023 nel footer. Dovremmo tenere aggiornate queste date sempre all'anno in corso o comunque alla data di ultimo aggiornamento?
+* comp-think
 
 ## Memo
 
