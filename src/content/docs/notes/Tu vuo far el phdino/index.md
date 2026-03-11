@@ -5,143 +5,266 @@ editUrl: false
 
 ## La Novitade
 
-### OC Meta
+### Meta
 
-* Numero di quadruple nella provenance corretta: 8,451,129,250. Numero di quadruple nella provenance originale: 7,976,167,041. Buon segno. Paradossalmente, però, la provenanza nuova pesa meno, forse per una differenza nell'algoritmo di compressione o per assenza di spazi o per informazioni duplicate e cancellate. 40.73 GB vs 36.48 GB
-* Qlever ha indicizzato tutta la provenance in quattro ore e mezza come quadruple. \~172GB
+```bash
+(oc-meta) arcangelo@serverGrosso:/mnt/arcangelo/qlever-meta-data/indices$ qlever index-stats
 
-<div style="border: 1px solid #d0d7de; border-radius: 8px; padding: 16px; margin: 8px 0; background: #ffffff; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; color: #1f2328;"><div style="display: flex; align-items: center; gap: 12px; margin-bottom: 12px;"><div><strong style="display: block; color: #1f2328;">arcangelo7</strong><span style="font-size: 0.85em; color: #656d76;">Mar 4, 2026</span><span style="font-size: 0.85em; color: #656d76;"> &middot; </span><a href="https://github.com/opencitations/oc_meta" style="font-size: 0.85em; color: #0969da; text-decoration: none;">opencitations/oc_meta</a></div></div><div style="margin: 12px 0; color: #1f2328;"><p>refactor(migration): generalize provenance_to_nquads to handle all RDF data</p>
-<p>Rename script to rdf_to_nquads and add --mode parameter to select which
-ZIP files to process: &#39;all&#39; (default), &#39;data&#39; (entity files only), or
-&#39;prov&#39; (provenance se.zip files only).</p></div><div style="display: flex; justify-content: space-between; align-items: center; font-size: 0.85em;"><span style="font-family: monospace; color: #1a7f37; font-weight: 600;">+212</span><span style="font-family: monospace; color: #cf222e; font-weight: 600;">-62</span><a href="https://github.com/opencitations/oc_meta/commit/0233efede85ec12194f54d6648d5c8537cfe6db4" style="color: #0969da; text-decoration: none; font-weight: 500;">0233efe</a></div></div>
+Command: index-stats
 
-### API
+Breakdown of the time used for building the index, based on the timestamps for key lines in "meta-data.index-log.txt"
 
-<div style="border: 1px solid #d0d7de; border-radius: 8px; padding: 16px; margin: 8px 0; background: #ffffff; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; color: #1f2328;"><div style="display: flex; align-items: center; gap: 12px; margin-bottom: 12px;"><img src="https://avatars.githubusercontent.com/u/42008604?v=4" style="width: 32px; height: 32px; border-radius: 50%;" alt="arcangelo7" /><div><strong style="display: block; color: #1f2328;">arcangelo7</strong><span style="font-size: 0.85em; color: #656d76;">Mar 3, 2026</span><span style="font-size: 0.85em; color: #656d76;"> &middot; </span><a href="https://github.com/opencitations/sparqlite" style="font-size: 0.85em; color: #0969da; text-decoration: none;">opencitations/sparqlite</a></div></div><div style="margin: 12px 0; color: #1f2328;"><p>feat: add HTTP method selection with GET default for read queries [release]</p></div><div style="display: flex; justify-content: space-between; align-items: center; font-size: 0.85em;"><span style="font-family: monospace; color: #1a7f37; font-weight: 600;">+169</span><span style="font-family: monospace; color: #cf222e; font-weight: 600;">-81</span><a href="https://github.com/opencitations/sparqlite/commit/98e7e1f531d451e518cc8f567835271c0f41c589" style="color: #0969da; text-decoration: none; font-weight: 500;">98e7e1f</a></div></div>
+Parse input           :    1.4 h
+Build vocabularies    :    0.4 h
+Convert to global IDs :    0.2 h
+Permutation SPO & SOP :    0.2 h
+Permutation OSP & OPS :    0.3 h
+Permutation PSO & POS :    0.1 h
+Permutation PSO & POS :    0.3 h
 
-Aggiungere il GET a sparqlite mi è servito per generare un sottoinsieme di Index direttamente dall'endpoint pubblico, dato che tale endpoint accetta soltanto GET e non POST. Il sottoinsieme mi è servito per aggiungere dei test specifici per l'API di Index al repository oc\_api
+TOTAL time            :    2.9 h
 
-<div style="border: 1px solid #d0d7de; border-radius: 8px; padding: 16px; margin: 8px 0; background: #ffffff; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; color: #1f2328;"><div style="display: flex; align-items: center; gap: 12px; margin-bottom: 12px;"><img src="https://avatars.githubusercontent.com/u/42008604?v=4" style="width: 32px; height: 32px; border-radius: 50%;" alt="arcangelo7" /><div><strong style="display: block; color: #1f2328;">arcangelo7</strong><span style="font-size: 0.85em; color: #656d76;">Mar 3, 2026</span><span style="font-size: 0.85em; color: #656d76;"> &middot; </span><a href="https://github.com/opencitations/oc_meta" style="font-size: 0.85em; color: #0969da; text-decoration: none;">opencitations/oc_meta</a></div></div><div style="margin: 12px 0; color: #1f2328;"><p>feat(migration): add predicate discovery, graph-less and non-recursive modes to extract_subset</p>
-<p>Bump sparqlite to 1.2.0 and add unit tests.</p></div><div style="display: flex; justify-content: space-between; align-items: center; font-size: 0.85em;"><span style="font-family: monospace; color: #1a7f37; font-weight: 600;">+267</span><span style="font-family: monospace; color: #cf222e; font-weight: 600;">-37</span><a href="https://github.com/opencitations/oc_meta/commit/9f701d18afef68331526958d18cb194d2bcc79a1" style="color: #0969da; text-decoration: none; font-weight: 500;">9f701d1</a></div></div>
+Breakdown of the space used for building the index
 
-<div style="border: 1px solid #d0d7de; border-radius: 8px; padding: 16px; margin: 8px 0; background: #ffffff; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; color: #1f2328;"><div style="display: flex; align-items: center; gap: 12px; margin-bottom: 12px;"><img src="https://avatars.githubusercontent.com/u/42008604?v=4" style="width: 32px; height: 32px; border-radius: 50%;" alt="arcangelo7" /><div><strong style="display: block; color: #1f2328;">arcangelo7</strong><span style="font-size: 0.85em; color: #656d76;">Mar 3, 2026</span><span style="font-size: 0.85em; color: #656d76;"> &middot; </span><a href="https://github.com/opencitations/oc_api" style="font-size: 0.85em; color: #0969da; text-decoration: none;">opencitations/oc_api</a></div></div><div style="margin: 12px 0; color: #1f2328;"><p>test: set up test infrastructure for API query</p></div><div style="display: flex; justify-content: space-between; align-items: center; font-size: 0.85em;"><span style="font-family: monospace; color: #1a7f37; font-weight: 600;">+31891</span><span style="font-family: monospace; color: #cf222e; font-weight: 600;">-247</span><a href="https://github.com/opencitations/oc_api/commit/184ed24b35da7fbd9a0bf03719e9d19cb4021226" style="color: #0969da; text-decoration: none; font-weight: 500;">184ed24</a></div></div>
+Files index.*         :   65.3 GB
+Files vocabulary.*    :   27.4 GB
 
-<div style="border: 1px solid #d0d7de; border-radius: 8px; padding: 16px; margin: 8px 0; background: #ffffff; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; color: #1f2328;"><div style="display: flex; align-items: center; gap: 12px; margin-bottom: 12px;"><img src="https://avatars.githubusercontent.com/u/42008604?v=4" style="width: 32px; height: 32px; border-radius: 50%;" alt="arcangelo7" /><div><strong style="display: block; color: #1f2328;">arcangelo7</strong><span style="font-size: 0.85em; color: #656d76;">Mar 4, 2026</span><span style="font-size: 0.85em; color: #656d76;"> &middot; </span><a href="https://github.com/opencitations/oc_api" style="font-size: 0.85em; color: #0969da; text-decoration: none;">opencitations/oc_api</a></div></div><div style="margin: 12px 0; color: #1f2328;"><p>test(index): add index API tests with real citation data</p>
-<p>Citations from DOI 10.1162/qss_a_00292 (OpenCitations Meta paper).</p></div><div style="display: flex; justify-content: space-between; align-items: center; font-size: 0.85em;"><span style="font-family: monospace; color: #1a7f37; font-weight: 600;">+4248</span><span style="font-family: monospace; color: #cf222e; font-weight: 600;">-446</span><a href="https://github.com/opencitations/oc_api/commit/25107ff2725cd435964d859b6fa4df57dafb100b" style="color: #0969da; text-decoration: none; font-weight: 500;">25107ff</a></div></div>
+TOTAL size            :   92.7 GB
+```
 
-<div style="border: 1px solid #d0d7de; border-radius: 8px; padding: 16px; margin: 8px 0; background: #ffffff; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; color: #1f2328;"><div style="display: flex; align-items: center; gap: 12px; margin-bottom: 12px;"><img src="https://avatars.githubusercontent.com/u/42008604?v=4" style="width: 32px; height: 32px; border-radius: 50%;" alt="arcangelo7" /><div><strong style="display: block; color: #1f2328;">arcangelo7</strong><span style="font-size: 0.85em; color: #656d76;">Mar 4, 2026</span><span style="font-size: 0.85em; color: #656d76;"> &middot; </span><a href="https://github.com/opencitations/oc_api" style="font-size: 0.85em; color: #0969da; text-decoration: none;">opencitations/oc_api</a></div></div><div style="margin: 12px 0; color: #1f2328;"><p>fix(index): split UNION in venue OPTIONAL to fix Virtuoso SPARQL evaluation bug</p>
-<p>Virtuoso incorrectly evaluates subsequent OPTIONAL blocks when a
-preceding OPTIONAL contains a UNION with a transitive property path
-(frbr:partOf+) that produces no matches. This caused empty author and
-source metadata for non-JournalArticle entities (e.g. fabio:Expression),
-leading to wrong author_sc and journal_sc values in citation results.</p>
-<p>Splitting the single OPTIONAL with UNION into two separate OPTIONALs
-sharing the same ?venue variable is semantically equivalent and avoids
-the bug.</p>
-<p>Also adds integration tests for author self-citation, journal
-self-citation, negative timespan, and month/day precision in timespan
-calculations, with real data from OpenCitations.</p></div><div style="display: flex; justify-content: space-between; align-items: center; font-size: 0.85em;"><span style="font-family: monospace; color: #1a7f37; font-weight: 600;">+200</span><span style="font-family: monospace; color: #cf222e; font-weight: 600;">-8</span><a href="https://github.com/opencitations/oc_api/commit/9adb0f6a726c986459435c6769d0b441ef863c8e" style="color: #0969da; text-decoration: none; font-weight: 500;">9adb0f6</a></div></div>
-)
-![[Pasted image 20260304162504.png]]
+```bash
+(oc-meta) arcangelo@serverGrosso:/mnt/arcangelo/qlever-meta-data/indices$ qlever index-stats
 
-Quando un'entità non è un fabio:JournalArticle e non ha frbr:partOf, nessun ramo del UNION matcha. In teoria l'OPTIONAL dovrebbe semplicemente non produrre risultati e passare oltre. Invece Virtuoso, quando incontra un UNION con un property path transitivo (frbr:partOf+) che non matcha, "rompe" gli OPTIONAL successivi, facendoli restituire stringhe vuote. Quindi, per esempio, ci saranno sicuramente delle citazioni per cui author self citation risulta false quando dovrebbe essere true.
+Command: index-stats
 
-<div style="border: 1px solid #d0d7de; border-radius: 8px; padding: 16px; margin: 8px 0; background: #ffffff; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; color: #1f2328;"><div style="display: flex; align-items: center; gap: 12px; margin-bottom: 12px;"><img src="https://avatars.githubusercontent.com/u/42008604?v=4" style="width: 32px; height: 32px; border-radius: 50%;" alt="arcangelo7" /><div><strong style="display: block; color: #1f2328;">arcangelo7</strong><span style="font-size: 0.85em; color: #656d76;">Mar 4, 2026</span><span style="font-size: 0.85em; color: #656d76;"> &middot; </span><a href="https://github.com/opencitations/oc_api" style="font-size: 0.85em; color: #0969da; text-decoration: none;">opencitations/oc_api</a></div></div><div style="margin: 12px 0; color: #1f2328;"><p>refactor(index): remove dead code and replace dateutil.parser with strptime</p>
-<p>Remove unreachable code paths (encode, isinstance else branches,
-multi=False, reverse=False, defensive key checks) and replace
-dateutil.parser.parse with datetime.strptime using date padding.
-Add mock tests for SPARQL endpoint failures to reach 100% coverage.</p></div><div style="display: flex; justify-content: space-between; align-items: center; font-size: 0.85em;"><span style="font-family: monospace; color: #1a7f37; font-weight: 600;">+76</span><span style="font-family: monospace; color: #cf222e; font-weight: 600;">-136</span><a href="https://github.com/opencitations/oc_api/commit/6d9696f2bf68a6d7a6a15c6980520fb4786d045b" style="color: #0969da; text-decoration: none; font-weight: 500;">6d9696f</a></div></div>
+Breakdown of the time used for building the index, based on the timestamps for key lines in "meta-data.index-log.txt"
 
-<div style="border: 1px solid #d0d7de; border-radius: 8px; padding: 16px; margin: 8px 0; background: #ffffff; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; color: #1f2328;"><div style="display: flex; align-items: center; gap: 12px; margin-bottom: 12px;"><img src="https://avatars.githubusercontent.com/u/42008604?v=4" style="width: 32px; height: 32px; border-radius: 50%;" alt="arcangelo7" /><div><strong style="display: block; color: #1f2328;">arcangelo7</strong><span style="font-size: 0.85em; color: #656d76;">Mar 4, 2026</span><span style="font-size: 0.85em; color: #656d76;"> &middot; </span><a href="https://github.com/opencitations/oc_api" style="font-size: 0.85em; color: #0969da; text-decoration: none;">opencitations/oc_api</a></div></div><div style="margin: 12px 0; color: #1f2328;"><p>fix(index): align v1 SPARQL queries with v2 and add v1 tests</p>
-<p>The v1 __get_omid_of used plain literals only, failing to resolve DOIs
-stored as typed literals (^^xsd:string). The __br_meta_metadata had a
-UNION inside OPTIONAL that triggered a Virtuoso evaluation bug,
-corrupting GROUP_CONCAT results for authors. Both issues caused
-inconsistent author_sc values between v1 and v2 for the same citations.</p>
-<p>Port the typed literal UNION and the split OPTIONAL fixes from v2.
-Replace bare except clauses with except RequestException and return
-({}, []) instead of (None, None) from __br_meta_metadata to resolve
-pyright errors. Add dedicated v1 test file, rename v2 tests, extract
-shared helpers into conftest, and exclude ramose.py from coverage.</p></div><div style="display: flex; justify-content: space-between; align-items: center; font-size: 0.85em;"><span style="font-family: monospace; color: #1a7f37; font-weight: 600;">+271</span><span style="font-family: monospace; color: #cf222e; font-weight: 600;">-109</span><a href="https://github.com/opencitations/oc_api/commit/6664e25899acb960b9beb153c47747b6cb762412" style="color: #0969da; text-decoration: none; font-weight: 500;">6664e25</a></div></div>
+Parse input           :    1.4 h
+Build vocabularies    :    0.4 h
+Convert to global IDs :    0.2 h
+Permutation SPO & SOP :    0.2 h
+Permutation OSP & OPS :    0.3 h
+Permutation PSO & POS :    0.1 h
+Permutation PSO & POS :    0.3 h
+**Text index            :    4.1 h**
 
-### Aldrovandi
+TOTAL time            :    7.0 h
 
-<div style="border: 1px solid #d0d7de; border-radius: 8px; padding: 16px; margin: 8px 0; background: #ffffff; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; color: #1f2328;"><div style="display: flex; align-items: center; gap: 12px; margin-bottom: 12px;"><img src="https://avatars.githubusercontent.com/u/42008604?v=4" style="width: 32px; height: 32px; border-radius: 50%;" alt="arcangelo7" /><div><strong style="display: block; color: #1f2328;">arcangelo7</strong><span style="font-size: 0.85em; color: #656d76;">Feb 28, 2026</span><span style="font-size: 0.85em; color: #656d76;"> &middot; </span><a href="https://github.com/dharc-org/changes-metadata-manager" style="font-size: 0.85em; color: #0969da; text-decoration: none;">dharc-org/changes-metadata-manager</a></div></div><div style="margin: 12px 0; color: #1f2328;"><p>feat(zenodo): generate methods description from knowledge graph</p></div><div style="display: flex; justify-content: space-between; align-items: center; font-size: 0.85em;"><span style="font-family: monospace; color: #1a7f37; font-weight: 600;">+260</span><span style="font-family: monospace; color: #cf222e; font-weight: 600;">-29</span><a href="https://github.com/dharc-org/changes-metadata-manager/commit/b9515d8655821d67da668860cb0741d4929c8f01" style="color: #0969da; text-decoration: none; font-weight: 500;">b9515d8</a></div></div>
+Breakdown of the space used for building the index
 
-<div style="border: 1px solid #d0d7de; border-radius: 8px; padding: 16px; margin: 8px 0; background: #ffffff; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; color: #1f2328;"><div style="display: flex; align-items: center; gap: 12px; margin-bottom: 12px;"><img src="https://avatars.githubusercontent.com/u/42008604?v=4" style="width: 32px; height: 32px; border-radius: 50%;" alt="arcangelo7" /><div><strong style="display: block; color: #1f2328;">arcangelo7</strong><span style="font-size: 0.85em; color: #656d76;">Feb 28, 2026</span><span style="font-size: 0.85em; color: #656d76;"> &middot; </span><a href="https://github.com/dharc-org/changes-metadata-manager" style="font-size: 0.85em; color: #0969da; text-decoration: none;">dharc-org/changes-metadata-manager</a></div></div><div style="margin: 12px 0; color: #1f2328;"><p>feat(zenodo): add funding metadata to generated configs</p></div><div style="display: flex; justify-content: space-between; align-items: center; font-size: 0.85em;"><span style="font-family: monospace; color: #1a7f37; font-weight: 600;">+19</span><span style="font-family: monospace; color: #cf222e; font-weight: 600;">-1</span><a href="https://github.com/dharc-org/changes-metadata-manager/commit/22f0c9849435f3b1a27364e8de209caa6e6233f0" style="color: #0969da; text-decoration: none; font-weight: 500;">22f0c98</a></div></div>
+Files index.*         :   65.3 GB
+Files vocabulary.*    :   27.4 GB
+**Files text.*          :   29.2 GB**
 
-[https://sandbox.zenodo.org/records/449574](https://sandbox.zenodo.org/records/449574)
-[https://sandbox.zenodo.org/records/449576](https://sandbox.zenodo.org/records/449576)
-[https://sandbox.zenodo.org/records/449570](https://sandbox.zenodo.org/records/449570)
-[https://sandbox.zenodo.org/records/449572](https://sandbox.zenodo.org/records/449572)
+TOTAL size            :  121.8 GB
+```
 
-<div style="border: 1px solid #d0d7de; border-radius: 8px; padding: 16px; margin: 8px 0; background: #ffffff; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; color: #1f2328;"><div style="display: flex; align-items: center; gap: 12px; margin-bottom: 12px;"><img src="https://avatars.githubusercontent.com/u/42008604?v=4" style="width: 32px; height: 32px; border-radius: 50%;" alt="arcangelo7" /><div><strong style="display: block; color: #1f2328;">arcangelo7</strong><span style="font-size: 0.85em; color: #656d76;">Mar 4, 2026</span><span style="font-size: 0.85em; color: #656d76;"> &middot; </span><a href="https://github.com/dharc-org/changes-metadata-manager" style="font-size: 0.85em; color: #0969da; text-decoration: none;">dharc-org/changes-metadata-manager</a></div></div><div style="margin: 12px 0; color: #1f2328;"><p>feat(zenodo): generate table for DMP</p></div><div style="display: flex; justify-content: space-between; align-items: center; font-size: 0.85em;"><span style="font-family: monospace; color: #1a7f37; font-weight: 600;">+103</span><span style="font-family: monospace; color: #cf222e; font-weight: 600;">-63</span><a href="https://github.com/dharc-org/changes-metadata-manager/commit/13437de4c495323c31a5d0f23d2ce00172e3ed34" style="color: #0969da; text-decoration: none; font-weight: 500;">13437de</a></div></div>
+DOI-ORCID index 2025: [https://doi.org/10.5281/zenodo.18881876](https://doi.org/10.5281/zenodo.18881876)
 
-| Numero su DMP | Caso di studio | Autore/i                                                                                                                                                                                                                                         | Tipo    | Titolo                                                                               | Data pubblicazione | DOI | URL                                                                                    | Repository | Licenza                                               | Note |
-| ------------- | -------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------- | ------------------------------------------------------------------------------------ | ------------------ | --- | -------------------------------------------------------------------------------------- | ---------- | ----------------------------------------------------- | ---- |
-|               | Aldrovandi     | Bordignon, Alice \[orcid:0009-0008-3556-0493]; Bonifazi, Federica \[orcid:0009-0000-8466-5541]; Massari, Arcangelo \[orcid:0000-0002-8420-0696]; Moretti, Arianna \[orcid:0000-0001-5486-7070]; Barzaghi, Sebastian \[orcid:0000-0002-0799-1527] | Dataset | Carta nautica - Digital Cultural Heritage Object - Aldrovandi Digital Twin           | 2026-02-28         |     | [https://sandbox.zenodo.org/records/466512](https://sandbox.zenodo.org/records/466512) | Zenodo     | cc0-1.0 (Metadata license); cc0-1.0 (Content license) |      |
-|               | Aldrovandi     | Bordignon, Alice \[orcid:0009-0008-3556-0493]; Bonifazi, Federica \[orcid:0009-0000-8466-5541]; Massari, Arcangelo \[orcid:0000-0002-8420-0696]; Moretti, Arianna \[orcid:0000-0001-5486-7070]; Barzaghi, Sebastian \[orcid:0000-0002-0799-1527] | Dataset | Carta nautica - Optimized Digital Cultural Heritage Object - Aldrovandi Digital Twin | 2026-02-28         |     | [https://sandbox.zenodo.org/records/466514](https://sandbox.zenodo.org/records/466514) | Zenodo     | cc0-1.0 (Metadata license); cc0-1.0 (Content license) |      |
-|               | Aldrovandi     | Bonifazi, Federica \[orcid:0009-0000-8466-5541]; Massari, Arcangelo \[orcid:0000-0002-8420-0696]; Moretti, Arianna \[orcid:0000-0001-5486-7070]; Barzaghi, Sebastian \[orcid:0000-0002-0799-1527]                                                | Dataset | Carta nautica - Raw - Aldrovandi Digital Twin                                        | 2026-02-28         |     | [https://sandbox.zenodo.org/records/466516](https://sandbox.zenodo.org/records/466516) | Zenodo     | cc0-1.0 (Metadata license)                            |      |
-|               | Aldrovandi     | Bonifazi, Federica \[orcid:0009-0000-8466-5541]; Massari, Arcangelo \[orcid:0000-0002-8420-0696]; Moretti, Arianna \[orcid:0000-0001-5486-7070]; Barzaghi, Sebastian \[orcid:0000-0002-0799-1527]                                                | Dataset | Carta nautica - Processed raw model - Aldrovandi Digital Twin                        | 2026-02-28         |     | [https://sandbox.zenodo.org/records/466518](https://sandbox.zenodo.org/records/466518) | Zenodo     | cc0-1.0 (Metadata license)                            |      |
+### oc\_ds\_converter
 
-### Time Agnostic Library
+<div style="border: 1px solid #d0d7de; border-radius: 8px; padding: 16px; margin: 8px 0; background: #ffffff; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; color: #1f2328;"><div style="display: flex; align-items: center; gap: 12px; margin-bottom: 12px;"><div><strong style="display: block; color: #1f2328;">arcangelo7</strong><span style="font-size: 0.85em; color: #656d76;">Mar 5, 2026</span><span style="font-size: 0.85em; color: #656d76;"> &middot; </span><a href="https://github.com/opencitations/oc_ds_converter" style="font-size: 0.85em; color: #0969da; text-decoration: none;">opencitations/oc_ds_converter</a></div></div><div style="margin: 12px 0; color: #1f2328;"><p>build: migrate from poetry to uv package manager</p></div><div style="display: flex; justify-content: space-between; align-items: center; font-size: 0.85em;"><span style="font-family: monospace; color: #1a7f37; font-weight: 600;">+1229</span><span style="font-family: monospace; color: #cf222e; font-weight: 600;">-2461</span><a href="https://github.com/opencitations/oc_ds_converter/commit/2ffaab0e23fe18ccc414d4fb95fd061596da466b" style="color: #0969da; text-decoration: none; font-weight: 500;">2ffaab0</a></div></div>
 
-> Temporal SPARQL extensions require either native support in triplestores or an external processing layer that translates extended queries into operations executable on standard endpoints. Since no temporal SPARQL extension has been adopted by mainstream triplestores or standardized by the W3C, the former path remains unavailable, and the latter results in the same architectural pattern as a library operating directly on standard SPARQL, with the addition of a non-standard query syntax. The approach presented here avoids this intermediate layer: users write standard SPARQL queries, and the library handles temporal reconstruction transparently, ensuring compatibility with any compliant triplestore.
+<div style="border: 1px solid #d0d7de; border-radius: 8px; padding: 16px; margin: 8px 0; background: #ffffff; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; color: #1f2328;"><div style="display: flex; align-items: center; gap: 12px; margin-bottom: 12px;"><div><strong style="display: block; color: #1f2328;">arcangelo7</strong><span style="font-size: 0.85em; color: #656d76;">Mar 5, 2026</span><span style="font-size: 0.85em; color: #656d76;"> &middot; </span><a href="https://github.com/opencitations/oc_ds_converter" style="font-size: 0.85em; color: #0969da; text-decoration: none;">opencitations/oc_ds_converter</a></div></div><div style="margin: 12px 0; color: #1f2328;"><p>test: add HTTP mocking infrastructure with pytest and responses</p></div><div style="display: flex; justify-content: space-between; align-items: center; font-size: 0.85em;"><span style="font-family: monospace; color: #1a7f37; font-weight: 600;">+1185</span><span style="font-family: monospace; color: #cf222e; font-weight: 600;">-10</span><a href="https://github.com/opencitations/oc_ds_converter/commit/ddadb5bff81322885a84f0e41dd78b3ca3434400" style="color: #0969da; text-decoration: none; font-weight: 500;">ddadb5b</a></div></div>
 
-<div style="border: 1px solid #d0d7de; border-radius: 8px; padding: 16px; margin: 8px 0; background: #ffffff; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; color: #1f2328;"><div style="display: flex; align-items: center; gap: 12px; margin-bottom: 12px;"><img src="https://avatars.githubusercontent.com/u/42008604?v=4" style="width: 32px; height: 32px; border-radius: 50%;" alt="arcangelo7" /><div><strong style="display: block; color: #1f2328;">arcangelo7</strong><span style="font-size: 0.85em; color: #656d76;">Mar 2, 2026</span><span style="font-size: 0.85em; color: #656d76;"> &middot; </span><a href="https://github.com/opencitations/time-agnostic-library" style="font-size: 0.85em; color: #0969da; text-decoration: none;">opencitations/time-agnostic-library</a></div></div><div style="margin: 12px 0; color: #1f2328;"><p>feat(benchmark): add R43ples benchmark scripts and analysis integration</p></div><div style="display: flex; justify-content: space-between; align-items: center; font-size: 0.85em;"><span style="font-family: monospace; color: #1a7f37; font-weight: 600;">+879</span><span style="font-family: monospace; color: #cf222e; font-weight: 600;">-21</span><a href="https://github.com/opencitations/time-agnostic-library/commit/ccb99ea31af8fc76c5bb9ab33e310db0525ae0f0" style="color: #0969da; text-decoration: none; font-weight: 500;">ccb99ea</a></div></div>
+<div style="border: 1px solid #d0d7de; border-radius: 8px; padding: 16px; margin: 8px 0; background: #ffffff; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; color: #1f2328;"><div style="display: flex; align-items: center; gap: 12px; margin-bottom: 12px;"><div><strong style="display: block; color: #1f2328;">arcangelo7</strong><span style="font-size: 0.85em; color: #656d76;">Mar 5, 2026</span><span style="font-size: 0.85em; color: #656d76;"> &middot; </span><a href="https://github.com/opencitations/oc_ds_converter" style="font-size: 0.85em; color: #0969da; text-decoration: none;">opencitations/oc_ds_converter</a></div></div><div style="margin: 12px 0; color: #1f2328;"><p>fix(doi): only attempt DOI repair when API service is enabled</p>
+<p>Previously the DOI cleaning logic was applied unconditionally during
+normalization. Now malformed DOIs are only repaired when API validation
+is enabled, with the API called before and after repair to verify the
+corrected DOI actually exists.</p></div><div style="display: flex; justify-content: space-between; align-items: center; font-size: 0.85em;"><span style="font-family: monospace; color: #1a7f37; font-weight: 600;">+351</span><span style="font-family: monospace; color: #cf222e; font-weight: 600;">-141</span><a href="https://github.com/opencitations/oc_ds_converter/commit/9093d880610a62d85f79ad23eeaa1a167f62e057" style="color: #0969da; text-decoration: none; font-weight: 500;">9093d88</a></div></div>
 
-Cose belle: [https://ctan.mirror.garr.it/mirrors/ctan/macros/latex/contrib/algorithm2e/doc/algorithm2e.pdf](https://ctan.mirror.garr.it/mirrors/ctan/macros/latex/contrib/algorithm2e/doc/algorithm2e.pdf)
+<div style="border: 1px solid #d0d7de; border-radius: 8px; padding: 16px; margin: 8px 0; background: #ffffff; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; color: #1f2328;"><div style="display: flex; align-items: center; gap: 12px; margin-bottom: 12px;"><div><strong style="display: block; color: #1f2328;">arcangelo7</strong><span style="font-size: 0.85em; color: #656d76;">Mar 8, 2026</span><span style="font-size: 0.85em; color: #656d76;"> &middot; </span><a href="https://github.com/opencitations/oc_ds_converter" style="font-size: 0.85em; color: #0969da; text-decoration: none;">opencitations/oc_ds_converter</a></div></div><div style="margin: 12px 0; color: #1f2328;"><p>refactor(crossref)!: auto-generate publishers file from Crossref API</p>
+<p>The publishers CSV is now automatically downloaded from the Crossref API
+at startup and stored in oc_ds_converter/crossref/data/publishers.csv.
+This removes the need for users to manually provide or maintain the file.</p>
+<p>BREAKING CHANGE: The -p/--publishers CLI argument has been removed.
+The publishers file is now generated automatically.</p></div><div style="display: flex; justify-content: space-between; align-items: center; font-size: 0.85em;"><span style="font-family: monospace; color: #1a7f37; font-weight: 600;">+279</span><span style="font-family: monospace; color: #cf222e; font-weight: 600;">-23</span><a href="https://github.com/opencitations/oc_ds_converter/commit/dd6496aae829ca48f01d308e12f4e31ed63f19eb" style="color: #0969da; text-decoration: none; font-weight: 500;">dd6496a</a></div></div>
 
-![Pasted image 20260302155742.png](../../../../assets/notes/attachments/pasted-image-20260302155742.png)
+<div style="border: 1px solid #d0d7de; border-radius: 8px; padding: 16px; margin: 8px 0; background: #ffffff; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; color: #1f2328;"><div style="display: flex; align-items: center; gap: 12px; margin-bottom: 12px;"><div><strong style="display: block; color: #1f2328;">arcangelo7</strong><span style="font-size: 0.85em; color: #656d76;">Mar 8, 2026</span><span style="font-size: 0.85em; color: #656d76;"> &middot; </span><a href="https://github.com/opencitations/oc_ds_converter" style="font-size: 0.85em; color: #0969da; text-decoration: none;">opencitations/oc_ds_converter</a></div></div><div style="margin: 12px 0; color: #1f2328;"><p>feat(crossref): store DOI-ORCID index in Redis for multiprocessing</p>
+<p>Previously, each worker loaded the entire ORCID index from disk,
+causing severe performance degradation when processing large batches.
+Now the index is loaded once into Redis at startup and shared across
+all workers.</p>
+<p>The -o flag behavior changes: if specified, the Redis index is cleared
+and reloaded from the directory; if omitted, the existing index is used.</p></div><div style="display: flex; justify-content: space-between; align-items: center; font-size: 0.85em;"><span style="font-family: monospace; color: #1a7f37; font-weight: 600;">+259</span><span style="font-family: monospace; color: #cf222e; font-weight: 600;">-43</span><a href="https://github.com/opencitations/oc_ds_converter/commit/d4c2ed4d1082806c12f1b6a570f0bd8bf3d4e6de" style="color: #0969da; text-decoration: none; font-weight: 500;">d4c2ed4</a></div></div>
 
-<div style="border: 1px solid #d0d7de; border-radius: 8px; padding: 16px; margin: 8px 0; background: #ffffff; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; color: #1f2328;"><div style="display: flex; align-items: center; gap: 12px; margin-bottom: 12px;"><img src="https://avatars.githubusercontent.com/u/42008604?v=4" style="width: 32px; height: 32px; border-radius: 50%;" alt="arcangelo7" /><div><strong style="display: block; color: #1f2328;">arcangelo7</strong><span style="font-size: 0.85em; color: #656d76;">Mar 4, 2026</span><span style="font-size: 0.85em; color: #656d76;"> &middot; </span><a href="https://github.com/opencitations/time-agnostic-library" style="font-size: 0.85em; color: #0969da; text-decoration: none;">opencitations/time-agnostic-library</a></div></div><div style="margin: 12px 0; color: #1f2328;"><p>feat!: replace DeltaQuery modified dict with net delta quad sets</p>
-<p>DeltaQuery.run_agnostic_query() now returns additions and deletions
-as sets of N3-encoded quad tuples instead of raw SPARQL UPDATE strings
-keyed by timestamp. Add AgnosticEntity.get_delta() for computing net
-deltas directly on a single entity without SPARQL query overhead.</p>
-<p>BREAKING CHANGE: DeltaQuery output replaces &quot;modified&quot; dict with
-&quot;additions&quot; and &quot;deletions&quot; sets of quad tuples.</p></div><div style="display: flex; justify-content: space-between; align-items: center; font-size: 0.85em;"><span style="font-family: monospace; color: #1a7f37; font-weight: 600;">+301</span><span style="font-family: monospace; color: #cf222e; font-weight: 600;">-129</span><a href="https://github.com/opencitations/time-agnostic-library/commit/d0f4f95d6ca27a5a805e125c031b959091b84321" style="color: #0969da; text-decoration: none; font-weight: 500;">d0f4f95</a></div></div>
+<div style="border: 1px solid #d0d7de; border-radius: 8px; padding: 16px; margin: 8px 0; background: #ffffff; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; color: #1f2328;"><div style="display: flex; align-items: center; gap: 12px; margin-bottom: 12px;"><div><strong style="display: block; color: #1f2328;">arcangelo7</strong><span style="font-size: 0.85em; color: #656d76;">Mar 9, 2026</span><span style="font-size: 0.85em; color: #656d76;"> &middot; </span><a href="https://github.com/opencitations/oc_ds_converter" style="font-size: 0.85em; color: #0969da; text-decoration: none;">opencitations/oc_ds_converter</a></div></div><div style="margin: 12px 0; color: #1f2328;"><p>feat(crossref): add Redis publishers storage and age-based regeneration</p>
+<p>Store publishers mapping in Redis for multiprocessing scenarios,
+avoiding memory duplication across worker processes. Add file age
+checking to skip unnecessary API calls when publishers.csv is recent.</p>
+<p>New CLI options:</p>
+<ul>
+<li>--update-publishers: force regeneration ignoring age</li>
+<li>--publishers-max-age: days before automatic update (default 30)</li>
+</ul></div><div style="display: flex; justify-content: space-between; align-items: center; font-size: 0.85em;"><span style="font-family: monospace; color: #1a7f37; font-weight: 600;">+475</span><span style="font-family: monospace; color: #cf222e; font-weight: 600;">-31</span><a href="https://github.com/opencitations/oc_ds_converter/commit/c01039bd8552e5ac05a438e4fb08b9aee906b735" style="color: #0969da; text-decoration: none; font-weight: 500;">c01039b</a></div></div>
 
-![Pasted image 20260304185605.png](../../../../assets/notes/attachments/pasted-image-20260304185605.png)
+<div style="border: 1px solid #d0d7de; border-radius: 8px; padding: 16px; margin: 8px 0; background: #ffffff; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; color: #1f2328;"><div style="display: flex; align-items: center; gap: 12px; margin-bottom: 12px;"><div><strong style="display: block; color: #1f2328;">arcangelo7</strong><span style="font-size: 0.85em; color: #656d76;">Mar 9, 2026</span><span style="font-size: 0.85em; color: #656d76;"> &middot; </span><a href="https://github.com/opencitations/oc_ds_converter" style="font-size: 0.85em; color: #0969da; text-decoration: none;">opencitations/oc_ds_converter</a></div></div><div style="margin: 12px 0; color: #1f2328;"><p>refactor(storage)!: make Redis the only storage backend</p>
+<p>Remove SqliteStorageManager and InMemoryStorageManager. All ID managers
+and processing classes now use RedisStorageManager exclusively, with a
+testing parameter to switch between real Redis and fakeredis.</p>
+<p>The temporary batching during file processing uses a new lightweight
+BatchManager class (simple dict wrapper).</p>
+<p>BREAKING CHANGE: CLI arguments --storage_path and --redis_storage_manager removed.</p></div><div style="display: flex; justify-content: space-between; align-items: center; font-size: 0.85em;"><span style="font-family: monospace; color: #1a7f37; font-weight: 600;">+903</span><span style="font-family: monospace; color: #cf222e; font-weight: 600;">-1604</span><a href="https://github.com/opencitations/oc_ds_converter/commit/4df3775c1b197cf79858bd06998f6f2f15a93103" style="color: #0969da; text-decoration: none; font-weight: 500;">4df3775</a></div></div>
 
-![Pasted image 20260304185612.png](../../../../assets/notes/attachments/pasted-image-20260304185612.png)
+<div style="border: 1px solid #d0d7de; border-radius: 8px; padding: 16px; margin: 8px 0; background: #ffffff; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; color: #1f2328;"><div style="display: flex; align-items: center; gap: 12px; margin-bottom: 12px;"><div><strong style="display: block; color: #1f2328;">arcangelo7</strong><span style="font-size: 0.85em; color: #656d76;">Mar 9, 2026</span><span style="font-size: 0.85em; color: #656d76;"> &middot; </span><a href="https://github.com/opencitations/oc_ds_converter" style="font-size: 0.85em; color: #0969da; text-decoration: none;">opencitations/oc_ds_converter</a></div></div><div style="margin: 12px 0; color: #1f2328;"><p>perf(crossref): only invoke BeautifulSoup when the text actually contains angle brackets</p></div><div style="display: flex; justify-content: space-between; align-items: center; font-size: 0.85em;"><span style="font-family: monospace; color: #1a7f37; font-weight: 600;">+10</span><span style="font-family: monospace; color: #cf222e; font-weight: 600;">-12</span><a href="https://github.com/opencitations/oc_ds_converter/commit/3ee7afc9eae3a9b2775041951c01b2b18c3d84d9" style="color: #0969da; text-decoration: none; font-weight: 500;">3ee7afc</a></div></div>
 
-![Pasted image 20260304185620.png](../../../../assets/notes/attachments/pasted-image-20260304185620.png)
+<div style="border: 1px solid #d0d7de; border-radius: 8px; padding: 16px; margin: 8px 0; background: #ffffff; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; color: #1f2328;"><div style="display: flex; align-items: center; gap: 12px; margin-bottom: 12px;"><div><strong style="display: block; color: #1f2328;">arcangelo7</strong><span style="font-size: 0.85em; color: #656d76;">Mar 10, 2026</span><span style="font-size: 0.85em; color: #656d76;"> &middot; </span><a href="https://github.com/opencitations/oc_ds_converter" style="font-size: 0.85em; color: #0969da; text-decoration: none;">opencitations/oc_ds_converter</a></div></div><div style="margin: 12px 0; color: #1f2328;"><p>perf(crossref): prefetch DOI-ORCID index</p>
+<p>Replace individual Redis lookups with batch prefetch via pipeline.
+Normalize DOIs with prefix during index loading for consistent keys.
+Simplify orcid_finder to use in-memory cache populated by prefetch.</p></div><div style="display: flex; justify-content: space-between; align-items: center; font-size: 0.85em;"><span style="font-family: monospace; color: #1a7f37; font-weight: 600;">+78</span><span style="font-family: monospace; color: #cf222e; font-weight: 600;">-25</span><a href="https://github.com/opencitations/oc_ds_converter/commit/99e4f57685cea838e3d88cc9d1cfa804af86a785" style="color: #0969da; text-decoration: none; font-weight: 500;">99e4f57</a></div></div>
+
+Prima: orcid\_finder: 4-4.6s per file
+Dopo: orcid\_finder: 0.31-0.44s
+
+#### Mistero misterioso
+
+```python
+# 1) ORCID nei metadati
+# E ok
+
+# 2) Indice DOI→ORCID
+# E ok
+
+# 3) Fallback Redis snapshot (se presente e univoca o coerente con l'indice)
+if not oc and getattr(self, "_redis_values_ra", None):
+	for oc_snap in self._redis_values_ra:
+		oc_norm = self.orcid_m.normalise(oc_snap, include_prefix=True)
+		if oc_norm:
+			if len(self._redis_values_ra) == 1 or (
+					raw_index and oc_norm.split(":", 1)[1] in str(raw_index)):
+				oc = oc_norm
+				break
+# ???                                                    
+```
+
+Tradotto
+
+* Se c'è UN SOLO ORCID in tutto il file → assegnalo a questo autore
+* OPPURE se l'ORCID appare in raw\_index → assegnalo
+
+1. Caso "un solo ORCID": Se nel file ci sono 5000 item con 10 autori ciascuno, e solo UN autore ha l'ORCID, il codice lo assegnerebbe a TUTTI gli autori. Assurdo.
+2. Caso "ORCID in raw\_index": Ma se l'ORCID è già in raw\_index, allora lo step 2 avrebbe dovuto trovarlo! Se non l'ha trovato è perché il nome non matchava. E allora perché assegnarlo comunque? A quale autore?
+
+E c'è anche un test per questo scenario
+
+```python
+def test_get_agents_strings_list_api_disabled_redis_unprefixed_orcid(self):
+	"""
+	API OFF + nessun ORCID in metadata + indice vuoto.
+	Redis snapshot contiene ORCID per l'autore **senza prefisso**: deve essere apposto all'autore.
+	"""
+	cp = CrossrefProcessing(use_orcid_api=False, testing=True)
+
+	# Autore senza ORCID nei metadati
+	agents = [{
+		"given": "Chan-Ick",
+		"family": "Cheigh",
+		"role": "author"
+	}]
+
+	# Redis snapshot con ORCID **senza prefisso** dell'autore
+	raw_orcid = "0000-0002-6227-4053"
+	cp.update_redis_values(br=[], ra=[raw_orcid])
+
+	authors, editors = cp.get_agents_strings_list("10.9799/ksfan.2012.25.1.069", agents)
+	self.assertEqual(authors, ["Cheigh, Chan-Ick [orcid:0000-0002-6227-4053]"])
+	self.assertEqual(editors, [])
+	cp.orcid_m.storage_manager.delete_storage()
+
+```
+
+Questo test copre il caso "1 autore + 1 ORCID", dove l'assegnazione ha senso. Ma in produzione questo scenario non esiste.
+
+Questo loop da solo prendeva circa 30 secondi a file ed era l'operazione più onerosa dell'intero processo, più di tutte le chiamate alle API messe insieme! L'ho cancellato.
+
+<div style="border: 1px solid #d0d7de; border-radius: 8px; padding: 16px; margin: 8px 0; background: #ffffff; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; color: #1f2328;"><div style="display: flex; align-items: center; gap: 12px; margin-bottom: 12px;"><div><strong style="display: block; color: #1f2328;">arcangelo7</strong><span style="font-size: 0.85em; color: #656d76;">Mar 9, 2026</span><span style="font-size: 0.85em; color: #656d76;"> &middot; </span><a href="https://github.com/opencitations/oc_ds_converter" style="font-size: 0.85em; color: #0969da; text-decoration: none;">opencitations/oc_ds_converter</a></div></div><div style="margin: 12px 0; color: #1f2328;"><p>perf(crossref): remove broken O(n²) ORCID fallback in get_agents_strings_list</p>
+<p>The redis_fallback logic iterated through all ORCIDs from all items in
+the file for each author, causing quadratic complexity. The fallback
+also had flawed logic: it either assigned an ORCID when only one existed
+in the entire file (wrong for multiple authors) or checked if an ORCID
+was in raw_index (redundant with the name-matching step).</p>
+<p>Loop time reduced from ~34s to ~1-2.5s per file (13-40x speedup).</p></div><div style="display: flex; justify-content: space-between; align-items: center; font-size: 0.85em;"><span style="font-family: monospace; color: #1a7f37; font-weight: 600;">+193</span><span style="font-family: monospace; color: #cf222e; font-weight: 600;">-49</span><a href="https://github.com/opencitations/oc_ds_converter/commit/413fff27f3d3b64a6ab66abf1efc5976425dfde7" style="color: #0969da; text-decoration: none; font-weight: 500;">413fff2</a></div></div>
+
+<div style="border: 1px solid #d0d7de; border-radius: 8px; padding: 16px; margin: 8px 0; background: #ffffff; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; color: #1f2328;"><div style="display: flex; align-items: center; gap: 12px; margin-bottom: 12px;"><div><strong style="display: block; color: #1f2328;">arcangelo7</strong><span style="font-size: 0.85em; color: #656d76;">Mar 11, 2026</span><span style="font-size: 0.85em; color: #656d76;"> &middot; </span><a href="https://github.com/opencitations/oc_ds_converter" style="font-size: 0.85em; color: #0969da; text-decoration: none;">opencitations/oc_ds_converter</a></div></div><div style="margin: 12px 0; color: #1f2328;"><p>refactor: remove doi_csv filtering, add exclude-existing flag</p>
+<p>Replace the doi_csv/wanted_doi_filepath parameter with a more efficient
+exclude-existing mechanism. The old approach loaded all wanted DOIs into
+memory upfront, while the new flag checks Meta existence via
+Redis.</p>
+<p>Changes:</p>
+<ul>
+<li>Remove doi_csv parameter from RaProcessor and all processor subclasses</li>
+<li>Remove -w/--wanted CLI argument from all run scripts</li>
+<li>Add --exclude-existing flag that checks BR_redis before creating rows</li>
+</ul></div><div style="display: flex; justify-content: space-between; align-items: center; font-size: 0.85em;"><span style="font-family: monospace; color: #1a7f37; font-weight: 600;">+378</span><span style="font-family: monospace; color: #cf222e; font-weight: 600;">-269</span><a href="https://github.com/opencitations/oc_ds_converter/commit/ff9fa36dbe152bac9a21835bb3beafeea97ab662" style="color: #0969da; text-decoration: none; font-weight: 500;">ff9fa36</a></div></div>
+
+### time-agnostic-library
+
+<div style="border: 1px solid #d0d7de; border-radius: 8px; padding: 16px; margin: 8px 0; background: #ffffff; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; color: #1f2328;"><div style="display: flex; align-items: center; gap: 12px; margin-bottom: 12px;"><img src="https://avatars.githubusercontent.com/u/42008604?v=4" style="width: 32px; height: 32px; border-radius: 50%;" alt="arcangelo7" /><div><strong style="display: block; color: #1f2328;">arcangelo7</strong><span style="font-size: 0.85em; color: #656d76;">Mar 5, 2026</span><span style="font-size: 0.85em; color: #656d76;"> &middot; </span><a href="https://github.com/opencitations/time-agnostic-library" style="font-size: 0.85em; color: #0969da; text-decoration: none;">opencitations/time-agnostic-library</a></div></div><div style="margin: 12px 0; color: #1f2328;"><p>refactor(test): add multi-triplestore CI matrix</p>
+<p>Also fold invalidatedAtTime into the DeltaQuery provenance query,
+removing the separate _batch_check_existence call.</p></div><div style="display: flex; justify-content: space-between; align-items: center; font-size: 0.85em;"><span style="font-family: monospace; color: #1a7f37; font-weight: 600;">+767</span><span style="font-family: monospace; color: #cf222e; font-weight: 600;">-1245</span><a href="https://github.com/opencitations/time-agnostic-library/commit/fe4cf6fb1ecc8bcfd9b63f22fa410e9b7713edc7" style="color: #0969da; text-decoration: none; font-weight: 500;">fe4cf6f</a></div></div>
+
+### Index
+
+<div style="border: 1px solid #d0d7de; border-radius: 8px; padding: 16px; margin: 8px 0; background: #ffffff; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; color: #1f2328;"><div style="display: flex; align-items: center; gap: 12px; margin-bottom: 12px;"><div><strong style="display: block; color: #1f2328;">arcangelo7</strong><span style="font-size: 0.85em; color: #656d76;">Mar 6, 2026</span><span style="font-size: 0.85em; color: #656d76;"> &middot; </span><a href="https://github.com/opencitations/index" style="font-size: 0.85em; color: #0969da; text-decoration: none;">opencitations/index</a></div></div><div style="margin: 12px 0; color: #1f2328;"><p>fix(meta2redis): fix buffer batching and replace tqdm/logger with rich</p>
+<ul>
+<li>Fix buffer batching that was not actually flushing during processing</li>
+<li>Replace tqdm with rich progress bar showing time remaining across all CSV files</li>
+<li>Replace logger with rich console</li>
+<li>Add --redis-only flag to skip CSV file generation</li>
+<li>Remove unused imports and variables (datetime, br_ids, ra_ids, db_omid)</li>
+<li>Fix TextIOWrapper issue by opening CSV files in binary mode</li>
+<li>Change CSV output from append to write mode to avoid duplicates</li>
+<li>Add rich to dependencies</li>
+</ul></div><div style="display: flex; justify-content: space-between; align-items: center; font-size: 0.85em;"><span style="font-family: monospace; color: #1a7f37; font-weight: 600;">+139</span><span style="font-family: monospace; color: #cf222e; font-weight: 600;">-139</span><a href="https://github.com/opencitations/index/commit/2a07e127fe6219666e77eeb8081c14972cdf24da" style="color: #0969da; text-decoration: none; font-weight: 500;">2a07e12</a></div></div>
+
+<div style="border: 1px solid #d0d7de; border-radius: 8px; padding: 16px; margin: 8px 0; background: #ffffff; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; color: #1f2328;"><div style="display: flex; align-items: center; gap: 12px; margin-bottom: 12px;"><div><strong style="display: block; color: #1f2328;">arcangelo7</strong><span style="font-size: 0.85em; color: #656d76;">Mar 6, 2026</span><span style="font-size: 0.85em; color: #656d76;"> &middot; </span><a href="https://github.com/opencitations/index" style="font-size: 0.85em; color: #0969da; text-decoration: none;">opencitations/index</a></div></div><div style="margin: 12px 0; color: #1f2328;"><p>perf(meta2redis): use redis pipelines and remove buffer batching</p>
+<p>Replace individual SET operations with pipelined writes that batch
+all operations per file into a single network round-trip. Remove the
+intermediate buffer logic which was ineffective since it still performed
+individual Redis calls internally.</p></div><div style="display: flex; justify-content: space-between; align-items: center; font-size: 0.85em;"><span style="font-family: monospace; color: #1a7f37; font-weight: 600;">+49</span><span style="font-family: monospace; color: #cf222e; font-weight: 600;">-87</span><a href="https://github.com/opencitations/index/commit/5bb3149e17fb2f78993dcabf8415ddee8c16ef17" style="color: #0969da; text-decoration: none; font-weight: 500;">5bb3149</a></div></div>
+
+<div style="border: 1px solid #d0d7de; border-radius: 8px; padding: 16px; margin: 8px 0; background: #ffffff; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; color: #1f2328;"><div style="display: flex; align-items: center; gap: 12px; margin-bottom: 12px;"><div><strong style="display: block; color: #1f2328;">arcangelo7</strong><span style="font-size: 0.85em; color: #656d76;">Mar 6, 2026</span><span style="font-size: 0.85em; color: #656d76;"> &middot; </span><a href="https://github.com/opencitations/index" style="font-size: 0.85em; color: #0969da; text-decoration: none;">opencitations/index</a></div></div><div style="margin: 12px 0; color: #1f2328;"><p>feat(meta2redis): add multiprocessing and switch to redis SADD</p>
+<p>Replace sequential file processing with parallel workers using
+multiprocessing.Pool. Switch from SET to SADD for br/ra indexes,
+allowing concurrent writes without conflicts. Remove global index
+dictionaries since accumulation now happens in Redis directly.</p>
+<p>Add --workers CLI option to control parallelism.</p></div><div style="display: flex; justify-content: space-between; align-items: center; font-size: 0.85em;"><span style="font-family: monospace; color: #1a7f37; font-weight: 600;">+70</span><span style="font-family: monospace; color: #cf222e; font-weight: 600;">-53</span><a href="https://github.com/opencitations/index/commit/8c8f81427d2201dbf38bdc65aba5f24f7c5e7728" style="color: #0969da; text-decoration: none; font-weight: 500;">8c8f814</a></div></div>
+
+<div style="border: 1px solid #d0d7de; border-radius: 8px; padding: 16px; margin: 8px 0; background: #ffffff; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; color: #1f2328;"><div style="display: flex; align-items: center; gap: 12px; margin-bottom: 12px;"><div><strong style="display: block; color: #1f2328;">arcangelo7</strong><span style="font-size: 0.85em; color: #656d76;">Mar 8, 2026</span><span style="font-size: 0.85em; color: #656d76;"> &middot; </span><a href="https://github.com/opencitations/oc_ds_converter" style="font-size: 0.85em; color: #0969da; text-decoration: none;">opencitations/oc_ds_converter</a></div></div><div style="margin: 12px 0; color: #1f2328;"><p>refactor(redis): migrate OMID storage from string to set operations</p></div><div style="display: flex; justify-content: space-between; align-items: center; font-size: 0.85em;"><span style="font-family: monospace; color: #1a7f37; font-weight: 600;">+148</span><span style="font-family: monospace; color: #cf222e; font-weight: 600;">-122</span><a href="https://github.com/opencitations/oc_ds_converter/commit/886dd691ec8bb3f691c38ca80c31e80913077418" style="color: #0969da; text-decoration: none; font-weight: 500;">886dd69</a></div></div>
+
+### RML
+
+<div style="border: 1px solid #d0d7de; border-radius: 8px; padding: 16px; margin: 8px 0; background: #ffffff; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; color: #1f2328;"><div style="display: flex; align-items: center; gap: 12px; margin-bottom: 12px;"><img src="https://avatars.githubusercontent.com/u/42008604?v=4" style="width: 32px; height: 32px; border-radius: 50%;" alt="arcangelo7" /><div><strong style="display: block; color: #1f2328;">arcangelo7</strong><span style="font-size: 0.85em; color: #656d76;">Mar 6, 2026</span><span style="font-size: 0.85em; color: #656d76;"> &middot; </span><a href="https://github.com/arcangelo7/knowledge-graphs-inversion" style="font-size: 0.85em; color: #0969da; text-decoration: none;">arcangelo7/knowledge-graphs-inversion</a></div></div><div style="margin: 12px 0; color: #1f2328;"><p>fix(inversion): handle column-reference subjects with rr:termType rr:IRI</p>
+<p>For rr:column with rr:termType rr:IRI, the subject IRI is the column
+value itself and requires no STRAFTER/STRBEFORE extraction. Three changes
+make this work:</p>
+<ul>
+<li>Fix N-Triples parser regex to handle IRIs with spaces (morph-kgc
+generates invalid IRIs like <Emily Smith> for column-as-IRI mappings)</li>
+<li>Classify RML_REFERENCE subjects as plain references in SubjectTriple
+so url_decode is not applied to non-URL-encoded values</li>
+<li>Remove check_column_as_iri_subject detection that incorrectly flagged
+the case as a mapping issue</li>
+</ul>
+<p>R2RMLTC0020b now passes (26/45 instead of 25/45).</p></div><div style="display: flex; justify-content: space-between; align-items: center; font-size: 0.85em;"><span style="font-family: monospace; color: #1a7f37; font-weight: 600;">+16</span><span style="font-family: monospace; color: #cf222e; font-weight: 600;">-25</span><a href="https://github.com/arcangelo7/knowledge-graphs-inversion/commit/f81f981e9f042127792b1c1ce526ecea7e96c2c1" style="color: #0969da; text-decoration: none; font-weight: 500;">f81f981</a></div></div>
+
+<div style="border: 1px solid #d0d7de; border-radius: 8px; padding: 16px; margin: 8px 0; background: #ffffff; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; color: #1f2328;"><div style="display: flex; align-items: center; gap: 12px; margin-bottom: 12px;"><img src="https://avatars.githubusercontent.com/u/42008604?v=4" style="width: 32px; height: 32px; border-radius: 50%;" alt="arcangelo7" /><div><strong style="display: block; color: #1f2328;">arcangelo7</strong><span style="font-size: 0.85em; color: #656d76;">Mar 6, 2026</span><span style="font-size: 0.85em; color: #656d76;"> &middot; </span><a href="https://github.com/arcangelo7/knowledge-graphs-inversion" style="font-size: 0.85em; color: #0969da; text-decoration: none;">arcangelo7/knowledge-graphs-inversion</a></div></div><div style="margin: 12px 0; color: #1f2328;"><p>feat(inversion): extract column values referenced exclusively by graph maps</p>
+<p>Switch morph-kgc output to N-Quads to preserve named graph information.
+Extend the N-Quads parser to handle the optional 4th graph component.
+When a column is referenced only by rr:graphMap (not by any subject,
+predicate, or object term map), wrap SPARQL patterns in a GRAPH ?g clause
+and apply STRAFTER/STRBEFORE extraction on the graph variable.</p></div><div style="display: flex; justify-content: space-between; align-items: center; font-size: 0.85em;"><span style="font-family: monospace; color: #1a7f37; font-weight: 600;">+221</span><span style="font-family: monospace; color: #cf222e; font-weight: 600;">-75</span><a href="https://github.com/arcangelo7/knowledge-graphs-inversion/commit/9d35f0294cd36dd73aac7aea63f28ad9f4a4c8b6" style="color: #0969da; text-decoration: none; font-weight: 500;">9d35f02</a></div></div>
+
+### Cose belle
+
+[https://docs.astral.sh/](https://docs.astral.sh/)
 
 ### Domande
 
-* Ho scoperto che YAGO (ovvero Wikidata con entità human-readable) ha un timeout di 1 minuto sulle query sia SPARQL che API. Lo dicono qui: [https://yago-knowledge.org/sparql](https://yago-knowledge.org/sparql). Usano Blazegraph. Lo so perché c´è una cartella blazegraph sul loro repo: [https://github.com/yago-naga/yago-website](https://github.com/yago-naga/yago-website). Idea per un articolo: confronto su come servizi su dataset RDF di grandi dimensioni in giro per il mondo gestiscono il problema della scalabilità vs come facciamo noi.
-* Per la tabella con i record del DMP per i vari casi studio dello Spoke 4 io faccio continuare la numerazione dall'ultima riga già presente oppure lascio vuoto e ci pensiamo dopo?
-  * Inoltre nella colonna licenza metto entrambe le licenze? CC0 sempre per i metadati più eventualmente quella dei dati
-* Mario mi confermi che per le API di Index e Meta utilizziamo sempre e solo il fork locale di Ramose e mai la libreria? Mi ripeti il motivo di questa cosa? Perché adesso devo lavorare su Ramose e non vorrei che per l'API rimanesse il fork.
-
-```python
-  # ramose 1.0.8                                                    
-  self.preprocess(par_dict, self.i, self.addon)             
-  query = self.i["sparql"]                                                       
-  for param in par_dict:
-      query = query.replace("[[%s]]" % param, str(par_dict[param]))
-      
-  # fork
-  self.preprocess(par_dict, self.i, self.addon)
-  # Gestione parametri lista
-  par_dict = {p_k: [par_dict[p_k]] if not isinstance(par_dict[p_k], list) else par_dict[p_k] for p_k in par_dict}
-  combinations = product(*par_dict.values())
-  parameters_comb = []
-  for combination in combinations:
-      parameters_comb.append(dict(zip(list(par_dict.keys()), list(combination))))
-  list_of_res = []
-  for par_dict in parameters_comb:
-      query = self.i["sparql"]
-      for param in par_dict:
-          query = query.replace("[[%s]]" % param, str(par_dict[param]))
-```
-
-Con il fork locale, quando un utente cerca per DOI un'entita' che ha piu' OMID associati (perche' ad esempio ci sono duplicati nel database), RAMOSE esegue una query SPARQL separata per ciascun OMID e poi unisce i risultati. Il pacchetto installato non puo' farlo perche' non sa gestire il caso in cui il preprocessor restituisce più valori da iterare. In pratica: un DOI potrebbe risolvere a piu' bibliographic resource distinte in OpenCitations Meta. Il fork permette di interrogare Index per ciascuna di esse e aggregare le citazioni.
-
-* [https://reuse.software/spec-3.3/](https://reuse.software/spec-3.3/) e [https://www.linuxfoundation.org/licensebestpractices](https://www.linuxfoundation.org/licensebestpractices)
-* wl.py in oc-api è solo in oc-api o è condiviso tra vari servizi?
-* Siamo consapevoli del fatto che la V1 di index fa una query diretta all'end point di Meta? Cioè proprio tramite query SPARQL a un servizio esterno.
+* Index ha un sistema di installazione abbastanza vetusto e supporta ancora Python 3.7 che però non è più sopportato dalle GitHub Action e di conseguenza i test falliscono. Possiamo droppare da Python 3.9 compreso in giù?
+* Possiamo anche aggiornare il sistema di gestione dell'ambiente virtuale di index con UV perché altrimenti ogni modifica che viene fatta bisogna rilanciare il setup all'interno dell'ambiente virtuale.
+* È utile che meta2redis salvi in csv oltre che sul redis? lo chiedo perché chiaramente è un problema di memoria non indifferente da gestire
+* Allora, per quanto riguarda la laurea di Hubert, non ho capito, devo venire in aula freschi alle 9 il 20? Devo prepararmi in qualche modo?
 
 ## Memo
 
