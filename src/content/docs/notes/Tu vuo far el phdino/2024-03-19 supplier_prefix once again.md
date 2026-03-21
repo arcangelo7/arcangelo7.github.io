@@ -1,4 +1,8 @@
 ---
+# SPDX-FileCopyrightText: 2025-2026 Arcangelo Massari <info@arcangelomassari.com>
+#
+# SPDX-License-Identifier: CC-BY-4.0
+
 title: 2024-03-19 supplier_prefix once again
 editUrl: false
 ---

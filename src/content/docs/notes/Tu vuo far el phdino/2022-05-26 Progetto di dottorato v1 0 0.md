@@ -1,4 +1,8 @@
 ---
+# SPDX-FileCopyrightText: 2025-2026 Arcangelo Massari <info@arcangelomassari.com>
+#
+# SPDX-License-Identifier: CC-BY-4.0
+
 title: 2022-05-26 Progetto di dottorato v1 0 0
 editUrl: false
 ---

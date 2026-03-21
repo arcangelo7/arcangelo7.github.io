@@ -1,4 +1,8 @@
 ---
+# SPDX-FileCopyrightText: 2025-2026 Arcangelo Massari <info@arcangelomassari.com>
+#
+# SPDX-License-Identifier: CC-BY-4.0
+
 title: 2023-09-12 Mi è scappata la mano e ho finito il d
 editUrl: false
 ---

@@ -1,0 +1,28 @@
+version = 1
+
+# Content assets (images, PDFs, SVGs)
+[[annotations]]
+path = [
+    "public/favicon.png",
+    "public/notes/attachments/**",
+    "src/assets/logo.png",
+    "src/assets/notes/attachments/**",
+]
+SPDX-FileCopyrightText = "2025-2026 Arcangelo Massari <info@arcangelomassari.com>"
+SPDX-License-Identifier = "CC-BY-4.0"
+
+# Project configuration files (no inline comments)
+[[annotations]]
+path = [
+    ".gitignore",
+    "package.json",
+    "tsconfig.json",
+]
+SPDX-FileCopyrightText = "2025-2026 Arcangelo Massari <info@arcangelomassari.com>"
+SPDX-License-Identifier = "ISC"
+
+# Machine-generated files
+[[annotations]]
+path = "package-lock.json"
+SPDX-FileCopyrightText = "NONE"
+SPDX-License-Identifier = "CC0-1.0"
