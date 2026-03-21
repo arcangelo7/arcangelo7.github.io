@@ -10,19 +10,3 @@ SPDX-License-Identifier: CC-BY-4.0
 [![REUSE](https://github.com/arcangelo7/arcangelo7.github.io/actions/workflows/reuse.yml/badge.svg)](https://github.com/arcangelo7/arcangelo7.github.io/actions/workflows/reuse.yml)
 
 PhD journal published with [Starlight](https://starlight.astro.build/) and [starlight-obsidian](https://starlight-obsidian.vercel.app/).
-
-## How it works
-
-Notes are written in Obsidian and automatically converted to a static site:
-
-1. Edit notes in Obsidian vault (`~/Documents/obsidian/Tu vuo far el phdino/`)
-2. Run `npm run build` to generate pages
-3. Commit and push (GitHub Actions deploys to GitHub Pages)
-
-## Commands
-
-| Command | Description |
-|---------|-------------|
-| `npm run dev` | Start local dev server |
-| `npm run build` | Build production site |
-| `npm run preview` | Preview production build |

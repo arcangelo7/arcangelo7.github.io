@@ -40,10 +40,10 @@ export default defineConfig({
 					skipGeneration: !!process.env.SKIP_OBSIDIAN_GENERATION,
 				}),
 				kgiPlugin({
-					vault: '/home/arcangelo/Documents/obsidian',
-					output: 'notes/kgi',
+					vault: '/home/arcangelo/Documents/obsidian/KG Inversion',
+					configFolder: '../.obsidian',
+					output: 'kgi',
 					ignore: [
-						'!(KG Inversion|attachments)/**',
 						'*.png',
 					],
 					sidebar: {
