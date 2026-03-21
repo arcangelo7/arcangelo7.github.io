@@ -34,7 +34,7 @@ export default defineConfig({
 						'*.png',
 					],
 					sidebar: {
-						label: 'PhD Journal',
+						label: 'Tu vuo far el phdino',
 						collapsed: false,
 					},
 					skipGeneration: !!process.env.SKIP_OBSIDIAN_GENERATION,
