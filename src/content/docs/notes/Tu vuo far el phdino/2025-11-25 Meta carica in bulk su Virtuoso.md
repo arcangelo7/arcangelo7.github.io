@@ -1,8 +1,4 @@
 ---
-# SPDX-FileCopyrightText: 2025-2026 Arcangelo Massari <info@arcangelomassari.com>
-#
-# SPDX-License-Identifier: CC-BY-4.0
-
 title: 2025-11-25 Meta carica in bulk su Virtuoso
 editUrl: false
 ---

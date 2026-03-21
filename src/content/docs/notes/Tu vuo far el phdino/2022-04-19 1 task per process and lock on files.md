@@ -1,8 +1,4 @@
 ---
-# SPDX-FileCopyrightText: 2025-2026 Arcangelo Massari <info@arcangelomassari.com>
-#
-# SPDX-License-Identifier: CC-BY-4.0
-
 title: 2022-04-19 1 task per process and lock on files
 editUrl: false
 ---

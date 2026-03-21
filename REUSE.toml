@@ -4,9 +4,9 @@ version = 1
 [[annotations]]
 path = [
     "public/favicon.png",
-    "public/notes/attachments/**",
+    "public/notes/**",
     "src/assets/logo.png",
-    "src/assets/notes/attachments/**",
+    "src/assets/notes/**",
 ]
 SPDX-FileCopyrightText = "2025-2026 Arcangelo Massari <info@arcangelomassari.com>"
 SPDX-License-Identifier = "CC-BY-4.0"
@@ -20,6 +20,12 @@ path = [
 ]
 SPDX-FileCopyrightText = "2025-2026 Arcangelo Massari <info@arcangelomassari.com>"
 SPDX-License-Identifier = "ISC"
+
+# Generated content (starlight-obsidian output)
+[[annotations]]
+path = "src/content/docs/notes/**"
+SPDX-FileCopyrightText = "2025-2026 Arcangelo Massari <info@arcangelomassari.com>"
+SPDX-License-Identifier = "CC-BY-4.0"
 
 # Machine-generated files
 [[annotations]]

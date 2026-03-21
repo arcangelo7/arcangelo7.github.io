@@ -1,8 +1,4 @@
 ---
-# SPDX-FileCopyrightText: 2025-2026 Arcangelo Massari <info@arcangelomassari.com>
-#
-# SPDX-License-Identifier: CC-BY-4.0
-
 title: 2024-09-03 Creazione entità
 editUrl: false
 ---

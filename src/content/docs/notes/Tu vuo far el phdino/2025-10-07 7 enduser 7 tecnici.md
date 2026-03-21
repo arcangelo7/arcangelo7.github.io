@@ -1,8 +1,4 @@
 ---
-# SPDX-FileCopyrightText: 2025-2026 Arcangelo Massari <info@arcangelomassari.com>
-#
-# SPDX-License-Identifier: CC-BY-4.0
-
 title: 2025-10-07 7 enduser 7 tecnici
 editUrl: false
 ---

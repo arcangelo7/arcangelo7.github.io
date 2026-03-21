@@ -5,7 +5,9 @@
 // @ts-check
 import { defineConfig } from 'astro/config';
 import starlight from '@astrojs/starlight';
-import starlightObsidian, { obsidianSidebarGroup } from 'starlight-obsidian';
+import starlightObsidian, { obsidianSidebarGroup, createStarlightObsidianPlugin } from 'starlight-obsidian';
+
+const [kgiPlugin, kgiSidebarGroup] = createStarlightObsidianPlugin();
 
 // https://astro.build/config
 export default defineConfig({
@@ -23,7 +25,7 @@ export default defineConfig({
 				Sidebar: './src/components/Sidebar.astro',
 				Pagination: './src/components/Pagination.astro',
 			},
-			sidebar: [obsidianSidebarGroup],
+			sidebar: [obsidianSidebarGroup, kgiSidebarGroup],
 			plugins: [
 				starlightObsidian({
 					vault: '/home/arcangelo/Documents/obsidian',
@@ -33,6 +35,19 @@ export default defineConfig({
 					],
 					sidebar: {
 						label: 'PhD Journal',
+						collapsed: false,
+					},
+					skipGeneration: !!process.env.SKIP_OBSIDIAN_GENERATION,
+				}),
+				kgiPlugin({
+					vault: '/home/arcangelo/Documents/obsidian',
+					output: 'notes/kgi',
+					ignore: [
+						'!(KG Inversion|attachments)/**',
+						'*.png',
+					],
+					sidebar: {
+						label: 'KGI',
 						collapsed: false,
 					},
 					skipGeneration: !!process.env.SKIP_OBSIDIAN_GENERATION,
