@@ -8,7 +8,7 @@ head:
   - tag: meta
     attrs:
       http-equiv: refresh
-      content: 0; url=/notes/tu-vuo-far-el-phdino/
+      content: 0; url=/notes/
 ---
 
-Redirecting to [Tu vuo far el phdino](/notes/tu-vuo-far-el-phdino/)...
+Redirecting to [notes](/notes/)...
