@@ -28,9 +28,9 @@ export default defineConfig({
 			sidebar: [obsidianSidebarGroup, kgiSidebarGroup],
 			plugins: [
 				starlightObsidian({
-					vault: '/home/arcangelo/Documents/obsidian',
+					vault: '/home/arcangelo/Documents/obsidian/Tu vuo far el phdino',
+					configFolder: '../.obsidian',
 					ignore: [
-						'!(Tu vuo far el phdino|attachments)/**',
 						'*.png',
 					],
 					sidebar: {
