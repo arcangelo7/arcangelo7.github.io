@@ -5,6 +5,27 @@ editUrl: false
 
 ## La Novitade
 
+### OC Meta
+
+<div style="border: 1px solid #d0d7de; border-radius: 8px; padding: 16px; margin: 8px 0; background: #ffffff; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; color: #1f2328;"><div style="display: flex; align-items: center; gap: 12px; margin-bottom: 12px;"><div><strong style="display: block; color: #1f2328;">arcangelo7</strong><span style="font-size: 0.85em; color: #656d76;">Mar 21, 2026</span><span style="font-size: 0.85em; color: #656d76;"> &middot; </span><a href="https://github.com/opencitations/oc_meta" style="font-size: 0.85em; color: #0969da; text-decoration: none;">opencitations/oc_meta</a></div></div><div style="margin: 12px 0; color: #1f2328;"><p>refactor: standardize string literals to use explicit xsd:string datatype</p>
+<p>Remove UNION patterns that handled both typed and untyped string
+literals. All string literals now use explicit xsd:string datatype,
+eliminating the need for redundant query branches in SPARQL and
+dual-literal searches in local graph traversal.</p></div><div style="display: flex; justify-content: space-between; align-items: center; font-size: 0.85em;"><span style="font-family: monospace; color: #1a7f37; font-weight: 600;">+15227</span><span style="font-family: monospace; color: #cf222e; font-weight: 600;">-15286</span><a href="https://github.com/opencitations/oc_meta/commit/1d947fe6e0419b32fae2c6746f5da7192908edcf" style="color: #0969da; text-decoration: none; font-weight: 500;">1d947fe</a></div></div>
+
+L'indice testuale di qlever è rotto:
+
+* [https://github.com/ad-freiburg/qlever/issues/2082](https://github.com/ad-freiburg/qlever/issues/2082)
+* [https://github.com/ad-freiburg/qlever/issues/2688](https://github.com/ad-freiburg/qlever/issues/2688)
+
+Nel Qleverfile che definisce le regole per costruire l'indice bisogna fissare l'immagine di docker e dev'essere la stessa con cui viene avviato il container, altrimenti alcune query non funzionano. Se non si fissa l'immagine si rischia che il CLI usi una versione di docker diversa da quella con cui viene avviato il container.
+
+```
+[runtime]
+SYSTEM = docker
+IMAGE = docker.io/adfreiburg/qlever:commit-5c6a72a
+```
+
 ### RDFLib alla foce della Magra?
 
 * Purtroppo, a differenza di RDFlib, pyoxigraph non indica il data type stringa nelle nquads. Questo è corretto da specifica, anzi pyoxigraph è più corretto di RDFlib in questo senso e si avvicina anche di più al comportamento di Qlever. Tuttavia, io ci terrei, almeno in questa fase, a mantenere il data type esplicito per essere il più possibili agnostici rispetto al database, date le esperienze passate, e quindi almeno per questa operazione per il momento preferisco continuare a utilizzare RDFLib.
@@ -50,6 +71,8 @@ editUrl: false
 <div style="border: 1px solid #d0d7de; border-radius: 8px; padding: 16px; margin: 8px 0; background: #ffffff; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; color: #1f2328;"><div style="display: flex; align-items: center; gap: 12px; margin-bottom: 12px;"><img src="https://avatars.githubusercontent.com/u/42008604?v=4" style="width: 32px; height: 32px; border-radius: 50%;" alt="arcangelo7" /><div><strong style="display: block; color: #1f2328;">arcangelo7</strong><span style="font-size: 0.85em; color: #656d76;">Mar 21, 2026</span><span style="font-size: 0.85em; color: #656d76;"> &middot; </span><a href="https://github.com/opencitations/crowdsourcing" style="font-size: 0.85em; color: #0969da; text-decoration: none;">opencitations/crowdsourcing</a></div></div><div style="margin: 12px 0; color: #1f2328;"><p>feat: add REUSE 3.3 spec compliance</p></div><div style="display: flex; justify-content: space-between; align-items: center; font-size: 0.85em;"><span style="font-family: monospace; color: #1a7f37; font-weight: 600;">+266</span><span style="font-family: monospace; color: #cf222e; font-weight: 600;">-134</span><a href="https://github.com/opencitations/crowdsourcing/commit/6a7703a0cd25ce9815b45a1a3174454eafccab41" style="color: #0969da; text-decoration: none; font-weight: 500;">6a7703a</a></div></div>
 
 <div style="border: 1px solid #d0d7de; border-radius: 8px; padding: 16px; margin: 8px 0; background: #ffffff; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; color: #1f2328;"><div style="display: flex; align-items: center; gap: 12px; margin-bottom: 12px;"><img src="https://avatars.githubusercontent.com/u/42008604?v=4" style="width: 32px; height: 32px; border-radius: 50%;" alt="arcangelo7" /><div><strong style="display: block; color: #1f2328;">arcangelo7</strong><span style="font-size: 0.85em; color: #656d76;">Mar 21, 2026</span><span style="font-size: 0.85em; color: #656d76;"> &middot; </span><a href="https://github.com/thinkcompute/thinkcompute.github.io" style="font-size: 0.85em; color: #0969da; text-decoration: none;">thinkcompute/thinkcompute.github.io</a></div></div><div style="margin: 12px 0; color: #1f2328;"><p>chore: add REUSE 3.3 license compliance</p></div><div style="display: flex; justify-content: space-between; align-items: center; font-size: 0.85em;"><span style="font-family: monospace; color: #1a7f37; font-weight: 600;">+1197</span><span style="font-family: monospace; color: #cf222e; font-weight: 600;">-1274</span><a href="https://github.com/thinkcompute/thinkcompute.github.io/commit/0c6a477bcdb50fd73b3b06d08a8f56324c86454f" style="color: #0969da; text-decoration: none; font-weight: 500;">0c6a477</a></div></div>
+
+<div style="border: 1px solid #d0d7de; border-radius: 8px; padding: 16px; margin: 8px 0; background: #ffffff; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; color: #1f2328;"><div style="display: flex; align-items: center; gap: 12px; margin-bottom: 12px;"><img src="https://avatars.githubusercontent.com/u/42008604?v=4" style="width: 32px; height: 32px; border-radius: 50%;" alt="arcangelo7" /><div><strong style="display: block; color: #1f2328;">arcangelo7</strong><span style="font-size: 0.85em; color: #656d76;">Mar 21, 2026</span><span style="font-size: 0.85em; color: #656d76;"> &middot; </span><a href="https://github.com/opencitations/oc_ds_converter" style="font-size: 0.85em; color: #0969da; text-decoration: none;">opencitations/oc_ds_converter</a></div></div><div style="margin: 12px 0; color: #1f2328;"><p>chore: add REUSE 3.3 license compliance</p></div><div style="display: flex; justify-content: space-between; align-items: center; font-size: 0.85em;"><span style="font-family: monospace; color: #1a7f37; font-weight: 600;">+1297</span><span style="font-family: monospace; color: #cf222e; font-weight: 600;">-1138</span><a href="https://github.com/opencitations/oc_ds_converter/commit/eeb8161b7acf98b843b9c05fe24861f9871b636e" style="color: #0969da; text-decoration: none; font-weight: 500;">eeb8161</a></div></div>
 
 ### Domande
 
