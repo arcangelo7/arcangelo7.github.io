@@ -10,15 +10,13 @@ There are two repositories to consider:
 1. **Archived repository** ([https://github.com/kg-construct/rml-test-cases](https://github.com/kg-construct/rml-test-cases)). This repo is marked as deprecated ("new test cases are published per module") but it remains the only source for database-specific RML test cases.
    * Test case directories spanning RMLTC0000 through RMLTC0020
 2. **New modular repository** ([https://github.com/kg-construct/rml-core](https://github.com/kg-construct/rml-core)): currently only JSON variants.
-   * Contains 76 test cases spanning RMLTC0000 through RMLTC0031. Test cases RMLTC0021 through RMLTC0031 are entirely new and have no equivalent in the archived repo or in R2RML. Compared to the archived repo, the new repo also drops several test cases from the 0000-0020 range (detailed below).
+   * Contains 76 test cases spanning RMLTC0000 through RMLTC0031. Test cases RMLTC0021 through RMLTC0031 are entirely new and have no equivalent in the archived repo or in R2RML.
 
 ## Comparison between archived RML test cases and R2RML test cases
 
 Our project currently uses 62 R2RML test cases (R2RMLTC0000 through R2RMLTC0020), matching the kg-construct/r2rml-test-cases-support repository. The W3C spec ([https://www.w3.org/2001/sw/rdb2rdf/test-cases/](https://www.w3.org/2001/sw/rdb2rdf/test-cases/)) defines 63 test cases, but R2RMLTC0003a ("undefined SQL Version identifier", an error test case) was never implemented in the support repository. The archived RML repo covers the same range (RMLTC0000 through RMLTC0020) with 60 PostgreSQL test cases.
 
-### Direct equivalents
-
-Most RML-PostgreSQL archived test cases map directly to R2RML test cases and test the same features, with only the expected vocabulary and quoting differences (detailed in the "Systematic differences" section below). Test cases marked with \* have inconsistencies. Test cases marked with \*\* are affected by the PostgreSQL case sensitivity bug documented below.
+Test cases marked with \* have inconsistencies. Test cases marked with \*\* are affected by the PostgreSQL case sensitivity bug documented below.
 
 | Feature area                    | R2RML IDs                                   | RML IDs (archived)         | Notes                                                                                                                                                                                                                                                                                                                                                      |
 | ------------------------------- | ------------------------------------------- | -------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
