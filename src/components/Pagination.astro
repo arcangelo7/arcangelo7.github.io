@@ -4,24 +4,50 @@ SPDX-FileCopyrightText: 2025 Arcangelo Massari <info@arcangelomassari.com>
 SPDX-License-Identifier: ISC
 -->
 ---
-const { dir, pagination, entry } = Astro.locals.starlightRoute;
+const { dir, pagination, entry, sidebar } = Astro.locals.starlightRoute;
 const isRtl = dir === 'rtl';
 
-// Check if current page is the index
-const isIndex = entry.slug.endsWith('/index') || entry.slug === 'index';
+const isIndex = !entry.slug.includes('/') || entry.slug.endsWith('/index');
+const currentSection = entry.slug.split('/')[0];
 
-// For reversed sidebar order:
-// - Index is first, so it has no prev, only next (most recent date)
-// - For other pages, swap prev/next
+interface PaginationLink { href: string; label: string }
+
+function sameSection(link: PaginationLink | undefined): PaginationLink | undefined {
+	if (!link) return undefined;
+	const linkSection = link.href.replace(/^\//, '').split('/')[0];
+	return linkSection === currentSection ? link : undefined;
+}
+
+// Find the last leaf entry in the current section (= most recent in original order,
+// which becomes the first after visual reversal in the Sidebar component)
+function findLastLeafInSection(): PaginationLink | undefined {
+	const sectionPrefix = `/${currentSection}/`;
+	for (const group of sidebar) {
+		if (group.type !== 'group') continue;
+		const leaves: PaginationLink[] = [];
+		function collect(entries: typeof sidebar): void {
+			for (const e of entries) {
+				if (e.type === 'group') collect(e.entries);
+				else if (e.type === 'link' && e.href.startsWith(sectionPrefix) && !e.isCurrent) {
+					leaves.push({ href: e.href, label: e.label });
+				}
+			}
+		}
+		collect(group.entries);
+		if (leaves.length > 0) return leaves[leaves.length - 1];
+	}
+	return undefined;
+}
+
+// Reversed sidebar order: swap prev/next, suppress cross-section links.
+// For index pages, "next" is the most recent entry (last in original order).
 let prev, next;
 if (isIndex) {
-	// Index: no previous, next is the most recent date (which was originally the last item)
 	prev = undefined;
-	next = pagination.prev; // The original prev points to the most recent date after reversal
+	next = findLastLeafInSection();
 } else {
-	// Other pages: swap prev and next
-	prev = pagination.next;
-	next = pagination.prev;
+	prev = sameSection(pagination.next);
+	next = sameSection(pagination.prev);
 }
 
 const leftArrow = '<path d="M17 11H9.41l3.3-3.29a1.004 1.004 0 1 0-1.42-1.42l-5 5a1 1 0 0 0-.21.33 1 1 0 0 0 0 .76 1 1 0 0 0 .21.33l5 5a1.002 1.002 0 0 0 1.639-.325 1 1 0 0 0-.219-1.095L9.41 13H17a1 1 0 0 0 0-2Z"/>';
