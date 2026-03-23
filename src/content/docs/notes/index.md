@@ -42,6 +42,18 @@ IMAGE = docker.io/adfreiburg/qlever:commit-5c6a72a
 
 [https://github.com/w3c/sparql-query/pull/57](https://github.com/w3c/sparql-query/pull/57)
 
+### shacl-extractor
+
+[https://github.com/skg-if/shacl-extractor/pull/3](https://github.com/skg-if/shacl-extractor/pull/3)
+
+[https://github.com/skg-if/shacl-extractor/issues/4](https://github.com/skg-if/shacl-extractor/issues/4)
+
+[https://github.com/skg-if/shacl-extractor/issues/5](https://github.com/skg-if/shacl-extractor/issues/5)
+
+### Difesa
+
+![Pasted image 20260323152727.png](../../../assets/notes/attachments/pasted-image-20260323152727.png)
+
 ### Machine readable vanity
 
 ![Pasted image 20260321111201.png](../../../assets/notes/attachments/pasted-image-20260321111201.png)
