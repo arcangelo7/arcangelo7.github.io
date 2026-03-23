@@ -26,6 +26,13 @@ SYSTEM = docker
 IMAGE = docker.io/adfreiburg/qlever:commit-5c6a72a
 ```
 
+Ce l'abbiamo un anno e mezzo per produrre il prossimo dump?\
+![Pasted image 20260323224052.png](../../../assets/notes/attachments/pasted-image-20260323224052.png)
+
+#### Skibidiboppi
+
+![Pasted image 20260323224414.png](../../../assets/notes/attachments/pasted-image-20260323224414.png)
+
 ### RDFLib alla foce della Magra?
 
 * Purtroppo, a differenza di RDFlib, pyoxigraph non indica il data type stringa nelle nquads. Questo è corretto da specifica, anzi pyoxigraph è più corretto di RDFlib in questo senso e si avvicina anche di più al comportamento di Qlever. Tuttavia, io ci terrei, almeno in questa fase, a mantenere il data type esplicito per essere il più possibili agnostici rispetto al database, date le esperienze passate, e quindi almeno per questa operazione per il momento preferisco continuare a utilizzare RDFLib.
