@@ -21,6 +21,13 @@ if [ ! -d "$VAULT" ]; then
   exit 0
 fi
 
+link="$VAULT/Tu vuo far el phdino/attachments"
+target="$VAULT/attachments"
+if [ -d "$target" ] && [ -d "$VAULT/Tu vuo far el phdino" ] && [ ! -e "$link" ]; then
+  ln -sfn "$target" "$link"
+  echo "Created symlink: $link -> $target"
+fi
+
 DEST="public/notes"
 EXTENSIONS=("json" "csv" "docx" "yml" "yaml")
 INCLUDED_DIRS=("attachments" "Tu vuo far el phdino")
