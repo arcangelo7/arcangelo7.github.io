@@ -5,362 +5,144 @@ editUrl: false
 
 ## La Novitade
 
+### RAMOSE
+
+<div style="border: 1px solid #d0d7de; border-radius: 8px; padding: 16px; margin: 8px 0; background: #ffffff; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; color: #1f2328;"><div style="display: flex; align-items: center; gap: 12px; margin-bottom: 12px;"><img src="https://avatars.githubusercontent.com/u/42008604?v=4" style="width: 32px; height: 32px; border-radius: 50%;" alt="arcangelo7" /><div><strong style="display: block; color: #1f2328;">arcangelo7</strong><span style="font-size: 0.85em; color: #656d76;">Apr 27, 2026</span><span style="font-size: 0.85em; color: #656d76;"> &middot; </span><a href="https://github.com/opencitations/ramose" style="font-size: 0.85em; color: #0969da; text-decoration: none;">opencitations/ramose</a></div></div><div style="margin: 12px 0; color: #1f2328;"><p>refactor(skgif): use full URIs as product identifiers instead of OMID shorthand</p></div><div style="display: flex; justify-content: space-between; align-items: center; font-size: 0.85em;"><span style="font-family: monospace; color: #1a7f37; font-weight: 600;">+29</span><span style="font-family: monospace; color: #cf222e; font-weight: 600;">-36</span><a href="https://github.com/opencitations/ramose/commit/00c8ee2f64ff85399553030a7331b803396ca38b" style="color: #0969da; text-decoration: none; font-weight: 500;">00c8ee2</a></div></div>
+
+<div style="border: 1px solid #d0d7de; border-radius: 8px; padding: 16px; margin: 8px 0; background: #ffffff; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; color: #1f2328;"><div style="display: flex; align-items: center; gap: 12px; margin-bottom: 12px;"><img src="https://avatars.githubusercontent.com/u/42008604?v=4" style="width: 32px; height: 32px; border-radius: 50%;" alt="arcangelo7" /><div><strong style="display: block; color: #1f2328;">arcangelo7</strong><span style="font-size: 0.85em; color: #656d76;">Apr 27, 2026</span><span style="font-size: 0.85em; color: #656d76;"> &middot; </span><a href="https://github.com/opencitations/ramose" style="font-size: 0.85em; color: #0969da; text-decoration: none;">opencitations/ramose</a></div></div><div style="margin: 12px 0; color: #1f2328;"><p>feat: add #default_format field to override CSV default per operation</p></div><div style="display: flex; justify-content: space-between; align-items: center; font-size: 0.85em;"><span style="font-family: monospace; color: #1a7f37; font-weight: 600;">+133</span><span style="font-family: monospace; color: #cf222e; font-weight: 600;">-6</span><a href="https://github.com/opencitations/ramose/commit/fffea47753486c152777ad07e4e7eb2437e20342" style="color: #0969da; text-decoration: none; font-weight: 500;">fffea47</a></div></div>
+
+<div style="border: 1px solid #d0d7de; border-radius: 8px; padding: 16px; margin: 8px 0; background: #ffffff; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; color: #1f2328;"><div style="display: flex; align-items: center; gap: 12px; margin-bottom: 12px;"><img src="https://avatars.githubusercontent.com/u/42008604?v=4" style="width: 32px; height: 32px; border-radius: 50%;" alt="arcangelo7" /><div><strong style="display: block; color: #1f2328;">arcangelo7</strong><span style="font-size: 0.85em; color: #656d76;">Apr 28, 2026</span><span style="font-size: 0.85em; color: #656d76;"> &middot; </span><a href="https://github.com/opencitations/ramose" style="font-size: 0.85em; color: #0969da; text-decoration: none;">opencitations/ramose</a></div></div><div style="margin: 12px 0; color: #1f2328;"><p>feat: add #custom_params field for addon-handled query parameters</p>
+<p>Allow operations to declare custom query string parameters that are
+processed by addon functions instead of the built-in pipeline. Each
+parameter specifies a handler, processing phase (preprocess or
+postprocess), and description.</p>
+<p>Preprocess handlers generate SPARQL fragments injected via [[name]]
+placeholders. Postprocess handlers transform the result table after
+built-in filters. When a custom parameter name collides with a built-in
+(filter, sort, require), the built-in behavior is disabled.</p></div><div style="display: flex; justify-content: space-between; align-items: center; font-size: 0.85em;"><span style="font-family: monospace; color: #1a7f37; font-weight: 600;">+383</span><span style="font-family: monospace; color: #cf222e; font-weight: 600;">-21</span><a href="https://github.com/opencitations/ramose/commit/4320f54ccb40bb1a6435dd6b28594b89b670ec56" style="color: #0969da; text-decoration: none; font-weight: 500;">4320f54</a></div></div>
+
+<div style="border: 1px solid #d0d7de; border-radius: 8px; padding: 16px; margin: 8px 0; background: #ffffff; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; color: #1f2328;"><div style="display: flex; align-items: center; gap: 12px; margin-bottom: 12px;"><img src="https://avatars.githubusercontent.com/u/42008604?v=4" style="width: 32px; height: 32px; border-radius: 50%;" alt="arcangelo7" /><div><strong style="display: block; color: #1f2328;">arcangelo7</strong><span style="font-size: 0.85em; color: #656d76;">Apr 28, 2026</span><span style="font-size: 0.85em; color: #656d76;"> &middot; </span><a href="https://github.com/opencitations/ramose" style="font-size: 0.85em; color: #0969da; text-decoration: none;">opencitations/ramose</a></div></div><div style="margin: 12px 0; color: #1f2328;"><p>feat(skgif): expand product filter with contributor and type criteria</p>
+<p>Support filtering by contributor attributes (family name, given name,
+ORCID, identifier scheme, local identifier, organization name) and by
+product type.</p></div><div style="display: flex; justify-content: space-between; align-items: center; font-size: 0.85em;"><span style="font-family: monospace; color: #1a7f37; font-weight: 600;">+196</span><span style="font-family: monospace; color: #cf222e; font-weight: 600;">-90</span><a href="https://github.com/opencitations/ramose/commit/f805f4baab1b637ea0266b14672320506598c6d1" style="color: #0969da; text-decoration: none; font-weight: 500;">f805f4b</a></div></div>
+
+<div style="border: 1px solid #d0d7de; border-radius: 8px; padding: 16px; margin: 8px 0; background: #ffffff; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; color: #1f2328;"><div style="display: flex; align-items: center; gap: 12px; margin-bottom: 12px;"><img src="https://avatars.githubusercontent.com/u/42008604?v=4" style="width: 32px; height: 32px; border-radius: 50%;" alt="arcangelo7" /><div><strong style="display: block; color: #1f2328;">arcangelo7</strong><span style="font-size: 0.85em; color: #656d76;">Apr 28, 2026</span><span style="font-size: 0.85em; color: #656d76;"> &middot; </span><a href="https://github.com/opencitations/ramose" style="font-size: 0.85em; color: #0969da; text-decoration: none;">opencitations/ramose</a></div></div><div style="margin: 12px 0; color: #1f2328;"><p>test(skgif): validate converter output against SHACL shapes</p>
+<p>Also, the converter now normalizes partial dates to full dates before output.</p></div><div style="display: flex; justify-content: space-between; align-items: center; font-size: 0.85em;"><span style="font-family: monospace; color: #1a7f37; font-weight: 600;">+42</span><span style="font-family: monospace; color: #cf222e; font-weight: 600;">-3</span><a href="https://github.com/opencitations/ramose/commit/b7adb1029c98e6b2928c8be1609c3cdf7a3d72ba" style="color: #0969da; text-decoration: none; font-weight: 500;">b7adb10</a></div></div>
+
+<div style="border: 1px solid #d0d7de; border-radius: 8px; padding: 16px; margin: 8px 0; background: #ffffff; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; color: #1f2328;"><div style="display: flex; align-items: center; gap: 12px; margin-bottom: 12px;"><img src="https://avatars.githubusercontent.com/u/42008604?v=4" style="width: 32px; height: 32px; border-radius: 50%;" alt="arcangelo7" /><div><strong style="display: block; color: #1f2328;">arcangelo7</strong><span style="font-size: 0.85em; color: #656d76;">Apr 29, 2026</span><span style="font-size: 0.85em; color: #656d76;"> &middot; </span><a href="https://github.com/opencitations/ramose" style="font-size: 0.85em; color: #0969da; text-decoration: none;">opencitations/ramose</a></div></div><div style="margin: 12px 0; color: #1f2328;"><p>feat(skgif): add citation filters via directive injection into query templates</p>
+<p>Placeholders can be placed anywhere in the #sparql
+block, and the engine resolves them before checking for @@ directives.</p>
+<p>Four new citation filters (cf.cites, cf.cited_by, cf.cites_doi,
+cf.cited_by_doi) use this mechanism to federate across Meta and Index
+endpoints.</p></div><div style="display: flex; justify-content: space-between; align-items: center; font-size: 0.85em;"><span style="font-family: monospace; color: #1a7f37; font-weight: 600;">+420</span><span style="font-family: monospace; color: #cf222e; font-weight: 600;">-209</span><a href="https://github.com/opencitations/ramose/commit/5e159cb52e4b3f2ec22ad5d99350e3cc204fc85d" style="color: #0969da; text-decoration: none; font-weight: 500;">5e159cb</a></div></div>
+
+<div style="border: 1px solid #d0d7de; border-radius: 8px; padding: 16px; margin: 8px 0; background: #ffffff; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; color: #1f2328;"><div style="display: flex; align-items: center; gap: 12px; margin-bottom: 12px;"><img src="https://avatars.githubusercontent.com/u/42008604?v=4" style="width: 32px; height: 32px; border-radius: 50%;" alt="arcangelo7" /><div><strong style="display: block; color: #1f2328;">arcangelo7</strong><span style="font-size: 0.85em; color: #656d76;">Apr 29, 2026</span><span style="font-size: 0.85em; color: #656d76;"> &middot; </span><a href="https://github.com/opencitations/ramose" style="font-size: 0.85em; color: #0969da; text-decoration: none;">opencitations/ramose</a></div></div><div style="margin: 12px 0; color: #1f2328;"><p>fix(api_manager): return 400 instead of 404 for invalid parameter values</p>
+<p>When an operation exists but the parameter value doesn&#39;t match the
+expected type regex (e.g. a DOI where an ORCID is expected), the error
+now correctly reports an invalid parameter (400) rather than a missing
+operation (404). Empty parameters are also caught with a specific message.</p>
+<p>Closes: #19</p></div><div style="display: flex; justify-content: space-between; align-items: center; font-size: 0.85em;"><span style="font-family: monospace; color: #1a7f37; font-weight: 600;">+57</span><span style="font-family: monospace; color: #cf222e; font-weight: 600;">-7</span><a href="https://github.com/opencitations/ramose/commit/f26a6c05d515d4c93cdb26ef34a9fcdef8e6ded7" style="color: #0969da; text-decoration: none; font-weight: 500;">f26a6c0</a></div></div>
+
 ### Meta
 
-#### TripleLite
+L'ingestione di OpenAlex è andata out of memory a causa del db Redis per i contatori di dati e provenance che ha superato i 100GB in RAM. Non è più sostenibile, conviene tornare al vecchio sistema basato su file. Vediamo di quanto degradano le performance. Al massimo sostituisco i file con un db relazionale.
 
-<div style="border: 1px solid #d0d7de; border-radius: 8px; padding: 16px; margin: 8px 0; background: #ffffff; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; color: #1f2328;"><div style="display: flex; align-items: center; gap: 12px; margin-bottom: 12px;"><div><strong style="display: block; color: #1f2328;">arcangelo7</strong><span style="font-size: 0.85em; color: #656d76;">Apr 15, 2026</span><span style="font-size: 0.85em; color: #656d76;"> &middot; </span><a href="https://github.com/opencitations/triplelite" style="font-size: 0.85em; color: #0969da; text-decoration: none;">opencitations/triplelite</a></div></div><div style="margin: 12px 0; color: #1f2328;"><p>perf: intern strings and terms as integer IDs in internal indices</p>
-<p>Store subjects, predicates, and objects as integer IDs internally,
-mapping back to strings/RDFTerms only at the public API boundary.
-Reduces memory for repeated URIs and speeds up set operations
-(int hashing/comparison vs full string).</p>
-<p>Add add_many() for batch insertion with cached lookups, avoiding
-per-call method overhead. Update rdflib bridge and subgraph to
-use it.</p></div><div style="display: flex; justify-content: space-between; align-items: center; font-size: 0.85em;"><span style="font-family: monospace; color: #1a7f37; font-weight: 600;">+422</span><span style="font-family: monospace; color: #cf222e; font-weight: 600;">-105</span><a href="https://github.com/opencitations/triplelite/commit/b631e9abec4bb9c47605455a13da5f5dbb43b502" style="color: #0969da; text-decoration: none; font-weight: 500;">b631e9a</a></div></div>
+<div style="border: 1px solid #d0d7de; border-radius: 8px; padding: 16px; margin: 8px 0; background: #ffffff; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; color: #1f2328;"><div style="display: flex; align-items: center; gap: 12px; margin-bottom: 12px;"><div><strong style="display: block; color: #1f2328;">arcangelo7</strong><span style="font-size: 0.85em; color: #656d76;">May 1, 2026</span><span style="font-size: 0.85em; color: #656d76;"> &middot; </span><a href="https://github.com/opencitations/oc_meta" style="font-size: 0.85em; color: #0969da; text-decoration: none;">opencitations/oc_meta</a></div></div><div style="margin: 12px 0; color: #1f2328;"><p>refactor!: replace redis counters with filesystem-based counter handler</p></div><div style="display: flex; justify-content: space-between; align-items: center; font-size: 0.85em;"><span style="font-family: monospace; color: #1a7f37; font-weight: 600;">+249</span><span style="font-family: monospace; color: #cf222e; font-weight: 600;">-544</span><a href="https://github.com/opencitations/oc_meta/commit/a53d21beda3532ea060a47d144d9bc68316b9d59" style="color: #0969da; text-decoration: none; font-weight: 500;">a53d21b</a></div></div>
 
-Stesse triple in 4 posti:
+### Uno più uno
 
-1. finder.graph, cache grande condivisa
-2. subgraph temporaneo, vive durante `__init__`, poi GC'd
-3. GraphEntity.g, TripleLite per-entità in oc\_ocdm
-4. `GraphEntity._preexisting_triples`, frozenset per calcolo diff
+Posso fare come ho sempre fatto
 
-No buono.
-
-<div style="border: 1px solid #d0d7de; border-radius: 8px; padding: 16px; margin: 8px 0; background: #ffffff; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; color: #1f2328;"><div style="display: flex; align-items: center; gap: 12px; margin-bottom: 12px;"><div><strong style="display: block; color: #1f2328;">arcangelo7</strong><span style="font-size: 0.85em; color: #656d76;">Apr 16, 2026</span><span style="font-size: 0.85em; color: #656d76;"> &middot; </span><a href="https://github.com/opencitations/triplelite" style="font-size: 0.85em; color: #0969da; text-decoration: none;">opencitations/triplelite</a></div></div><div style="margin: 12px 0; color: #1f2328;"><p>feat: replace subgraph copy with zero-copy SubgraphView [release]</p>
-<p>subgraph() now returns a read-only SubgraphView that references
-the parent graph&#39;s internal data directly. The view reflects
-subsequent changes to the parent and supports iteration, length,
-predicate_objects(), and set operations.</p></div><div style="display: flex; justify-content: space-between; align-items: center; font-size: 0.85em;"><span style="font-family: monospace; color: #1a7f37; font-weight: 600;">+120</span><span style="font-family: monospace; color: #cf222e; font-weight: 600;">-24</span><a href="https://github.com/opencitations/triplelite/commit/4326f1ad9c70b683a4de245772b0f01933745377" style="color: #0969da; text-decoration: none; font-weight: 500;">4326f1a</a></div></div>
-
- <span class="sl-obs-tag">#TODO</span> Questa libreria va chiaramente riscritta in C. È piccola, semplice, già scritta col C in mente.
-
-#### JaLC
-
-```bash
-Total Duration: 28733.617s (7.9 ore)
-Total Records: 2_504_478
-Total Entities: 14_136_038
-Peak Memory (RSS): 30283.4 MB
+```sparql
+?br_uri datacite:hasIdentifier ?id .
+?id literal:hasLiteralValue "9781402096327" .
 ```
 
-#### OUTCITE
+Oppure posso usare un blank node
 
-```bash
-Total Duration: 138883.274s (38,7 ore)
-Total Records: 2_306_758
-Total Entities: 15_707_992
-Peak Memory (RSS): 53809.9 MB
+```sparql
+?br_uri datacite:hasIdentifier [ literal:hasLiteralValue "9781402096327" ] .
 ```
 
-![Pasted image 20260424105623.png](../../../assets/notes/attachments/pasted-image-20260424105623.png)
-
-### OC\_OCDM
-
-<div style="border: 1px solid #d0d7de; border-radius: 8px; padding: 16px; margin: 8px 0; background: #ffffff; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; color: #1f2328;"><div style="display: flex; align-items: center; gap: 12px; margin-bottom: 12px;"><img src="https://avatars.githubusercontent.com/u/42008604?v=4" style="width: 32px; height: 32px; border-radius: 50%;" alt="arcangelo7" /><div><strong style="display: block; color: #1f2328;">arcangelo7</strong><span style="font-size: 0.85em; color: #656d76;">Apr 14, 2026</span><span style="font-size: 0.85em; color: #656d76;"> &middot; </span><a href="https://github.com/opencitations/oc_ocdm" style="font-size: 0.85em; color: #0969da; text-decoration: none;">opencitations/oc_ocdm</a></div></div><div style="margin: 12px 0; color: #1f2328;"><p>refactor!: replace rdflib Graph/URIRef with lightweight LightGraph/str</p>
-<p>BREAKING CHANGE: entity.res is now str (was URIRef), entity.g is now
-LightGraph (was rdflib.Graph), all factory methods accept str instead
-of URIRef, all getters return str instead of URIRef</p></div><div style="display: flex; justify-content: space-between; align-items: center; font-size: 0.85em;"><span style="font-family: monospace; color: #1a7f37; font-weight: 600;">+1179</span><span style="font-family: monospace; color: #cf222e; font-weight: 600;">-1019</span><a href="https://github.com/opencitations/oc_ocdm/commit/355f76a3ee2498ab853ba18a1333095cb2321f07" style="color: #0969da; text-decoration: none; font-weight: 500;">355f76a</a></div></div>
-
-Rilascio un'autorizzazione a buongiorno principessarmi: ho capito solo ora a cosa serva il context nei file json-ld e mi piace molto.
-
-<div style="border: 1px solid #d0d7de; border-radius: 8px; padding: 16px; margin: 8px 0; background: #ffffff; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; color: #1f2328;"><div style="display: flex; align-items: center; gap: 12px; margin-bottom: 12px;"><div><strong style="display: block; color: #1f2328;">arcangelo7</strong><span style="font-size: 0.85em; color: #656d76;">Apr 16, 2026</span><span style="font-size: 0.85em; color: #656d76;"> &middot; </span><a href="https://github.com/opencitations/metadata" style="font-size: 0.85em; color: #0969da; text-decoration: none;">opencitations/metadata</a></div></div><div style="margin: 12px 0; color: #1f2328;"><p>feat: extend context with new types, identifiers, and restructured properties</p>
-<p>Add type mappings for document parts (abstract, introduction,
-discussion, methods, results, conclusion, related_work, materials),
-document types (archival_document, audio_document, computer_program,
-editorial, journal_editorial, newspaper, newspaper_article,
-newspaper_editorial, newspaper_issue, presentation,
-data_management_plan, retraction_notice), and has_annotation property.</p>
-<p>Add identifier schemes: intrepid, jid, openalex, ror, wikidata,
-wikipedia.</p></div><div style="display: flex; justify-content: space-between; align-items: center; font-size: 0.85em;"><span style="font-family: monospace; color: #1a7f37; font-weight: 600;">+29</span><span style="font-family: monospace; color: #cf222e; font-weight: 600;">-2</span><a href="https://github.com/opencitations/metadata/commit/708e1327fe61baef0628670793688751af077650" style="color: #0969da; text-decoration: none; font-weight: 500;">708e132</a></div></div>
-
-<div style="border: 1px solid #d0d7de; border-radius: 8px; padding: 16px; margin: 8px 0; background: #ffffff; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; color: #1f2328;"><div style="display: flex; align-items: center; gap: 12px; margin-bottom: 12px;"><div><strong style="display: block; color: #1f2328;">arcangelo7</strong><span style="font-size: 0.85em; color: #656d76;">Apr 16, 2026</span><span style="font-size: 0.85em; color: #656d76;"> &middot; </span><a href="https://github.com/opencitations/oc_ocdm" style="font-size: 0.85em; color: #0969da; text-decoration: none;">opencitations/oc_ocdm</a></div></div><div style="margin: 12px 0; color: #1f2328;"><p>refactor(context): add meta namespace prefixes and prune redundant aliases</p>
-<p>Introduce short prefixes (<code>br</code>, <code>ar</code>, <code>ra</code>, <code>id</code>, <code>re</code>, <code>pa</code>) for the <code>https://w3id.org/oc/meta/</code> namespace.</p>
-<p>Since <code>id</code> now points to the identifier namespace, the former <code>id</code> term for <code>literal:hasLiteralValue</code> is renamed to <code>literal_value</code>.</p>
-<p>Drop three redundant aliases: <code>proceedings_series</code> duplicated <code>series</code> (both <code>fabio:Series</code>), and <code>xpath</code> / <code>xmlid</code> duplicated <code>localresource</code> (all three <code>datacite:local-resource-identifier-scheme</code>).</p></div><div style="display: flex; justify-content: space-between; align-items: center; font-size: 0.85em;"><span style="font-family: monospace; color: #1a7f37; font-weight: 600;">+9</span><span style="font-family: monospace; color: #cf222e; font-weight: 600;">-5</span><a href="https://github.com/opencitations/oc_ocdm/commit/6683869d598132a78e572624b1e5dd3c570a1073" style="color: #0969da; text-decoration: none; font-weight: 500;">6683869</a></div></div>
-
-### JaLC
-
-Trovato questo in JaLC
-
-```json
-"journal_title_name_list":[
-    {"journal_title_name":"金大考古\nen: The Archaeological Journal of Kanazawa University"}
-]
-```
-
-<div style="border: 1px solid #d0d7de; border-radius: 8px; padding: 16px; margin: 8px 0; background: #ffffff; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; color: #1f2328;"><div style="display: flex; align-items: center; gap: 12px; margin-bottom: 12px;"><div><strong style="display: block; color: #1f2328;">arcangelo7</strong><span style="font-size: 0.85em; color: #656d76;">Apr 17, 2026</span><span style="font-size: 0.85em; color: #656d76;"> &middot; </span><a href="https://github.com/opencitations/oc_ds_converter" style="font-size: 0.85em; color: #0969da; text-decoration: none;">opencitations/oc_ds_converter</a></div></div><div style="margin: 12px 0; color: #1f2328;"><p>fix(jalc): split packed multilang entries to keep CSV cells single-line</p>
-<p>JaLC records occasionally collapse multiple languages into a single
-untagged title/journal entry separated by &#39;\n&#39; with an inline &quot;en:&quot;
-prefix (observed on 10.24517/0002000619). The extractor
-previously passed the raw string through, producing CSV rows with
-embedded newlines. Detect the packed-lang pattern, split it into
-per-language entries, and collapse residual whitespace on the chosen
-value so single-line cells are preserved.</p></div><div style="display: flex; justify-content: space-between; align-items: center; font-size: 0.85em;"><span style="font-family: monospace; color: #1a7f37; font-weight: 600;">+111</span><span style="font-family: monospace; color: #cf222e; font-weight: 600;">-6</span><a href="https://github.com/opencitations/oc_ds_converter/commit/0c8e357e665030694c2bece70b9bdbac0b50252b" style="color: #0969da; text-decoration: none; font-weight: 500;">0c8e357</a></div></div>
-
-<div style="border: 1px solid #d0d7de; border-radius: 8px; padding: 16px; margin: 8px 0; background: #ffffff; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; color: #1f2328;"><div style="display: flex; align-items: center; gap: 12px; margin-bottom: 12px;"><div><strong style="display: block; color: #1f2328;">arcangelo7</strong><span style="font-size: 0.85em; color: #656d76;">Apr 17, 2026</span><span style="font-size: 0.85em; color: #656d76;"> &middot; </span><a href="https://github.com/opencitations/oc_ds_converter" style="font-size: 0.85em; color: #0969da; text-decoration: none;">opencitations/oc_ds_converter</a></div></div><div style="margin: 12px 0; color: #1f2328;"><p>fix(jalc): decode html entities before flattening whitespace</p>
-<p>JaLC records occasionally encode control characters as numeric HTML
-entities (<code>&amp;#13;&amp;#10;</code>) inside author, title, venue and publisher
-fields. The previous collapse step ran before entity resolution, so the
-decoded CR/LF survived into the CSV and broke downstream parsers.</p></div><div style="display: flex; justify-content: space-between; align-items: center; font-size: 0.85em;"><span style="font-family: monospace; color: #1a7f37; font-weight: 600;">+81</span><span style="font-family: monospace; color: #cf222e; font-weight: 600;">-17</span><a href="https://github.com/opencitations/oc_ds_converter/commit/24faa3cbcf3059c469de8f4b30d7bac4fbb85fd7" style="color: #0969da; text-decoration: none; font-weight: 500;">24faa3c</a></div></div>
-
-Ingestione fatta.
-
-### OUTCITE
-
-2,306,758 righe, 650,682 fanno capo a br esistenti, 1,656,076 (il 71.8%) sono nuove.
-
-Facciamo che le processo tutte come nuove, sia perché ora si può fare velocemente sia per ricompensare il philippahsannico sforzo.
-
-<div style="border: 1px solid #d0d7de; border-radius: 8px; padding: 16px; margin: 8px 0; background: #ffffff; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; color: #1f2328;"><div style="display: flex; align-items: center; gap: 12px; margin-bottom: 12px;"><div><strong style="display: block; color: #1f2328;">arcangelo7</strong><span style="font-size: 0.85em; color: #656d76;">Apr 25, 2026</span><span style="font-size: 0.85em; color: #656d76;"> &middot; </span><a href="https://github.com/opencitations/oc_meta" style="font-size: 0.85em; color: #0969da; text-decoration: none;">opencitations/oc_meta</a></div></div><div style="margin: 12px 0; color: #1f2328;"><p>fix(check_results): verify output CSVs instead of input CSVs</p>
-<p>Input CSVs may contain only temporary identifiers with no OMID</p>
-<p>The new logic distinguishes three identifier categories per entity group:
-the OMID token (used as ground truth for file and provenance checks),
-recognized external identifiers (doi, orcid, etc.) looked up in the
-triplestore to detect mismatches with the expected OMID, and
-unverifiable schemas that are simply counted and skipped.</p></div><div style="display: flex; justify-content: space-between; align-items: center; font-size: 0.85em;"><span style="font-family: monospace; color: #1a7f37; font-weight: 600;">+392</span><span style="font-family: monospace; color: #cf222e; font-weight: 600;">-280</span><a href="https://github.com/opencitations/oc_meta/commit/4a30a3d52b63355fd8c8f8d9b22893c668613870" style="color: #0969da; text-decoration: none; font-weight: 500;">4a30a3d</a></div></div>
-
-In fase di verifica ho trovato un bug nel creator, il quale non era allineato alla logica del curator per quanto riguarda il collegare un editor al contenitore e non al contenuto per specifici tipi di entità come ad esempio i capitoli dei libri. Di conseguenza, nonostante il curator creasse le nuove entità da collegare al contenitore, il creator le marcava come già esistenti per entità per le quali l'editor era già stato collegato al contenuto e l'OMID, per quanto tracciato all'interno del CSV di output, non compariva nei dati finali.
-
-<div style="border: 1px solid #d0d7de; border-radius: 8px; padding: 16px; margin: 8px 0; background: #ffffff; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; color: #1f2328;"><div style="display: flex; align-items: center; gap: 12px; margin-bottom: 12px;"><div><strong style="display: block; color: #1f2328;">arcangelo7</strong><span style="font-size: 0.85em; color: #656d76;">Apr 25, 2026</span><span style="font-size: 0.85em; color: #656d76;"> &middot; </span><a href="https://github.com/opencitations/oc_meta" style="font-size: 0.85em; color: #0969da; text-decoration: none;">opencitations/oc_meta</a></div></div><div style="margin: 12px 0; color: #1f2328;"><p>fix(creator): query editor roles on the correct BR entity</p>
-<p>When a row&#39;s editors belong to a container (venue/book) rather than the
-row&#39;s own BR, skip_editor was evaluated against the row&#39;s BR roles.
-Now resolves the actual edited BR via get_edited_br_metaid and queries
-its existing roles separately when they differ.</p>
-<p>Adds fix_misplaced_editor_ars patch script with tests to migrate
-existing RDF data where editor ARs were misplaced on content entities
-instead of their containers.</p></div><div style="display: flex; justify-content: space-between; align-items: center; font-size: 0.85em;"><span style="font-family: monospace; color: #1a7f37; font-weight: 600;">+431</span><span style="font-family: monospace; color: #cf222e; font-weight: 600;">-1</span><a href="https://github.com/opencitations/oc_meta/commit/4a0552055e8f0c1e664245a65c47af13a248419c" style="color: #0969da; text-decoration: none; font-weight: 500;">4a05520</a></div></div>
-
-Mentre lanciavo la dry run per individuare l'entità del problema, mi sono accorto che c'è un problema preliminare, ovvero entità che hanno più di un part of. Fortunatamente nessuna di queste entità ha anche un problema di editor mal collocato.
-
-<div style="border: 1px solid #d0d7de; border-radius: 8px; padding: 16px; margin: 8px 0; background: #ffffff; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; color: #1f2328;"><div style="display: flex; align-items: center; gap: 12px; margin-bottom: 12px;"><div><strong style="display: block; color: #1f2328;">arcangelo7</strong><span style="font-size: 0.85em; color: #656d76;">Apr 26, 2026</span><span style="font-size: 0.85em; color: #656d76;"> &middot; </span><a href="https://github.com/opencitations/oc_meta" style="font-size: 0.85em; color: #0969da; text-decoration: none;">opencitations/oc_meta</a></div></div><div style="margin: 12px 0; color: #1f2328;"><p>fix(patch): detect duplicate editors during AR migration and fix duplicate partOf</p>
-<p>The editor AR patch now resolves duplicate responsible agents by RA URI,
-shared identifier, or name match before moving ARs to containers. Skipped
-duplicates are removed from the content entity without being re-added.</p>
-<p>New fix_duplicate_part_of script scans for BRs with multiple frbr:partOf
-values, follows container chains to top-level venues, and auto-fixes when
-chains converge to the same or equivalent venues. Divergent venues are
-flagged for manual review with enriched identifier and candidate info.</p></div><div style="display: flex; justify-content: space-between; align-items: center; font-size: 0.85em;"><span style="font-family: monospace; color: #1a7f37; font-weight: 600;">+2181</span><span style="font-family: monospace; color: #cf222e; font-weight: 600;">-112</span><a href="https://github.com/opencitations/oc_meta/commit/b8c5b8a363bda5f7e9f663a6f59c8d2b8ae5dd42" style="color: #0969da; text-decoration: none; font-weight: 500;">b8c5b8a</a></div></div>
-
-Found 82,794 misplaced editor ARs across 39,569 content entities. 61,931 to move, 62 skip (same RA), 3 skip (same identifier), 20,798 skip (same name)
-
-<div style="border: 1px solid #d0d7de; border-radius: 8px; padding: 16px; margin: 8px 0; background: #ffffff; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; color: #1f2328;"><div style="display: flex; align-items: center; gap: 12px; margin-bottom: 12px;"><div><strong style="display: block; color: #1f2328;">arcangelo7</strong><span style="font-size: 0.85em; color: #656d76;">Apr 26, 2026</span><span style="font-size: 0.85em; color: #656d76;"> &middot; </span><a href="https://github.com/opencitations/oc_meta" style="font-size: 0.85em; color: #0969da; text-decoration: none;">opencitations/oc_meta</a></div></div><div style="margin: 12px 0; color: #1f2328;"><p>fix(patch): handle content entities with multiple frbr:partOf containers</p>
-<p>When a content entity belongs to multiple containers, the original AR is
-moved to the first and a new AR (same RA) is created for each additional
-one.</p></div><div style="display: flex; justify-content: space-between; align-items: center; font-size: 0.85em;"><span style="font-family: monospace; color: #1a7f37; font-weight: 600;">+100</span><span style="font-family: monospace; color: #cf222e; font-weight: 600;">-45</span><a href="https://github.com/opencitations/oc_meta/commit/6d8ae9e13adf8311942e0f4b946448023b80a8bc" style="color: #0969da; text-decoration: none; font-weight: 500;">6d8ae9e</a></div></div>
-
-Ho deciso di non applicare la patch per ora. L'applicherò quando avrò un dataset di partenza più pulito con problemi preliminari risolti, a cominciare dalla rimozione dei duplicati, degli orfani, delle entità vuote, dei predicari doppi.
-
-### RAMOSE
-
-<div style="border: 1px solid #d0d7de; border-radius: 8px; padding: 16px; margin: 8px 0; background: #ffffff; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; color: #1f2328;"><div style="display: flex; align-items: center; gap: 12px; margin-bottom: 12px;"><img src="https://avatars.githubusercontent.com/u/42008604?v=4" style="width: 32px; height: 32px; border-radius: 50%;" alt="arcangelo7" /><div><strong style="display: block; color: #1f2328;">arcangelo7</strong><span style="font-size: 0.85em; color: #656d76;">Apr 14, 2026</span><span style="font-size: 0.85em; color: #656d76;"> &middot; </span><a href="https://github.com/opencitations/ramose" style="font-size: 0.85em; color: #0969da; text-decoration: none;">opencitations/ramose</a></div></div><div style="margin: 12px 0; color: #1f2328;"><p>refactor(openapi): remove x-ramose vendor extensions from spec output</p>
-<p>Implementation details like endpoint, addon, sparql method, preprocess,
-and postprocess are not meaningful to API consumers.</p></div><div style="display: flex; justify-content: space-between; align-items: center; font-size: 0.85em;"><span style="font-family: monospace; color: #1a7f37; font-weight: 600;">+3</span><span style="font-family: monospace; color: #cf222e; font-weight: 600;">-50</span><a href="https://github.com/opencitations/ramose/commit/7b07d63d1797f9334b7bfc983d3837134ca915e7" style="color: #0969da; text-decoration: none; font-weight: 500;">7b07d63</a></div></div>
-
-<div style="border: 1px solid #d0d7de; border-radius: 8px; padding: 16px; margin: 8px 0; background: #ffffff; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; color: #1f2328;"><div style="display: flex; align-items: center; gap: 12px; margin-bottom: 12px;"><img src="https://avatars.githubusercontent.com/u/42008604?v=4" style="width: 32px; height: 32px; border-radius: 50%;" alt="arcangelo7" /><div><strong style="display: block; color: #1f2328;">arcangelo7</strong><span style="font-size: 0.85em; color: #656d76;">Apr 14, 2026</span><span style="font-size: 0.85em; color: #656d76;"> &middot; </span><a href="https://github.com/opencitations/ramose" style="font-size: 0.85em; color: #0969da; text-decoration: none;">opencitations/ramose</a></div></div><div style="margin: 12px 0; color: #1f2328;"><p>fix: use GET as default SPARQL HTTP method</p></div><div style="display: flex; justify-content: space-between; align-items: center; font-size: 0.85em;"><span style="font-family: monospace; color: #1a7f37; font-weight: 600;">+2</span><span style="font-family: monospace; color: #cf222e; font-weight: 600;">-2</span><a href="https://github.com/opencitations/ramose/commit/c0a101df986ec473d8b534327fa6f619adefde55" style="color: #0969da; text-decoration: none; font-weight: 500;">c0a101d</a></div></div>
-
-```python
-raise ValueError(f"Expected key=value option, got {token!r}")
-```
-
-Quel !r chiama repr sul valore. Produce la rappresentazione con le virgolette.
-
-```python
-token = "left"
-
-f"{token}" # left
-f"{token!r}" # 'left'
-```
-
-Rende visibili anche caratteri che altrimenti sarebbero invisibili (spazi iniziali/finali, tab, newline).
-
-Ho capito a cosa serviva l'alias in @@foreach, per evitare questo
-
-```
-@@foreach ?br wait=0.1
-PREFIX cito: <http://purl.org/spar/cito/>
-
-SELECT ?br (COUNT(?citing) AS ?oc_citation_count) WHERE {
-  BIND(<[[?br]]> AS ?br)
-  ?cit a cito:Citation ;
-       cito:hasCitedEntity  ?br ;
-       cito:hasCitingEntity ?citing .
-}
-GROUP BY ?br
-```
-
-Si può aggiungere un parametro obbligatorio posizionale, quindi non chiave-valore, così
-
-```
-@@foreach ?br item wait=0.1
-PREFIX cito: <http://purl.org/spar/cito/>
-
-SELECT ?br (COUNT(?citing) AS ?oc_citation_count) WHERE {
-  BIND(<[[item]]> AS ?br)
-  ?cit a cito:Citation ;
-       cito:hasCitedEntity  ?br ;
-       cito:hasCitingEntity ?citing .
-}
-GROUP BY ?br
-```
-
-<div style="border: 1px solid #d0d7de; border-radius: 8px; padding: 16px; margin: 8px 0; background: #ffffff; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; color: #1f2328;"><div style="display: flex; align-items: center; gap: 12px; margin-bottom: 12px;"><img src="https://avatars.githubusercontent.com/u/42008604?v=4" style="width: 32px; height: 32px; border-radius: 50%;" alt="arcangelo7" /><div><strong style="display: block; color: #1f2328;">arcangelo7</strong><span style="font-size: 0.85em; color: #656d76;">Apr 14, 2026</span><span style="font-size: 0.85em; color: #656d76;"> &middot; </span><a href="https://github.com/opencitations/ramose" style="font-size: 0.85em; color: #0969da; text-decoration: none;">opencitations/ramose</a></div></div><div style="margin: 12px 0; color: #1f2328;"><p>refactor: standardize directive syntax with key=value options and merged @@foreach</p>
-<p>Directive optional parameters now use unambiguous key=value syntax
-(e.g. type=left, wait=0.5) while required arguments stay positional.
-This resolves parsing ambiguity when extending directives with new
-options.</p>
-<p>@@foreach absorbs the old @@values ?var:alias setup into a single
-directive: @@foreach ?variable placeholder [wait=N].</p></div><div style="display: flex; justify-content: space-between; align-items: center; font-size: 0.85em;"><span style="font-family: monospace; color: #1a7f37; font-weight: 600;">+87</span><span style="font-family: monospace; color: #cf222e; font-weight: 600;">-91</span><a href="https://github.com/opencitations/ramose/commit/7ad324bb4444eb5dc21ca3c9e38f65f648c7a249" style="color: #0969da; text-decoration: none; font-weight: 500;">7ad324b</a></div></div>
-
-Però così @@foreach ?br item wait=0.1 è poco leggibile, non si capisce cosa sia item. Inoltre non si capisce perché i parametri obbligatori debbano essere solo posizionali e non anche per keyword. Si potrebbe fare come in Python
-
-```
-@@name <arg>... [param=value]...
-
-@@foreach ?br item wait=0.5
-@@foreach ?br placeholder=item wait=0.5
-@@foreach variable=?br placeholder=item wait=0.5
-@@foreach wait=0.5 variable=?br placeholder=item
-```
-
-<div style="border: 1px solid #d0d7de; border-radius: 8px; padding: 16px; margin: 8px 0; background: #ffffff; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; color: #1f2328;"><div style="display: flex; align-items: center; gap: 12px; margin-bottom: 12px;"><img src="https://avatars.githubusercontent.com/u/42008604?v=4" style="width: 32px; height: 32px; border-radius: 50%;" alt="arcangelo7" /><div><strong style="display: block; color: #1f2328;">arcangelo7</strong><span style="font-size: 0.85em; color: #656d76;">Apr 14, 2026</span><span style="font-size: 0.85em; color: #656d76;"> &middot; </span><a href="https://github.com/opencitations/ramose" style="font-size: 0.85em; color: #0969da; text-decoration: none;">opencitations/ramose</a></div></div><div style="margin: 12px 0; color: #1f2328;"><p>refactor: replace key-value-only parser with Python-style argument parser</p>
-<p>_parse_kv_options only handled key=value tokens after positional args
-were manually extracted by each handler. The new _parse_directive_args
-supports positional, keyword, and mixed styles in the same call, with
-free ordering when all arguments are keyword. A token containing = is
-only treated as keyword if the key part matches a known parameter name,
-so URLs with query strings work as positional values.</p>
-<p>All directive handlers now delegate to _parse_directive_args with their
-parameter schema.</p>
-<p>Documentation now includes parameter tables for each directive.</p></div><div style="display: flex; justify-content: space-between; align-items: center; font-size: 0.85em;"><span style="font-family: monospace; color: #1a7f37; font-weight: 600;">+166</span><span style="font-family: monospace; color: #cf222e; font-weight: 600;">-41</span><a href="https://github.com/opencitations/ramose/commit/baeb15d06f37e227fe309b4e866e2b22e4eae1c1" style="color: #0969da; text-decoration: none; font-weight: 500;">baeb15d</a></div></div>
-
-<div style="border: 1px solid #d0d7de; border-radius: 8px; padding: 16px; margin: 8px 0; background: #ffffff; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; color: #1f2328;"><div style="display: flex; align-items: center; gap: 12px; margin-bottom: 12px;"><img src="https://avatars.githubusercontent.com/u/42008604?v=4" style="width: 32px; height: 32px; border-radius: 50%;" alt="arcangelo7" /><div><strong style="display: block; color: #1f2328;">arcangelo7</strong><span style="font-size: 0.85em; color: #656d76;">Apr 22, 2026</span><span style="font-size: 0.85em; color: #656d76;"> &middot; </span><a href="https://github.com/opencitations/ramose" style="font-size: 0.85em; color: #0969da; text-decoration: none;">opencitations/ramose</a></div></div><div style="margin: 12px 0; color: #1f2328;"><p>feat(skgif): add products/{local_identifier} endpoint with JSON-LD output</p>
-<p>Implement the SKG-IF converter that transforms SPARQL results from
-OpenCitations Meta and Index into JSON-LD conforming to the Scholarly
-Knowledge Graph Interoperability Framework specification (v1.1.0).</p>
-<p>The endpoint uses multi-source SPARQL with left joins across Meta
-(bibliographic metadata, contributors, venue) and Index (citations),
-producing a complete product representation including identifiers,
-ordered contributions with linked-list rank preservation, manifestation
-details, and citation references.</p></div><div style="display: flex; justify-content: space-between; align-items: center; font-size: 0.85em;"><span style="font-family: monospace; color: #1a7f37; font-weight: 600;">+513</span><span style="font-family: monospace; color: #cf222e; font-weight: 600;">-0</span><a href="https://github.com/opencitations/ramose/commit/86491f780f6083f3f22bbf60e2b2debf227ee2f4" style="color: #0969da; text-decoration: none; font-weight: 500;">86491f7</a></div></div>
-
-<div style="border: 1px solid #d0d7de; border-radius: 8px; padding: 16px; margin: 8px 0; background: #ffffff; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; color: #1f2328;"><div style="display: flex; align-items: center; gap: 12px; margin-bottom: 12px;"><img src="https://avatars.githubusercontent.com/u/42008604?v=4" style="width: 32px; height: 32px; border-radius: 50%;" alt="arcangelo7" /><div><strong style="display: block; color: #1f2328;">arcangelo7</strong><span style="font-size: 0.85em; color: #656d76;">Apr 22, 2026</span><span style="font-size: 0.85em; color: #656d76;"> &middot; </span><a href="https://github.com/opencitations/ramose" style="font-size: 0.85em; color: #0969da; text-decoration: none;">opencitations/ramose</a></div></div><div style="margin: 12px 0; color: #1f2328;"><p>test(skgif): validate converter output against upstream OpenAPI schema</p>
-<p>Fetch the SKG-IF OpenAPI spec from skg-if/api at test time,
-resolve $ref pointers, and validate JSON-LD responses against
-the extracted Product response schema using jsonschema.</p></div><div style="display: flex; justify-content: space-between; align-items: center; font-size: 0.85em;"><span style="font-family: monospace; color: #1a7f37; font-weight: 600;">+220</span><span style="font-family: monospace; color: #cf222e; font-weight: 600;">-0</span><a href="https://github.com/opencitations/ramose/commit/1acce0dae5d4f7d7668d60e8436266261c0f4ee0" style="color: #0969da; text-decoration: none; font-weight: 500;">1acce0d</a></div></div>
-
-### CEC
-
-<div style="border: 1px solid #d0d7de; border-radius: 8px; padding: 16px; margin: 8px 0; background: #ffffff; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; color: #1f2328;"><div style="display: flex; align-items: center; gap: 12px; margin-bottom: 12px;"><img src="https://avatars.githubusercontent.com/u/42008604?v=4" style="width: 32px; height: 32px; border-radius: 50%;" alt="arcangelo7" /><div><strong style="display: block; color: #1f2328;">arcangelo7</strong><span style="font-size: 0.85em; color: #656d76;">Apr 16, 2026</span><span style="font-size: 0.85em; color: #656d76;"> &middot; </span><a href="https://github.com/opencitations/cec" style="font-size: 0.85em; color: #0969da; text-decoration: none;">opencitations/cec</a></div></div><div style="margin: 12px 0; color: #1f2328;"><p>docs(extractor): add /cex prefix to api endpoint examples</p>
-<p>The Flask app mounts the API blueprint at /cex/api (main.py sets
-PREFIX=&quot;/cex&quot;), but the README endpoint and curl examples referenced
-the bare /api path. Align the examples with the actual routing and
-include the per-request UUID segment in the download URL example.</p></div><div style="display: flex; justify-content: space-between; align-items: center; font-size: 0.85em;"><span style="font-family: monospace; color: #1a7f37; font-weight: 600;">+4</span><span style="font-family: monospace; color: #cf222e; font-weight: 600;">-4</span><a href="https://github.com/opencitations/cec/commit/9b0852cce07f0a3c96e982a3d8e085fae265adab" style="color: #0969da; text-decoration: none; font-weight: 500;">9b0852c</a></div></div>
-
-<div style="border: 1px solid #d0d7de; border-radius: 8px; padding: 16px; margin: 8px 0; background: #ffffff; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; color: #1f2328;"><div style="display: flex; align-items: center; gap: 12px; margin-bottom: 12px;"><img src="https://avatars.githubusercontent.com/u/42008604?v=4" style="width: 32px; height: 32px; border-radius: 50%;" alt="arcangelo7" /><div><strong style="display: block; color: #1f2328;">arcangelo7</strong><span style="font-size: 0.85em; color: #656d76;">Apr 18, 2026</span><span style="font-size: 0.85em; color: #656d76;"> &middot; </span><a href="https://github.com/opencitations/cec" style="font-size: 0.85em; color: #0969da; text-decoration: none;">opencitations/cec</a></div></div><div style="margin: 12px 0; color: #1f2328;"><p>feat(grobid): release 1.1.0 with configurable crossref mailto</p>
-<p>Add oc_cec_grobid wrapper image over opencitations/grobid-cec:1.0.0
-that injects the crossref consolidation mailto at container startup via
-the CROSSREF_MAILTO env var.</p>
-<p>Register a dedicated build workflow and
-document the required variable in the compose example.</p>
-<p>Drop pull_request triggers and remove the master branch so
-builds only fire on merges to main.</p></div><div style="display: flex; justify-content: space-between; align-items: center; font-size: 0.85em;"><span style="font-family: monospace; color: #1a7f37; font-weight: 600;">+135</span><span style="font-family: monospace; color: #cf222e; font-weight: 600;">-18</span><a href="https://github.com/opencitations/cec/commit/a0f0de89e6912d23778e0e40a1e2015a7114ffc7" style="color: #0969da; text-decoration: none; font-weight: 500;">a0f0de8</a></div></div>
-
-[https://github.com/opencitations/cec/issues/13](https://github.com/opencitations/cec/issues/13)
-
-<div style="border: 1px solid #d0d7de; border-radius: 8px; padding: 16px; margin: 8px 0; background: #ffffff; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; color: #1f2328;"><div style="display: flex; align-items: center; gap: 12px; margin-bottom: 12px;"><img src="https://avatars.githubusercontent.com/u/42008604?v=4" style="width: 32px; height: 32px; border-radius: 50%;" alt="arcangelo7" /><div><strong style="display: block; color: #1f2328;">arcangelo7</strong><span style="font-size: 0.85em; color: #656d76;">Apr 18, 2026</span><span style="font-size: 0.85em; color: #656d76;"> &middot; </span><a href="https://github.com/opencitations/cec" style="font-size: 0.85em; color: #0969da; text-decoration: none;">opencitations/cec</a></div></div><div style="margin: 12px 0; color: #1f2328;"><p>feat: add bulk extraction script with configurable grobid concurrency</p></div><div style="display: flex; justify-content: space-between; align-items: center; font-size: 0.85em;"><span style="font-family: monospace; color: #1a7f37; font-weight: 600;">+254</span><span style="font-family: monospace; color: #cf222e; font-weight: 600;">-2</span><a href="https://github.com/opencitations/cec/commit/2d07db8f6e42945a93577ccf46a7d21210e883aa" style="color: #0969da; text-decoration: none; font-weight: 500;">2d07db8</a></div></div>
-
-<div style="border: 1px solid #d0d7de; border-radius: 8px; padding: 16px; margin: 8px 0; background: #ffffff; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; color: #1f2328;"><div style="display: flex; align-items: center; gap: 12px; margin-bottom: 12px;"><img src="https://avatars.githubusercontent.com/u/42008604?v=4" style="width: 32px; height: 32px; border-radius: 50%;" alt="arcangelo7" /><div><strong style="display: block; color: #1f2328;">arcangelo7</strong><span style="font-size: 0.85em; color: #656d76;">Apr 18, 2026</span><span style="font-size: 0.85em; color: #656d76;"> &middot; </span><a href="https://github.com/opencitations/cec" style="font-size: 0.85em; color: #0969da; text-decoration: none;">opencitations/cec</a></div></div><div style="margin: 12px 0; color: #1f2328;"><p>docs(extractor): document the consolidate form field</p>
-<p>Add the new opt-in consolidate toggle to the API form-field table
-and to the curl upload example.</p></div><div style="display: flex; justify-content: space-between; align-items: center; font-size: 0.85em;"><span style="font-family: monospace; color: #1a7f37; font-weight: 600;">+50</span><span style="font-family: monospace; color: #cf222e; font-weight: 600;">-86</span><a href="https://github.com/opencitations/cec/commit/66e245b180863bb8bb3aa9d121f49268e0a777e0" style="color: #0969da; text-decoration: none; font-weight: 500;">66e245b</a></div></div>
-
-### This is your daily dose of rdflib antidote
-
-Ultimo commit di due mesi fa, vorrei segnalare, e il repository è pieno zeppo di errori di tipizzazione e warning di deprecazione interni al repository stesso, oltre a 299 issue aperte e 61 PR: [https://github.com/rdflib/rdflib](https://github.com/rdflib/rdflib). Secondo me possiamo considerarlo archiviato, per il momento
-
-### Duplicati nei CSV
-
-<div style="border: 1px solid #d0d7de; border-radius: 8px; padding: 16px; margin: 8px 0; background: #ffffff; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; color: #1f2328;"><div style="display: flex; align-items: center; gap: 12px; margin-bottom: 12px;"><div><strong style="display: block; color: #1f2328;">arcangelo7</strong><span style="font-size: 0.85em; color: #656d76;">Apr 21, 2026</span><span style="font-size: 0.85em; color: #656d76;"> &middot; </span><a href="https://github.com/opencitations/oc_meta" style="font-size: 0.85em; color: #0969da; text-decoration: none;">opencitations/oc_meta</a></div></div><div style="margin: 12px 0; color: #1f2328;"><p>fix(generate_csv): always rebuild Redis OMID set at startup</p>
-<p>The previous logic skipped reloading processed OMIDs from output CSVs
-if Redis already had entries. This caused incomplete deduplication on
-restart: OMIDs written to output files during a prior run were absent
-from Redis (workers never write to it), so a restarted run would
-re-process already-output entities and produce duplicates.</p>
-<p>Replace the early-return short-circuit with an unconditional delete +
-reload to guarantee Redis always reflects all existing output CSVs at
-startup.</p></div><div style="display: flex; justify-content: space-between; align-items: center; font-size: 0.85em;"><span style="font-family: monospace; color: #1a7f37; font-weight: 600;">+5</span><span style="font-family: monospace; color: #cf222e; font-weight: 600;">-7</span><a href="https://github.com/opencitations/oc_meta/commit/07bbc74be34c24de1a22c88db06062e3bb86d30a" style="color: #0969da; text-decoration: none; font-weight: 500;">07bbc74</a></div></div>
-
-In pratica il sistema era fatto per permettere un solo riavvio, perché la lettura del Redis per caricare gli OMID già processati veniva fatta soltanto se il Redis era vuoto e il Redis non veniva aggiornato file per file, ma soltanto all'avvio. Il senso era evitare che degli OMID venissero marcati come già processati quando in realtà erano assenti dai CSV perché i CSV vengono scritti in batch. La soluzione è caricare gli OMID in Redis a ogni riavvio a partire dai CSV già processati.
-
-### Produzione
-
-Indicizzare Qlever per i dati di Meta (no provenance) ha impiegato su produzione 7.3 h vs 5.8 h su ServerGrosso. Io dico che è usabilissimo.
-
-## Domande
-
-### GRAPHIA
-
-Documento di domande aperte per la stesura del rulebook della federazione GRAPHIA, organizzato per WP. Bisogna farne la review, commentandolo.
-
-[https://docs.google.com/document/d/1g1N2W4ks59yTnSUG2oSKZyd\_bVdVxyJRsec8EwbEuLQ/edit?tab=t.0#heading=h.tag7a4psw9w](https://docs.google.com/document/d/1g1N2W4ks59yTnSUG2oSKZyd_bVdVxyJRsec8EwbEuLQ/edit?tab=t.0#heading=h.tag7a4psw9w)
-
-### RAMOSE
-
-Scapolottina numero 1
-
-GET /skgif/v1/products/omid:br/0612058700
-
-```json
-{
-	"local_identifier": "products/omid:br/0612058700",
-	"contributions": [{"by": {"local_identifier": "persons/omid:ra/069012996"}}],
-	"manifestations": [{"biblio": {"in": {"local_identifier": "venues/omid:br/0626055628"}}}],
-	"related_products": {"cites": ["products/omid:br/0612058701"]}
-}
-```
-
-Scapolottina numero 2
-
-GET /skgif/v1/products/br/0612058700
-
-```json
-{
-	"local_identifier": "products/br/0612058700",
-	"contributions": [{"by": {"local_identifier": "persons/ra/069012996"}}],
-	"manifestations": [{"biblio": {"in": {"local_identifier": "venues/br/0626055628"}}}],
-	"related_products": {"cites": ["products/br/0612058701"]}
-}
-```
-
-***
-
-* Al momento la conversione al formato di skg-if si può triggerare con la query format `/skgif/v1/products/{omid}?format=skgif` Dovrebbe funzionare così? Al momento non c'è un modo per definire un formato di default, il formato di default è sempre CSV
-* Per la lingua metto none, giusto?
-* Per il publisher lo metto il rank?
-* Al momento l'operazione products è nei test del repo di ramose. Devo metto gli hf di skg-if? Quale sarà l'endpoint in produzione?
-* Abbiamo un jsonschema per validare gli output di SKG-IF? La validazione fatta su skg-id/api è overkill [https://github.com/skg-if/api/blob/main/.github/scripts/validate\_files.py](https://github.com/skg-if/api/blob/main/.github/scripts/validate_files.py)
-
-### Pubblicazioni
-
-* Se io cito un software utilizzando software Heritage, in teoria dovrei utilizzare l'SHA preciso della versione da cui è dipendente il mio software nel momento in cui scrivo l'articolo. Giusto? Inoltre, mi chiedo, che anno devo specificare? L'anno di creazione del software o l'anno in cui è stata rilasciata quella versione?
-
-### Email
-
-* Email Francesca
-* Email licenza speciale
-
-### Altro
-
-* [https://w3id.org/oc/ontology/context.jsonld](https://w3id.org/oc/ontology/context.jsonld) questo è rotto. Come si aggiusta?
-* Per evitare confusione a noi stessi e anche agli altri, io comincerei a marcare come archiviati/deprecati i repository che non stiamo più mantenendo. Tra questi c'è il corpus e aggiungerei anche le virtuoso\_utilities che non servono più.
-  [https://github.com/opencitations/corpus](https://github.com/opencitations/corpus). Che ne pensate?
+### Triplelite
+
+<div style="border: 1px solid #d0d7de; border-radius: 8px; padding: 16px; margin: 8px 0; background: #ffffff; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; color: #1f2328;"><div style="display: flex; align-items: center; gap: 12px; margin-bottom: 12px;"><img src="https://avatars.githubusercontent.com/u/42008604?v=4" style="width: 32px; height: 32px; border-radius: 50%;" alt="arcangelo7" /><div><strong style="display: block; color: #1f2328;">arcangelo7</strong><span style="font-size: 0.85em; color: #656d76;">May 1, 2026</span><span style="font-size: 0.85em; color: #656d76;"> &middot; </span><a href="https://github.com/opencitations/triplelite" style="font-size: 0.85em; color: #0969da; text-decoration: none;">opencitations/triplelite</a></div></div><div style="margin: 12px 0; color: #1f2328;"><p>build: add initial _core.c with primitives (StringArray, RDFTermArray)</p>
+<p>Also switch from hatchling to meson-python build system
+to support C compilation</p></div><div style="display: flex; justify-content: space-between; align-items: center; font-size: 0.85em;"><span style="font-family: monospace; color: #1a7f37; font-weight: 600;">+165</span><span style="font-family: monospace; color: #cf222e; font-weight: 600;">-8</span><a href="https://github.com/opencitations/triplelite/commit/61505fbcf7021aeb78d282f85b85ca41dab513ec" style="color: #0969da; text-decoration: none; font-weight: 500;">61505fb</a></div></div>
+
+<div style="border: 1px solid #d0d7de; border-radius: 8px; padding: 16px; margin: 8px 0; background: #ffffff; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; color: #1f2328;"><div style="display: flex; align-items: center; gap: 12px; margin-bottom: 12px;"><img src="https://avatars.githubusercontent.com/u/42008604?v=4" style="width: 32px; height: 32px; border-radius: 50%;" alt="arcangelo7" /><div><strong style="display: block; color: #1f2328;">arcangelo7</strong><span style="font-size: 0.85em; color: #656d76;">May 2, 2026</span><span style="font-size: 0.85em; color: #656d76;"> &middot; </span><a href="https://github.com/opencitations/triplelite" style="font-size: 0.85em; color: #0969da; text-decoration: none;">opencitations/triplelite</a></div></div><div style="margin: 12px 0; color: #1f2328;"><p>feat: add a chained hashmap (djb2)</p></div><div style="display: flex; justify-content: space-between; align-items: center; font-size: 0.85em;"><span style="font-family: monospace; color: #1a7f37; font-weight: 600;">+163</span><span style="font-family: monospace; color: #cf222e; font-weight: 600;">-63</span><a href="https://github.com/opencitations/triplelite/commit/81137f59cf34e2b134bec2a2166912e9c043ed10" style="color: #0969da; text-decoration: none; font-weight: 500;">81137f5</a></div></div>
+
+<div style="border: 1px solid #d0d7de; border-radius: 8px; padding: 16px; margin: 8px 0; background: #ffffff; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; color: #1f2328;"><div style="display: flex; align-items: center; gap: 12px; margin-bottom: 12px;"><img src="https://avatars.githubusercontent.com/u/42008604?v=4" style="width: 32px; height: 32px; border-radius: 50%;" alt="arcangelo7" /><div><strong style="display: block; color: #1f2328;">arcangelo7</strong><span style="font-size: 0.85em; color: #656d76;">May 2, 2026</span><span style="font-size: 0.85em; color: #656d76;"> &middot; </span><a href="https://github.com/opencitations/triplelite" style="font-size: 0.85em; color: #0969da; text-decoration: none;">opencitations/triplelite</a></div></div><div style="margin: 12px 0; color: #1f2328;"><p>feat: add RDFTerm hashmap and string/RDFTerm interners</p></div><div style="display: flex; justify-content: space-between; align-items: center; font-size: 0.85em;"><span style="font-family: monospace; color: #1a7f37; font-weight: 600;">+166</span><span style="font-family: monospace; color: #cf222e; font-weight: 600;">-5</span><a href="https://github.com/opencitations/triplelite/commit/5e8256add7fc08d7efddc2a527165bb1264f848a" style="color: #0969da; text-decoration: none; font-weight: 500;">5e8256a</a></div></div>
+
+<div style="border: 1px solid #d0d7de; border-radius: 8px; padding: 16px; margin: 8px 0; background: #ffffff; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; color: #1f2328;"><div style="display: flex; align-items: center; gap: 12px; margin-bottom: 12px;"><img src="https://avatars.githubusercontent.com/u/42008604?v=4" style="width: 32px; height: 32px; border-radius: 50%;" alt="arcangelo7" /><div><strong style="display: block; color: #1f2328;">arcangelo7</strong><span style="font-size: 0.85em; color: #656d76;">May 2, 2026</span><span style="font-size: 0.85em; color: #656d76;"> &middot; </span><a href="https://github.com/opencitations/triplelite" style="font-size: 0.85em; color: #0969da; text-decoration: none;">opencitations/triplelite</a></div></div><div style="margin: 12px 0; color: #1f2328;"><p>feat: add integer set and SPO triple index</p>
+<p>Open-addressing IntSet with linear probing</p></div><div style="display: flex; justify-content: space-between; align-items: center; font-size: 0.85em;"><span style="font-family: monospace; color: #1a7f37; font-weight: 600;">+378</span><span style="font-family: monospace; color: #cf222e; font-weight: 600;">-0</span><a href="https://github.com/opencitations/triplelite/commit/2a40d65c7f7a51e6cc9b2e94553193af10468b6f" style="color: #0969da; text-decoration: none; font-weight: 500;">2a40d65</a></div></div>
+
+<div style="border: 1px solid #d0d7de; border-radius: 8px; padding: 16px; margin: 8px 0; background: #ffffff; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; color: #1f2328;"><div style="display: flex; align-items: center; gap: 12px; margin-bottom: 12px;"><img src="https://avatars.githubusercontent.com/u/42008604?v=4" style="width: 32px; height: 32px; border-radius: 50%;" alt="arcangelo7" /><div><strong style="display: block; color: #1f2328;">arcangelo7</strong><span style="font-size: 0.85em; color: #656d76;">May 3, 2026</span><span style="font-size: 0.85em; color: #656d76;"> &middot; </span><a href="https://github.com/opencitations/triplelite" style="font-size: 0.85em; color: #0969da; text-decoration: none;">opencitations/triplelite</a></div></div><div style="margin: 12px 0; color: #1f2328;"><p>feat: implement TripleLite C extension with Python bindings</p>
+<p>Expose the C engine as a CPython type with add, remove, triples,
+objects, predicate_objects, subjects, and has_subject methods.
+Supports <strong>len</strong>, <strong>contains</strong>, and <strong>iter</strong> via a custom
+iterator that walks the SPO index.</p>
+<p>Add memory ownership throughout: strdup in hashmap/dynarray/intset,
+deep-copy for RDFTerm, and corresponding free functions for all
+data structures.</p></div><div style="display: flex; justify-content: space-between; align-items: center; font-size: 0.85em;"><span style="font-family: monospace; color: #1a7f37; font-weight: 600;">+904</span><span style="font-family: monospace; color: #cf222e; font-weight: 600;">-151</span><a href="https://github.com/opencitations/triplelite/commit/606d2d4383a7f9a629a892496e0f01d2b2996239" style="color: #0969da; text-decoration: none; font-weight: 500;">606d2d4</a></div></div>
+
+| Operazione         | Python           | C                | Rapporto           |
+| ------------------ | ---------------- | ---------------- | ------------------ |
+| add\_many          | 1.05M triple/s   | 19.8K triple/s   | C 53× piu lento    |
+| add\_single        | 991K triple/s    | 17.9K triple/s   | C 55× piu lento    |
+| predicate\_objects | 1.14 μs/chiamata | 819 μs/chiamata  | C 719× piu lento   |
+| subjects           | 0.75 μs/chiamata | 156 μs/chiamata  | C 209× piu lento   |
+| objects            | 0.78 μs/chiamata | 990 μs/chiamata  | C 1.269× piu lento |
+| has\_subject       | 0.14 μs/chiamata | 71.5 μs/chiamata | C 502× piu lento   |
+| contains           | 0.50 μs/chiamata | 143 μs/chiamata  | C 286× piu lento   |
+| full\_scan         | 4.56M triple/s   | 2.05M triple/s   | C 2.2× piu lento   |
+
+| Python            | C                 | Rapporto       |
+| ----------------- | ----------------- | -------------- |
+| 373.0 byte/tripla | 295.2 byte/tripla | C 1.3× in meno |
+
+<div style="border: 1px solid #d0d7de; border-radius: 8px; padding: 16px; margin: 8px 0; background: #ffffff; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; color: #1f2328;"><div style="display: flex; align-items: center; gap: 12px; margin-bottom: 12px;"><div><strong style="display: block; color: #1f2328;">arcangelo7</strong><span style="font-size: 0.85em; color: #656d76;">May 3, 2026</span><span style="font-size: 0.85em; color: #656d76;"> &middot; </span><a href="https://github.com/opencitations/triplelite" style="font-size: 0.85em; color: #0969da; text-decoration: none;">opencitations/triplelite</a></div></div><div style="margin: 12px 0; color: #1f2328;"><p>perf: add dynamic resizing to all hash tables and optimize query lookups</p></div><div style="display: flex; justify-content: space-between; align-items: center; font-size: 0.85em;"><span style="font-family: monospace; color: #1a7f37; font-weight: 600;">+265</span><span style="font-family: monospace; color: #cf222e; font-weight: 600;">-39</span><a href="https://github.com/opencitations/triplelite/commit/d266629b0fac9bca3ca5dc668e226a0c162ea673" style="color: #0969da; text-decoration: none; font-weight: 500;">d266629</a></div></div>
+
+<div style="border: 1px solid #d0d7de; border-radius: 8px; padding: 16px; margin: 8px 0; background: #ffffff; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; color: #1f2328;"><div style="display: flex; align-items: center; gap: 12px; margin-bottom: 12px;"><div><strong style="display: block; color: #1f2328;">arcangelo7</strong><span style="font-size: 0.85em; color: #656d76;">May 3, 2026</span><span style="font-size: 0.85em; color: #656d76;"> &middot; </span><a href="https://github.com/opencitations/triplelite" style="font-size: 0.85em; color: #0969da; text-decoration: none;">opencitations/triplelite</a></div></div><div style="margin: 12px 0; color: #1f2328;"><p>perf: replace chained hash tables with open-addressing</p></div><div style="display: flex; justify-content: space-between; align-items: center; font-size: 0.85em;"><span style="font-family: monospace; color: #1a7f37; font-weight: 600;">+708</span><span style="font-family: monospace; color: #cf222e; font-weight: 600;">-819</span><a href="https://github.com/opencitations/triplelite/commit/b0bc371004598daf618581208ea27111c74e140f" style="color: #0969da; text-decoration: none; font-weight: 500;">b0bc371</a></div></div>
+
+| Operazione         | Python           | C                | Rapporto          |
+| ------------------ | ---------------- | ---------------- | ----------------- |
+| add\_many          | 1.07M triple/s   | 2.16M triple/s   | C 2.0× più veloce |
+| add\_single        | 1.00M triple/s   | 1.24M triple/s   | C 1.2× più veloce |
+| predicate\_objects | 1.38 μs/chiamata | 2.13 μs/chiamata | C 0.7×            |
+| subjects           | 0.76 μs/chiamata | 0.80 μs/chiamata | C 0.9×            |
+| objects            | 0.79 μs/chiamata | 1.01 μs/chiamata | C 0.8×            |
+| has\_subject       | 0.14 μs/chiamata | 0.14 μs/chiamata | C 1.0×            |
+| contains           | 0.42 μs/chiamata | 0.52 μs/chiamata | C 0.8×            |
+| subgraph           | 1.58 μs/chiamata | 3.80 μs/chiamata | C 0.4×            |
+| full\_scan         | 5.68M triple/s   | 2.47M triple/s   | C 0.4×            |
+
+| Python            | C                 | Rapporto       |
+| ----------------- | ----------------- | -------------- |
+| 373.0 byte/tripla | 167.6 byte/tripla | C 2.2× in meno |
+
+<div style="border: 1px solid #d0d7de; border-radius: 8px; padding: 16px; margin: 8px 0; background: #ffffff; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; color: #1f2328;"><div style="display: flex; align-items: center; gap: 12px; margin-bottom: 12px;"><div><strong style="display: block; color: #1f2328;">arcangelo7</strong><span style="font-size: 0.85em; color: #656d76;">May 3, 2026</span><span style="font-size: 0.85em; color: #656d76;"> &middot; </span><a href="https://github.com/opencitations/triplelite" style="font-size: 0.85em; color: #0969da; text-decoration: none;">opencitations/triplelite</a></div></div><div style="margin: 12px 0; color: #1f2328;"><p>ci: add cross-platform wheel builds</p>
+<p>Replace single-platform uv build with cibuildwheel for building wheels
+across Linux (x86_64, aarch64, musl), macOS (x86_64, arm64), and
+Windows (AMD64, ARM64) for Python 3.10-3.13.</p>
+<p>Add multi-OS matrix to test workflow.</p></div><div style="display: flex; justify-content: space-between; align-items: center; font-size: 0.85em;"><span style="font-family: monospace; color: #1a7f37; font-weight: 600;">+88</span><span style="font-family: monospace; color: #cf222e; font-weight: 600;">-11</span><a href="https://github.com/opencitations/triplelite/commit/0bb61b5fc6774aacc38b6bd5f848d96f6535ba23" style="color: #0969da; text-decoration: none; font-weight: 500;">0bb61b5</a></div></div>
+
+\##Domande
+
+* In Matilda ci sono tante risorse identificate solo dall'id arXiv, non riconciliato al DOI della versione pubblicata. Va bene così?
+* SKG-IF impose [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) datetime per le date. Significa che ci vuole anche ora, minuti e secondi. Va bene così?
+* [https://github.com/opencitations/ramose/issues/2](https://github.com/opencitations/ramose/issues/2)?
+* Ilaria
+* Peffomance? [https://swsa.semanticweb.org/content/swsa-distinguished-dissertation-award](https://swsa.semanticweb.org/content/swsa-distinguished-dissertation-award)
+* Articolo ISWC
+* Elia, quando hai corretto la provenance hai verificato che tutte le entità nei dati avessero degli snapshot di provenance? Gli OMID consecutivi 0624010177378–0624010177388 e 0624010177865–0624010177868 non hanno snapshot di provenance. Sono vecchi perché non uso più prefissi diversi da 060 da due dump.
+* w3id
 
 ## Memo
 
 Aldrovandi
 
 * Ai related works c'è da aggiungere l'articolo su chad kg
-* Mail con marcatura istituto
 * Articolo del Twin
 
 Vizioso
