@@ -3,7 +3,7 @@
 #
 # SPDX-License-Identifier: CC-BY-4.0
 
-title: Tu vuo far el phdino
+title: Tu vuo far el contrattino
 head:
   - tag: meta
     attrs:

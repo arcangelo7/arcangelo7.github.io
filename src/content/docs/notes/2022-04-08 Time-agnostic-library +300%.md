@@ -24,7 +24,7 @@ editUrl: false
 
   * Ho caricato i dataset di test su Zenodo. Lanciando `poetry run tests` tutto l’occorrente, se non è già presente, viene automaticamente scaricato ed estratto nella cartella corretta. Dopodiché, sia Blazegraph che GraphDB vengono lanciati in automatico, in modo da consentire l’esecuzione dei test.
 
-  * Risolto l’annoso problema menzionato nel seguente blocco: [Tu vuo far el phdino/22-03-2022 GraphDB vs Blazegraph](/notes/tu-vuo-far-el-phdino/22-03-2022-graphdb-vs-blazegraph)
+  * Risolto l’annoso problema menzionato nel seguente blocco: [diario/22-03-2022 GraphDB vs Blazegraph](/notes/diario/22-03-2022-graphdb-vs-blazegraph)
     * Non è un problema legato ai limiti sul multi-threading imposti dalla versione gratuita. Ho testato la versione a pagamento tramite prova di 60 giorni e il problema persiste.
     * Il problema è che ho passato come indirizzo locale dell’endpoint http\://**localhost**:7200/repositories/data anziché http\://**127.0.0.1**/repositories/data. In questo modo, il DNS doveva risolvere ogni volta l’indirizzo, causando una pausa di circa 1 secondo tra una query e l’altra.
 

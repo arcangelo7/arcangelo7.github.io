@@ -16,7 +16,7 @@ editUrl: false
 * Ho studiato il caso dei campi ‘**issue**’ e ‘**volume**’ invalidi. Segue un elenco di tutti i pattern validi e invalidi presenti nel dump di Crossref. Tutti i pattern sono case insensitive. È sottointeso che ogni pattern è preceduto da ^ e seguito da \$.
 
     <aside>
-    👉 I pattern validi **non** servono a creare delle whitelist, che abbiamo filosoficamente bocciato durante il nostro incontro del [[Tu vuo far el phdino/27-01-2022]]. Servono solo a individuare il 100% dei pattern invalidi.
+    👉 I pattern validi **non** servono a creare delle whitelist, che abbiamo filosoficamente bocciato durante il nostro incontro del [[diario/27-01-2022]]. Servono solo a individuare il 100% dei pattern invalidi.
 
     </aside>
 

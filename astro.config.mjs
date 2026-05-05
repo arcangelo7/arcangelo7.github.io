@@ -13,7 +13,7 @@ const [kgiPlugin, kgiSidebarGroup] = createStarlightObsidianPlugin();
 export default defineConfig({
 	integrations: [
 		starlight({
-			title: 'Tu vuo far el phdino',
+			title: 'Tu vuo far el contrattino',
 			logo: {
 				src: './src/assets/logo.png',
 				alt: 'PhD Journal Logo',
@@ -28,13 +28,13 @@ export default defineConfig({
 			sidebar: [obsidianSidebarGroup, kgiSidebarGroup],
 			plugins: [
 				starlightObsidian({
-					vault: '/home/arcangelo/Documents/obsidian/Tu vuo far el phdino',
+					vault: '/home/arcangelo/Documents/obsidian/diario',
 					configFolder: '../.obsidian',
 					ignore: [
 						'*.png',
 					],
 					sidebar: {
-						label: 'Tu vuo far el phdino',
+						label: 'Tu vuo far el contrattino',
 						collapsed: false,
 					},
 					skipGeneration: !!process.env.SKIP_OBSIDIAN_GENERATION,

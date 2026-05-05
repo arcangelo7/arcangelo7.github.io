@@ -16,7 +16,7 @@ editUrl: false
 * Novità relative a *Performing live time-traversal queries on RDF datasets*:
 
   * Ho completato tutti i **benchmark**. Ecco i risultati: [https://arcangelo7.github.io/files/](https://arcangelo7.github.io/files/)
-    * Sono una valanga di numeri, ma non sarà necessario inserirli tutti. Alcune tipologie di query verranno accorpate, perché bisogna modificare la tassonomia per rispondere a una delle obiezioni dei revisori, per cui si rimanda a [Tu vuo far el phdino/07-06-2022 In preparazione alla lettera di rispost](/notes/tu-vuo-far-el-phdino/07-06-2022-in-preparazione-alla-lettera-di-rispost)
+    * Sono una valanga di numeri, ma non sarà necessario inserirli tutti. Alcune tipologie di query verranno accorpate, perché bisogna modificare la tassonomia per rispondere a una delle obiezioni dei revisori, per cui si rimanda a [diario/07-06-2022 In preparazione alla lettera di rispost](/notes/diario/07-06-2022-in-preparazione-alla-lettera-di-rispost)
   * Cancellando tutto il capitolo sui related works l’articolo è lungo 7500/7000 parole, considerando anche le tabelle. Se si escudono le tabelle, il computo si attesta intorno alle 6000/7000 parole. Il problema è che le tabelle contengono per lo più numeri e singoli caratteri che vengono contati come parole.
 
   [Lettera di risposta ai revisori](Lettera%20di%20risposta%20ai%20revisori%205fb3cbc0a37b4c1dab)

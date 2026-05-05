@@ -14,7 +14,7 @@ editUrl: false
     * Viene proces[2022-05-26 Progetto di dottorato v1 0 0](/notes/2022-05-26-progetto-di-dottorato-v1-0-0)sato solo il campo “id”. Tutti gli altri campi verranno popolati da Meta a partire dal MetaId.
     * Perché non processare immediatamente tutta la riga? Perché occorrerebbe preprocessare circa 1,3 GB di dati, che richiederebbe troppo tempo senza che ce ne sia la necessità.
 * Ho cominciato a lavorare all’integrazione di time-agnostic-library con Apache Jena Fuseki:
-  * Ho risolto il problema discusso nel seguente blocco: [Tu vuo far el phdino/10-02-2022 Triplestore del terzo tipo](/notes/tu-vuo-far-el-phdino/10-02-2022-triplestore-del-terzo-tipo)
+  * Ho risolto il problema discusso nel seguente blocco: [diario/10-02-2022 Triplestore del terzo tipo](/notes/diario/10-02-2022-triplestore-del-terzo-tipo)
 
     Occorre specificare il parametro `tdb2:unionDefaultGraph true` nel file di configurazione:
 
@@ -93,7 +93,7 @@ editUrl: false
     * A entrambi viene assegnato lo stesso ORCID e diventano uno l’autore successivo dell’altro, generando un loop infinito.
     * Il bug si risolve imponendo come condizione che, se ci sono più autori con lo stesso cognome e la stessa iniziale del nome, l’ORCID va assegnato alla persona in cui nome case insensitive matcha perfettamente con il nome registrato su ORCID.
 * Ho cominciato a lavorare all’integrazione di time-agnostic-library con Apache Jena Fuseki:
-  * Ho risolto il problema discusso nel seguente blocco: [Tu vuo far el phdino/10-02-2022 Triplestore del terzo tipo](/notes/tu-vuo-far-el-phdino/10-02-2022-triplestore-del-terzo-tipo)
+  * Ho risolto il problema discusso nel seguente blocco: [diario/10-02-2022 Triplestore del terzo tipo](/notes/diario/10-02-2022-triplestore-del-terzo-tipo)
 
     Occorre specificare il parametro `tdb2:unionDefaultGraph true` nel file di configurazione:
 
