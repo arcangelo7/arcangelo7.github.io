@@ -151,6 +151,10 @@ provenance (with SVG diagrams ported from old docs), counter handlers.</p></div>
 ## Domande
 
 * Ruben
+  * Why are usage (rate/request/result size) limits implemented?
+  * What specific limits are implemented on the SPARQL endpoint you maintain?
+  * Do the implemented rate limits work?
+  * Are you (as an endpoint maintainer) willing to implement a metadata schema to advertise these limits to users?
 
 ## Memo
 
