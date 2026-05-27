@@ -32,7 +32,7 @@ editUrl: false
       return app.test_client()
   ```
 
-* Sto cominciando a realizzare la famosa guida sull'integrazione continua direttamente nel progetto di Heritrace, così che costituisca un esempio concreto. Ci vorrà sicuramente una guida separata che spieghi le cose fin dalle fondamenta, ma è un modo per cominciare facendo una cosa utile nell’immediato.
+* Sto cominciando a realizzare la famosa guida sull'integrazione continua direttamente nel progetto di Heritrace, così che costituisca un esempio concreto. Ci vorrà sicuramente una guida separata che spieghi le cose fin dalle fondamenta, ma è un modo per cominciare facendo una cosa utile nell'immediato.
   * [https://github.com/opencitations/heritrace/blob/main/tests/README.md](https://github.com/opencitations/heritrace/blob/main/tests/README.md)
   * [https://github.com/opencitations/heritrace/blob/main/.github/CI\_CD\_SETUP.md](https://github.com/opencitations/heritrace/blob/main/.github/CI_CD_SETUP.md)
 
@@ -45,7 +45,7 @@ editUrl: false
 
 * Alert con rotellina e testo esplicativo
   * Cercare orfani e proxy
-  * Applicare le modifiche a un’entità
+  * Applicare le modifiche a un'entità
   * Ripristino di una versione
   * Creazione di una entità
 
