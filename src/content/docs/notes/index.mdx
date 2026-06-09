@@ -1,0 +1,339 @@
+---
+title: index
+editUrl: false
+---
+
+import { Image } from 'astro:assets'
+
+import pjpcaj from '../../../assets/notes/attachments/pasted-image-20260609081226.png'
+
+## La Novitade
+
+### Meta
+
+Durante la validazione dell'allineamento Meta/OpenAlex ho scoperto un problema grave nella classe di normalizzazione dei DOI dell'oc\_ds\_converter. Il commit che integrava la logica di correzione automatica dei DOI (quella dell'esame di Computational Thinking) l'aveva distribuita su due punti: la parte principale in `is_valid` che, dopo le mie correzioni, chiama `attempt_repair` solo con le API attive, e lo strip di vari suffissi in `normalize`, che viene eseguito sempre. Credevo di aver contenuto il problema delegando la correzione alle sole chiamate API, ma lo strip in `normalize` agiva a prescindere. Poiché esistono DOI validi che terminano con `#`, 4043 DOI sono stati alterati (almeno), generando duplicati in Meta difficili da mergiare: per ogni caso esistono due varianti dello stesso identificatore, una con e una senza cancelletto.
+
+Esempio: [`10.1002/(sici)1096-9896(199912)189:4<623::aid-path475>3.0.co;2-#`](https://doi.org/api/handles/10.1002%2F\(sici\)1096-9896\(199912\)189:4%3C623::aid-path475%3E3.0.co;2-%23)
+
+[https://github.com/opencitations/oc\_meta/issues/64](https://github.com/opencitations/oc_meta/issues/64)
+
+<div style="border: 1px solid #d0d7de; border-radius: 8px; padding: 16px; margin: 8px 0; background: #ffffff; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; color: #1f2328;"><div style="display: flex; align-items: center; gap: 12px; margin-bottom: 12px;"><img src="https://avatars.githubusercontent.com/u/42008604?v=4" style="width: 32px; height: 32px; border-radius: 50%;" alt="arcangelo7" /><div><strong style="display: block; color: #1f2328;">arcangelo7</strong><span style="font-size: 0.85em; color: #656d76;">May 29, 2026</span><span style="font-size: 0.85em; color: #656d76;"> &middot; </span><a href="https://github.com/opencitations/oc_ds_converter" style="font-size: 0.85em; color: #0969da; text-decoration: none;">opencitations/oc_ds_converter</a></div></div><div style="margin: 12px 0; color: #1f2328;"><p>fix(doi): stop normalise from destructively stripping DOI content</p>
+<p>Suffix stripping (16 regex patterns including #, query params, PMID, year,
+delimiters) and embedded URL prefix stripping ran unconditionally in
+normalise(), silently corrupting valid DOIs with legitimate characters like #.</p>
+<p>Moved all heuristic correction to attempt_repair(), which only runs when API
+is enabled and verifies the repaired DOI exists. Merged base_normalise() into
+normalise() (redundant after removing the stripping logic) and dropped the
+prefix regex (URL prefix handling was already covered by extracting from &quot;10.&quot;).</p></div><div style="display: flex; justify-content: flex-end; align-items: center; font-size: 0.85em;"><a href="https://github.com/opencitations/oc_ds_converter/commit/fbc4f2e6879cc4baa2ca63d9993443d6678416f0" style="color: #0969da; text-decoration: none; font-weight: 500;">fbc4f2e</a></div></div>
+
+<div style="border: 1px solid #d0d7de; border-radius: 8px; padding: 16px; margin: 8px 0; background: #ffffff; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; color: #1f2328;"><div style="display: flex; align-items: center; gap: 12px; margin-bottom: 12px;"><div><strong style="display: block; color: #1f2328;">arcangelo7</strong><span style="font-size: 0.85em; color: #656d76;">May 30, 2026</span><span style="font-size: 0.85em; color: #656d76;"> &middot; </span><a href="https://github.com/opencitations/oc_meta" style="font-size: 0.85em; color: #0969da; text-decoration: none;">opencitations/oc_meta</a></div></div><div style="margin: 12px 0; color: #1f2328;"><p>fix(patch): repair SICI DOIs truncated by the oc_ds_converter suffix bug</p>
+<p>oc_ds_converter&#39;s suffix regex stripped the trailing &quot;#&quot; check character from
+SICI DOIs (e.g. Wiley &quot;...CO;2-#&quot;), leaving &quot;...co;2-&quot; and creating a duplicate
+bibliographic resource next to the entity that already held the correct DOI.</p>
+<p>The script collects the omid_mismatch errors from check_results, reconstructs
+the DOI by reappending &quot;#&quot;, confirms it on Crossref, and scores the duplicate&#39;s
+metadata against the Crossref record to avoid wrong merges. Confirmed cases are
+merged into the surviving entity and the truncated identifier is removed; when
+the same article was minted under several OMIDs the duplicates are merged N-way
+into one survivor. The run is refused unless the triplestore is updated directly
+(rdf_files_only=False) so every case reads consistent state.</p></div><div style="display: flex; justify-content: flex-end; align-items: center; font-size: 0.85em;"><a href="https://github.com/opencitations/oc_meta/commit/29cacb6540c68c8f234154487540b21007256585" style="color: #0969da; text-decoration: none; font-weight: 500;">29cacb6</a></div></div>
+
+Ho usato l'euristica di Martijn Visser, Nees Jan van Eck, Ludo Waltman; Large-scale comparison of bibliographic data sources: Scopus, Web of Science, Dimensions, Crossref, and Microsoft Academic. Quantitative Science Studies 2021; 2 (1): 20–41. doi: [https://doi.org/10.1162/qss\_a\_00112](https://doi.org/10.1162/qss_a_00112)
+
+<div style="border: 1px solid #d0d7de; border-radius: 8px; padding: 16px; margin: 8px 0; background: #ffffff; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; color: #1f2328;"><div style="display: flex; align-items: center; gap: 12px; margin-bottom: 12px;"><div><strong style="display: block; color: #1f2328;">arcangelo7</strong><span style="font-size: 0.85em; color: #656d76;">Jun 1, 2026</span><span style="font-size: 0.85em; color: #656d76;"> &middot; </span><a href="https://github.com/opencitations/oc_meta" style="font-size: 0.85em; color: #0969da; text-decoration: none;">opencitations/oc_meta</a></div></div><div style="margin: 12px 0; color: #1f2328;"><p>feat(patch): add omid mismatch fixer and extract shared matching module</p>
+<p>Extract bibliographic matching logic (Crossref fetching, triplestore
+metadata retrieval, weighted scoring) into oc_meta.lib.bibliographic_matching.</p>
+<p>Add fix_omid_mismatches.py for merging duplicate entities caused by DOI
+normalization issues (trailing periods).
+Validates merges via doi.org resolution and Crossref metadata scoring.</p></div><div style="display: flex; justify-content: flex-end; align-items: center; font-size: 0.85em;"><a href="https://github.com/opencitations/oc_meta/commit/194327feb81ab044294a6f74c6c7b34dce8bba35" style="color: #0969da; text-decoration: none; font-weight: 500;">194327f</a></div></div>
+
+<div style="border: 1px solid #d0d7de; border-radius: 8px; padding: 16px; margin: 8px 0; background: #ffffff; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; color: #1f2328;"><div style="display: flex; align-items: center; gap: 12px; margin-bottom: 12px;"><div><strong style="display: block; color: #1f2328;">arcangelo7</strong><span style="font-size: 0.85em; color: #656d76;">Jun 9, 2026</span><span style="font-size: 0.85em; color: #656d76;"> &middot; </span><a href="https://github.com/opencitations/oc_ds_converter" style="font-size: 0.85em; color: #0969da; text-decoration: none;">opencitations/oc_ds_converter</a></div></div><div style="margin: 12px 0; color: #1f2328;"><p>fix: correct ORCID reconciliation in agent string builders</p>
+<p>The DOI-&gt;ORCID index matching attributed one author&#39;s ORCID to unrelated
+co-authors in two ways:</p>
+<p>Surname matching used bidirectional substring containment, so a short
+indexed surname like &quot;Li&quot; matched every co-author whose surname merely
+contained it (&quot;Gladilin&quot;, &quot;Poggioli&quot;, &quot;Zwalinski&quot;...). Combined with the
+given-name initial fallback this smeared a single ORCID across many
+distinct people in large collaborations. Replace containment with
+token-subset matching, so compound surnames still match while short
+fragments no longer do.</p></div><div style="display: flex; justify-content: flex-end; align-items: center; font-size: 0.85em;"><a href="https://github.com/opencitations/oc_ds_converter/commit/8aaf803d4e6b0b08f9293cfc67faf48815210042" style="color: #0969da; text-decoration: none; font-weight: 500;">8aaf803</a></div></div>
+
+### RAMOSE
+
+<div style="border: 1px solid #d0d7de; border-radius: 8px; padding: 16px; margin: 8px 0; background: #ffffff; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; color: #1f2328;"><div style="display: flex; align-items: center; gap: 12px; margin-bottom: 12px;"><img src="https://avatars.githubusercontent.com/u/42008604?v=4" style="width: 32px; height: 32px; border-radius: 50%;" alt="arcangelo7" /><div><strong style="display: block; color: #1f2328;">arcangelo7</strong><span style="font-size: 0.85em; color: #656d76;">Jun 5, 2026</span><span style="font-size: 0.85em; color: #656d76;"> &middot; </span><a href="https://github.com/opencitations/ramose" style="font-size: 0.85em; color: #0969da; text-decoration: none;">opencitations/ramose</a></div></div><div style="margin: 12px 0; color: #1f2328;"><p>feat(skgif): omit empty optional fields from JSON-LD output</p></div><div style="display: flex; justify-content: flex-end; align-items: center; font-size: 0.85em;"><a href="https://github.com/opencitations/ramose/commit/aefcb5271ae9bfbe966fa79777ffe5b409c38f3f" style="color: #0969da; text-decoration: none; font-weight: 500;">aefcb52</a></div></div>
+
+<div style="border: 1px solid #d0d7de; border-radius: 8px; padding: 16px; margin: 8px 0; background: #ffffff; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; color: #1f2328;"><div style="display: flex; align-items: center; gap: 12px; margin-bottom: 12px;"><img src="https://avatars.githubusercontent.com/u/42008604?v=4" style="width: 32px; height: 32px; border-radius: 50%;" alt="arcangelo7" /><div><strong style="display: block; color: #1f2328;">arcangelo7</strong><span style="font-size: 0.85em; color: #656d76;">Jun 5, 2026</span><span style="font-size: 0.85em; color: #656d76;"> &middot; </span><a href="https://github.com/opencitations/ramose" style="font-size: 0.85em; color: #0969da; text-decoration: none;">opencitations/ramose</a></div></div><div style="margin: 12px 0; color: #1f2328;"><p>fix(skgif): emit url scheme for Zenodo and SWH identifiers in Wikidata API</p></div><div style="display: flex; justify-content: flex-end; align-items: center; font-size: 0.85em;"><a href="https://github.com/opencitations/ramose/commit/b68ab386eeee4cdea376714f01c4511c606be174" style="color: #0969da; text-decoration: none; font-weight: 500;">b68ab38</a></div></div>
+
+<div style="border: 1px solid #d0d7de; border-radius: 8px; padding: 16px; margin: 8px 0; background: #ffffff; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; color: #1f2328;"><div style="display: flex; align-items: center; gap: 12px; margin-bottom: 12px;"><img src="https://avatars.githubusercontent.com/u/42008604?v=4" style="width: 32px; height: 32px; border-radius: 50%;" alt="arcangelo7" /><div><strong style="display: block; color: #1f2328;">arcangelo7</strong><span style="font-size: 0.85em; color: #656d76;">Jun 6, 2026</span><span style="font-size: 0.85em; color: #656d76;"> &middot; </span><a href="https://github.com/opencitations/ramose" style="font-size: 0.85em; color: #0969da; text-decoration: none;">opencitations/ramose</a></div></div><div style="margin: 12px 0; color: #1f2328;"><p>feat(openapi): upgrade OpenAPI from 3.0 to 3.1</p>
+<p>The generated spec only uses Schema Object constructs that are already
+compatible with JSON Schema 2020-12 (type/properties/items/enum/format/
+pattern/$ref/required), so moving from 3.0.3 to 3.1.0 is a plain version
+bump with no semantic change.</p>
+<p>Add automated validation through openapi-spec-validator.</p></div><div style="display: flex; justify-content: flex-end; align-items: center; font-size: 0.85em;"><a href="https://github.com/opencitations/ramose/commit/018a92633f7b048a04e852fd3f5bd6edbf70eeb5" style="color: #0969da; text-decoration: none; font-weight: 500;">018a926</a></div></div>
+
+<div style="border: 1px solid #d0d7de; border-radius: 8px; padding: 16px; margin: 8px 0; background: #ffffff; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; color: #1f2328;"><div style="display: flex; align-items: center; gap: 12px; margin-bottom: 12px;"><img src="https://avatars.githubusercontent.com/u/42008604?v=4" style="width: 32px; height: 32px; border-radius: 50%;" alt="arcangelo7" /><div><strong style="display: block; color: #1f2328;">arcangelo7</strong><span style="font-size: 0.85em; color: #656d76;">Jun 6, 2026</span><span style="font-size: 0.85em; color: #656d76;"> &middot; </span><a href="https://github.com/opencitations/ramose" style="font-size: 0.85em; color: #0969da; text-decoration: none;">opencitations/ramose</a></div></div><div style="margin: 12px 0; color: #1f2328;"><p>feat(openapi): serve Swagger UI and fix exported response media types</p>
+<p>Serve interactive Swagger UI at /docs with a dropdown over every loaded
+API spec</p>
+<p>An operation can now declare the content type of a custom output format
+as an optional third field of #format, for example
+skgif,to_skgif,application/ld+json.</p>
+<p>Tabular JSON examples also gain a matching CSV example.</p></div><div style="display: flex; justify-content: flex-end; align-items: center; font-size: 0.85em;"><a href="https://github.com/opencitations/ramose/commit/6114a16fc1d739d086c039ca82f86855a29c750e" style="color: #0969da; text-decoration: none; font-weight: 500;">6114a16</a></div></div>
+
+[https://colab.research.google.com/github/opencitations/ramose/blob/master/docs/09-demo-skgif.ipynb](https://colab.research.google.com/github/opencitations/ramose/blob/master/docs/09-demo-skgif.ipynb)
+
+<div style="border: 1px solid #d0d7de; border-radius: 8px; padding: 16px; margin: 8px 0; background: #ffffff; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; color: #1f2328;"><div style="display: flex; align-items: center; gap: 12px; margin-bottom: 12px;"><img src="https://avatars.githubusercontent.com/u/42008604?v=4" style="width: 32px; height: 32px; border-radius: 50%;" alt="arcangelo7" /><div><strong style="display: block; color: #1f2328;">arcangelo7</strong><span style="font-size: 0.85em; color: #656d76;">Jun 6, 2026</span><span style="font-size: 0.85em; color: #656d76;"> &middot; </span><a href="https://github.com/opencitations/ramose" style="font-size: 0.85em; color: #0969da; text-decoration: none;">opencitations/ramose</a></div></div><div style="margin: 12px 0; color: #1f2328;"><p>feat: negotiate response format via the Accept header</p></div><div style="display: flex; justify-content: flex-end; align-items: center; font-size: 0.85em;"><a href="https://github.com/opencitations/ramose/commit/2e0f0c005757c119a4ffa92fc3ed100eb4e95ae7" style="color: #0969da; text-decoration: none; font-weight: 500;">2e0f0c0</a></div></div>
+
+![Pasted image 20260606211836.png](../../../assets/notes/attachments/pasted-image-20260606211836.png)
+
+<div style="border: 1px solid #d0d7de; border-radius: 8px; padding: 16px; margin: 8px 0; background: #ffffff; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; color: #1f2328;"><div style="display: flex; align-items: center; gap: 12px; margin-bottom: 12px;"><img src="https://avatars.githubusercontent.com/u/42008604?v=4" style="width: 32px; height: 32px; border-radius: 50%;" alt="arcangelo7" /><div><strong style="display: block; color: #1f2328;">arcangelo7</strong><span style="font-size: 0.85em; color: #656d76;">Jun 7, 2026</span><span style="font-size: 0.85em; color: #656d76;"> &middot; </span><a href="https://github.com/opencitations/ramose" style="font-size: 0.85em; color: #0969da; text-decoration: none;">opencitations/ramose</a></div></div><div style="margin: 12px 0; color: #1f2328;"><p>feat: add SPARQL write operations with bearer-token authentication</p>
+<p>POST, PUT and DELETE operations now run a SPARQL 1.1 Update against
+#update_endpoint (falling back to #endpoint) and return a JSON
+confirmation. Routing is method-aware, so the
+same #url can host several operations differing by method.</p>
+<p>Body and path values bind through iri()/literal() typed parameters:
+literals are escaped, IRIs are validated and rejected with 400 on
+forbidden characters, guarding against update injection. A request that
+leaves any [[placeholder]] unfilled is rejected with 400 before anything
+reaches the endpoint.</p>
+<p>The #auth directive (API-level default, per-operation override) marks
+operations that require a bearer token. The web layer validates the
+Authorization header against TokenStore, a local SQLite registry that
+keeps only the SHA-256 hash of each token and supports creation,
+expiry, revocation and listing. Manage tokens with --token-create,
+--token-ttl, --token-list, --token-revoke and --auth-db.</p></div><div style="display: flex; justify-content: flex-end; align-items: center; font-size: 0.85em;"><a href="https://github.com/opencitations/ramose/commit/7479bdef828db0b57b6cbafe73f841f086c6a120" style="color: #0969da; text-decoration: none; font-weight: 500;">7479bde</a></div></div>
+
+```
+#url /resources
+#type operation
+#method post
+#auth required
+#resource iri(.+)
+#title literal(.+)
+#identifier iri(.+)
+#scheme iri(.+)
+#value literal(.+)
+#description Create a bibliographic resource with a title and an identifier.
+#field_type str(x)
+#sparql INSERT DATA {
+            <[[resource]]> a <http://purl.org/spar/fabio/Expression> ;
+                <http://purl.org/dc/terms/title> "[[title]]" ;
+                <http://purl.org/spar/datacite/hasIdentifier> <[[identifier]]> .
+            <[[identifier]]> a <http://purl.org/spar/datacite/Identifier> ;
+                <http://purl.org/spar/datacite/usesIdentifierScheme> <[[scheme]]> ;
+                <http://www.essepuntato.it/2010/06/literalreification/hasLiteralValue> "[[value]]" .
+        }
+```
+
+```sh
+uv run python -m ramose --token-create demo --auth-db .auth
+
+Token created for 'demo': bw5qGD2PKjzc17qJY9QbE89SFO4vVUFvE4Pa2yjd6VA
+```
+
+```sh
+uv run python -m ramose -s test/fixtures/write_api.hf -w 127.0.0.1:8080 --auth-db .auth
+```
+
+```
+POST /resources
+Authorization: Bearer bw5qGD2PKjzc17qJY9QbE89SFO4vVUFvE4Pa2yjd6VA
+Content-Type: application/json
+
+{
+  "resource": "https://w3id.org/oc/meta/br/062104388184",
+  "title": "OpenCitations Meta",
+  "identifier": "https://w3id.org/oc/meta/id/062106312420",
+  "scheme": "http://purl.org/spar/datacite/doi",
+  "value": "10.1162/qss_a_00292"
+}
+```
+
+```sh
+curl -X POST "http://127.0.0.1:8080/bibliography/v1/resources?resource=https://w3id.org/oc/meta/br/062104388184&title=OpenCitations%20Meta&identifier=https://w3id.org/oc/meta/id/062106312420&scheme=http://purl.org/spar/datacite/doi&value=10.1162/qss_a_00292" \
+  -H "Authorization: Bearer bw5qGD2PKjzc17qJY9QbE89SFO4vVUFvE4Pa2yjd6VA"
+```
+
+Si possono configurare update di endpoint multipli, diversi a seconda dell'operazione, ma non si può federare un update.
+
+<div style="border: 1px solid #d0d7de; border-radius: 8px; padding: 16px; margin: 8px 0; background: #ffffff; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; color: #1f2328;"><div style="display: flex; align-items: center; gap: 12px; margin-bottom: 12px;"><img src="https://avatars.githubusercontent.com/u/42008604?v=4" style="width: 32px; height: 32px; border-radius: 50%;" alt="arcangelo7" /><div><strong style="display: block; color: #1f2328;">arcangelo7</strong><span style="font-size: 0.85em; color: #656d76;">Jun 7, 2026</span><span style="font-size: 0.85em; color: #656d76;"> &middot; </span><a href="https://github.com/opencitations/ramose" style="font-size: 0.85em; color: #0969da; text-decoration: none;">opencitations/ramose</a></div></div><div style="margin: 12px 0; color: #1f2328;"><p>feat: authenticate RAMOSE to SPARQL backends per endpoint</p>
+<p>This adds a configurable credential on the
+RAMOSE to backend boundary, kept separate from the client to RAMOSE
+bearer token.</p>
+<p>Configure via RAMOSE_BACKEND_AUTH
+(newline-separated endpoint=header entries,) or a
+repeatable --backend-auth flag.</p>
+<p>The header is applied to every request to its endpoint,
+reads and writes alike, and to no other.</p></div><div style="display: flex; justify-content: flex-end; align-items: center; font-size: 0.85em;"><a href="https://github.com/opencitations/ramose/commit/5f95e03bf53af024d00f6aa23c57564a0dd60f72" style="color: #0969da; text-decoration: none; font-weight: 500;">5f95e03</a></div></div>
+
+```sh
+python -m ramose -s apis.hf -w 127.0.0.1:8080 \
+  --backend-auth 'https://qlever.example/sparql=Bearer <token>' \
+  --backend-auth 'https://fuseki.example/ds/update=Basic <base64>'
+```
+
+RAMOSE non interpreta quello che metti dopo l'uguale, quindi vengono gestiti anche schemi di token speciali tipo il GDB di GraphDB. Ciò che si mette dopo l'uguale viene inviato nell'header Authorization all'endpoint così com'è.
+
+### Articolo su RAMOSE
+
+#### Research o applied research?
+
+Applied research, per i seguenti motivi:
+
+* Ho trovato un articolo in applied research su IEEE Access su uno strumento comparabile a RAMOSE:
+  > G. Vega-Gorgojo, "CRAFTS: Configurable REST APIs for Triple Stores," in IEEE Access, vol. 10, pp. 32426-32441, 2022, doi: 10.1109/ACCESS.2022.3160610
+* Sia Scopus che WoS classificano tutti i paper IEEE Access come Article
+  ![Pasted image 20260529121725.png](../../../assets/notes/attachments/pasted-image-20260529121725.png)
+  ![Pasted image 20260529121919.png](../../../assets/notes/attachments/pasted-image-20260529121919.png)
+
+#### Related works
+
+[https://github.com/CLARIAH/grlc/issues/573](https://github.com/CLARIAH/grlc/issues/573)
+
+Espinoza-Arias, P., Garijo, D., & Corcho, O. (2021). Crossing the chasm between ontology engineering and application development: A survey. *Journal of Web Semantics*, *70*, 100655. [https://doi.org/10.1016/j.websem.2021.100655](https://doi.org/10.1016/j.websem.2021.100655)
+
+![Pasted image 20260608150615.png](../../../assets/notes/attachments/pasted-image-20260608150615.png)
+
+![Pasted image 20260608150625.png](../../../assets/notes/attachments/pasted-image-20260608150625.png)
+
+Anziché riutilizzare la [tabella dell'articolo originale di RAMOSE](https://doi.org/10.3233/SW-210439), ho preferito adottarne una presente in un survey scritto non da noi perché:
+
+1. È meno autoreferenziale
+2. Permette di confrontare tutti i tool su categorie meno sbilanciate verso il modo di RAMOSE di vedere la soluzione al problema
+3. È più strutturata e meno discorsiva
+
+Della tabella originale si perde running interface, che fa emergere nulla di interessante, secondo me. I running requirements invece sono divisi su colonne più granulari (language, input, configuration format).
+
+Si perdono anche le colonne pre-processing e post-processing, che però fanno emergere dettagli implementativi, cioè differenze tra approcci dichiarativi vs imperativi, quindi si rischia di tiltare troppo verso RAMOSE. In un certo senso, valgono già le colonne configurable queries e control over JSON per questi due aspetti.
+
+Ho pensato di aggiungere 5 colonne, ben distanziate dalle altre, che mettono in luce specificamente le novità di RAMOSE v1. Queste colonne sono sufficientemente generiche e coperte da diversi tool (a parte non-RDF sources), il che le rende categorie neutre, secondo me.
+
+Inoltre, ho aggiunto la colonna licenza, presente nella tabella originale di RAMOSE ma assente in Espinoza.
+
+### Aldrovandi
+
+Ho corretto le licenze
+
+
+
+## Domande
+
+Aloha: [https://github.com/skg-if/api/issues/62#issuecomment-4660975585](https://github.com/skg-if/api/issues/62#issuecomment-4660975585)
+
+### Index
+
+L'endpoint SPARQL di Index non ritorna JSON valido rispetto a [SPARQL 1.1 Query Results JSON Format](https://www.w3.org/TR/sparql11-results-json/)
+
+```sh
+curl -s -H 'Accept: application/sparql-results+json' -G 'https://sparql.opencitations.net/index' --data-urlencode 'query=SELECT ?s WHERE { ?s ?p ?o } LIMIT 1'
+```
+
+C'è un campo `meta` di troppo. Me ne sono accorto perché ho provato a costruire un'API con CRAFTS, che valida le risposta rispetto a uno schema.
+
+Inoltre, tool come [Walder](https://github.com/KNowledgeOnWebScale/walder), che utilizzano Comunica come query engine, non possono fare query sui nostri endpoint SPARQL, perché si aspettano una [SPARQL Service Description](https://www.w3.org/TR/sparql11-service-description/) al GET sull'endpoint, non una pagina HTML.
+
+### RAMOSE
+
+Cosa dico a Sergei? Gli devo scrivere quantomeno per chiedergli di creare un ORCID.
+
+Ho sempre citato le specifiche del W3C come riferimenti bibliografici, non come URL. Li cito come URL?
+
+#### Ordine degli autori
+
+* [https://www.informatics-europe.org/component/phocadownload/category/9-publications/10-reports.html?download=278%3Aresearch-evaluation-2025](https://www.informatics-europe.org/component/phocadownload/category/9-publications/10-reports.html?download=278%3Aresearch-evaluation-2025)
+* **Waltman**, L., An empirical analysis of the use of alphabetical authorship in scientific publishing. [https://doi.org/10.1016/j.joi.2012.07.008](https://doi.org/10.1016/j.joi.2012.07.008 "Persistent link using digital object identifier")
+  * La categoria "Computer science, theory & methods" ha un mean alphabetization score di solo 33.6% (e questo include anche quelle che sono alfabetiche per caso, non intenzionalmente, altrimenti si scende a 32.6%). Lo studio conclude che nel 2011 meno del 4% di tutte le pubblicazioni scientifiche usa intenzionalmente l'ordine alfabetico.
+    * ![Pasted image 20260530135957.png](../../../assets/notes/attachments/pasted-image-20260530135957.png)
+
+> We find that the use of alphabetical authorship is declining over time. In 2011, the authors of less than 4% of all publications intentionally chose to list their names alphabetically. The use of alphabetical authorship is most common in mathematics, economics (including finance), and high energy physics.
+
+<Image src={pjpcaj} alt="" width="300" height="auto" />
+
+* In finanza l'ordine alfabetico è la norma, sono felici?
+  * Joanis ST, Patil VH. Alphabetical ordering of author surnames in academic publishing: **A detriment to teamwork**. PLoS One. 2021 May 5;16(5):e0251176. doi: doi.org/10.1371/journal.pone.0251176. PMID: 33951084; PMCID: PMC8099113.
+    * lo studio empirico è condotto solo su riviste di business. ordine alfabetico → minor incentivo a collaborare (perché il tuo contributo extra non viene reso visibile) → meno coautori per pubblicazione
+    * L'ordine alfabetico in finanza, dove è la norma, non è neutro, ma ha un effetto, che è quello di discriminare chi è nato con un cognome che viene dopo nell'alfabeto:
+      * Van Praag, C. M., & Van Praag, B. M. S. (2008). The Benefits of Being Economics Professor A (rather than Z). Economica, 75(300), 782–796. [https://doi.org/10.1111/j.1468-0335.2007.00653.x](https://doi.org/10.1111/j.1468-0335.2007.00653.x)
+
+### Aldrovandi
+
+<div style="border: 1px solid #d0d7de; border-radius: 8px; padding: 16px; margin: 8px 0; background: #ffffff; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; color: #1f2328;"><div style="display: flex; align-items: center; gap: 12px; margin-bottom: 12px;"><img src="https://avatars.githubusercontent.com/u/42008604?v=4" style="width: 32px; height: 32px; border-radius: 50%;" alt="arcangelo7" /><div><strong style="display: block; color: #1f2328;">arcangelo7</strong><span style="font-size: 0.85em; color: #656d76;">May 29, 2026</span><span style="font-size: 0.85em; color: #656d76;"> &middot; </span><a href="https://github.com/dharc-org/changes-metadata-manager" style="font-size: 0.85em; color: #0969da; text-decoration: none;">dharc-org/changes-metadata-manager</a></div></div><div style="margin: 12px 0; color: #1f2328;"><p>feat(zenodo): add sync-status and cleanup-duplicates subcommands</p>
+<p>sync-status queries each record&#39;s actual state from the Zenodo API,
+updates drafts.json with current status/DOI/URL, and regenerates
+doi_table.csv. Falls back to draft endpoint on 404 for unpublished
+records.</p>
+<p>cleanup-duplicates finds user records whose title matches drafts.json
+but whose ID is not tracked, deletes draft duplicates and reports
+published ones. Supports --dry-run.</p></div><div style="display: flex; justify-content: flex-end; align-items: center; font-size: 0.85em;"><a href="https://github.com/dharc-org/changes-metadata-manager/commit/79ecb4799b0b06f8764df978d823d64fd068c15a" style="color: #0969da; text-decoration: none; font-weight: 500;">79ecb47</a></div></div>
+
+## Memo
+
+RAMOSE
+
+* Confronto performance
+* Aggiungere connextion
+
+TAL
+
+* Aggiungere skolemizzazione
+
+Vizioso
+
+* [https://en.wikipedia.org/wiki/Compilers:\_Principles,\_Techniques,\_and\_Tools](https://en.wikipedia.org/wiki/Compilers:_Principles,_Techniques,_and_Tools)
+* [https://en.wikipedia.org/wiki/GNU\_Bison](https://en.wikipedia.org/wiki/GNU_Bison)
+* [https://en.wikipedia.org/wiki/Yacc](https://en.wikipedia.org/wiki/Yacc)
+
+HERITRACE
+
+* C'è un bug che si verifica quando uno seleziona un'entità preesistente, poi clicca sulla X e inserisce i metadati a mano. Alcuni metadati vengono duplicati.
+* Se uno ripristina una sotto entità a seguito di un merge, l'entità principale potrebbe rompersi.
+* Per risolvere le performance del time-vault non usare la time-agnostic-library, ma guarda solo la query di update dello snapshot di cancellazione.
+* Ordine dato all’indice dell’elemento
+* date: formato
+* anni: essere meno stretto sugli anni. Problema ISO per 999. 0999?
+* Opzione per evitare counting
+* Opzione per non aggiungere la lista delle risorse, che posso comunque essere cercate
+* Configurabilità troppa fatica
+* Timer massimo. Timer configurabile. Messaggio in caso si stia per toccare il timer massimo.
+* Riflettere su @lang. SKOS come use case. skos:prefLabel, skos:altLabel
+* Possibilità di specificare l’URI a mano in fase di creazione
+* la base è non specificare la sorgente, perché non sarà mai quella iniziale.
+* desvription con l'entità e stata modificata. Tipo commit
+* display name è References Cited by VA bene
+* Avvertire l'utente del disastro imminente nel caso in cui provi a cancellare un volume
+
+Meta
+
+* Matilda e OUTCITE nella prossima versione
+* Rilanciare processo eliminazione duplicati
+* Fusione: chi ha più metadati compilati. A parità di metadato si tiene l’omid più basso
+* frbr:partOf non deve aggiungere nel merge: [https://opencitations.net/meta/api/v1/metadata/omid:br/06304322094](https://opencitations.net/meta/api/v1/metadata/omid:br/06304322094)
+* API v2
+* Usare il triplestore di provenance per fare 303 in caso di entità mergiate o mostrare la provenance in caso di cancellazione e basta.
+
+oc\_ocdm
+
+* Automatizzare mark\_as\_restored di default. è possibile disabilitare e fare a mano mark\_as\_restored.
+* [https://opencitations.net/meta/api/v1/metadata/doi:10.1093/acprof:oso/9780199977628.001.0001](https://opencitations.net/meta/api/v1/metadata/doi:10.1093/acprof:oso/9780199977628.001.0001)
+* DELETE con variabile
+* Modificare Meta sulla base della tabella di Elia
+* embodiment multipli devono essere purgati a monte
+* Modificare documentazione API aggiungendo omid
+* aggiungere Relation sovraclasse di Citazione e Menzione
+
+RML
+
+* Vedere come morh kgc rappresenta database internamente
+* [https://github.com/oeg-upm/gtfs-bench](https://github.com/oeg-upm/gtfs-bench)
+* Chiedere Ionannisil diagramma che ha usato per auto rml.
+
+Crowdsourcing
+
+* Quando dobbiamo ingerire Crossref stoppo manualmente OJS. Si mette una nota nel repository per dire le cose. Ogni mese.
+* Aggiornamenti al dump incrementali. Si usa un nuovo prefisso e si aggiungono dati solo a quel CSV.
+* Bisogna usare il DOI di Zenodo come primary source. Un unico DOI per batch process.
+* Bisogna fare l’aggiornamento sulla copia e poi bisogna automatizzare lo switch
+
+Citazioni
+
+* Fare diff DataCite per togliere le citazioni che non sono più citazioni. è da fare in post. Snapshot 2 di provenance. Fare lo snapshot 3 con la creazione con il derived from al nuovo dump. La lineage viene data dallo specialization of. Colleghi sia al 2 che al dump.
+* Repo cerotti. meta/index/sorgenti
