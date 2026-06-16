@@ -1,11 +1,11 @@
 ---
-title: index
+title: 2026-06-10 La x sulla tabella
 editUrl: false
 ---
 
 import { Image } from 'astro:assets'
 
-import pjpcaj from '../../../assets/notes/attachments/pasted-image-20260609081226.png'
+import gaqoez from '../../../assets/notes/attachments/pasted-image-20260609081226.png'
 
 ## La Novitade
 
@@ -211,6 +211,15 @@ Inoltre, ho aggiunto la colonna licenza, presente nella tabella originale di RAM
 
 ### Aldrovandi
 
+<div style="border: 1px solid #d0d7de; border-radius: 8px; padding: 16px; margin: 8px 0; background: #ffffff; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; color: #1f2328;"><div style="display: flex; align-items: center; gap: 12px; margin-bottom: 12px;"><img src="https://avatars.githubusercontent.com/u/42008604?v=4" style="width: 32px; height: 32px; border-radius: 50%;" alt="arcangelo7" /><div><strong style="display: block; color: #1f2328;">arcangelo7</strong><span style="font-size: 0.85em; color: #656d76;">May 29, 2026</span><span style="font-size: 0.85em; color: #656d76;"> &middot; </span><a href="https://github.com/dharc-org/changes-metadata-manager" style="font-size: 0.85em; color: #0969da; text-decoration: none;">dharc-org/changes-metadata-manager</a></div></div><div style="margin: 12px 0; color: #1f2328;"><p>feat(zenodo): add sync-status and cleanup-duplicates subcommands</p>
+<p>sync-status queries each record&#39;s actual state from the Zenodo API,
+updates drafts.json with current status/DOI/URL, and regenerates
+doi_table.csv. Falls back to draft endpoint on 404 for unpublished
+records.</p>
+<p>cleanup-duplicates finds user records whose title matches drafts.json
+but whose ID is not tracked, deletes draft duplicates and reports
+published ones. Supports --dry-run.</p></div><div style="display: flex; justify-content: flex-end; align-items: center; font-size: 0.85em;"><a href="https://github.com/dharc-org/changes-metadata-manager/commit/79ecb4799b0b06f8764df978d823d64fd068c15a" style="color: #0969da; text-decoration: none; font-weight: 500;">79ecb47</a></div></div>
+
 Ho corretto le licenze
 
 
@@ -246,94 +255,10 @@ Ho sempre citato le specifiche del W3C come riferimenti bibliografici, non come 
 
 > We find that the use of alphabetical authorship is declining over time. In 2011, the authors of less than 4% of all publications intentionally chose to list their names alphabetically. The use of alphabetical authorship is most common in mathematics, economics (including finance), and high energy physics.
 
-<Image src={pjpcaj} alt="" width="300" height="auto" />
+<Image src={gaqoez} alt="" width="300" height="auto" />
 
 * In finanza l'ordine alfabetico è la norma, sono felici?
   * Joanis ST, Patil VH. Alphabetical ordering of author surnames in academic publishing: **A detriment to teamwork**. PLoS One. 2021 May 5;16(5):e0251176. doi: doi.org/10.1371/journal.pone.0251176. PMID: 33951084; PMCID: PMC8099113.
     * lo studio empirico è condotto solo su riviste di business. ordine alfabetico → minor incentivo a collaborare (perché il tuo contributo extra non viene reso visibile) → meno coautori per pubblicazione
     * L'ordine alfabetico in finanza, dove è la norma, non è neutro, ma ha un effetto, che è quello di discriminare chi è nato con un cognome che viene dopo nell'alfabeto:
       * Van Praag, C. M., & Van Praag, B. M. S. (2008). The Benefits of Being Economics Professor A (rather than Z). Economica, 75(300), 782–796. [https://doi.org/10.1111/j.1468-0335.2007.00653.x](https://doi.org/10.1111/j.1468-0335.2007.00653.x)
-
-### Aldrovandi
-
-<div style="border: 1px solid #d0d7de; border-radius: 8px; padding: 16px; margin: 8px 0; background: #ffffff; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; color: #1f2328;"><div style="display: flex; align-items: center; gap: 12px; margin-bottom: 12px;"><img src="https://avatars.githubusercontent.com/u/42008604?v=4" style="width: 32px; height: 32px; border-radius: 50%;" alt="arcangelo7" /><div><strong style="display: block; color: #1f2328;">arcangelo7</strong><span style="font-size: 0.85em; color: #656d76;">May 29, 2026</span><span style="font-size: 0.85em; color: #656d76;"> &middot; </span><a href="https://github.com/dharc-org/changes-metadata-manager" style="font-size: 0.85em; color: #0969da; text-decoration: none;">dharc-org/changes-metadata-manager</a></div></div><div style="margin: 12px 0; color: #1f2328;"><p>feat(zenodo): add sync-status and cleanup-duplicates subcommands</p>
-<p>sync-status queries each record&#39;s actual state from the Zenodo API,
-updates drafts.json with current status/DOI/URL, and regenerates
-doi_table.csv. Falls back to draft endpoint on 404 for unpublished
-records.</p>
-<p>cleanup-duplicates finds user records whose title matches drafts.json
-but whose ID is not tracked, deletes draft duplicates and reports
-published ones. Supports --dry-run.</p></div><div style="display: flex; justify-content: flex-end; align-items: center; font-size: 0.85em;"><a href="https://github.com/dharc-org/changes-metadata-manager/commit/79ecb4799b0b06f8764df978d823d64fd068c15a" style="color: #0969da; text-decoration: none; font-weight: 500;">79ecb47</a></div></div>
-
-## Memo
-
-RAMOSE
-
-* Confronto performance
-* Aggiungere connextion
-
-TAL
-
-* Aggiungere skolemizzazione
-
-Vizioso
-
-* [https://en.wikipedia.org/wiki/Compilers:\_Principles,\_Techniques,\_and\_Tools](https://en.wikipedia.org/wiki/Compilers:_Principles,_Techniques,_and_Tools)
-* [https://en.wikipedia.org/wiki/GNU\_Bison](https://en.wikipedia.org/wiki/GNU_Bison)
-* [https://en.wikipedia.org/wiki/Yacc](https://en.wikipedia.org/wiki/Yacc)
-
-HERITRACE
-
-* C'è un bug che si verifica quando uno seleziona un'entità preesistente, poi clicca sulla X e inserisce i metadati a mano. Alcuni metadati vengono duplicati.
-* Se uno ripristina una sotto entità a seguito di un merge, l'entità principale potrebbe rompersi.
-* Per risolvere le performance del time-vault non usare la time-agnostic-library, ma guarda solo la query di update dello snapshot di cancellazione.
-* Ordine dato all’indice dell’elemento
-* date: formato
-* anni: essere meno stretto sugli anni. Problema ISO per 999. 0999?
-* Opzione per evitare counting
-* Opzione per non aggiungere la lista delle risorse, che posso comunque essere cercate
-* Configurabilità troppa fatica
-* Timer massimo. Timer configurabile. Messaggio in caso si stia per toccare il timer massimo.
-* Riflettere su @lang. SKOS come use case. skos:prefLabel, skos:altLabel
-* Possibilità di specificare l’URI a mano in fase di creazione
-* la base è non specificare la sorgente, perché non sarà mai quella iniziale.
-* desvription con l'entità e stata modificata. Tipo commit
-* display name è References Cited by VA bene
-* Avvertire l'utente del disastro imminente nel caso in cui provi a cancellare un volume
-
-Meta
-
-* Matilda e OUTCITE nella prossima versione
-* Rilanciare processo eliminazione duplicati
-* Fusione: chi ha più metadati compilati. A parità di metadato si tiene l’omid più basso
-* frbr:partOf non deve aggiungere nel merge: [https://opencitations.net/meta/api/v1/metadata/omid:br/06304322094](https://opencitations.net/meta/api/v1/metadata/omid:br/06304322094)
-* API v2
-* Usare il triplestore di provenance per fare 303 in caso di entità mergiate o mostrare la provenance in caso di cancellazione e basta.
-
-oc\_ocdm
-
-* Automatizzare mark\_as\_restored di default. è possibile disabilitare e fare a mano mark\_as\_restored.
-* [https://opencitations.net/meta/api/v1/metadata/doi:10.1093/acprof:oso/9780199977628.001.0001](https://opencitations.net/meta/api/v1/metadata/doi:10.1093/acprof:oso/9780199977628.001.0001)
-* DELETE con variabile
-* Modificare Meta sulla base della tabella di Elia
-* embodiment multipli devono essere purgati a monte
-* Modificare documentazione API aggiungendo omid
-* aggiungere Relation sovraclasse di Citazione e Menzione
-
-RML
-
-* Vedere come morh kgc rappresenta database internamente
-* [https://github.com/oeg-upm/gtfs-bench](https://github.com/oeg-upm/gtfs-bench)
-* Chiedere Ionannisil diagramma che ha usato per auto rml.
-
-Crowdsourcing
-
-* Quando dobbiamo ingerire Crossref stoppo manualmente OJS. Si mette una nota nel repository per dire le cose. Ogni mese.
-* Aggiornamenti al dump incrementali. Si usa un nuovo prefisso e si aggiungono dati solo a quel CSV.
-* Bisogna usare il DOI di Zenodo come primary source. Un unico DOI per batch process.
-* Bisogna fare l’aggiornamento sulla copia e poi bisogna automatizzare lo switch
-
-Citazioni
-
-* Fare diff DataCite per togliere le citazioni che non sono più citazioni. è da fare in post. Snapshot 2 di provenance. Fare lo snapshot 3 con la creazione con il derived from al nuovo dump. La lineage viene data dallo specialization of. Colleghi sia al 2 che al dump.
-* Repo cerotti. meta/index/sorgenti
