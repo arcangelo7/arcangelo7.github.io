@@ -7,138 +7,84 @@ editUrl: false
 
 ### RAMOSE
 
-<div style="border: 1px solid #d0d7de; border-radius: 8px; padding: 16px; margin: 8px 0; background: #ffffff; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; color: #1f2328;"><div style="display: flex; align-items: center; gap: 12px; margin-bottom: 12px;"><img src="https://avatars.githubusercontent.com/u/42008604?v=4" style="width: 32px; height: 32px; border-radius: 50%;" alt="arcangelo7" /><div><strong style="display: block; color: #1f2328;">arcangelo7</strong><span style="font-size: 0.85em; color: #656d76;">Jun 10, 2026</span><span style="font-size: 0.85em; color: #656d76;"> &middot; </span><a href="https://github.com/opencitations/ramose" style="font-size: 0.85em; color: #0969da; text-decoration: none;">opencitations/ramose</a></div></div><div style="margin: 12px 0; color: #1f2328;"><p>fix(skgif): normalize local identifier URLs with merged scheme slashes [release]</p>
-<p>Reverse proxies such as Traefik sanitize request paths by collapsing
-duplicate slashes, so a full URL passed as local identifier reaches the
-API as &quot;https:/example.org/...&quot;. The new normalize_local_identifier_url
-preprocess function restores the scheme separator, so specs can accept
-both the canonical and the merged form.</p></div><div style="display: flex; justify-content: flex-end; align-items: center; font-size: 0.85em;"><a href="https://github.com/opencitations/ramose/commit/8994919de5d4d4734c6533ab66fb1bb76b02ecf7" style="color: #0969da; text-decoration: none; font-weight: 500;">8994919</a></div></div>
+<div style="border: 1px solid #d0d7de; border-radius: 8px; padding: 16px; margin: 8px 0; background: #ffffff; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; color: #1f2328;"><div style="display: flex; align-items: center; gap: 12px; margin-bottom: 12px;"><img src="https://avatars.githubusercontent.com/u/42008604?v=4" style="width: 32px; height: 32px; border-radius: 50%;" alt="arcangelo7" /><div><strong style="display: block; color: #1f2328;">arcangelo7</strong><span style="font-size: 0.85em; color: #656d76;">Jun 17, 2026</span><span style="font-size: 0.85em; color: #656d76;"> &middot; </span><a href="https://github.com/opencitations/ramose" style="font-size: 0.85em; color: #0969da; text-decoration: none;">opencitations/ramose</a></div></div><div style="margin: 12px 0; color: #1f2328;"><p>feat: support config-driven custom filters</p></div><div style="display: flex; justify-content: flex-end; align-items: center; font-size: 0.85em;"><a href="https://github.com/opencitations/ramose/commit/9c1c1c16267466f0b62a199a109791599c535b57" style="color: #0969da; text-decoration: none; font-weight: 500;">9c1c1c1</a></div></div>
 
-<div style="border: 1px solid #d0d7de; border-radius: 8px; padding: 16px; margin: 8px 0; background: #ffffff; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; color: #1f2328;"><div style="display: flex; align-items: center; gap: 12px; margin-bottom: 12px;"><img src="https://avatars.githubusercontent.com/u/42008604?v=4" style="width: 32px; height: 32px; border-radius: 50%;" alt="arcangelo7" /><div><strong style="display: block; color: #1f2328;">arcangelo7</strong><span style="font-size: 0.85em; color: #656d76;">Jun 11, 2026</span><span style="font-size: 0.85em; color: #656d76;"> &middot; </span><a href="https://github.com/opencitations/ramose" style="font-size: 0.85em; color: #0969da; text-decoration: none;">opencitations/ramose</a></div></div><div style="margin: 12px 0; color: #1f2328;"><p>feat(skgif): add per-triplestore text-search backend addon modules</p>
-<p>The package default keeps FILTER CONTAINS for endpoints
-without a text index; the blazegraph, fuseki, graphdb, qlever and virtuoso
-modules override that behaviour. They can be imported as
-ramose.skgif_addon.virtuoso, ramose.skgif_addon.qlever, ecc.</p></div><div style="display: flex; justify-content: flex-end; align-items: center; font-size: 0.85em;"><a href="https://github.com/opencitations/ramose/commit/63043369c7dc73a1e8129af2760fcd96327b130c" style="color: #0969da; text-decoration: none; font-weight: 500;">6304336</a></div></div>
+<div style="border: 1px solid #d0d7de; border-radius: 8px; padding: 16px; margin: 8px 0; background: #ffffff; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; color: #1f2328;"><div style="display: flex; align-items: center; gap: 12px; margin-bottom: 12px;"><img src="https://avatars.githubusercontent.com/u/42008604?v=4" style="width: 32px; height: 32px; border-radius: 50%;" alt="arcangelo7" /><div><strong style="display: block; color: #1f2328;">arcangelo7</strong><span style="font-size: 0.85em; color: #656d76;">Jun 17, 2026</span><span style="font-size: 0.85em; color: #656d76;"> &middot; </span><a href="https://github.com/opencitations/ramose" style="font-size: 0.85em; color: #0969da; text-decoration: none;">opencitations/ramose</a></div></div><div style="margin: 12px 0; color: #1f2328;"><p>feat(multi-source): add page directive</p>
+<p>Add @@page to multi-source pipelines so operations can select one page of distinct values before later query steps resolve full records.</p>
+<p>Syntax: <code>@@page &lt;variable&gt; [default_size=&lt;N&gt;] [max_size=&lt;M&gt;]</code></p></div><div style="display: flex; justify-content: flex-end; align-items: center; font-size: 0.85em;"><a href="https://github.com/opencitations/ramose/commit/e58064ffb9b821e9f5b1fa9b9614df720489c0f6" style="color: #0969da; text-decoration: none; font-weight: 500;">e58064f</a></div></div>
 
-<div style="border: 1px solid #d0d7de; border-radius: 8px; padding: 16px; margin: 8px 0; background: #ffffff; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; color: #1f2328;"><div style="display: flex; align-items: center; gap: 12px; margin-bottom: 12px;"><img src="https://avatars.githubusercontent.com/u/42008604?v=4" style="width: 32px; height: 32px; border-radius: 50%;" alt="arcangelo7" /><div><strong style="display: block; color: #1f2328;">arcangelo7</strong><span style="font-size: 0.85em; color: #656d76;">Jun 15, 2026</span><span style="font-size: 0.85em; color: #656d76;"> &middot; </span><a href="https://github.com/opencitations/ramose" style="font-size: 0.85em; color: #0969da; text-decoration: none;">opencitations/ramose</a></div></div><div style="margin: 12px 0; color: #1f2328;"><p>fix(skg-if): emit single_entity meta for single-entity lookups [release]</p></div><div style="display: flex; justify-content: flex-end; align-items: center; font-size: 0.85em;"><a href="https://github.com/opencitations/ramose/commit/be00bb511cb5f4e6af499329a7852f4dbe2fbd3e" style="color: #0969da; text-decoration: none; font-weight: 500;">be00bb5</a></div></div>
+> All endpoints support pagination. **Default:** 10 items per page, sorted by FSD ID descending. Use `?page=N` and `?page_size=M` to modify navigation.
 
-La nuova BBuusta di metadati per products/{local\_identifier}
+[https://api.fsd.tuni.fi/skg-if](https://api.fsd.tuni.fi/skg-if)
 
-```json
-  "meta": {
-    "local_identifier": "https://example.com/skg-if/api/products/product-1-fgp",
-    "entity_type": "single_entity",
-    "api_items": [
-      {
-        "local_identifier": "person-5-mw",
-        "urls": [
-          {
-            "entity_type": "link",
-            "rel": "self",
-            "href": "https://example.com/skg-if/api/persons/person-5-mw"
-          }
-        ]
-      },
-      {
-        "local_identifier": "affiliation-organisation-1",
-        "urls": [
-          {
-            "entity_type": "link",
-            "rel": "self",
-            "href": "https://example.com/skg-if/api/organisations/affiliation-organisation-1"
-          }
-        ]
-      },
-      {
-        "local_identifier": "datasource-1-aa",
-        "urls": [
-          {
-            "entity_type": "link",
-            "rel": "self",
-            "href": "https://example.com/skg-if/api/datasources/datasource-1-aa"
-          }
-        ]
-      },
-      {
-        "local_identifier": "venue-5-sd",
-        "urls": [
-          {
-            "entity_type": "link",
-            "rel": "self",
-            "href": "https://example.com/skg-if/api/venues/venue-5-sd"
-          }
-        ]
-      }
-    ]
-  }
-```
+<div style="border: 1px solid #d0d7de; border-radius: 8px; padding: 16px; margin: 8px 0; background: #ffffff; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; color: #1f2328;"><div style="display: flex; align-items: center; gap: 12px; margin-bottom: 12px;"><img src="https://avatars.githubusercontent.com/u/42008604?v=4" style="width: 32px; height: 32px; border-radius: 50%;" alt="arcangelo7" /><div><strong style="display: block; color: #1f2328;">arcangelo7</strong><span style="font-size: 0.85em; color: #656d76;">Jun 17, 2026</span><span style="font-size: 0.85em; color: #656d76;"> &middot; </span><a href="https://github.com/opencitations/oc_api" style="font-size: 0.85em; color: #0969da; text-decoration: none;">opencitations/oc_api</a></div></div><div style="margin: 12px 0; color: #1f2328;"><p>feat(skg-if): always paginate product search results. default_size=10, max_size=100</p>
+<p>Move SKG-IF filters to YAML-backed Ramose handlers and apply pagination before product detail expansion</p></div><div style="display: flex; justify-content: flex-end; align-items: center; font-size: 0.85em;"><a href="https://github.com/opencitations/oc_api/commit/ab6c222cdf42373b30ccf3ea59557b2005c72416" style="color: #0969da; text-decoration: none; font-weight: 500;">ab6c222</a></div></div>
 
-Io ho implementato e local\_identifier e "entity\_type": "single\_entity", che sono obbligatori. api\_items lo metto?
-
-#### Parametri custom con logica dichiarativa
-
-`#custom_params` continua a funzionare come già funziona, ma con una possibilità in più. Se come handler del parametro custom specifichi una funzione, te la implementi tu e di sicuro puoi farci più cose. In alternativa, al posto del nome della funzione, puoi indicare il percorso a un file YAML.
-
-Il file mappa ogni filtro ai "buchi" della query. Per ogni filtro la chiave è il nome con cui lo si invoca nella richiesta; sotto, dici in quale placeholder `[[...]]` della query SPARQL va iniettato il frammento, e qual è il frammento. Il valore passato nella richiesta entra nel frammento dove scrivi {{value}}.
-
-Nel file hf hai
-
-```
-#custom_params filter,ocdm.yaml,preprocess,Search filter.
-```
-
-Esempio:
+<div style="border: 1px solid #d0d7de; border-radius: 8px; padding: 16px; margin: 8px 0; background: #ffffff; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; color: #1f2328;"><div style="display: flex; align-items: center; gap: 12px; margin-bottom: 12px;"><img src="https://avatars.githubusercontent.com/u/42008604?v=4" style="width: 32px; height: 32px; border-radius: 50%;" alt="arcangelo7" /><div><strong style="display: block; color: #1f2328;">arcangelo7</strong><span style="font-size: 0.85em; color: #656d76;">Jun 18, 2026</span><span style="font-size: 0.85em; color: #656d76;"> &middot; </span><a href="https://github.com/opencitations/ramose" style="font-size: 0.85em; color: #0969da; text-decoration: none;">opencitations/ramose</a></div></div><div style="margin: 12px 0; color: #1f2328;"><p>feat: support YAML spec files as a mirror of the hash format</p></div><div style="display: flex; justify-content: flex-end; align-items: center; font-size: 0.85em;"><a href="https://github.com/opencitations/ramose/commit/78b3c05e56877bfb403d2f15cde2090c957f03af" style="color: #0969da; text-decoration: none; font-weight: 500;">78b3c05</a></div></div>
 
 ```yaml
-identifiers.id:
-    filter: "?product datacite:hasIdentifier [ literal:hasLiteralValue {{value}} ] ."
+- url: /v1
+  type: api
+  base: https://api.opencitations.net/meta
+  title: OpenCitations Meta REST API
+  description: REST API for bibliographic metadata from OpenCitations Meta
+  version: "1.1.1"
+  license: ISC
+  contacts: contact@opencitations.net
+  endpoint: https://opencitations.net/meta/sparql
+  method: post
 
-cf.cites:
-	filter_preamble: |
-		@@with source=index
-		SELECT ?product WHERE { ?ci cito:hasCitedEntity {{value}} ;
-			cito:hasCitingEntity ?product . }
-		@@join ?product ?product type=inner
+- url: /metadata/{ids}
+  type: operation
+  ids: 'str((doi|issn|isbn|omid|openalex|pmid|pmcid):.+)'
+  preprocess: generate_id_search(ids)
+  method: get
+  description: |
+    Returns bibliographic metadata for the given identifiers.
+  call: /metadata/doi:10.1162/qss_a_00292
+  field_type: str(id) str(title) datetime(pub_date)
+  output_json: |
+    [
+      {
+        "id": "doi:10.1162/qss_a_00292",
+        "title": "OpenCitations Meta",
+        "pub_date": "2024"
+      }
+    ]
+  sparql: |
+    SELECT DISTINCT ?id ?title ?pub_date WHERE {
+      [[ids]]
+    }
 ```
 
-Dove la query dell'operazione è:
+<div style="border: 1px solid #d0d7de; border-radius: 8px; padding: 16px; margin: 8px 0; background: #ffffff; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; color: #1f2328;"><div style="display: flex; align-items: center; gap: 12px; margin-bottom: 12px;"><img src="https://avatars.githubusercontent.com/u/42008604?v=4" style="width: 32px; height: 32px; border-radius: 50%;" alt="arcangelo7" /><div><strong style="display: block; color: #1f2328;">arcangelo7</strong><span style="font-size: 0.85em; color: #656d76;">Jun 19, 2026</span><span style="font-size: 0.85em; color: #656d76;"> &middot; </span><a href="https://github.com/opencitations/ramose" style="font-size: 0.85em; color: #0969da; text-decoration: none;">opencitations/ramose</a></div></div><div style="margin: 12px 0; color: #1f2328;"><p>fix(skg-if): emit absolute local_identifier URLs in result meta</p></div><div style="display: flex; justify-content: flex-end; align-items: center; font-size: 0.85em;"><a href="https://github.com/opencitations/ramose/commit/ee01c8e7a22cc03d69dbecd8e741a6e1f5b59517" style="color: #0969da; text-decoration: none; font-weight: 500;">ee01c8e</a></div></div>
 
-```
-SELECT ?product ?title WHERE {
-	[[filter_preamble]]
-	?product dcterms:title ?title .
-	[[filter]]
-}
-```
+<div style="border: 1px solid #d0d7de; border-radius: 8px; padding: 16px; margin: 8px 0; background: #ffffff; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; color: #1f2328;"><div style="display: flex; align-items: center; gap: 12px; margin-bottom: 12px;"><img src="https://avatars.githubusercontent.com/u/42008604?v=4" style="width: 32px; height: 32px; border-radius: 50%;" alt="arcangelo7" /><div><strong style="display: block; color: #1f2328;">arcangelo7</strong><span style="font-size: 0.85em; color: #656d76;">Jun 19, 2026</span><span style="font-size: 0.85em; color: #656d76;"> &middot; </span><a href="https://github.com/opencitations/ramose" style="font-size: 0.85em; color: #0969da; text-decoration: none;">opencitations/ramose</a></div></div><div style="margin: 12px 0; color: #1f2328;"><p>fix: reject invalid built-in query parameters with HTTP 422 [release]</p></div><div style="display: flex; justify-content: flex-end; align-items: center; font-size: 0.85em;"><a href="https://github.com/opencitations/ramose/commit/779956eb08788aadb124aab89ac8dc8a14c4fd3d" style="color: #0969da; text-decoration: none; font-weight: 500;">779956e</a></div></div>
 
-### HERITRACE
+<div style="border: 1px solid #d0d7de; border-radius: 8px; padding: 16px; margin: 8px 0; background: #ffffff; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; color: #1f2328;"><div style="display: flex; align-items: center; gap: 12px; margin-bottom: 12px;"><img src="https://avatars.githubusercontent.com/u/42008604?v=4" style="width: 32px; height: 32px; border-radius: 50%;" alt="arcangelo7" /><div><strong style="display: block; color: #1f2328;">arcangelo7</strong><span style="font-size: 0.85em; color: #656d76;">Jun 20, 2026</span><span style="font-size: 0.85em; color: #656d76;"> &middot; </span><a href="https://github.com/opencitations/ramose" style="font-size: 0.85em; color: #0969da; text-decoration: none;">opencitations/ramose</a></div></div><div style="margin: 12px 0; color: #1f2328;"><p>feat: add SPARQL read retries</p>
+<p>Add configurable retry attempts, wait time, and backoff for SPARQL read requests.</p>
+<p>Apply the policy to standard SPARQL calls, multi-source query steps, and SPARQL Anything reads while leaving write operations unchanged.</p></div><div style="display: flex; justify-content: flex-end; align-items: center; font-size: 0.85em;"><a href="https://github.com/opencitations/ramose/commit/b9ff22efca2db98d633069aedf6e3a3b9633ff2a" style="color: #0969da; text-decoration: none; font-weight: 500;">b9ff22e</a></div></div>
 
-Ripristinare un'entità ripristinava l'intero vicinato di un'entità. Ripristinare il ra di un'autore ripristinava anche la br collegata nel grafo corrente: i suoi link tornavano a puntare agli ar originali. C'era un bug per cui le entità correlate venivano scoperte solo nel grafo corrente e non in quello storico, per cui se ad esempio avevo cancellato gli ar originali, ecco che la br perdeva tutti i ruoli connessi al ripristino di un ra collegato.
+### Index
 
-Tuttavia, trovo che ripristinare tutte le entità collegate sia una cosa un po' pazzerella. L'utente, quando clicca restore, si aspetta di ripristinare quell'entità e quelle modificate nella transazione di quell'entità, tipo un ra e l'id collegato, non anche le br associate e gli ar associati ecc.
+Matilda ha finito
 
-Il revert co-transazionale equivale a un git revert. Il revert del vicinato completo equivale a un git reset --hard dell'intero repo. Mi sembra un po' too much.
+<div style="border: 1px solid #d0d7de; border-radius: 8px; padding: 16px; margin: 8px 0; background: #ffffff; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; color: #1f2328;"><div style="display: flex; align-items: center; gap: 12px; margin-bottom: 12px;"><div><strong style="display: block; color: #1f2328;">arcangelo7</strong><span style="font-size: 0.85em; color: #656d76;">Jun 22, 2026</span><span style="font-size: 0.85em; color: #656d76;"> &middot; </span><a href="https://github.com/opencitations/index" style="font-size: 0.85em; color: #0969da; text-decoration: none;">opencitations/index</a></div></div><div style="margin: 12px 0; color: #1f2328;"><p>feat(meta2redis): support Meta RDF dumps</p>
+<p>The importer can now index from RDF files while keeping the existing CSV path.</p></div><div style="display: flex; justify-content: flex-end; align-items: center; font-size: 0.85em;"><a href="https://github.com/opencitations/index/commit/1aeed7188648ada560afd144df45e0080ee2a64e" style="color: #0969da; text-decoration: none; font-weight: 500;">1aeed71</a></div></div>
 
-Scegliendo di applicare la semantica del git revert non pregiudica di ottenere il risultato del git rest. Basta scegliere la radice giusta, mentre la semantica opposta sarebbe più vincolante.
+### Articolo su RAMOSE
 
-Per essere chiaro, non è solo un problema di direzionalità dei collegamenti. Il problema non è solo recuperare le entità che referenziano quella corrente come oggetto e includerle nel revert, ma anche includere nel revert quelle collegate come oggetto diretto o indiretto all'entità corrente. Cambia solo la scala del problema, ma il problema rimane.
-
-Esempio, ripristino un br alla versione T. Un altro utente, la settimana scorsa (dopo T), ha corretto un refuso nel literal di un identifier, in un salvataggio che non c'entrava nulla col br. Restore-a-T outgoing-only: l'identifier torna al valore sbagliato.
-
-Per revert co-transazionale mi riferisco al revert delle operazioni eseguite nello stesso salvataggio: ripristinando un'entità a una versione T, vengono annullate le sue modifiche successive a T e, per ogni entità correlata, soltanto le modifiche scritte negli stessi salvataggi che si stanno annullando (riconoscibili dal prov:generatedAtTime condiviso), lasciando intatte quelle ricevute in operazioni indipendenti.
-
-C'è però un problema a livello di interfaccia, perché se l'utente va a ispezionare la storia di un'entità, vedrà anche lo stato vecchio delle entità correlate. Quindi facendo un revert potrebbe aspettarsi di ripristinare anche le identità correlate per come le ha viste nella versione vecchia. Tuttavia io mi aspetto che un utente che fa un revert vada ad annullare le proprie azioni, le proprie modifiche, non le modifiche del mondo. Cioè non mi aspetto che l'utente faccia un audit completo di tutte le entità correlate quando fa un revert
-
-<div style="border: 1px solid #d0d7de; border-radius: 8px; padding: 16px; margin: 8px 0; background: #ffffff; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; color: #1f2328;"><div style="display: flex; align-items: center; gap: 12px; margin-bottom: 12px;"><img src="https://avatars.githubusercontent.com/u/42008604?v=4" style="width: 32px; height: 32px; border-radius: 50%;" alt="arcangelo7" /><div><strong style="display: block; color: #1f2328;">arcangelo7</strong><span style="font-size: 0.85em; color: #656d76;">Jun 13, 2026</span><span style="font-size: 0.85em; color: #656d76;"> &middot; </span><a href="https://github.com/opencitations/heritrace" style="font-size: 0.85em; color: #0969da; text-decoration: none;">opencitations/heritrace</a></div></div><div style="margin: 12px 0; color: #1f2328;"><p>fix(restore): scope version restore to the transactions being undone</p>
-<p>Restoring a version rebuilt every related entity from its snapshot at the
-target time, which also reverted changes those entities received in unrelated
-later transactions.</p></div><div style="display: flex; justify-content: flex-end; align-items: center; font-size: 0.85em;"><a href="https://github.com/opencitations/heritrace/commit/07f79f6a9e5688ff71e95276e0afc36487444bde" style="color: #0969da; text-decoration: none; font-weight: 500;">07f79f6</a></div></div>
+Ho scritto le sezioni New requirements, RAMOSE: architecture and new features e Related works and functional comparison. Le trovate su Underleaf.
 
 ## Domande
 
-Io non ho idea di come rendere i filtri di SKF-IF agnostici rispetto al data model e riutilizzabili dalla community. Al momento il parametro custom "filter" è associato ad un addon che inietta nella query SPARQL i predicati dell'OCDM.
+[https://github.com/opencitations/oc\_api/issues/39](https://github.com/opencitations/oc_api/issues/39)
 
-Secondo me dovrebbe essere discussa e entrare in specifica una paginazione di default quando l'utente non specifica nulla nelle ricerche. È impensabile ritornare una lista piatta di tutto come default.
+### ISWC
+
+Come funziona ora? Devo modificare le review? Se sì, le devo riscrivere tenendo conto sia dell'articolo che della rebuttal? Cioè dicendo: l'articolo dice questo, ma la rebuttal dice quest'altro. Oppure togliendo in toto le parti risolte dalla rebuttal.
+
+Axel e Marieke dicono che devo discutere con gli altri PC member. Come dovrebbe avvenire questa cosa?
 
 ## Memo
 
