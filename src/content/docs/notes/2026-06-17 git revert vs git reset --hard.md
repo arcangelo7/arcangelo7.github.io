@@ -1,5 +1,5 @@
 ---
-title: 2026-06-27 git revert vs git reset --hard
+title: 2026-06-17 git revert vs git reset --hard
 editUrl: false
 ---
 

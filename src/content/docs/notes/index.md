@@ -5,86 +5,60 @@ editUrl: false
 
 ## La Novitade
 
-### RAMOSE
+### oc\_graphenricher
 
-<div style="border: 1px solid #d0d7de; border-radius: 8px; padding: 16px; margin: 8px 0; background: #ffffff; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; color: #1f2328;"><div style="display: flex; align-items: center; gap: 12px; margin-bottom: 12px;"><img src="https://avatars.githubusercontent.com/u/42008604?v=4" style="width: 32px; height: 32px; border-radius: 50%;" alt="arcangelo7" /><div><strong style="display: block; color: #1f2328;">arcangelo7</strong><span style="font-size: 0.85em; color: #656d76;">Jun 17, 2026</span><span style="font-size: 0.85em; color: #656d76;"> &middot; </span><a href="https://github.com/opencitations/ramose" style="font-size: 0.85em; color: #0969da; text-decoration: none;">opencitations/ramose</a></div></div><div style="margin: 12px 0; color: #1f2328;"><p>feat: support config-driven custom filters</p></div><div style="display: flex; justify-content: flex-end; align-items: center; font-size: 0.85em;"><a href="https://github.com/opencitations/ramose/commit/9c1c1c16267466f0b62a199a109791599c535b57" style="color: #0969da; text-decoration: none; font-weight: 500;">9c1c1c1</a></div></div>
+<div style="border: 1px solid #d0d7de; border-radius: 8px; padding: 16px; margin: 8px 0; background: #ffffff; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; color: #1f2328;"><div style="display: flex; align-items: center; gap: 12px; margin-bottom: 12px;"><img src="https://avatars.githubusercontent.com/u/42008604?v=4" style="width: 32px; height: 32px; border-radius: 50%;" alt="arcangelo7" /><div><strong style="display: block; color: #1f2328;">arcangelo7</strong><span style="font-size: 0.85em; color: #656d76;">Jun 23, 2026</span><span style="font-size: 0.85em; color: #656d76;"> &middot; </span><a href="https://github.com/opencitations/oc_graphenricher" style="font-size: 0.85em; color: #0969da; text-decoration: none;">opencitations/oc_graphenricher</a></div></div><div style="margin: 12px 0; color: #1f2328;"><p>build: migrate from poetry to uv</p></div><div style="display: flex; justify-content: flex-end; align-items: center; font-size: 0.85em;"><a href="https://github.com/opencitations/oc_graphenricher/commit/a4dcdbb8f36b0b7da3bab15128d5a2c9d0fbe57b" style="color: #0969da; text-decoration: none; font-weight: 500;">a4dcdbb</a></div></div>
 
-<div style="border: 1px solid #d0d7de; border-radius: 8px; padding: 16px; margin: 8px 0; background: #ffffff; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; color: #1f2328;"><div style="display: flex; align-items: center; gap: 12px; margin-bottom: 12px;"><img src="https://avatars.githubusercontent.com/u/42008604?v=4" style="width: 32px; height: 32px; border-radius: 50%;" alt="arcangelo7" /><div><strong style="display: block; color: #1f2328;">arcangelo7</strong><span style="font-size: 0.85em; color: #656d76;">Jun 17, 2026</span><span style="font-size: 0.85em; color: #656d76;"> &middot; </span><a href="https://github.com/opencitations/ramose" style="font-size: 0.85em; color: #0969da; text-decoration: none;">opencitations/ramose</a></div></div><div style="margin: 12px 0; color: #1f2328;"><p>feat(multi-source): add page directive</p>
-<p>Add @@page to multi-source pipelines so operations can select one page of distinct values before later query steps resolve full records.</p>
-<p>Syntax: <code>@@page &lt;variable&gt; [default_size=&lt;N&gt;] [max_size=&lt;M&gt;]</code></p></div><div style="display: flex; justify-content: flex-end; align-items: center; font-size: 0.85em;"><a href="https://github.com/opencitations/ramose/commit/e58064ffb9b821e9f5b1fa9b9614df720489c0f6" style="color: #0969da; text-decoration: none; font-weight: 500;">e58064f</a></div></div>
+<div style="border: 1px solid #d0d7de; border-radius: 8px; padding: 16px; margin: 8px 0; background: #ffffff; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; color: #1f2328;"><div style="display: flex; align-items: center; gap: 12px; margin-bottom: 12px;"><img src="https://avatars.githubusercontent.com/u/42008604?v=4" style="width: 32px; height: 32px; border-radius: 50%;" alt="arcangelo7" /><div><strong style="display: block; color: #1f2328;">arcangelo7</strong><span style="font-size: 0.85em; color: #656d76;">Jun 23, 2026</span><span style="font-size: 0.85em; color: #656d76;"> &middot; </span><a href="https://github.com/opencitations/oc_graphenricher" style="font-size: 0.85em; color: #0969da; text-decoration: none;">opencitations/oc_graphenricher</a></div></div><div style="margin: 12px 0; color: #1f2328;"><p>test: migrate suite from unittest to pytest and add CI</p></div><div style="display: flex; justify-content: flex-end; align-items: center; font-size: 0.85em;"><a href="https://github.com/opencitations/oc_graphenricher/commit/874fd6766d695ba5505d643838df446884eb852a" style="color: #0969da; text-decoration: none; font-weight: 500;">874fd67</a></div></div>
 
-> All endpoints support pagination. **Default:** 10 items per page, sorted by FSD ID descending. Use `?page=N` and `?page_size=M` to modify navigation.
+<div style="border: 1px solid #d0d7de; border-radius: 8px; padding: 16px; margin: 8px 0; background: #ffffff; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; color: #1f2328;"><div style="display: flex; align-items: center; gap: 12px; margin-bottom: 12px;"><img src="https://avatars.githubusercontent.com/u/42008604?v=4" style="width: 32px; height: 32px; border-radius: 50%;" alt="arcangelo7" /><div><strong style="display: block; color: #1f2328;">arcangelo7</strong><span style="font-size: 0.85em; color: #656d76;">Jun 24, 2026</span><span style="font-size: 0.85em; color: #656d76;"> &middot; </span><a href="https://github.com/opencitations/oc_graphenricher" style="font-size: 0.85em; color: #0969da; text-decoration: none;">opencitations/oc_graphenricher</a></div></div><div style="margin: 12px 0; color: #1f2328;"><p>fix(instancematching): avoid self-merging named contributors</p>
+<p>Increase test coverage</p></div><div style="display: flex; justify-content: flex-end; align-items: center; font-size: 0.85em;"><a href="https://github.com/opencitations/oc_graphenricher/commit/1e8e38bf1730a865c11706e3d51f7c6d0acf6563" style="color: #0969da; text-decoration: none; font-weight: 500;">1e8e38b</a></div></div>
 
-[https://api.fsd.tuni.fi/skg-if](https://api.fsd.tuni.fi/skg-if)
-
-<div style="border: 1px solid #d0d7de; border-radius: 8px; padding: 16px; margin: 8px 0; background: #ffffff; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; color: #1f2328;"><div style="display: flex; align-items: center; gap: 12px; margin-bottom: 12px;"><img src="https://avatars.githubusercontent.com/u/42008604?v=4" style="width: 32px; height: 32px; border-radius: 50%;" alt="arcangelo7" /><div><strong style="display: block; color: #1f2328;">arcangelo7</strong><span style="font-size: 0.85em; color: #656d76;">Jun 17, 2026</span><span style="font-size: 0.85em; color: #656d76;"> &middot; </span><a href="https://github.com/opencitations/oc_api" style="font-size: 0.85em; color: #0969da; text-decoration: none;">opencitations/oc_api</a></div></div><div style="margin: 12px 0; color: #1f2328;"><p>feat(skg-if): always paginate product search results. default_size=10, max_size=100</p>
-<p>Move SKG-IF filters to YAML-backed Ramose handlers and apply pagination before product detail expansion</p></div><div style="display: flex; justify-content: flex-end; align-items: center; font-size: 0.85em;"><a href="https://github.com/opencitations/oc_api/commit/ab6c222cdf42373b30ccf3ea59557b2005c72416" style="color: #0969da; text-decoration: none; font-weight: 500;">ab6c222</a></div></div>
-
-<div style="border: 1px solid #d0d7de; border-radius: 8px; padding: 16px; margin: 8px 0; background: #ffffff; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; color: #1f2328;"><div style="display: flex; align-items: center; gap: 12px; margin-bottom: 12px;"><img src="https://avatars.githubusercontent.com/u/42008604?v=4" style="width: 32px; height: 32px; border-radius: 50%;" alt="arcangelo7" /><div><strong style="display: block; color: #1f2328;">arcangelo7</strong><span style="font-size: 0.85em; color: #656d76;">Jun 18, 2026</span><span style="font-size: 0.85em; color: #656d76;"> &middot; </span><a href="https://github.com/opencitations/ramose" style="font-size: 0.85em; color: #0969da; text-decoration: none;">opencitations/ramose</a></div></div><div style="margin: 12px 0; color: #1f2328;"><p>feat: support YAML spec files as a mirror of the hash format</p></div><div style="display: flex; justify-content: flex-end; align-items: center; font-size: 0.85em;"><a href="https://github.com/opencitations/ramose/commit/78b3c05e56877bfb403d2f15cde2090c957f03af" style="color: #0969da; text-decoration: none; font-weight: 500;">78b3c05</a></div></div>
-
-```yaml
-- url: /v1
-  type: api
-  base: https://api.opencitations.net/meta
-  title: OpenCitations Meta REST API
-  description: REST API for bibliographic metadata from OpenCitations Meta
-  version: "1.1.1"
-  license: ISC
-  contacts: contact@opencitations.net
-  endpoint: https://opencitations.net/meta/sparql
-  method: post
-
-- url: /metadata/{ids}
-  type: operation
-  ids: 'str((doi|issn|isbn|omid|openalex|pmid|pmcid):.+)'
-  preprocess: generate_id_search(ids)
-  method: get
-  description: |
-    Returns bibliographic metadata for the given identifiers.
-  call: /metadata/doi:10.1162/qss_a_00292
-  field_type: str(id) str(title) datetime(pub_date)
-  output_json: |
-    [
-      {
-        "id": "doi:10.1162/qss_a_00292",
-        "title": "OpenCitations Meta",
-        "pub_date": "2024"
-      }
-    ]
-  sparql: |
-    SELECT DISTINCT ?id ?title ?pub_date WHERE {
-      [[ids]]
-    }
-```
-
-<div style="border: 1px solid #d0d7de; border-radius: 8px; padding: 16px; margin: 8px 0; background: #ffffff; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; color: #1f2328;"><div style="display: flex; align-items: center; gap: 12px; margin-bottom: 12px;"><img src="https://avatars.githubusercontent.com/u/42008604?v=4" style="width: 32px; height: 32px; border-radius: 50%;" alt="arcangelo7" /><div><strong style="display: block; color: #1f2328;">arcangelo7</strong><span style="font-size: 0.85em; color: #656d76;">Jun 19, 2026</span><span style="font-size: 0.85em; color: #656d76;"> &middot; </span><a href="https://github.com/opencitations/ramose" style="font-size: 0.85em; color: #0969da; text-decoration: none;">opencitations/ramose</a></div></div><div style="margin: 12px 0; color: #1f2328;"><p>fix(skg-if): emit absolute local_identifier URLs in result meta</p></div><div style="display: flex; justify-content: flex-end; align-items: center; font-size: 0.85em;"><a href="https://github.com/opencitations/ramose/commit/ee01c8e7a22cc03d69dbecd8e741a6e1f5b59517" style="color: #0969da; text-decoration: none; font-weight: 500;">ee01c8e</a></div></div>
-
-<div style="border: 1px solid #d0d7de; border-radius: 8px; padding: 16px; margin: 8px 0; background: #ffffff; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; color: #1f2328;"><div style="display: flex; align-items: center; gap: 12px; margin-bottom: 12px;"><img src="https://avatars.githubusercontent.com/u/42008604?v=4" style="width: 32px; height: 32px; border-radius: 50%;" alt="arcangelo7" /><div><strong style="display: block; color: #1f2328;">arcangelo7</strong><span style="font-size: 0.85em; color: #656d76;">Jun 19, 2026</span><span style="font-size: 0.85em; color: #656d76;"> &middot; </span><a href="https://github.com/opencitations/ramose" style="font-size: 0.85em; color: #0969da; text-decoration: none;">opencitations/ramose</a></div></div><div style="margin: 12px 0; color: #1f2328;"><p>fix: reject invalid built-in query parameters with HTTP 422 [release]</p></div><div style="display: flex; justify-content: flex-end; align-items: center; font-size: 0.85em;"><a href="https://github.com/opencitations/ramose/commit/779956eb08788aadb124aab89ac8dc8a14c4fd3d" style="color: #0969da; text-decoration: none; font-weight: 500;">779956e</a></div></div>
-
-<div style="border: 1px solid #d0d7de; border-radius: 8px; padding: 16px; margin: 8px 0; background: #ffffff; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; color: #1f2328;"><div style="display: flex; align-items: center; gap: 12px; margin-bottom: 12px;"><img src="https://avatars.githubusercontent.com/u/42008604?v=4" style="width: 32px; height: 32px; border-radius: 50%;" alt="arcangelo7" /><div><strong style="display: block; color: #1f2328;">arcangelo7</strong><span style="font-size: 0.85em; color: #656d76;">Jun 20, 2026</span><span style="font-size: 0.85em; color: #656d76;"> &middot; </span><a href="https://github.com/opencitations/ramose" style="font-size: 0.85em; color: #0969da; text-decoration: none;">opencitations/ramose</a></div></div><div style="margin: 12px 0; color: #1f2328;"><p>feat: add SPARQL read retries</p>
-<p>Add configurable retry attempts, wait time, and backoff for SPARQL read requests.</p>
-<p>Apply the policy to standard SPARQL calls, multi-source query steps, and SPARQL Anything reads while leaving write operations unchanged.</p></div><div style="display: flex; justify-content: flex-end; align-items: center; font-size: 0.85em;"><a href="https://github.com/opencitations/ramose/commit/b9ff22efca2db98d633069aedf6e3a3b9633ff2a" style="color: #0969da; text-decoration: none; font-weight: 500;">b9ff22e</a></div></div>
+<div style="border: 1px solid #d0d7de; border-radius: 8px; padding: 16px; margin: 8px 0; background: #ffffff; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; color: #1f2328;"><div style="display: flex; align-items: center; gap: 12px; margin-bottom: 12px;"><img src="https://avatars.githubusercontent.com/u/42008604?v=4" style="width: 32px; height: 32px; border-radius: 50%;" alt="arcangelo7" /><div><strong style="display: block; color: #1f2328;">arcangelo7</strong><span style="font-size: 0.85em; color: #656d76;">Jun 25, 2026</span><span style="font-size: 0.85em; color: #656d76;"> &middot; </span><a href="https://github.com/opencitations/oc_graphenricher" style="font-size: 0.85em; color: #0969da; text-decoration: none;">opencitations/oc_graphenricher</a></div></div><div style="margin: 12px 0; color: #1f2328;"><p>feat!: add storage factories for single-file and OCDM directory output</p>
+<p>BREAKING CHANGE: GraphEnricher and InstanceMatching now require a storage factory, either single_file_storage or directory_storage. The graph_filename and provenance_filename constructor parameters were removed.</p></div><div style="display: flex; justify-content: flex-end; align-items: center; font-size: 0.85em;"><a href="https://github.com/opencitations/oc_graphenricher/commit/5f20d941d95f765c42c45507ce95b9ee28b59e93" style="color: #0969da; text-decoration: none; font-weight: 500;">5f20d94</a></div></div>
 
 ### Index
 
-Matilda ha finito
+<div style="border: 1px solid #d0d7de; border-radius: 8px; padding: 16px; margin: 8px 0; background: #ffffff; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; color: #1f2328;"><div style="display: flex; align-items: center; gap: 12px; margin-bottom: 12px;"><div><strong style="display: block; color: #1f2328;">arcangelo7</strong><span style="font-size: 0.85em; color: #656d76;">Jun 23, 2026</span><span style="font-size: 0.85em; color: #656d76;"> &middot; </span><a href="https://github.com/opencitations/index" style="font-size: 0.85em; color: #0969da; text-decoration: none;">opencitations/index</a></div></div><div style="margin: 12px 0; color: #1f2328;"><p>fix(cnc): read br omid index from redis sets, not semi-colon separated strings</p></div><div style="display: flex; justify-content: flex-end; align-items: center; font-size: 0.85em;"><a href="https://github.com/opencitations/index/commit/f0821fb38deb49d17d8641835ba30e665e91ddc0" style="color: #0969da; text-decoration: none; font-weight: 500;">f0821fb</a></div></div>
 
-<div style="border: 1px solid #d0d7de; border-radius: 8px; padding: 16px; margin: 8px 0; background: #ffffff; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; color: #1f2328;"><div style="display: flex; align-items: center; gap: 12px; margin-bottom: 12px;"><div><strong style="display: block; color: #1f2328;">arcangelo7</strong><span style="font-size: 0.85em; color: #656d76;">Jun 22, 2026</span><span style="font-size: 0.85em; color: #656d76;"> &middot; </span><a href="https://github.com/opencitations/index" style="font-size: 0.85em; color: #0969da; text-decoration: none;">opencitations/index</a></div></div><div style="margin: 12px 0; color: #1f2328;"><p>feat(meta2redis): support Meta RDF dumps</p>
-<p>The importer can now index from RDF files while keeping the existing CSV path.</p></div><div style="display: flex; justify-content: flex-end; align-items: center; font-size: 0.85em;"><a href="https://github.com/opencitations/index/commit/1aeed7188648ada560afd144df45e0080ee2a64e" style="color: #0969da; text-decoration: none; font-weight: 500;">1aeed71</a></div></div>
+Dump di Meta pubblicati su Zenodo
 
-### Articolo su RAMOSE
+CSV: [https://doi.org/10.5281/zenodo.20965426](https://doi.org/10.5281/zenodo.20965426)
+RDF: [https://doi.org/10.5281/zenodo.20965956](https://doi.org/10.5281/zenodo.20965956)
+Virtuoso dati: [https://doi.org/10.5281/zenodo.21001553](https://doi.org/10.5281/zenodo.21001553)
+QLever provenance: [https://doi.org/10.5281/zenodo.20970244](https://doi.org/10.5281/zenodo.20970244)
 
-Ho scritto le sezioni New requirements, RAMOSE: architecture and new features e Related works and functional comparison. Le trovate su Underleaf.
+### RAMOSE
+
+<div style="border: 1px solid #d0d7de; border-radius: 8px; padding: 16px; margin: 8px 0; background: #ffffff; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; color: #1f2328;"><div style="display: flex; align-items: center; gap: 12px; margin-bottom: 12px;"><img src="https://avatars.githubusercontent.com/u/42008604?v=4" style="width: 32px; height: 32px; border-radius: 50%;" alt="arcangelo7" /><div><strong style="display: block; color: #1f2328;">arcangelo7</strong><span style="font-size: 0.85em; color: #656d76;">Jun 25, 2026</span><span style="font-size: 0.85em; color: #656d76;"> &middot; </span><a href="https://github.com/opencitations/ramose" style="font-size: 0.85em; color: #0969da; text-decoration: none;">opencitations/ramose</a></div></div><div style="margin: 12px 0; color: #1f2328;"><p>docs(comparison): add shexpose comparison</p></div><div style="display: flex; justify-content: flex-end; align-items: center; font-size: 0.85em;"><a href="https://github.com/opencitations/ramose/commit/7e016c346e8cd25dc5a786b2bcd4eff46def4d2f" style="color: #0969da; text-decoration: none; font-weight: 500;">7e016c3</a></div></div>
+
+[https://opencitations.github.io/ramose/comparison/shexpose.html](https://opencitations.github.io/ramose/comparison/shexpose.html)
+
+### Software citation sync
+
+[https://github.com/marketplace/actions/software-citation-sync](https://github.com/marketplace/actions/software-citation-sync)
 
 ## Domande
 
-[https://github.com/opencitations/oc\_api/issues/39](https://github.com/opencitations/oc_api/issues/39)
+### Index
 
-### ISWC
+Ho provato a correggere i test in maniera tale da procedere con ulteriori ottimizzazioni in maniera sicura, ma mi sono accorto che al momento è viscoso lavorare con questa libreria perché conserva ancora tutta la logica legacy sia nel codice che nei test. Non ha alcun senso correggere i test per farli passare con la logica nuova perché mischierebbero logiche diverse. Secondo me la cosa più sensata è togliere tutta la logica legacy. Cosa ne pensate?
 
-Come funziona ora? Devo modificare le review? Se sì, le devo riscrivere tenendo conto sia dell'articolo che della rebuttal? Cioè dicendo: l'articolo dice questo, ma la rebuttal dice quest'altro. Oppure togliendo in toto le parti risolte dalla rebuttal.
+Sui dataset dei nuovi dump pubblicati su Zenodo metto il finanziamento? Se sì, quale?
 
-Axel e Marieke dicono che devo discutere con gli altri PC member. Come dovrebbe avvenire questa cosa?
+### RAMOSE
+
+Servono una bio, una foto e l'ORCID di Sergei, gli scrivo io?
+
+### SKG-IF
+
+![Pasted image 20260629171457.png](../../../assets/notes/attachments/pasted-image-20260629171457.png)
+
+[https://skg-if.github.io/api/openapi/ver/current/skg-if-openapi.yaml](https://skg-if.github.io/api/openapi/ver/current/skg-if-openapi.yaml)
+
+### Altro
+
+Email Czesary
 
 ## Memo
 
@@ -92,6 +66,7 @@ RAMOSE
 
 * Confronto performance
 * Aggiungere connextion
+* Chiarire di non usare LIMIT con @@page
 
 TAL
 
