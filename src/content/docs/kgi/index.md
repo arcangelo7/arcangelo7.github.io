@@ -74,13 +74,27 @@ R2RMLTC0002f.</p></div><div style="display: flex; justify-content: flex-end; ali
 
 Let's take the case with 5 TM and 8 POM
 
+```
 TM1 subject {p1}, -> p1...p8
 TM2 subject {p2}, -> p1...p8
 ...
 TM5 subject {p5}, -> p1...p8
+```
 
 All columns used in the subjects, p1...p5, are already available as literal objects in every TM. We don't need 5 groups to rebuild the row. We can take only one representative subject map.
 
 This optimization made mappings\_5\_8 go from 36,35s to 6,30s
+
+***
+
+I only considered the cases where TM < POM, otherwise it's impossible to associate a value to a specific TM and, therefore, to a specific column/row
+
+```
+TM1: subject /table/{p1}, -> p1 e p2
+TM2: subject /table/{p2}, -> p1 e p2
+TM3: subject /table/{p3}, -> p1 e p2
+```
+
+These three subject templates have the same structure. There is no way to understand from the graph that p3 comes from TM3.
 
 <div style="border: 1px solid #d0d7de; border-radius: 8px; padding: 16px; margin: 8px 0; background: #ffffff; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; color: #1f2328;"><div style="display: flex; align-items: center; gap: 12px; margin-bottom: 12px;"><img src="https://avatars.githubusercontent.com/u/42008604?v=4" style="width: 32px; height: 32px; border-radius: 50%;" alt="arcangelo7" /><div><strong style="display: block; color: #1f2328;">arcangelo7</strong><span style="font-size: 0.85em; color: #656d76;">Jul 9, 2026</span><span style="font-size: 0.85em; color: #656d76;"> &middot; </span><a href="https://github.com/arcangelo7/knowledge-graphs-inversion" style="font-size: 0.85em; color: #0969da; text-decoration: none;">arcangelo7/knowledge-graphs-inversion</a></div></div><div style="margin: 12px 0; color: #1f2328;"><p>feat(benchmarks): add gtfs benchmark</p></div><div style="display: flex; justify-content: flex-end; align-items: center; font-size: 0.85em;"><a href="https://github.com/arcangelo7/knowledge-graphs-inversion/commit/454fe17f473f322cbb8de62590def2dc14b8a30e" style="color: #0969da; text-decoration: none; font-weight: 500;">454fe17</a></div></div>
