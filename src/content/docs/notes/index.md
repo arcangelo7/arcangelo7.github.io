@@ -5,60 +5,325 @@ editUrl: false
 
 ## La Novitade
 
-### oc\_graphenricher
+<div style="border: 1px solid #d0d7de; border-radius: 8px; padding: 16px; margin: 8px 0; background: #ffffff; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; color: #1f2328;"><div style="display: flex; align-items: center; gap: 12px; margin-bottom: 12px;"><img src="https://avatars.githubusercontent.com/u/42008604?v=4" style="width: 32px; height: 32px; border-radius: 50%;" alt="arcangelo7" /><div><strong style="display: block; color: #1f2328;">arcangelo7</strong><span style="font-size: 0.85em; color: #656d76;">Jun 30, 2026</span><span style="font-size: 0.85em; color: #656d76;"> &middot; </span><a href="https://github.com/opencitations/ramose" style="font-size: 0.85em; color: #0969da; text-decoration: none;">opencitations/ramose</a></div></div><div style="margin: 12px 0; color: #1f2328;"><p>fix(skg-if): emit json-ld base placeholder [release]</p></div><div style="display: flex; justify-content: flex-end; align-items: center; font-size: 0.85em;"><a href="https://github.com/opencitations/ramose/commit/e14ffed25ff7730a713a1a18e5d3f05cab47b4c0" style="color: #0969da; text-decoration: none; font-weight: 500;">e14ffed</a></div></div>
 
-<div style="border: 1px solid #d0d7de; border-radius: 8px; padding: 16px; margin: 8px 0; background: #ffffff; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; color: #1f2328;"><div style="display: flex; align-items: center; gap: 12px; margin-bottom: 12px;"><img src="https://avatars.githubusercontent.com/u/42008604?v=4" style="width: 32px; height: 32px; border-radius: 50%;" alt="arcangelo7" /><div><strong style="display: block; color: #1f2328;">arcangelo7</strong><span style="font-size: 0.85em; color: #656d76;">Jun 23, 2026</span><span style="font-size: 0.85em; color: #656d76;"> &middot; </span><a href="https://github.com/opencitations/oc_graphenricher" style="font-size: 0.85em; color: #0969da; text-decoration: none;">opencitations/oc_graphenricher</a></div></div><div style="margin: 12px 0; color: #1f2328;"><p>build: migrate from poetry to uv</p></div><div style="display: flex; justify-content: flex-end; align-items: center; font-size: 0.85em;"><a href="https://github.com/opencitations/oc_graphenricher/commit/a4dcdbb8f36b0b7da3bab15128d5a2c9d0fbe57b" style="color: #0969da; text-decoration: none; font-weight: 500;">a4dcdbb</a></div></div>
+### Articolo RAMOSE
 
-<div style="border: 1px solid #d0d7de; border-radius: 8px; padding: 16px; margin: 8px 0; background: #ffffff; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; color: #1f2328;"><div style="display: flex; align-items: center; gap: 12px; margin-bottom: 12px;"><img src="https://avatars.githubusercontent.com/u/42008604?v=4" style="width: 32px; height: 32px; border-radius: 50%;" alt="arcangelo7" /><div><strong style="display: block; color: #1f2328;">arcangelo7</strong><span style="font-size: 0.85em; color: #656d76;">Jun 23, 2026</span><span style="font-size: 0.85em; color: #656d76;"> &middot; </span><a href="https://github.com/opencitations/oc_graphenricher" style="font-size: 0.85em; color: #0969da; text-decoration: none;">opencitations/oc_graphenricher</a></div></div><div style="margin: 12px 0; color: #1f2328;"><p>test: migrate suite from unittest to pytest and add CI</p></div><div style="display: flex; justify-content: flex-end; align-items: center; font-size: 0.85em;"><a href="https://github.com/opencitations/oc_graphenricher/commit/874fd6766d695ba5505d643838df446884eb852a" style="color: #0969da; text-decoration: none; font-weight: 500;">874fd67</a></div></div>
+Ho rimosso l'affermazione secondo cui le statistiche dimostrano che Ramose permette di gestire un elevato carico. Non è vero. Questo andrebbe dimostrato mostrando statistiche di uptime, che non stiamo mostrando, e queste statistiche dovrebbero rimuovere la variabile Virtuoso, il che non è possibile.
 
-<div style="border: 1px solid #d0d7de; border-radius: 8px; padding: 16px; margin: 8px 0; background: #ffffff; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; color: #1f2328;"><div style="display: flex; align-items: center; gap: 12px; margin-bottom: 12px;"><img src="https://avatars.githubusercontent.com/u/42008604?v=4" style="width: 32px; height: 32px; border-radius: 50%;" alt="arcangelo7" /><div><strong style="display: block; color: #1f2328;">arcangelo7</strong><span style="font-size: 0.85em; color: #656d76;">Jun 24, 2026</span><span style="font-size: 0.85em; color: #656d76;"> &middot; </span><a href="https://github.com/opencitations/oc_graphenricher" style="font-size: 0.85em; color: #0969da; text-decoration: none;">opencitations/oc_graphenricher</a></div></div><div style="margin: 12px 0; color: #1f2328;"><p>fix(instancematching): avoid self-merging named contributors</p>
-<p>Increase test coverage</p></div><div style="display: flex; justify-content: flex-end; align-items: center; font-size: 0.85em;"><a href="https://github.com/opencitations/oc_graphenricher/commit/1e8e38bf1730a865c11706e3d51f7c6d0acf6563" style="color: #0969da; text-decoration: none; font-weight: 500;">1e8e38b</a></div></div>
+### HERITRACE
 
-<div style="border: 1px solid #d0d7de; border-radius: 8px; padding: 16px; margin: 8px 0; background: #ffffff; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; color: #1f2328;"><div style="display: flex; align-items: center; gap: 12px; margin-bottom: 12px;"><img src="https://avatars.githubusercontent.com/u/42008604?v=4" style="width: 32px; height: 32px; border-radius: 50%;" alt="arcangelo7" /><div><strong style="display: block; color: #1f2328;">arcangelo7</strong><span style="font-size: 0.85em; color: #656d76;">Jun 25, 2026</span><span style="font-size: 0.85em; color: #656d76;"> &middot; </span><a href="https://github.com/opencitations/oc_graphenricher" style="font-size: 0.85em; color: #0969da; text-decoration: none;">opencitations/oc_graphenricher</a></div></div><div style="margin: 12px 0; color: #1f2328;"><p>feat!: add storage factories for single-file and OCDM directory output</p>
-<p>BREAKING CHANGE: GraphEnricher and InstanceMatching now require a storage factory, either single_file_storage or directory_storage. The graph_filename and provenance_filename constructor parameters were removed.</p></div><div style="display: flex; justify-content: flex-end; align-items: center; font-size: 0.85em;"><a href="https://github.com/opencitations/oc_graphenricher/commit/5f20d941d95f765c42c45507ce95b9ee28b59e93" style="color: #0969da; text-decoration: none; font-weight: 500;">5f20d94</a></div></div>
+<div style="border: 1px solid #d0d7de; border-radius: 8px; padding: 16px; margin: 8px 0; background: #ffffff; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; color: #1f2328;"><div style="display: flex; align-items: center; gap: 12px; margin-bottom: 12px;"><img src="https://avatars.githubusercontent.com/u/42008604?v=4" style="width: 32px; height: 32px; border-radius: 50%;" alt="arcangelo7" /><div><strong style="display: block; color: #1f2328;">arcangelo7</strong><span style="font-size: 0.85em; color: #656d76;">Jul 2, 2026</span><span style="font-size: 0.85em; color: #656d76;"> &middot; </span><a href="https://github.com/opencitations/heritrace" style="font-size: 0.85em; color: #0969da; text-decoration: none;">opencitations/heritrace</a></div></div><div style="margin: 12px 0; color: #1f2328;"><p>perf(catalog): avoid repeated label and class queries</p>
+<p>Cache SHACL shape query results and parallelize labels formatting</p></div><div style="display: flex; justify-content: flex-end; align-items: center; font-size: 0.85em;"><a href="https://github.com/opencitations/heritrace/commit/30809bca82ab9dfc656fb7add00403a2ec87e4cc" style="color: #0969da; text-decoration: none; font-weight: 500;">30809bc</a></div></div>
 
-### Index
+### Meta
 
-<div style="border: 1px solid #d0d7de; border-radius: 8px; padding: 16px; margin: 8px 0; background: #ffffff; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; color: #1f2328;"><div style="display: flex; align-items: center; gap: 12px; margin-bottom: 12px;"><div><strong style="display: block; color: #1f2328;">arcangelo7</strong><span style="font-size: 0.85em; color: #656d76;">Jun 23, 2026</span><span style="font-size: 0.85em; color: #656d76;"> &middot; </span><a href="https://github.com/opencitations/index" style="font-size: 0.85em; color: #0969da; text-decoration: none;">opencitations/index</a></div></div><div style="margin: 12px 0; color: #1f2328;"><p>fix(cnc): read br omid index from redis sets, not semi-colon separated strings</p></div><div style="display: flex; justify-content: flex-end; align-items: center; font-size: 0.85em;"><a href="https://github.com/opencitations/index/commit/f0821fb38deb49d17d8641835ba30e665e91ddc0" style="color: #0969da; text-decoration: none; font-weight: 500;">f0821fb</a></div></div>
+<div style="border: 1px solid #d0d7de; border-radius: 8px; padding: 16px; margin: 8px 0; background: #ffffff; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; color: #1f2328;"><div style="display: flex; align-items: center; gap: 12px; margin-bottom: 12px;"><div><strong style="display: block; color: #1f2328;">arcangelo7</strong><span style="font-size: 0.85em; color: #656d76;">Jul 2, 2026</span><span style="font-size: 0.85em; color: #656d76;"> &middot; </span><a href="https://github.com/opencitations/oc_meta" style="font-size: 0.85em; color: #0969da; text-decoration: none;">opencitations/oc_meta</a></div></div><div style="margin: 12px 0; color: #1f2328;"><p>feat: add SPARQL Service Description generator</p></div><div style="display: flex; justify-content: flex-end; align-items: center; font-size: 0.85em;"><a href="https://github.com/opencitations/oc_meta/commit/3daa7d3f2bc4647427d06c1fa7b89a7c24bc980f" style="color: #0969da; text-decoration: none; font-weight: 500;">3daa7d3</a></div></div>
 
-Dump di Meta pubblicati su Zenodo
+```turtle
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix formats: <http://www.w3.org/ns/formats/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix sd: <http://www.w3.org/ns/sparql-service-description#> .
+@prefix void: <http://rdfs.org/ns/void#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-CSV: [https://doi.org/10.5281/zenodo.20965426](https://doi.org/10.5281/zenodo.20965426)
-RDF: [https://doi.org/10.5281/zenodo.20965956](https://doi.org/10.5281/zenodo.20965956)
-Virtuoso dati: [https://doi.org/10.5281/zenodo.21001553](https://doi.org/10.5281/zenodo.21001553)
-QLever provenance: [https://doi.org/10.5281/zenodo.20970244](https://doi.org/10.5281/zenodo.20970244)
+[] a sd:Service ;
+    sd:defaultDataset [ a void:Dataset,
+                sd:Dataset ;
+            dcterms:description "OpenCitations Meta entity data"@en ;
+            dcterms:title "OpenCitations Meta"@en ;
+            void:classPartition [ void:class <http://purl.org/spar/fabio/Expression> ;
+                    void:entities 147369096 ],
+                [ void:class <http://purl.org/spar/datacite/Identifier> ;
+                    void:entities 259332879 ],
+                [ void:class <http://purl.org/spar/fabio/DataFile> ;
+                    void:entities 2860580 ],
+                [ void:class <http://purl.org/spar/fr/ReviewVersion> ;
+                    void:entities 5608 ],
+                [ void:class <http://purl.org/spar/fabio/Journal> ;
+                    void:entities 4755832 ],
+                [ void:class foaf:Agent ;
+                    void:entities 390541078 ],
+                [ void:class <http://purl.org/spar/fabio/Preprint> ;
+                    void:entities 256957 ],
+                [ void:class <http://purl.org/spar/fabio/Thesis> ;
+                    void:entities 65125 ],
+                [ void:class <http://purl.org/spar/fabio/DataManagementPlan> ;
+                    void:entities 4 ],
+                [ void:class <http://purl.org/spar/fabio/ReportDocument> ;
+                    void:entities 411417 ],
+                [ void:class <http://purl.org/spar/fabio/JournalVolume> ;
+                    void:entities 4336587 ],
+                [ void:class <http://purl.org/spar/fabio/ProceedingsPaper> ;
+                    void:entities 6504081 ],
+                [ void:class <http://purl.org/spar/fabio/SpecificationDocument> ;
+                    void:entities 14901 ],
+                [ void:class <http://purl.org/spar/fabio/ReferenceBook> ;
+                    void:entities 241168 ],
+                [ void:class <http://purl.org/spar/pro/RoleInTime> ;
+                    void:entities 541544410 ],
+                [ void:class <http://purl.org/spar/fabio/AcademicProceedings> ;
+                    void:entities 6638384 ],
+                [ void:class <http://purl.org/spar/fabio/JournalIssue> ;
+                    void:entities 7614242 ],
+                [ void:class <http://purl.org/spar/fabio/Presentation> ;
+                    void:entities 2 ],
+                [ void:class <http://purl.org/spar/fabio/Book> ;
+                    void:entities 7649106 ],
+                [ void:class <http://purl.org/spar/fabio/BookSet> ;
+                    void:entities 48 ],
+                [ void:class <http://purl.org/spar/fabio/Manifestation> ;
+                    void:entities 82546121 ],
+                [ void:class <http://purl.org/spar/fabio/BookSeries> ;
+                    void:entities 144213 ],
+                [ void:class <http://purl.org/spar/fabio/ReferenceEntry> ;
+                    void:entities 203258 ],
+                [ void:class <http://purl.org/spar/doco/Part> ;
+                    void:entities 4167 ],
+                [ void:class <http://purl.org/spar/fabio/ExpressionCollection> ;
+                    void:entities 23525 ],
+                [ void:class <http://purl.org/spar/fabio/BookChapter> ;
+                    void:entities 8300803 ],
+                [ void:class <http://purl.org/spar/fabio/ComputerProgram> ;
+                    void:entities 2330 ],
+                [ void:class <http://purl.org/spar/fabio/Series> ;
+                    void:entities 14088 ],
+                [ void:class <http://purl.org/spar/fabio/JournalArticle> ;
+                    void:entities 88373339 ],
+                [ void:class <http://purl.org/spar/fabio/WebContent> ;
+                    void:entities 992645 ] ;
+            void:classes 30 ;
+            void:distinctObjects 1680503691 ;
+            void:distinctSubjects 1421333585 ;
+            void:properties 18 ;
+            void:propertyPartition [ void:property foaf:familyName ;
+                    void:triples 342844564 ],
+                [ void:property <http://purl.org/spar/datacite/usesIdentifierScheme> ;
+                    void:triples 259332878 ],
+                [ void:property <http://purl.org/spar/pro/withRole> ;
+                    void:triples 541544409 ],
+                [ void:property foaf:givenName ;
+                    void:triples 340076746 ],
+                [ void:property <http://purl.org/spar/fabio/hasSequenceIdentifier> ;
+                    void:triples 11948142 ],
+                [ void:property <http://purl.org/vocab/frbr/core#embodiment> ;
+                    void:triples 82507304 ],
+                [ void:property <http://purl.org/spar/pro/isHeldBy> ;
+                    void:triples 541543125 ],
+                [ void:property <http://purl.org/spar/datacite/hasIdentifier> ;
+                    void:triples 260774629 ],
+                [ void:property <http://purl.org/vocab/frbr/core#partOf> ;
+                    void:triples 115198136 ],
+                [ void:property <http://purl.org/spar/pro/isDocumentContextFor> ;
+                    void:triples 534260004 ],
+                [ void:property <http://www.essepuntato.it/2010/06/literalreification/hasLiteralValue> ;
+                    void:triples 259332878 ],
+                [ void:property <http://prismstandard.org/namespaces/basic/2.0/startingPage> ;
+                    void:triples 81134704 ],
+                [ void:property <http://prismstandard.org/namespaces/basic/2.0/endingPage> ;
+                    void:triples 81134715 ],
+                [ void:property dcterms:title ;
+                    void:triples 129215401 ],
+                [ void:property rdf:type ;
+                    void:triples 1560745994 ],
+                [ void:property <http://prismstandard.org/namespaces/basic/2.0/publicationDate> ;
+                    void:triples 112453159 ],
+                [ void:property <https://w3id.org/oc/ontology/hasNext> ;
+                    void:triples 316466954 ],
+                [ void:property foaf:name ;
+                    void:triples 47742692 ] ;
+            void:sparqlEndpoint <https://sparql.opencitations.net/meta> ;
+            void:triples 5618256434 ;
+            void:uriSpace "https://w3id.org/oc/meta/" ;
+            sd:namedGraph [ a sd:NamedGraph ;
+                    sd:graph [ a sd:Graph ;
+                            void:classPartition [ void:class <http://purl.org/spar/datacite/Identifier> ;
+                                    void:entities 259332879 ] ;
+                            void:classes 1 ;
+                            void:properties 3 ;
+                            void:propertyPartition [ void:property rdf:type ;
+                                    void:triples 259332879 ],
+                                [ void:property <http://www.essepuntato.it/2010/06/literalreification/hasLiteralValue> ;
+                                    void:triples 259332878 ],
+                                [ void:property <http://purl.org/spar/datacite/usesIdentifierScheme> ;
+                                    void:triples 259332878 ] ;
+                            void:triples 777998635 ;
+                            void:uriSpace "https://w3id.org/oc/meta/id/" ] ;
+                    sd:name <https://w3id.org/oc/meta/id/> ],
+                [ a sd:NamedGraph ;
+                    sd:graph [ a sd:Graph ;
+                            void:classPartition [ void:class <http://purl.org/spar/pro/RoleInTime> ;
+                                    void:entities 541544410 ] ;
+                            void:classes 1 ;
+                            void:properties 4 ;
+                            void:propertyPartition [ void:property <https://w3id.org/oc/ontology/hasNext> ;
+                                    void:triples 316466954 ],
+                                [ void:property <http://purl.org/spar/pro/withRole> ;
+                                    void:triples 541544409 ],
+                                [ void:property rdf:type ;
+                                    void:triples 541544410 ],
+                                [ void:property <http://purl.org/spar/pro/isHeldBy> ;
+                                    void:triples 541543125 ] ;
+                            void:triples 1941098898 ;
+                            void:uriSpace "https://w3id.org/oc/meta/ar/" ] ;
+                    sd:name <https://w3id.org/oc/meta/ar/> ],
+                [ a sd:NamedGraph ;
+                    sd:graph [ a sd:Graph ;
+                            void:classPartition [ void:class <http://purl.org/spar/fabio/Manifestation> ;
+                                    void:entities 82546121 ] ;
+                            void:classes 1 ;
+                            void:properties 3 ;
+                            void:propertyPartition [ void:property rdf:type ;
+                                    void:triples 82546121 ],
+                                [ void:property <http://prismstandard.org/namespaces/basic/2.0/startingPage> ;
+                                    void:triples 81134704 ],
+                                [ void:property <http://prismstandard.org/namespaces/basic/2.0/endingPage> ;
+                                    void:triples 81134715 ] ;
+                            void:triples 244815540 ;
+                            void:uriSpace "https://w3id.org/oc/meta/re/" ] ;
+                    sd:name <https://w3id.org/oc/meta/re/> ],
+                [ a sd:NamedGraph ;
+                    sd:graph [ a sd:Graph ;
+                            void:classPartition [ void:class foaf:Agent ;
+                                    void:entities 390541078 ] ;
+                            void:classes 1 ;
+                            void:properties 5 ;
+                            void:propertyPartition [ void:property foaf:familyName ;
+                                    void:triples 342844564 ],
+                                [ void:property rdf:type ;
+                                    void:triples 390541078 ],
+                                [ void:property foaf:name ;
+                                    void:triples 47742692 ],
+                                [ void:property foaf:givenName ;
+                                    void:triples 340076746 ],
+                                [ void:property <http://purl.org/spar/datacite/hasIdentifier> ;
+                                    void:triples 12400527 ] ;
+                            void:triples 1133605607 ;
+                            void:uriSpace "https://w3id.org/oc/meta/ra/" ] ;
+                    sd:name <https://w3id.org/oc/meta/ra/> ],
+                [ a sd:NamedGraph ;
+                    sd:graph [ a sd:Graph ;
+                            void:classPartition [ void:class <http://purl.org/spar/fabio/BookSeries> ;
+                                    void:entities 144213 ],
+                                [ void:class <http://purl.org/spar/fabio/ExpressionCollection> ;
+                                    void:entities 23525 ],
+                                [ void:class <http://purl.org/spar/fabio/ReferenceBook> ;
+                                    void:entities 241168 ],
+                                [ void:class <http://purl.org/spar/fabio/JournalVolume> ;
+                                    void:entities 4336587 ],
+                                [ void:class <http://purl.org/spar/fabio/BookSet> ;
+                                    void:entities 48 ],
+                                [ void:class <http://purl.org/spar/fabio/DataFile> ;
+                                    void:entities 2860580 ],
+                                [ void:class <http://purl.org/spar/fabio/WebContent> ;
+                                    void:entities 992645 ],
+                                [ void:class <http://purl.org/spar/fabio/DataManagementPlan> ;
+                                    void:entities 4 ],
+                                [ void:class <http://purl.org/spar/doco/Part> ;
+                                    void:entities 4167 ],
+                                [ void:class <http://purl.org/spar/fabio/Thesis> ;
+                                    void:entities 65125 ],
+                                [ void:class <http://purl.org/spar/fabio/Book> ;
+                                    void:entities 7649106 ],
+                                [ void:class <http://purl.org/spar/fabio/ComputerProgram> ;
+                                    void:entities 2330 ],
+                                [ void:class <http://purl.org/spar/fabio/JournalIssue> ;
+                                    void:entities 7614242 ],
+                                [ void:class <http://purl.org/spar/fabio/BookChapter> ;
+                                    void:entities 8300803 ],
+                                [ void:class <http://purl.org/spar/fabio/Journal> ;
+                                    void:entities 4755832 ],
+                                [ void:class <http://purl.org/spar/fabio/JournalArticle> ;
+                                    void:entities 88373339 ],
+                                [ void:class <http://purl.org/spar/fr/ReviewVersion> ;
+                                    void:entities 5608 ],
+                                [ void:class <http://purl.org/spar/fabio/Series> ;
+                                    void:entities 14088 ],
+                                [ void:class <http://purl.org/spar/fabio/SpecificationDocument> ;
+                                    void:entities 14901 ],
+                                [ void:class <http://purl.org/spar/fabio/ProceedingsPaper> ;
+                                    void:entities 6504081 ],
+                                [ void:class <http://purl.org/spar/fabio/Expression> ;
+                                    void:entities 147369096 ],
+                                [ void:class <http://purl.org/spar/fabio/ReferenceEntry> ;
+                                    void:entities 203258 ],
+                                [ void:class <http://purl.org/spar/fabio/Presentation> ;
+                                    void:entities 2 ],
+                                [ void:class <http://purl.org/spar/fabio/Preprint> ;
+                                    void:entities 256957 ],
+                                [ void:class <http://purl.org/spar/fabio/ReportDocument> ;
+                                    void:entities 411417 ],
+                                [ void:class <http://purl.org/spar/fabio/AcademicProceedings> ;
+                                    void:entities 6638384 ] ;
+                            void:classes 26 ;
+                            void:properties 8 ;
+                            void:propertyPartition [ void:property <http://purl.org/vocab/frbr/core#partOf> ;
+                                    void:triples 115198136 ],
+                                [ void:property <http://prismstandard.org/namespaces/basic/2.0/publicationDate> ;
+                                    void:triples 112453159 ],
+                                [ void:property rdf:type ;
+                                    void:triples 286781506 ],
+                                [ void:property <http://purl.org/spar/pro/isDocumentContextFor> ;
+                                    void:triples 534260004 ],
+                                [ void:property <http://purl.org/spar/fabio/hasSequenceIdentifier> ;
+                                    void:triples 11948142 ],
+                                [ void:property <http://purl.org/vocab/frbr/core#embodiment> ;
+                                    void:triples 82507304 ],
+                                [ void:property dcterms:title ;
+                                    void:triples 129215401 ],
+                                [ void:property <http://purl.org/spar/datacite/hasIdentifier> ;
+                                    void:triples 248374102 ] ;
+                            void:triples 1520737754 ;
+                            void:uriSpace "https://w3id.org/oc/meta/br/" ] ;
+                    sd:name <https://w3id.org/oc/meta/br/> ] ] ;
+    sd:endpoint <https://sparql.opencitations.net/meta> ;
+    sd:feature sd:BasicFederatedQuery,
+        sd:UnionDefaultGraph ;
+    sd:resultFormat formats:SPARQL_Results_CSV,
+        formats:SPARQL_Results_JSON,
+        formats:SPARQL_Results_TSV,
+        formats:SPARQL_Results_XML,
+        formats:Turtle ;
+    sd:supportedLanguage sd:SPARQL11Query .
+```
 
-### RAMOSE
+<div style="border: 1px solid #d0d7de; border-radius: 8px; padding: 16px; margin: 8px 0; background: #ffffff; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; color: #1f2328;"><div style="display: flex; align-items: center; gap: 12px; margin-bottom: 12px;"><div><strong style="display: block; color: #1f2328;">arcangelo7</strong><span style="font-size: 0.85em; color: #656d76;">Jul 5, 2026</span><span style="font-size: 0.85em; color: #656d76;"> &middot; </span><a href="https://github.com/opencitations/oc_graphenricher" style="font-size: 0.85em; color: #0969da; text-decoration: none;">opencitations/oc_graphenricher</a></div></div><div style="margin: 12px 0; color: #1f2328;"><p>fix(deduplication): preserve more informative duplicate survivor [release]</p>
+<p>Automatic deduplication now selects the cluster member with more functional metadata when no preferred survivor is configured.</p></div><div style="display: flex; justify-content: flex-end; align-items: center; font-size: 0.85em;"><a href="https://github.com/opencitations/oc_graphenricher/commit/732e8648d4faeb02573211d17520ed2ad0fe1a7f" style="color: #0969da; text-decoration: none; font-weight: 500;">732e864</a></div></div>
 
-<div style="border: 1px solid #d0d7de; border-radius: 8px; padding: 16px; margin: 8px 0; background: #ffffff; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; color: #1f2328;"><div style="display: flex; align-items: center; gap: 12px; margin-bottom: 12px;"><img src="https://avatars.githubusercontent.com/u/42008604?v=4" style="width: 32px; height: 32px; border-radius: 50%;" alt="arcangelo7" /><div><strong style="display: block; color: #1f2328;">arcangelo7</strong><span style="font-size: 0.85em; color: #656d76;">Jun 25, 2026</span><span style="font-size: 0.85em; color: #656d76;"> &middot; </span><a href="https://github.com/opencitations/ramose" style="font-size: 0.85em; color: #0969da; text-decoration: none;">opencitations/ramose</a></div></div><div style="margin: 12px 0; color: #1f2328;"><p>docs(comparison): add shexpose comparison</p></div><div style="display: flex; justify-content: flex-end; align-items: center; font-size: 0.85em;"><a href="https://github.com/opencitations/ramose/commit/7e016c346e8cd25dc5a786b2bcd4eff46def4d2f" style="color: #0969da; text-decoration: none; font-weight: 500;">7e016c3</a></div></div>
+<div style="border: 1px solid #d0d7de; border-radius: 8px; padding: 16px; margin: 8px 0; background: #ffffff; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; color: #1f2328;"><div style="display: flex; align-items: center; gap: 12px; margin-bottom: 12px;"><div><strong style="display: block; color: #1f2328;">arcangelo7</strong><span style="font-size: 0.85em; color: #656d76;">Jul 6, 2026</span><span style="font-size: 0.85em; color: #656d76;"> &middot; </span><a href="https://github.com/opencitations/oc_graphenricher" style="font-size: 0.85em; color: #0969da; text-decoration: none;">opencitations/oc_graphenricher</a></div></div><div style="margin: 12px 0; color: #1f2328;"><p>fix(deduplication): avoid merging distinct containers [release]</p>
+<p>Container chains can contain same-typed volumes and issues that belong to different records. Match containers from the top of the hierarchy and merge only pairs with matching identity data so conflicting containers remain separate.</p></div><div style="display: flex; justify-content: flex-end; align-items: center; font-size: 0.85em;"><a href="https://github.com/opencitations/oc_graphenricher/commit/3a1da2f0e8b36d8f627e559e53df23d60db0e1bf" style="color: #0969da; text-decoration: none; font-weight: 500;">3a1da2f</a></div></div>
 
-[https://opencitations.github.io/ramose/comparison/shexpose.html](https://opencitations.github.io/ramose/comparison/shexpose.html)
+<div style="border: 1px solid #d0d7de; border-radius: 8px; padding: 16px; margin: 8px 0; background: #ffffff; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; color: #1f2328;"><div style="display: flex; align-items: center; gap: 12px; margin-bottom: 12px;"><div><strong style="display: block; color: #1f2328;">arcangelo7</strong><span style="font-size: 0.85em; color: #656d76;">Jul 6, 2026</span><span style="font-size: 0.85em; color: #656d76;"> &middot; </span><a href="https://github.com/opencitations/oc_graphenricher" style="font-size: 0.85em; color: #0969da; text-decoration: none;">opencitations/oc_graphenricher</a></div></div><div style="margin: 12px 0; color: #1f2328;"><p>fix(deduplication): keep distinct publisher roles [release]</p>
+<p>Merged bibliographic resources were merging publisher roles whenever both sides had one. This keeps disagreeing publishers separate and only merges roles when their responsible agents share an identifier or normalized name.</p></div><div style="display: flex; justify-content: flex-end; align-items: center; font-size: 0.85em;"><a href="https://github.com/opencitations/oc_graphenricher/commit/e1aa5cdf29700ec5662b69631a545f843826d128" style="color: #0969da; text-decoration: none; font-weight: 500;">e1aa5cd</a></div></div>
 
-### Software citation sync
+<div style="border: 1px solid #d0d7de; border-radius: 8px; padding: 16px; margin: 8px 0; background: #ffffff; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; color: #1f2328;"><div style="display: flex; align-items: center; gap: 12px; margin-bottom: 12px;"><div><strong style="display: block; color: #1f2328;">arcangelo7</strong><span style="font-size: 0.85em; color: #656d76;">Jul 6, 2026</span><span style="font-size: 0.85em; color: #656d76;"> &middot; </span><a href="https://github.com/opencitations/oc_graphenricher" style="font-size: 0.85em; color: #0969da; text-decoration: none;">opencitations/oc_graphenricher</a></div></div><div style="margin: 12px 0; color: #1f2328;"><p>fix(deduplication): Reject manual BR merges that would collapse a typed container into an incompatible BR type [release]</p>
+<p>Also, BR merges can acquire a container or publisher from an earlier merged entity. Re-reading survivor links before each merge lets later equivalent containers and publishers merge into the survivor state.</p>
+<p>Also add the software citation sync workflow</p></div><div style="display: flex; justify-content: flex-end; align-items: center; font-size: 0.85em;"><a href="https://github.com/opencitations/oc_graphenricher/commit/ed7ead33ab5a5b435790e5c84eabb4c29b967203" style="color: #0969da; text-decoration: none; font-weight: 500;">ed7ead3</a></div></div>
 
-[https://github.com/marketplace/actions/software-citation-sync](https://github.com/marketplace/actions/software-citation-sync)
+<div style="border: 1px solid #d0d7de; border-radius: 8px; padding: 16px; margin: 8px 0; background: #ffffff; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; color: #1f2328;"><div style="display: flex; align-items: center; gap: 12px; margin-bottom: 12px;"><div><strong style="display: block; color: #1f2328;">arcangelo7</strong><span style="font-size: 0.85em; color: #656d76;">Jul 7, 2026</span><span style="font-size: 0.85em; color: #656d76;"> &middot; </span><a href="https://github.com/opencitations/oc_graphenricher" style="font-size: 0.85em; color: #0969da; text-decoration: none;">opencitations/oc_graphenricher</a></div></div><div style="margin: 12px 0; color: #1f2328;"><p>fix(deduplication): order merge clusters before mutation [release]</p>
+<p>Run identifier clusters before resource clusters and merge bibliographic containers by depth (journal&gt;volume&gt;issue&gt;article)</p></div><div style="display: flex; justify-content: flex-end; align-items: center; font-size: 0.85em;"><a href="https://github.com/opencitations/oc_graphenricher/commit/9c0a1eab569a580a9f308842d78316018f8bc894" style="color: #0969da; text-decoration: none; font-weight: 500;">9c0a1ea</a></div></div>
+
+<div style="border: 1px solid #d0d7de; border-radius: 8px; padding: 16px; margin: 8px 0; background: #ffffff; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; color: #1f2328;"><div style="display: flex; align-items: center; gap: 12px; margin-bottom: 12px;"><div><strong style="display: block; color: #1f2328;">arcangelo7</strong><span style="font-size: 0.85em; color: #656d76;">Jul 4, 2026</span><span style="font-size: 0.85em; color: #656d76;"> &middot; </span><a href="https://github.com/opencitations/oc_meta" style="font-size: 0.85em; color: #0969da; text-decoration: none;">opencitations/oc_meta</a></div></div><div style="margin: 12px 0; color: #1f2328;"><p>fix(merge): use graphenricher merge workflow</p></div><div style="display: flex; justify-content: flex-end; align-items: center; font-size: 0.85em;"><a href="https://github.com/opencitations/oc_meta/commit/ca5ba592822923ad0eb2cd17fc475cbde377999e" style="color: #0969da; text-decoration: none; font-weight: 500;">ca5ba59</a></div></div>
+
+<div style="border: 1px solid #d0d7de; border-radius: 8px; padding: 16px; margin: 8px 0; background: #ffffff; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; color: #1f2328;"><div style="display: flex; align-items: center; gap: 12px; margin-bottom: 12px;"><div><strong style="display: block; color: #1f2328;">arcangelo7</strong><span style="font-size: 0.85em; color: #656d76;">Jul 6, 2026</span><span style="font-size: 0.85em; color: #656d76;"> &middot; </span><a href="https://github.com/opencitations/oc_meta" style="font-size: 0.85em; color: #0969da; text-decoration: none;">opencitations/oc_meta</a></div></div><div style="margin: 12px 0; color: #1f2328;"><p>fix(merge): load the full container closure to prevent over-merge corruption</p>
+<p>The batch merge cascades onto frbr:partOf containers through oc_graphenricher
+but only loaded a one-hop neighbourhood. Merging duplicate articles could delete
+a shared issue, volume or journal while sibling entities kept pointing at the
+deleted resource.</p>
+<p>Load the whole closure a merge touches instead: the seeds, their partOf ancestor
+chain and the one-hop neighbourhood of that set, so every entity referencing a
+container that may be deleted is present and gets redirected. entities.py and
+group_entities.py now share compute_related_closure, which also keeps merges
+reaching a common container in the same worker so parallel runs cannot diverge
+on it.</p></div><div style="display: flex; justify-content: flex-end; align-items: center; font-size: 0.85em;"><a href="https://github.com/opencitations/oc_meta/commit/2a57de568ebb729d78169536df53a45f33e2d015" style="color: #0969da; text-decoration: none; font-weight: 500;">2a57de5</a></div></div>
 
 ## Domande
 
-### Index
+88M dagli Stati Uniti e 69M dalla Repubblica Ceca. Cosa sta succedendo in Czechia?
 
-Ho provato a correggere i test in maniera tale da procedere con ulteriori ottimizzazioni in maniera sicura, ma mi sono accorto che al momento è viscoso lavorare con questa libreria perché conserva ancora tutta la logica legacy sia nel codice che nei test. Non ha alcun senso correggere i test per farli passare con la logica nuova perché mischierebbero logiche diverse. Secondo me la cosa più sensata è togliere tutta la logica legacy. Cosa ne pensate?
-
-Sui dataset dei nuovi dump pubblicati su Zenodo metto il finanziamento? Se sì, quale?
-
-### RAMOSE
-
-Servono una bio, una foto e l'ORCID di Sergei, gli scrivo io?
-
-### SKG-IF
-
-![Pasted image 20260629171457.png](../../../assets/notes/attachments/pasted-image-20260629171457.png)
-
-[https://skg-if.github.io/api/openapi/ver/current/skg-if-openapi.yaml](https://skg-if.github.io/api/openapi/ver/current/skg-if-openapi.yaml)
-
-### Altro
-
-Email Czesary
+![Pasted image 20260705222934.png](../../../assets/notes/attachments/pasted-image-20260705222934.png)
 
 ## Memo
 
@@ -80,25 +345,17 @@ Vizioso
 
 HERITRACE
 
-* C'è un bug che si verifica quando uno seleziona un'entità preesistente, poi clicca sulla X e inserisce i metadati a mano. Alcuni metadati vengono duplicati.
 * Per risolvere le performance del time-vault non usare la time-agnostic-library, ma guarda solo la query di update dello snapshot di cancellazione.
-* Ordine dato all’indice dell’elemento
-* date: formato
 * anni: essere meno stretto sugli anni. Problema ISO per 999. 0999?
-* Opzione per evitare counting
-* Opzione per non aggiungere la lista delle risorse, che posso comunque essere cercate
-* Configurabilità troppa fatica
 * Timer massimo. Timer configurabile. Messaggio in caso si stia per toccare il timer massimo.
 * Riflettere su @lang. SKOS come use case. skos:prefLabel, skos:altLabel
 * Possibilità di specificare l’URI a mano in fase di creazione
-* la base è non specificare la sorgente, perché non sarà mai quella iniziale.
-* desvription con l'entità e stata modificata. Tipo commit
+* description con l'entità e stata modificata. Tipo commit
 * display name è References Cited by VA bene
 * Avvertire l'utente del disastro imminente nel caso in cui provi a cancellare un volume
 
 Meta
 
-* Matilda e OUTCITE nella prossima versione
 * Rilanciare processo eliminazione duplicati
 * Fusione: chi ha più metadati compilati. A parità di metadato si tiene l’omid più basso
 * frbr:partOf non deve aggiungere nel merge: [https://opencitations.net/meta/api/v1/metadata/omid:br/06304322094](https://opencitations.net/meta/api/v1/metadata/omid:br/06304322094)
@@ -135,4 +392,4 @@ Citazioni
 
 OC di converter
 
-Riguardare perché viene fuori una seconda tabella object per DataCite.
+* Riguardare perché viene fuori una seconda tabella object per DataCite.
