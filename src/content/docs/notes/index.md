@@ -319,6 +319,13 @@ group_entities.py now share compute_related_closure, which also keeps merges
 reaching a common container in the same worker so parallel runs cannot diverge
 on it.</p></div><div style="display: flex; justify-content: flex-end; align-items: center; font-size: 0.85em;"><a href="https://github.com/opencitations/oc_meta/commit/2a57de568ebb729d78169536df53a45f33e2d015" style="color: #0969da; text-decoration: none; font-weight: 500;">2a57de5</a></div></div>
 
+Ho fuso gli identificativi
+
+<div style="border: 1px solid #d0d7de; border-radius: 8px; padding: 16px; margin: 8px 0; background: #ffffff; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; color: #1f2328;"><div style="display: flex; align-items: center; gap: 12px; margin-bottom: 12px;"><div><strong style="display: block; color: #1f2328;">arcangelo7</strong><span style="font-size: 0.85em; color: #656d76;">Jul 12, 2026</span><span style="font-size: 0.85em; color: #656d76;"> &middot; </span><a href="https://github.com/opencitations/oc_meta" style="font-size: 0.85em; color: #0969da; text-decoration: none;">opencitations/oc_meta</a></div></div><div style="margin: 12px 0; color: #1f2328;"><p>feat(patches): audit duplicate responsible agents</p>
+<p>Compare contributor roles and ORCID assignments with external metadata before
+responsible-agent merges. Generate reviewable correction plans and apply
+approved changes with stale-state checks.</p></div><div style="display: flex; justify-content: flex-end; align-items: center; font-size: 0.85em;"><a href="https://github.com/opencitations/oc_meta/commit/76e58018c4ba186b6ce9a4441865e39403acb6d0" style="color: #0969da; text-decoration: none; font-weight: 500;">76e5801</a></div></div>
+
 ## Domande
 
 88M dagli Stati Uniti e 69M dalla Repubblica Ceca. Cosa sta succedendo in Czechia?
