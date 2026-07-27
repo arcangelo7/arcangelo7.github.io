@@ -3,31 +3,30 @@ title: index
 editUrl: false
 ---
 
-### KROWN
+<div style="border: 1px solid #d0d7de; border-radius: 8px; padding: 16px; margin: 8px 0; background: #ffffff; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; color: #1f2328;"><div style="display: flex; align-items: center; gap: 12px; margin-bottom: 12px;"><img src="https://avatars.githubusercontent.com/u/42008604?v=4" style="width: 32px; height: 32px; border-radius: 50%;" alt="arcangelo7" /><div><strong style="display: block; color: #1f2328;">arcangelo7</strong><span style="font-size: 0.85em; color: #656d76;">Jul 25, 2026</span><span style="font-size: 0.85em; color: #656d76;"> &middot; </span><a href="https://github.com/arcangelo7/knowledge-graphs-inversion" style="font-size: 0.85em; color: #0969da; text-decoration: none;">arcangelo7/knowledge-graphs-inversion</a></div></div><div style="margin: 12px 0; color: #1f2328;"><p>feat(benchmarks): add the Datalog inversion engine to the KROWN runner</p></div><div style="display: flex; justify-content: flex-end; align-items: center; font-size: 0.85em;"><a href="https://github.com/arcangelo7/knowledge-graphs-inversion/commit/11b2946d8fa2eb97cec92c2bc92f56859282b4ff" style="color: #0969da; text-decoration: none; font-weight: 500;">11b2946</a></div></div>
 
-[https://github.com/kg-construct/KROWN/pull/18](https://github.com/kg-construct/KROWN/pull/18)
-
-<div style="border: 1px solid #d0d7de; border-radius: 8px; padding: 16px; margin: 8px 0; background: #ffffff; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; color: #1f2328;"><div style="display: flex; align-items: center; gap: 12px; margin-bottom: 12px;"><img src="https://avatars.githubusercontent.com/u/42008604?v=4" style="width: 32px; height: 32px; border-radius: 50%;" alt="arcangelo7" /><div><strong style="display: block; color: #1f2328;">arcangelo7</strong><span style="font-size: 0.85em; color: #656d76;">Jul 18, 2026</span><span style="font-size: 0.85em; color: #656d76;"> &middot; </span><a href="https://github.com/arcangelo7/knowledge-graphs-inversion" style="font-size: 0.85em; color: #0969da; text-decoration: none;">arcangelo7/knowledge-graphs-inversion</a></div></div><div style="margin: 12px 0; color: #1f2328;"><p>feat(benchmarks): align KROWN execution with official framework</p>
-<p>Run materialization through KROWN&#39;s Executor and collect inversion metrics with its Collector and Stats implementations. =</p></div><div style="display: flex; justify-content: flex-end; align-items: center; font-size: 0.85em;"><a href="https://github.com/arcangelo7/knowledge-graphs-inversion/commit/365d0fe63ec4439e7913af9d9e3a6a2b3bdc69cd" style="color: #0969da; text-decoration: none; font-weight: 500;">365d0fe</a></div></div>
+<div style="border: 1px solid #d0d7de; border-radius: 8px; padding: 16px; margin: 8px 0; background: #ffffff; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; color: #1f2328;"><div style="display: flex; align-items: center; gap: 12px; margin-bottom: 12px;"><div><strong style="display: block; color: #1f2328;">arcangelo7</strong><span style="font-size: 0.85em; color: #656d76;">Jul 26, 2026</span><span style="font-size: 0.85em; color: #656d76;"> &middot; </span><a href="https://github.com/arcangelo7/knowledge-graphs-inversion" style="font-size: 0.85em; color: #0969da; text-decoration: none;">arcangelo7/knowledge-graphs-inversion</a></div></div><div style="margin: 12px 0; color: #1f2328;"><p>feat(kgi): recover the columns a mapping exposes instead of rejecting it</p>
+<p>Indistinguishable subject templates, graph maps built from the same pattern
+and rr:column term maps with an IRI term type put values in the graph without
+recording which column they came from. Each used to reject the whole mapping,
+discarding columns that were perfectly recoverable: the KROWN named-graph
+scenario with five graph maps recovers p1 over a million rows. Those columns
+are now left out of the reconstruction, like columns a mapping never reads,
+and the rest is recovered. Dropping them also collapses the interchangeable
+triples maps into one query group, so the twenty of mappings_20_1 no longer
+build a twenty-way self-join.</p>
+<p>The graph map inverter emits one GRAPH clause per distinguishable graph map
+instead of wrapping every pattern in the first one, which left four columns
+unbound and turned a million source rows into five million.</p>
+<p>KROWN gains the AMBIGUOUS outcome for a reconstruction that is sound but
+misses columns the mapping reads, so the round trip is skipped instead of
+failing on them. Ten scenarios move there from NON_INVERTIBLE, which none now
+expects. A reconstructed column that is entirely NULL counts as not
+reconstructed, so the two engines are compared on what they recovered; souffle
+also needed the destination table created without the NOT NULL that LIKE
+copies from the source primary key. Runs measured before an abort are saved
+instead of being lost with the exception.</p></div><div style="display: flex; justify-content: flex-end; align-items: center; font-size: 0.85em;"><a href="https://github.com/arcangelo7/knowledge-graphs-inversion/commit/e2cac7e3ce39bb27ed4bad4c693ee518d4ba8a0b" style="color: #0969da; text-decoration: none; font-weight: 500;">e2cac7e</a></div></div>
 
 ### TODO
 
-* Dare la lista completa di cose non allineate tra test di RML e R2RML
-* [https://github.com/dtai-kg/R2RML2Datalog-Translator](https://github.com/dtai-kg/R2RML2Datalog-Translator)
-* Creare scenari dove Ali will fail. Fare l'avvocato del diavolo
-* estendere KROWN per generare casi invertibili
-* [https://docs.google.com/document/d/1tYxHmuqyAfniVGpTicDz3FB2jf0dZRx2kZWAjaZmkaI/edit?tab=t.0](https://docs.google.com/document/d/1tYxHmuqyAfniVGpTicDz3FB2jf0dZRx2kZWAjaZmkaI/edit?tab=t.0)
-* Deadline end of september
-* Testare il codice di Ali sia come compliance che performance
-* Facciamo R2RML, non RML
-* Fare girare [https://github.com/dtai-kg/ReverseR2RML](https://github.com/dtai-kg/ReverseR2RML) su KROWN. Aspettare Ali, mancano funzioni per eseguirlo con Soufflé. Un paio di giorni.
-* [https://github.com/souffle-lang/souffle](https://github.com/souffle-lang/souffle)
 * La test bench non fare overshadowing
-* Provare il forward su KROWN e il reverse sui test cases
-* La provenance non risolve la mancanza di informazioni, risolve cose come i separatori dei template. Investigare altre possibili motivazioni.
-
-### 2026-07-17
-
-* La provenance non scala, significa duplicare la tabella di origine. Ci vogliono buoni mapping.
-* Come ottimizzazione, Ali usa la primary key della tabella come identificatore.
-* Ali ha implementato l'approccio sulla provenance.

@@ -5,64 +5,70 @@ editUrl: false
 
 ## La Novitade
 
-### SPARQL Service Description
-
-> SPARQL services made available via the SPARQL Protocol SHOULD return a service description document **at the service endpoint** when dereferenced using the HTTP **GET** operation **without any query parameter** strings provided. This service description MUST be made available in an RDF serialization, **MAY be embedded in (X)HTML by way of RDFa** \[RDFA], and SHOULD use content negotiation \[CONNEG] if available in other RDF representations.
-> [https://www.w3.org/TR/sparql11-service-description/#accessing](https://www.w3.org/TR/sparql11-service-description/#accessing)
-
-Il di conseguenza: GET su [https://sparql.opencitations.net/meta](https://sparql.opencitations.net/meta) con con Accept: text/turtle -> SPARQL Service Description
-
-Oppure GET /meta con Accept: text/html -> Interfaccia HTML con la descrizione incorporata come RDFa
-
-Ancora
-
-> The URI /.well-known/void on any Web server is registered by this specification for a VoID description of any datasets hosted on that server. For example, on the host [www.example.com](http://www.example.com), this URI would be [http://www.example.com/.well-known/void](http://www.example.com/.well-known/void).  [https://www.w3.org/TR/void/#well-known](https://www.w3.org/TR/void/#well-known)
-
-### Meta
-
-<div style="border: 1px solid #d0d7de; border-radius: 8px; padding: 16px; margin: 8px 0; background: #ffffff; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; color: #1f2328;"><div style="display: flex; align-items: center; gap: 12px; margin-bottom: 12px;"><div><strong style="display: block; color: #1f2328;">arcangelo7</strong><span style="font-size: 0.85em; color: #656d76;">Jul 15, 2026</span><span style="font-size: 0.85em; color: #656d76;"> &middot; </span><a href="https://github.com/opencitations/oc_meta" style="font-size: 0.85em; color: #0969da; text-decoration: none;">opencitations/oc_meta</a></div></div><div style="margin: 12px 0; color: #1f2328;"><p>feat(patches): repair dangling agent roles</p>
-<p>Add a reviewed plan-and-execute workflow for reconstructing missing agent-role chains from external metadata.</p></div><div style="display: flex; justify-content: flex-end; align-items: center; font-size: 0.85em;"><a href="https://github.com/opencitations/oc_meta/commit/b417d95d590d554316cdf25b41a4a51a54bd0754" style="color: #0969da; text-decoration: none; font-weight: 500;">b417d95</a></div></div>
-
-### Aldrovandi
-
-<div style="border: 1px solid #d0d7de; border-radius: 8px; padding: 16px; margin: 8px 0; background: #ffffff; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; color: #1f2328;"><div style="display: flex; align-items: center; gap: 12px; margin-bottom: 12px;"><img src="https://avatars.githubusercontent.com/u/42008604?v=4" style="width: 32px; height: 32px; border-radius: 50%;" alt="arcangelo7" /><div><strong style="display: block; color: #1f2328;">arcangelo7</strong><span style="font-size: 0.85em; color: #656d76;">Jul 15, 2026</span><span style="font-size: 0.85em; color: #656d76;"> &middot; </span><a href="https://github.com/dharc-org/changes-metadata-manager" style="font-size: 0.85em; color: #0969da; text-decoration: none;">dharc-org/changes-metadata-manager</a></div></div><div style="margin: 12px 0; color: #1f2328;"><p>fix(zenodo): reject unresolved creators</p>
-<p>Creator names missing from the lookup were silently omitted from record metadata.
-Require exact RDF name matches, align the affected lookup entries, and cover the
-failure and resolution paths with tests.</p></div><div style="display: flex; justify-content: flex-end; align-items: center; font-size: 0.85em;"><a href="https://github.com/dharc-org/changes-metadata-manager/commit/87d8252bfc5b6b67dc9605755e7353d2f72d4322" style="color: #0969da; text-decoration: none; font-weight: 500;">87d8252</a></div></div>
-
-<div style="border: 1px solid #d0d7de; border-radius: 8px; padding: 16px; margin: 8px 0; background: #ffffff; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; color: #1f2328;"><div style="display: flex; align-items: center; gap: 12px; margin-bottom: 12px;"><img src="https://avatars.githubusercontent.com/u/42008604?v=4" style="width: 32px; height: 32px; border-radius: 50%;" alt="arcangelo7" /><div><strong style="display: block; color: #1f2328;">arcangelo7</strong><span style="font-size: 0.85em; color: #656d76;">Jul 16, 2026</span><span style="font-size: 0.85em; color: #656d76;"> &middot; </span><a href="https://github.com/dharc-org/changes-metadata-manager" style="font-size: 0.85em; color: #0969da; text-decoration: none;">dharc-org/changes-metadata-manager</a></div></div><div style="margin: 12px 0; color: #1f2328;"><p>fix(zenodo): add creator repair script</p></div><div style="display: flex; justify-content: flex-end; align-items: center; font-size: 0.85em;"><a href="https://github.com/dharc-org/changes-metadata-manager/commit/e9b32456deb48e4ba887e0014306e0767053ffec" style="color: #0969da; text-decoration: none; font-weight: 500;">e9b3245</a></div></div>
-
-<div style="border: 1px solid #d0d7de; border-radius: 8px; padding: 16px; margin: 8px 0; background: #ffffff; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; color: #1f2328;"><div style="display: flex; align-items: center; gap: 12px; margin-bottom: 12px;"><img src="https://avatars.githubusercontent.com/u/42008604?v=4" style="width: 32px; height: 32px; border-radius: 50%;" alt="arcangelo7" /><div><strong style="display: block; color: #1f2328;">arcangelo7</strong><span style="font-size: 0.85em; color: #656d76;">Jul 16, 2026</span><span style="font-size: 0.85em; color: #656d76;"> &middot; </span><a href="https://github.com/dharc-org/changes-metadata-manager" style="font-size: 0.85em; color: #0969da; text-decoration: none;">dharc-org/changes-metadata-manager</a></div></div><div style="margin: 12px 0; color: #1f2328;"><p>fix(zenodo): distinguish external source records</p>
-<p>Select missing-file notices from the stage&#39;s defining activity</p></div><div style="display: flex; justify-content: flex-end; align-items: center; font-size: 0.85em;"><a href="https://github.com/dharc-org/changes-metadata-manager/commit/a749510967ee0a5c53b82ff083fa9f34046dc888" style="color: #0969da; text-decoration: none; font-weight: 500;">a749510</a></div></div>
-
 ### HERITRACE
 
-<div style="border: 1px solid #d0d7de; border-radius: 8px; padding: 16px; margin: 8px 0; background: #ffffff; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; color: #1f2328;"><div style="display: flex; align-items: center; gap: 12px; margin-bottom: 12px;"><img src="https://avatars.githubusercontent.com/u/42008604?v=4" style="width: 32px; height: 32px; border-radius: 50%;" alt="arcangelo7" /><div><strong style="display: block; color: #1f2328;">arcangelo7</strong><span style="font-size: 0.85em; color: #656d76;">Jul 18, 2026</span><span style="font-size: 0.85em; color: #656d76;"> &middot; </span><a href="https://github.com/opencitations/heritrace" style="font-size: 0.85em; color: #0969da; text-decoration: none;">opencitations/heritrace</a></div></div><div style="margin: 12px 0; color: #1f2328;"><p>feat(iri): configure IRI minting components</p>
-<p>Load constructor options from JSON environment variables and provide a
-filesystem-backed OpenCitations Meta counter handler with atomic updates.</p></div><div style="display: flex; justify-content: flex-end; align-items: center; font-size: 0.85em;"><a href="https://github.com/opencitations/heritrace/commit/4337c46c6524a29dd036de9317755d52dae2174c" style="color: #0969da; text-decoration: none; font-weight: 500;">4337c46</a></div></div>
+<div style="border: 1px solid #d0d7de; border-radius: 8px; padding: 16px; margin: 8px 0; background: #ffffff; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; color: #1f2328;"><div style="display: flex; align-items: center; gap: 12px; margin-bottom: 12px;"><img src="https://avatars.githubusercontent.com/u/42008604?v=4" style="width: 32px; height: 32px; border-radius: 50%;" alt="arcangelo7" /><div><strong style="display: block; color: #1f2328;">arcangelo7</strong><span style="font-size: 0.85em; color: #656d76;">Jul 25, 2026</span><span style="font-size: 0.85em; color: #656d76;"> &middot; </span><a href="https://github.com/opencitations/time-agnostic-library" style="font-size: 0.85em; color: #0969da; text-decoration: none;">opencitations/time-agnostic-library</a></div></div><div style="margin: 12px 0; color: #1f2328;"><p>feat(entity): make historical provenance scans opt-in [release]</p></div><div style="display: flex; justify-content: flex-end; align-items: center; font-size: 0.85em;"><a href="https://github.com/opencitations/time-agnostic-library/commit/0efc873a3e2ce6f3cde296e1bdb4b8d604276c23" style="color: #0969da; text-decoration: none; font-weight: 500;">0efc873</a></div></div>
 
-<div style="border: 1px solid #d0d7de; border-radius: 8px; padding: 16px; margin: 8px 0; background: #ffffff; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; color: #1f2328;"><div style="display: flex; align-items: center; gap: 12px; margin-bottom: 12px;"><img src="https://avatars.githubusercontent.com/u/42008604?v=4" style="width: 32px; height: 32px; border-radius: 50%;" alt="arcangelo7" /><div><strong style="display: block; color: #1f2328;">arcangelo7</strong><span style="font-size: 0.85em; color: #656d76;">Jul 18, 2026</span><span style="font-size: 0.85em; color: #656d76;"> &middot; </span><a href="https://github.com/opencitations/heritrace" style="font-size: 0.85em; color: #0969da; text-decoration: none;">opencitations/heritrace</a></div></div><div style="margin: 12px 0; color: #1f2328;"><p>feat(meta): persist rdf archives after saves</p>
-<p>Add a configurable save plugin that writes changed OpenCitations Meta data and provenance entities to zipped JSON-LD archives after SPARQL updates.</p></div><div style="display: flex; justify-content: flex-end; align-items: center; font-size: 0.85em;"><a href="https://github.com/opencitations/heritrace/commit/61394e9900472c39de94b76cba7c801ea9b3b454" style="color: #0969da; text-decoration: none; font-weight: 500;">61394e9</a></div></div>
+<div style="border: 1px solid #d0d7de; border-radius: 8px; padding: 16px; margin: 8px 0; background: #ffffff; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; color: #1f2328;"><div style="display: flex; align-items: center; gap: 12px; margin-bottom: 12px;"><img src="https://avatars.githubusercontent.com/u/42008604?v=4" style="width: 32px; height: 32px; border-radius: 50%;" alt="arcangelo7" /><div><strong style="display: block; color: #1f2328;">arcangelo7</strong><span style="font-size: 0.85em; color: #656d76;">Jul 25, 2026</span><span style="font-size: 0.85em; color: #656d76;"> &middot; </span><a href="https://github.com/opencitations/heritrace" style="font-size: 0.85em; color: #0969da; text-decoration: none;">opencitations/heritrace</a></div></div><div style="margin: 12px 0; color: #1f2328;"><p>fix(history): query historical reverse relations only when display rules need them</p></div><div style="display: flex; justify-content: flex-end; align-items: center; font-size: 0.85em;"><a href="https://github.com/opencitations/heritrace/commit/0f34ea00ccb51c1b8c338cdf74d688691e386839" style="color: #0969da; text-decoration: none; font-weight: 500;">0f34ea0</a></div></div>
 
-[https://github.com/opencitations/heritrace/blob/61394e9900472c39de94b76cba7c801ea9b3b454/docker/docker-compose.meta.yaml#L93-L98](https://github.com/opencitations/heritrace/blob/61394e9900472c39de94b76cba7c801ea9b3b454/docker/docker-compose.meta.yaml#L93-L98)
+<div style="border: 1px solid #d0d7de; border-radius: 8px; padding: 16px; margin: 8px 0; background: #ffffff; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; color: #1f2328;"><div style="display: flex; align-items: center; gap: 12px; margin-bottom: 12px;"><img src="https://avatars.githubusercontent.com/u/42008604?v=4" style="width: 32px; height: 32px; border-radius: 50%;" alt="arcangelo7" /><div><strong style="display: block; color: #1f2328;">arcangelo7</strong><span style="font-size: 0.85em; color: #656d76;">Jul 26, 2026</span><span style="font-size: 0.85em; color: #656d76;"> &middot; </span><a href="https://github.com/opencitations/heritrace" style="font-size: 0.85em; color: #0969da; text-decoration: none;">opencitations/heritrace</a></div></div><div style="margin: 12px 0; color: #1f2328;"><p>perf(time-vault): list deletions without replaying entity history and warm-up</p>
+<p>Rendering a page rebuilt the whole history of every deleted entity in the
+store, so it never finished on datasets the size of OpenCitations Meta. The
+deletion snapshot already records the pre-deletion state, so the listing now
+reads it from there.</p></div><div style="display: flex; justify-content: flex-end; align-items: center; font-size: 0.85em;"><a href="https://github.com/opencitations/heritrace/commit/09a8b474a918ecd9318d7463b325d566fa2364f1" style="color: #0969da; text-decoration: none; font-weight: 500;">09a8b47</a></div></div>
 
-<div style="border: 1px solid #d0d7de; border-radius: 8px; padding: 16px; margin: 8px 0; background: #ffffff; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; color: #1f2328;"><div style="display: flex; align-items: center; gap: 12px; margin-bottom: 12px;"><img src="https://avatars.githubusercontent.com/u/42008604?v=4" style="width: 32px; height: 32px; border-radius: 50%;" alt="arcangelo7" /><div><strong style="display: block; color: #1f2328;">arcangelo7</strong><span style="font-size: 0.85em; color: #656d76;">Jul 20, 2026</span><span style="font-size: 0.85em; color: #656d76;"> &middot; </span><a href="https://github.com/opencitations/heritrace" style="font-size: 0.85em; color: #0969da; text-decoration: none;">opencitations/heritrace</a></div></div><div style="margin: 12px 0; color: #1f2328;"><p>perf(meta): index counter files by byte chunks</p>
-<p>Locate counter lines from byte-chunk checkpoints and memory-mapped reads so
-large provenance files avoid Python line iteration</p></div><div style="display: flex; justify-content: flex-end; align-items: center; font-size: 0.85em;"><a href="https://github.com/opencitations/heritrace/commit/e4397e735c78fcc0f13e8dc680df44fb04981694" style="color: #0969da; text-decoration: none; font-weight: 500;">e4397e7</a></div></div>
+### SPARQL Service Description
+
+<div style="border: 1px solid #d0d7de; border-radius: 8px; padding: 16px; margin: 8px 0; background: #ffffff; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; color: #1f2328;"><div style="display: flex; align-items: center; gap: 12px; margin-bottom: 12px;"><img src="https://avatars.githubusercontent.com/u/42008604?v=4" style="width: 32px; height: 32px; border-radius: 50%;" alt="arcangelo7" /><div><strong style="display: block; color: #1f2328;">arcangelo7</strong><span style="font-size: 0.85em; color: #656d76;">Jul 26, 2026</span><span style="font-size: 0.85em; color: #656d76;"> &middot; </span><a href="https://github.com/opencitations/oc_sparql" style="font-size: 0.85em; color: #0969da; text-decoration: none;">opencitations/oc_sparql</a></div></div><div style="margin: 12px 0; color: #1f2328;"><p>feat: expose service descriptions</p>
+<p>Adds /index/description, /meta/description and /.well-known/void, and
+content-negotiated between turtle/jsonld/rdf+xml/n-triples/html.</p>
+<p>Kept away from /index and /meta since those already serve the
+YASQE/YASR query UI on GET with no query string; a Link header on that
+existing response now points at the sibling description.</p></div><div style="display: flex; justify-content: flex-end; align-items: center; font-size: 0.85em;"><a href="https://github.com/opencitations/oc_sparql/commit/25012c75f1fd7acae3dd9f048ce5e360fc1c1beb" style="color: #0969da; text-decoration: none; font-weight: 500;">25012c7</a></div></div>
+
+[https://github.com/opencitations/oc\_sparql/pull/6](https://github.com/opencitations/oc_sparql/pull/6)
+
+### Contratto che vai Legge n. che trovi
+
+> il titolare di incarichi post-doc dell’Ateneo di Bologna dichiara di essere consapevole che, prima dell'inizio dello svolgimento dell'attività, deve acquisire la prescritta autorizzazione rilasciata dal Direttore del Dipartimento, sentito il tutor, così come previsto dal Regolamento per la disciplina dei contratti di ricerca ai sensi dell'art. 22 della Legge n. 240/2010, emanato con D.R. 1620/2025 e ss.mm.ii.
+
+### time-agnostic-library (perché sì, i nomi overly generic esistevano anche prima di ChatGPT)
+
+BEAR-B-instant, SV: 21.046 versioni × 62 pattern = 1,3M query x 6 esecuzioni (1 warmup + 5 ripetizioni) = 7,8M esecuzioni
+
+La scorsa esecuzione ha impiegato circa 1,11s per esecuzione = 8,7M s = 3,3 mesi. Bravi tutti.
+
+Direi che l'harness va modificata per funzionare in parallelo.
+
+Il parallelismo è attaccabile? Sì. tracemalloc misura l'heap del processo, quindi i numeri di memory peak restano validi. Ma dato che le query girano insieme sulla stessa macchina e sullo stesso endpoint, il numero che pubblicherei non sarebbe più la latenza per query ma il throughput sotto carico. Inoltre, TAL già parallelizza internamente ovunque è possibile.
 
 ## Domande
 
-Camera ready ISWC
+### ISWC
 
-### SKG-IF
+Nell'email relativa al camera ready, si dice che è gradito uno screenshot dell'iscrizione alla conferenza. Ora, nell'improbabile caso in cui io vinca il premio per la tesi di dottorato, dovrei poter partecipare gratuitamente. Come funziona? Si viene rimborsati?
 
-* [https://skg-if.github.io/interoperability-framework/docs/venue.html#type](https://skg-if.github.io/interoperability-framework/docs/venue.html#type) Noi non consideriamo repository come un tipo di venue. Dovremmo? Cioè nel nostro data model fabio:ComputerProgram non può essere un contenitore. Noi non distinguiamo, in effetti, tra software e contenitore del software.
+In ogni caso dubito fortemente di poter ricevere l'anticipo prima del 6 agosto.
 
-* Per le venue di SKG-IF, ho dato questa indicazione a Regina:
+L'iscrizione alla conferenza, che include la cena di gala costa 817,4 euro per gli early birds (fino al 31 agosto).
 
-> Please map fabio:Journal to journal, fabio:AcademicProceedings to conference, and fabio:Book and fabio:ReferenceBook to book. Map every other class, including fabio:BookSeries and fabio:Series, to other.
+![Pasted image 20260722180327.png](../../../assets/notes/attachments/pasted-image-20260722180327.png)
 
-Ma potrebbe non avere senso
+Mentre l'iscrizione alla pre-conference costa 305 euro più i costi annessi di pernottazione e consumazione.
+
+![Pasted image 20260722180406.png](../../../assets/notes/attachments/pasted-image-20260722180406.png)
+
+### Una riflettazione
+
+Ad oggi l'unico modo per riconoscere uno snapshot di cancellazione è la presenza di prov:invalidatedAtTime sull'ultimo snapshot. Questa informazione non è indicizzabile, perché prov:invalidatedAtTime è presente anche su tutti e gli altri snapshot. Quindi recuperare tutte le entità cancellate è un'operazione che non scala by design.
+
+***
+
+Che licenza ha il logo di OpenCitations?
+
+***
+
+Ad agosto potrò usare ServerGrosso?
 
 ## Memo
 
@@ -84,7 +90,6 @@ Vizioso
 
 HERITRACE
 
-* Per risolvere le performance del time-vault non usare la time-agnostic-library, ma guarda solo la query di update dello snapshot di cancellazione.
 * anni: essere meno stretto sugli anni. Problema ISO per 999. 0999?
 * Timer massimo. Timer configurabile. Messaggio in caso si stia per toccare il timer massimo.
 * Riflettere su @lang. SKOS come use case. skos:prefLabel, skos:altLabel
@@ -109,7 +114,7 @@ oc\_ocdm
 
 RML
 
-* Chiedere Ionannisil diagramma che ha usato per auto rml.
+* Chiedere Ionannis il diagramma che ha usato per auto rml.
 
 Crowdsourcing
 
