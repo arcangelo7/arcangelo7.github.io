@@ -5,12 +5,16 @@
 // @ts-check
 import { defineConfig } from 'astro/config';
 import starlight from '@astrojs/starlight';
-import starlightObsidian, { obsidianSidebarGroup, createStarlightObsidianPlugin } from 'starlight-obsidian';
-
-const [kgiPlugin, kgiSidebarGroup] = createStarlightObsidianPlugin();
+import starlightObsidian, { obsidianSidebarEntries } from 'starlight-obsidian';
+import { unified } from '@astrojs/markdown-remark';
+import remarkBreaks from 'remark-breaks';
+import remarkImageGrid from './src/plugins/remark-image-grid.mjs';
 
 // https://astro.build/config
 export default defineConfig({
+	markdown: {
+		processor: unified({ remarkPlugins: [remarkBreaks, remarkImageGrid] }),
+	},
 	integrations: [
 		starlight({
 			title: 'Tu vuo far el contrattino',
@@ -20,12 +24,15 @@ export default defineConfig({
 				replacesTitle: false,
 			},
 			favicon: '/favicon.png',
+			customCss: ['./src/styles/image-grid.css'],
 			social: [{ icon: 'github', label: 'GitHub', href: 'https://github.com/arcangelo7/arcangelo7.github.io' }],
 			components: {
 				Sidebar: './src/components/Sidebar.astro',
 				Pagination: './src/components/Pagination.astro',
 			},
-			sidebar: [obsidianSidebarGroup, kgiSidebarGroup],
+			sidebar: [
+				{ label: 'Tu vuo far el contrattino', collapsed: false, items: [obsidianSidebarEntries] },
+			],
 			plugins: [
 				starlightObsidian({
 					vault: '/home/arcangelo/Documents/obsidian/diario',
@@ -33,23 +40,6 @@ export default defineConfig({
 					ignore: [
 						'*.png',
 					],
-					sidebar: {
-						label: 'Tu vuo far el contrattino',
-						collapsed: false,
-					},
-					skipGeneration: !!process.env.SKIP_OBSIDIAN_GENERATION,
-				}),
-				kgiPlugin({
-					vault: '/home/arcangelo/Documents/obsidian/KG Inversion',
-					configFolder: '../.obsidian',
-					output: 'kgi',
-					ignore: [
-						'*.png',
-					],
-					sidebar: {
-						label: 'KGI',
-						collapsed: false,
-					},
 					skipGeneration: !!process.env.SKIP_OBSIDIAN_GENERATION,
 				}),
 			],

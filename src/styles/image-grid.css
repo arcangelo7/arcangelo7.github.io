@@ -1,0 +1,22 @@
+/*
+ * SPDX-FileCopyrightText: 2025-2026 Arcangelo Massari <info@arcangelomassari.com>
+ *
+ * SPDX-License-Identifier: ISC
+ */
+
+.sl-markdown-content .image-grid {
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(calc(50% - 0.25rem), 1fr));
+	gap: 0.5rem;
+}
+
+.sl-markdown-content .image-grid > img {
+	width: 100%;
+	margin-top: 0;
+}
+
+@media (max-width: 30rem) {
+	.sl-markdown-content .image-grid {
+		grid-template-columns: 1fr;
+	}
+}

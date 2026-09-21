@@ -5,10 +5,8 @@ version = 1
 path = [
     "public/favicon.png",
     "public/notes/**",
-    "public/kgi/**",
     "src/assets/logo.png",
     "src/assets/notes/**",
-    "src/assets/kgi/**",
 ]
 SPDX-FileCopyrightText = "2025-2026 Arcangelo Massari <info@arcangelomassari.com>"
 SPDX-License-Identifier = "CC-BY-4.0"
@@ -27,7 +25,6 @@ SPDX-License-Identifier = "ISC"
 [[annotations]]
 path = [
     "src/content/docs/notes/**",
-    "src/content/docs/kgi/**",
 ]
 SPDX-FileCopyrightText = "2025-2026 Arcangelo Massari <info@arcangelomassari.com>"
 SPDX-License-Identifier = "CC-BY-4.0"

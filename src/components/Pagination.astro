@@ -1,14 +1,13 @@
-<!--
-SPDX-FileCopyrightText: 2025 Arcangelo Massari <info@arcangelomassari.com>
-
-SPDX-License-Identifier: ISC
--->
 ---
-const { dir, pagination, entry, sidebar } = Astro.locals.starlightRoute;
+// SPDX-FileCopyrightText: 2025 Arcangelo Massari <info@arcangelomassari.com>
+//
+// SPDX-License-Identifier: ISC
+
+const { dir, pagination, id, sidebar } = Astro.locals.starlightRoute;
 const isRtl = dir === 'rtl';
 
-const isIndex = !entry.slug.includes('/') || entry.slug.endsWith('/index');
-const currentSection = entry.slug.split('/')[0];
+const isIndex = !id.includes('/') || id.endsWith('/index');
+const currentSection = id.split('/')[0];
 
 interface PaginationLink { href: string; label: string }
 
