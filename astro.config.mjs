@@ -10,15 +10,34 @@ import { unified } from '@astrojs/markdown-remark';
 import remarkBreaks from 'remark-breaks';
 import remarkImageGrid from './src/plugins/remark-image-grid.mjs';
 import stableObsidianImages from './src/plugins/stable-obsidian-images.mjs';
+import removeAstroHeadDirective from './src/plugins/remove-astro-head-directive.mjs';
 
 // https://astro.build/config
 export default defineConfig({
+	site: 'https://arcangelo7.github.io',
+	vite: {
+		plugins: [removeAstroHeadDirective()],
+	},
 	markdown: {
 		processor: unified({ remarkPlugins: [remarkBreaks, remarkImageGrid] }),
 	},
 	integrations: [
 		starlight({
 			title: 'Tu vuo far el contrattino',
+			disable404Route: true,
+			expressiveCode: {
+				shiki: {
+					langAlias: {
+						SPARQL: 'sparql',
+						TURTLE: 'turtle',
+						HTTP: 'http',
+						Dockerfile: 'dockerfile',
+						ntriples: 'turtle',
+						plantuml: 'text',
+						hf: 'text',
+					},
+				},
+			},
 			logo: {
 				src: './src/assets/logo.png',
 				alt: 'PhD Journal Logo',
