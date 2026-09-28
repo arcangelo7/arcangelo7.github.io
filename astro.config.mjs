@@ -9,6 +9,7 @@ import starlightObsidian, { obsidianSidebarEntries } from 'starlight-obsidian';
 import { unified } from '@astrojs/markdown-remark';
 import remarkBreaks from 'remark-breaks';
 import remarkImageGrid from './src/plugins/remark-image-grid.mjs';
+import stableObsidianImages from './src/plugins/stable-obsidian-images.mjs';
 
 // https://astro.build/config
 export default defineConfig({
@@ -44,5 +45,6 @@ export default defineConfig({
 				}),
 			],
 		}),
+		stableObsidianImages(),
 	],
 });
