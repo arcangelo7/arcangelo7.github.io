@@ -5,89 +5,151 @@ editUrl: false
 
 ## La Novitade
 
-### Meta
+### Articolo sulla Time Agnostic Library
 
-Ho scritto un programma che usa la provenance per trovare i BR a cui le prime fusioni hanno raddoppiato i ruoli, cioè gli autori del BR fuso finiti in coda a quelli del BR rimasto. Per quei BR cancella tutti i ruoli del tipo raddoppiato e prepara i CSV per reingerirli da Crossref/DataCite partendo dal DOI originale.
+**Perché non usate il Data History Plugin di GraphDB come baseline?**
 
-Questa logica va a triggerare una reingestione anche nei casi in cui persone nuove sono state aggiunte prima che Meta utilizzasse il silenziatore. Questo comportamento è voluto perché mi sono accorto che in molti casi le persone aggiunte sono persone che erano già presenti nella catena semplicemente scritte in un modo leggermente diverso.
-
-Qualche numero:
-
-* 26.848 eventi di raddoppio
-  * 17.176 eventi sono snapshot di fusione
-  * 9.672 eventi sono semplici modifiche.
-    * Di questi, 9.342 sono di gennaio 2024
-    * Ne ho sfogliati 200 a caso e solo in 2 casi erano persone nuove.
-
-***
-
-Ho messo su il db di provenance.
-
-***
-
-Ho lanciato la fusione dei responsible agents.
+Perché non va: [https://stackoverflow.com/questions/80014673/graphdb-history-plugin-from-http-www-ontotext-com-at-returns-current-da](https://stackoverflow.com/questions/80014673/graphdb-history-plugin-from-http-www-ontotext-com-at-returns-current-da)
 
 ### HERITRACE
 
-Assistito da Opus 5.5 medium, ho rifatto tutto il frontend in Flutter, usando però come pacchetto di widget non Material ma Cupertino, ovvero le forme di iOS.
+#### Da YAML a SHACL
 
-Sulla scorta della migrazione al design di iOS ho anche ripensato alcuni dettagli dell'interazione. In particolare, su iOS ogni riga che possa avere un'interazione ha una sola interazione principale, che solitamente è lo chevron right, che poi ti porta alla sezione. Eventuali azioni secondarie si raggiungono strisciando la riga, cosa che ovviamente su web non si può fare. In ogni caso ho pensato di sostituire tutti i visit con uno chevron right. Il visit non compare quando si entra in modalità di modifica, compare soltanto il cestino al suo posto.
+Ho spostato da YAML a SHACL tutto ciò che è esprimibile tramite [SHACL 1.2 User Interfaces](https://w3c.github.io/data-shapes/shacl12-ui/) e [SHACL 1.2 extensions](https://w3c.github.io/data-shapes/shacl12-sparql/). Sono entrambi draft, ma in ogni caso per portare quelle regole da YAML a RDF avrei dovuto definire un vocabolario, quindi tanto vale utilizzarne uno su cui sta lavorando qualcun altro.
 
-Aggiunto il tasto back
+* displayName della classe -> sh:name sulla node shape
+* displayName del campo -> sh:name sulla property shape
+* ordine dei displayProperties -> sh:order
+* displayRules per shape (Author/Editor/Publisher sullo stesso predicato) → una property shape per ruolo, con lo stesso path e sh:node diverso
+* fetchUriDisplay -> property shape con shui:LabelRole e la query in sh:values/sh:select, con \$this al posto di `[[uri]]`
+* inputType: textarea -> shui:editor shui:TextAreaEditor
+* supportsSearch -> shui:editor shui:AutoCompleteEditor
+  * sulla property shape del link, con sh:class o sh:node della destinazione
+  * si dichiara sul campo che punta all’entità da cercare, per esempio su pro:isHeldBy
+  * la query si ricava dai campi di testo della shape di destinazione e da quelli annidati di un livello, quindi posso cercare i nomi di un autore e anche i suoi id.
 
-Modalità scura
+TopQuadrant è un azienda che fa software per gestire knowledge graph. II suo prodotto principale è TopBraid EDG. Ha contribuito a definire SHACL. Anche SHACL UI riprende in qualche misura il vocabolario [DASH](https://datashapes.org/dash.ttl) definito per TopBraid. In DASH ci sono alcune proprietà che fanno cose non ancora integrate in SHACL UI ma utili per HERITRACE, per abbandonare definitivamente YAML senza creare neanche una nuova proprietà e riutilizzare al 100% l'esistente.
 
-Multilinguismo solo per i testi fissi
+```
+dash:composite
+  a rdf:Property ;
+  rdfs:comment "Can be used to indicate that a property/path represented by a property constraint represents a composite relationship. In a composite relationship, the life cycle of a \"child\" object (value of the property/path) depends on the \"parent\" object (focus node). If the parent gets deleted, then the child objects should be deleted, too. Tools may use dash:composite (if set to true) to implement cascading delete operations." ;
+  rdfs:domain sh:PropertyShape ;
+  rdfs:label "composite" ;
+  rdfs:range xsd:boolean ;
+.
+```
 
-### Nanodash
+```turtle
+sh:property [
+	sh:name "Author" ;
+	sh:path pro:isDocumentContextFor ;
+	sh:node schema:AuthorShape ;
+	shui:editor shui:DetailsEditor ;
+	shui:viewer shui:DetailsViewer ;
+	dash:composite true ;
+] .
+```
 
-[Nanopublication Template Ontology](https://peta-pico.github.io/npo/ntemplate/index-en.html) di Mr. Kuhn.
+![Pasted image 20261109190219.png](../../../assets/notes/attachments/pasted-image-20261109190219.png)
 
-**La tripla da produrre**
+dash:composite ha senso anche su identificatori, manifestazioni, citazioni, non solo sui proxy. È un concetto più generale.
 
-sub:st01 rdf:subject sub:work ; rdf:predicate dct:title ; rdf:object sub:title .
+dash:composite insieme a shui:editor shui:DetailsEditor ci permette di gestire il concetto proxy.
 
-**sub:work è un nt:UriPlaceholder + nt:LocalResource, cioè un buco da riempire con un nome breve (per esempio "br"), che diventa un IRI dentro la nanopubblicazione**
+E le proprietà virtuali? Le togliamo. Il problema delle citazioni si può risolvere con un path inverso
 
-sub:work a nt:LocalResource, nt:UriPlaceholder .
+```turtle
+schema:JournalArticleShape
+  sh:property [
+    sh:path [ sh:inversePath cito:hasCitingEntity ] ;
+    sh:name "Citations" ;
+    sh:node schema:CitationShape ;
+    dash:composite true ;
+  ] .
+  
 
-**sub:title è un nt:LiteralPlaceholder, cioè un buco da riempire con un testo**
+```
 
-sub:title a nt:LiteralPlaceholder ; rdfs:label "title" .
+Dentro Citations il campo hasCitingEntity non viene mostrato, perché è già noto, è l'articolo.
 
-Ho pubblicato un template per pubblicare e modificare risorse bibliografiche usando l'OCDM: [https://nanodash.knowledgepixels.com/explore?2\&id=https://w3id.org/np/RAL07AhiliV7p9d-766rTjSv5-3gW7eTcLftiYdzscel4](https://nanodash.knowledgepixels.com/explore?2\&id=https://w3id.org/np/RAL07AhiliV7p9d-766rTjSv5-3gW7eTcLftiYdzscel4)
+E la possibilità di nascondere intere classi? Sparisce.
 
-E ho pubblicato tutta la mia libreria Zotero su Nanodash usando quel template, ad esempio:
+Prima
 
-[https://nanodash.knowledgepixels.com/explore?id=https://w3id.org/np/RA-HZtJE-AXMhlx9ETHKrKKPFW0t65cpKOlP8W52GHLsc](https://nanodash.knowledgepixels.com/explore?id=https://w3id.org/np/RA-HZtJE-AXMhlx9ETHKrKKPFW0t65cpKOlP8W52GHLsc)
+```yaml
+- target:
+    class: "http://purl.org/spar/fabio/JournalArticle"
+  displayName: "Journal Article"
+  fetchUriDisplay: |
+    SELECT ?display WHERE { [[uri]] dcterms:title ?title ... }
+  displayProperties:
+    - property: "http://purl.org/spar/pro/isDocumentContextFor"
+      orderedBy: "https://w3id.org/oc/ontology/hasNext"
+      displayRules:
+        - shape: "http://schema.org/AuthorShape"
+          displayName: "Author"
+        - shape: "http://schema.org/EditorShape"
+          displayName: "Editor"
+```
+
+Ora
+
+```turtle
+schema:JournalArticleShape
+  a sh:NodeShape ;
+  sh:name "Journal Article" ;
+  sh:targetClass fabio:JournalArticle ;
+  sh:property [
+    sh:path pro:isDocumentContextFor ;
+    sh:name "Author" ;
+    sh:order 4 ;
+    sh:node schema:AuthorShape ;
+  ] ;
+  sh:property [
+    sh:path pro:isDocumentContextFor ;
+    sh:name "Editor" ;
+    sh:order 5 ;
+    sh:node schema:EditorShape ;
+  ] ;
+  sh:property [
+    sh:path rdfs:label ;
+    shui:propertyRole shui:LabelRole ;
+    sh:values [ sh:select "SELECT ?label WHERE { $this dcterms:title ?title ... }" ] ;
+  ] .
+```
+
+Ho anche aggiunto nella documentazione una sezione che elenca quale porzione del vocabolario SHACL stiamo supportando e quale no: [https://opencitations.github.io/heritrace/configuration/shacl/](https://opencitations.github.io/heritrace/configuration/shacl/)
+
+#### Interfaccia di configurazione
+
+`ADMIN_ORCIDS` per indicare la lista degli ORCID autorizzati a configurare l'applicazione
+
+Come si fa a rendere modificabile con HERITRACE delle SHACL shapes rendendo l'interfaccia usabile? O si crea un'interfaccia ad hoc per le shapes, oppure si riutilizza lo stesso motore di HERITRACE definendo una meta-shape immutabile. La meta-shape utilizza le stesse regole di visualizzazione fornite da SHACL UI per rendere leggibili i form di modifica delle shapes personalizzate.
+
+Corollario 1: il sottoinsieme di SHACL supportato da HERITRACE diventa machine readable.
+
+Corollario 2: SHACL viene validato tramite SHACL.
+
+Corollario 3: anche le modifiche allo SHACL hanno provenance e change tracking
+
+*Sed quis custodiet ipsos custodes*? Nessuno, se la meta-shape è sbagliata tutte le shape costruite a partire da essa saranno sbagliate.
+
+IRI base: [https://w3id.org/heritrace/](https://w3id.org/heritrace/). Viene usato nella meta-shape per:
+
+* La radice: l'entità sh:ShapesGraph che contiene tutti i tipi di entità (heritrace:configuration)
+* …/meta/…: le shape della meta-shape (ShapesGraphShape, NodeShapeShape, PropertyShapeShape)
+* heritrace:system, l’agente a cui viene attribuita la prima versione della configurazione, quella letta da un shacl.ttl senza provenance
+* …/genid/…: HERITRACE lavora su entità, non su nodi anonimi, ma SHACL usa quasi solo nodi anonimi. Gli IRI genid risolvono questo problema. Ogni nodo anonimo riceve un IRI inventato, `https://w3id.org/heritrace/genid/<uuid>`.
+* `…/shape/<uuid>`: IRI stabili dei tipi di entità creati dall’app
+
+Mentre un amministratore sta modificando la configurazione si applica lo stesso blocco che vale per le entità del dataset.
+
+### Meta
+
+Fusione dei RA finita. Avanti coi BR.
 
 ## Domande
-
-### Idee a cui Silvio mi dirà di no
-
-```
-snapshot oco:added <<( s p o )>>
-oco:removed <<( s p o )>>
-
-oppure
-
-<.../prov/se/3/added> e <.../prov/se/3/removed>
-
-GRAPH <https://w3id.org/oc/meta/br/06120/prov/> {
-    oco:hasAddedGraph <.../br/06120/prov/se/3/added> ;
-    oco:hasRemovedGraph <.../br/06120/prov/se/3/removed> .
-}
-
-GRAPH <.../br/06120/prov/se/3/added> {
-  <.../br/06120> dcterms:title "Nuovo titolo" .
-}
-```
-
-### Lab
-
-Guardando il calendario nel readme di CompData mi sono accorto che c'è già uno scollamento sulla programmazione. Nel senso che durante la scorsa lezione io ho completato tutto il secondo capitolo di laboratorio, compresa la parte 4 con la manipolazione di stringhe e l'esercizio sul paradosso di Zenone. Secondo la programmazione, quella parte avrei dovuto farla il 9, mentre dovrei fare soltanto le liste il 13. Che si fa? Potrei anche rallentare e far fare esercizi.
-
-Ho aggiunto degli esercizi sulle liste, però a questo punto, secondo me, conviene, se non quest'anno, l'anno prossimo, far sì che ogni lezione di laboratorio sia un documento a sé. Non si capisce perché avere un unico documento diviso in 10.000 parti che copre argomenti completamente diversi, come liste, loop condizionali e funzioni. Quindi, se decidiamo di andare più lentamente, gonfiamo, utilizzando esercizi, i singoli argomenti, secondo me.
 
 ## Memo
 
@@ -150,6 +212,7 @@ Crowdsourcing
 * Aggiornamenti al dump incrementali. Si usa un nuovo prefisso e si aggiungono dati solo a quel CSV.
 * Bisogna usare il DOI di Zenodo come primary source. Un unico DOI per batch process.
 * Bisogna fare l’aggiornamento sulla copia e poi bisogna automatizzare lo switch
+* Documentare come mettere su il repo di crowdsourcing, ad esempio la gestione dei secreti
 
 Citazioni
 
